@@ -1,1 +1,5 @@
 node_modules
+app.js
+server.js
+config.json
+.env

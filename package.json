@@ -1,7 +1,7 @@
 {
   "name": "word-gotchu",
   "version": "1.0.0",
-  "description": "Pixel styled web platform game based on Wordle and original characters known as “Gotchus’’ that battle against each other in an arena.",
+  "description": "Pixel styled web platform game based on Wordle and original characters known as 'Gotchus’ that battle against each other in an arena.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/iantelli/word-gotchu#readme",
   "dependencies": {
+    "axios": "^0.27.0",
     "body-parser": "^1.20.0",
     "cookie-session": "^2.0.0",
-    "express": "^4.17.3"
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "firebase": "^9.6.11"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
