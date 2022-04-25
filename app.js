@@ -1,9 +1,15 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const cookieSession = require('cookie-session');
 
 const app = express();
 
-app.get('/', (req, res) => res.send('Hello world!'));
+app.use(express.static("static"))
 
-const port = process.env.PORT || 8080;
+app.set('view engine', 'ejs')
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.get('/', (req, res) => {
+    res.send("Hello World!")
+});
+
+module.exports = app;

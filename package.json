@@ -4,7 +4,8 @@
   "description": "Pixel styled web platform game based on Wordle and original characters known as “Gotchus’’ that battle against each other in an arena.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
