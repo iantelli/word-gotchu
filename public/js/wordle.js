@@ -10,8 +10,10 @@ document.querySelector("button").addEventListener("click", event => {
         const correctCharacterPlacements = document.querySelector("span.correctCharacterPlacements");
         const completed = document.querySelector("span.completed");
         const word = response.data.word
-        correctCharacters.innerHTML = ""
-        incorrectCharacters.innerHTML = ""
+        document.querySelector("input.submitWord").value = "";
+        completed.innerHTML = ""
+        correctCharacters.innerHTML = "Correct Characters: "
+        incorrectCharacters.innerHTML = "Incorrect Characters: "
         Object.values(word.correctCharacters).forEach(letter => {
             correctCharacters.innerHTML += letter + " ";
         })
@@ -21,7 +23,24 @@ document.querySelector("button").addEventListener("click", event => {
         correctCharacterPlacements.innerHTML = word.correctCharacterPlacements.join(" ");
         totalGuesses.innerHTML = "Total guesses: " + word.totalGuesses;
         if (word.completed) {
-            completed.innerHTML = "you win!";
+            axios.post("/api/v1/lobbyWin", {
+                word
+            })
+            correctCharacters.innerHTML = "Correct Characters: "
+            incorrectCharacters.innerHTML = "Incorrect Characters: "
+            correctCharacterPlacements.innerHTML = "_ _ _ _ _";
+            totalGuesses.innerHTML = "Total guesses: 0"
+            completed.innerHTML = `correct! The word was ${word.correctCharacterPlacements.join("")}`;
+        }
+        if (word.totalGuesses == 5 && !word.completed) {
+            axios.post("/api/v1/lobbyLose", {
+                word
+            })
+            correctCharacters.innerHTML = "Correct Characters: "
+            incorrectCharacters.innerHTML = "Incorrect Characters: "
+            correctCharacterPlacements.innerHTML = "_ _ _ _ _";
+            totalGuesses.innerHTML = "Total guesses: 0"
+            completed.innerHTML = `Too many incorrect guesses! Start a new game!`;
         }
     })
     .catch(error => {
