@@ -16,6 +16,29 @@ let game = {
   answer: wordleRandom(),
 }
 
+const lobby = {
+  numOfGames: 0,
+  totalCorrect: 0,
+  totalIncorrect: 0,
+  prevGames: [],
+  startTime: Date.now(),
+  isOver: false
+}
+
+function createGame() {
+  game = {
+    totalGuesses: 0,
+    completed: false,
+    correctCharacterPlacements: new Array(5).fill("_"),
+    correctCharacters: new Set(),
+    incorrectCharacters: new Set(),
+    answer: wordleRandom(),
+  }
+  return game
+}
+
+
+
 function isUsernameTaken(username) {
   return !!users[username];
 }
@@ -75,6 +98,10 @@ function getGame() {
   return game;
 }
 
+function getLobby() {
+  return lobby;
+}
+
 module.exports = {
   isUsernameTaken,
   createUser,
@@ -82,4 +109,6 @@ module.exports = {
   getGame,
   guessWord,
   wordleRandom,
+  getLobby,
+  createGame,
 }
