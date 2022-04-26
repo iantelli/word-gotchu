@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, child, get, set } from "firebase/database";
 
-import config from "./firebaseConfig.json";
+import config from "./config.json";
 // https://www.bestwordlist.com/5letterwords.htm
 
 const firebaseConfig = {

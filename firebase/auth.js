@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-import config from "./firebaseConfig.json";
+import config from "./config.json";
 
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
