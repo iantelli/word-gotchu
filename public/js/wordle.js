@@ -1,3 +1,10 @@
+function startNewGame() {
+    document.querySelector("span.correctCharacters").innerHTML = "Correct Characters: "
+    document.querySelector("span.incorrectCharacters").innerHTML = "Incorrect Characters: "
+    document.querySelector("span.correctCharacterPlacements").innerHTML = "_ _ _ _ _";
+    document.querySelector("span.totalGuesses").innerHTML = "Total guesses: 0"
+}
+
 document.querySelector("button").addEventListener("click", event => {
     event.preventDefault();
     axios.post("/api/v1/lobby", {
@@ -26,24 +33,20 @@ document.querySelector("button").addEventListener("click", event => {
             axios.post("/api/v1/lobbyWin", {
                 word
             })
-            correctCharacters.innerHTML = "Correct Characters: "
-            incorrectCharacters.innerHTML = "Incorrect Characters: "
-            correctCharacterPlacements.innerHTML = "_ _ _ _ _";
-            totalGuesses.innerHTML = "Total guesses: 0"
             completed.innerHTML = `correct! The word was ${word.correctCharacterPlacements.join("")}`;
+            startNewGame();
         }
         if (word.totalGuesses == 5 && !word.completed) {
             axios.post("/api/v1/lobbyLose", {
                 word
             })
-            correctCharacters.innerHTML = "Correct Characters: "
-            incorrectCharacters.innerHTML = "Incorrect Characters: "
-            correctCharacterPlacements.innerHTML = "_ _ _ _ _";
-            totalGuesses.innerHTML = "Total guesses: 0"
             completed.innerHTML = `Too many incorrect guesses! Start a new game!`;
+            startNewGame();
         }
     })
     .catch(error => {
         console.log(error)
     })
 })
+
+startNewGame()
