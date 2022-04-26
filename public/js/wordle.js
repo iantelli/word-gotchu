@@ -26,21 +26,23 @@ document.querySelector("button").addEventListener("click", event => {
         const answerDiv = document.querySelector("div.answerContainer");
         
         // Adding colour classes to the correct/incorrect letters
-        (input.value.split("")).forEach((letter, index) => {
-            let span = document.createElement("span");
-            span.classList.add("letter");
-            if (word.correctCharacterPlacements[index] === letter) {
-                span.classList.add("correctCharacterPlacement");
-            }
-            if (word.correctCharacters.includes(letter)) {
-                span.classList.add("correctCharacter");
-            } else if (word.incorrectCharacters.includes(letter)) {
-                span.classList.add("incorrectCharacter");
-            }
-            span.appendChild(document.createTextNode(letter));
-            div.appendChild(span);
-            answerDiv.appendChild(div);
-        }) 
+        if (input.value.length === 5) {
+            (input.value.split("")).forEach((letter, index) => {
+                let span = document.createElement("span");
+                span.classList.add("letter");
+                if (word.correctCharacterPlacements[index] === letter) {
+                    span.classList.add("correctCharacterPlacement");
+                }
+                if (word.correctCharacters.includes(letter)) {
+                    span.classList.add("correctCharacter");
+                } else if (word.incorrectCharacters.includes(letter)) {
+                    span.classList.add("incorrectCharacter");
+                }
+                span.appendChild(document.createTextNode(letter));
+                div.appendChild(span);
+                answerDiv.appendChild(div);
+            }) 
+        }
 
         document.querySelector("input.submitWord").value = "";
         completed.innerHTML = "";
