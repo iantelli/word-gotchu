@@ -19,6 +19,7 @@ document.querySelector("button").addEventListener("click", event => {
             incorrectCharacters.innerHTML += letter + " ";
         })
         correctCharacterPlacements.innerHTML = word.correctCharacterPlacements.join(" ");
+        totalGuesses.innerHTML = "Total guesses: " + word.totalGuesses;
         if (word.completed) {
             completed.innerHTML = "you win!";
         }
