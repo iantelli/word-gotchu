@@ -1,9 +1,7 @@
-const router = require('express').Router();
-
-const db = require("../fakedb");
+const router = require("express").Router();
 
 router.get("/", (req, res) => {
-  res.status(200).send({ message: "Hey!"})
+  res.status(200).send({ message: "Hey!"});
 })
 
 router.get("/lobby", (req, res) => {
