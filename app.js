@@ -8,8 +8,17 @@ app.use(express.static("static"))
 
 app.set('view engine', 'ejs')
 
+
+
 app.get('/', (req, res) => {
-    res.send("Hello World!")
+    res.render('index.ejs');
 });
+
+
+app.get("/lobby", (req, res) => {
+    res.render('lobby.ejs');
+});
+
+
 
 module.exports = app;
