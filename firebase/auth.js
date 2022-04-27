@@ -4,20 +4,9 @@ import { getAuth, onAuthStateChanged, GoogleAuthProvider, createUserWithEmailAnd
 
 const provider = new GoogleAuthProvider();
 
-import config from "./config.json";
+
 import "dotenv/config";
 
-// See: https://firebase.google.com/docs/web/learn-more#config-object
-// const firebaseConfig = {
-//   apiKey: config.apiKey,
-//   authDomain: config.authDomain,
-//   projectId: config.projectId,
-//   storageBucket: config.storageBucket,
-//   messagingSenderId: config.messagingSenderId,
-//   appId: config.appId,
-//   measurementId: config.measurementId,
-//   databaseURL: config.databaseURL
-// };
 
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
