@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
+    background: #00BCD4;
+}
+
+span {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.base {
+    border-radius: 10px;
+    background: #272B2C;
+    display: flex;
+    width: 700px;
+    height: auto;
+    flex-direction: column;
+    padding: 30px 15px;
+    font: 28px arial;
+    box-shadow: 0px 40px 45px rgba(0, 0, 0, .4);
+}
+
+div[class*='line'] {
+    display: flex;
+    justify-content: space-around;
+}
+
+div[class*='line']+div[class*='line'] {
+    margin-top: 15px;
+}
+
+.line1,
+.line3 {
+    padding: 0 15px;
+}
+
+.line2 {
+    padding: 0 30px;
+}
+
+div[class*='line'] span .letter {
+    position: relative;
+    top: -1.5vh;
+}
+
+div[class*='line'] span:hover .letter {
+    top: -0.5vh
+}
+
+
+div[class*='line'] span[class='box1'] {
+    color: white;
+    padding: 1.5vw;
+    background: url("static/GUI/Buttons/Keyboard/Letter_Gray_Blank.svg") no-repeat;
+    background-size: 100%;
+    width: 25px;
+    text-align: center;
+
+}
+
+
+div[class*='line'] span[class='box1']:hover {
+    /*   box-shadow: 0px 2px 10px #040404;*/
+
+    background: url("static/GUI/Buttons/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+div[class*='line'] span:active {
+    transform: scale(.9);
+}
+
+.line3 span[class='box2'] {
+    background: url("static/GUI/Buttons/Keyboard/Enter.svg") no-repeat;
+    background-size: 100%;
+    width: 7.55vw;
+
+}
+
+.line3 span[class='box2']:hover {
+    background: url("static/GUI/Buttons/Keyboard/Enter_Pressed.svg") no-repeat;
+    background-size: 100%;
+    width: 7.55vw;
+
+}
+
+.line3 span[class='box3'] {
+    background: url("static/GUI/Buttons/Keyboard/Back.svg") no-repeat;
+    background-size: 100%;
+    width: 7vw;
+    padding: 0.27vw
+}
+
+.line3 span[class='box3']:hover {
+    background: url("static/GUI/Buttons/Keyboard/Back_Pressed.svg") no-repeat;
+    background-size: 100%;
+    width: 7vw;
+
+}
+
+/* correct letters */
+
+div[class*='line'] span[class='box1-correct'] {
+    color: white;
+    padding: 1.5vw;
+    background: url("static/GUI/Buttons/Keyboard/Letter_Green_Blank.svg") no-repeat;
+    background-size: 100%;
+    width: 25px;
+    text-align: center;
+
+}
+
+
+div[class*='line'] span[class='box1-correct']:hover {
+    /*   box-shadow: 0px 2px 10px #040404;*/
+
+    background: url("static/GUI/Buttons/Keyboard/Letter_Green_Blank_Pressed.svg") no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+
+@font-face {
+    font-family: kongText;
+    src: url('kongtext.ttf');
+}
+
+* {
+    font-family: kongText;
+}
+
+#arrow,
+#backspace,
+#smile,
+#mic {
+    fill: #71D4FE;
+    width: 35px;
+    height: 35px;
+    -webkit-filter: drop-shadow(0px 2px 20px #71D4FE);
+    filter: drop-shadow(0px 2px 20px #71D4FE)
+}
+
+#arrow:hover,
+#backspace:hover,
+#smile:hover,
+#mic:hover {
+    -webkit-filter: drop-shadow(0px 2px 15px #71D4FE);
+    filter: drop-shadow(0px 2px 15px #71D4FE)
+}

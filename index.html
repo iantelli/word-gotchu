@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="base">
+        <div class="line1">
+            <span class="box1">
+                <div class="letter">Q</div>
+            </span>
+            <span class="box1">
+                <div class="letter">W</div>
+            </span>
+            <span class="box1">
+                <div class="letter">E</div>
+            </span>
+            <span class="box1">
+                <div class="letter">R</div>
+            </span>
+            <span class="box1">
+                <div class="letter">T</div>
+            </span>
+            <span class="box1">
+                <div class="letter">Y</div>
+            </span>
+            <span class="box1">
+                <div class="letter">U</div>
+            </span>
+            <span class="box1">
+                <div class="letter">I</div>
+            </span>
+            <span class="box1">
+                <div class="letter">O</div>
+            </span>
+            <span class="box1">
+                <div class="letter">P</div>
+            </span>
+        </div>
+        <div class="line2">
+            <span class="box1">
+                <div class="letter">A</div>
+            </span>
+            <span class="box1">
+                <div class="letter">S</div>
+            </span>
+            <span class="box1">
+                <div class="letter">D</div>
+            </span>
+            <span class="box1">
+                <div class="letter">F</div>
+            </span>
+            <span class="box1">
+                <div class="letter">G</div>
+            </span>
+            <span class="box1">
+                <div class="letter">H</div>
+            </span>
+            <span class="box1">
+                <div class="letter">J</div>
+            </span>
+            <span class="box1">
+                <div class="letter">K</div>
+            </span>
+            <span class="box1">
+                <div class="letter">L</div>
+            </span>
+        </div>
+        <div class="line3">
+            <span class="box2">
+                <div class="letter"></div>
+            </span>
+            <span class="box1">
+                <div class="letter">Z</div>
+            </span>
+            <span class="box1">
+                <div class="letter">X</div>
+            </span>
+            <span class="box1">
+                <div class="letter">C</div>
+            </span>
+            <span class="box1">
+                <div class="letter">V</div>
+            </span>
+            <span class="box1">
+                <div class="letter">B</div>
+            </span>
+            <span class="box1">
+                <div class="letter">N</div>
+            </span>
+            <span class="box1">
+                <div class="letter">M</div>
+            </span>
+            <span class="box3">
+                <div class="letter"></div>
+            </span>
+        </div>
+    </div>
+    <button class="correct">Correct</button>
+    <button class="wrong">wrong</button>
+
+    <script>
+        if (document.addEventListener) {
+            document.addEventListener("click", function (event) {
+                // console.log(event.target.innerText)
+                if (event.target.classList.contains('letter') || event.target.classList.contains('box1') || event.target.classList.contains('box2') || event.target.classList.contains('box3')) {
+                    console.log(event.target.innerText)
+                }
+                if (event.target.classList.contains('correct')) {
+                    document.getElementsByClassName('box1').classList.add('box1-correct')
+                    document.getElementsByClassName('box1').classList.remove('box1')
+
+                }
+
+            })
+        };
+    </script>
+
+</body>
+
+</html>
