@@ -28,6 +28,7 @@
     "firebase": "^9.6.11"
   },
   "devDependencies": {
+    "jest": "^28.0.2",
     "nodemon": "^2.0.15"
   }
 }
