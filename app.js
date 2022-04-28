@@ -1,8 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cookieSession = require("cookie-session");
 
-const router = require("./routes/router.js");
-const apiRouter = require("./routes/api.js")
+const router = require("./routes/router");
+const apiRouter = require("./routes/api")
+const db = require("./fakedb")
 
 const app = express();
 
