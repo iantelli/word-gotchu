@@ -203,5 +203,6 @@ div[class*='black']:hover {
 }
 
 .key.one.yellow > .letter {
-    color: black;
+    text-shadow: 1px 1px 1px #8c8c8c;
+
 }
