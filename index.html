@@ -10,8 +10,13 @@
     <script>
         if (document.addEventListener) {
             document.addEventListener("click", function (event) {
-                if (event.target.classList.contains('key')) {
+                if (event.target.classList.contains('one')) {
+                    event.preventDefault()
                     console.log(event.target.innerText)
+                    document.querySelector(".output").innerHTML += event.target.innerText
+                } else if (event.target.classList.contains('del')) {
+                    document.querySelector(".output").innerHTML = document.querySelector(".output").innerHTML.slice(0, -1)
+
                 }
                 if (event.target.classList.contains('green')) {
                     document.querySelectorAll('.one').forEach(element => {
@@ -72,7 +77,7 @@
         </section>
 
         <section class="key-row">
-            <div class="key-two">ENT</div>
+            <div class="key-two ent">ENT</div>
             <div class="key one">Z</div>
             <div class="key one">X</div>
             <div class="key one">C</div>
@@ -80,7 +85,7 @@
             <div class="key one">B</div>
             <div class="key one">N</div>
             <div class="key one">M</div>
-            <div class="key-two">DEL</div>
+            <div class="key-two del">DEL</div>
         </section>
 
     </div>
@@ -93,6 +98,7 @@
     <button class="yellow">correct letter, wrong position</button>
     <button class="black">wrong letter</button>
     <button class="default">default key</button>
+    <p class="output"></p>
 
 
 </body>
