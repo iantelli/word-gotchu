@@ -6,86 +6,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
     <title>Document</title>
-    <script>
-        if (document.addEventListener) {
-            document.addEventListener("click", function (event) {
-                if (event.target.classList.contains('one')) {
-                    event.preventDefault()
-                    console.log(event.target.innerText)
-                    document.querySelector(".output").innerHTML += event.target.innerText
-                } else if (event.target.classList.contains('del')) {
-                    document.querySelector(".output").innerHTML = document.querySelector(".output").innerHTML.slice(0, -1)
 
-                }
-                if (event.target.classList.contains('green')) {
-                    document.querySelectorAll('.one').forEach(element => {
-                        element.className = 'key one green-background'
-                        console.log(element.className)
-
-                    });
-
-                } else if (event.target.classList.contains('yellow')) {
-                    document.querySelectorAll('.one').forEach(element => {
-                        element.className = 'key one yellow'
-                        console.log(element.className)
-                    });
-                } else if (event.target.classList.contains('black')) {
-                    document.querySelectorAll('.one').forEach(element => {
-                        element.className = 'key one black'
-                        console.log(element.className)
-                    });
-                } else if (event.target.classList.contains('default')) {
-                    document.querySelectorAll('.one').forEach(element => {
-                        element.className = 'key one background'
-                        console.log(element.className)
-                    });
-                }
-
-            })
-        };
-    </script>
 </head>
 
 <body>
     <div class="keyboard">
 
         <section class="key-row">
-            <div class="key one">Q</div>
-            <div class="key one">W</div>
-            <div class="key one">E</div>
-            <div class="key one">R</div>
-            <div class="key one">T</div>
-            <div class="key one">Y</div>
-            <div class="key one">U</div>
-            <div class="key one">I</div>
-            <div class="key one">O</div>
-            <div class="key one">P</div>
+            <div class="key one">
+                <p class="letter">Q</p>
+            </div>
+            <div class="key one">
+                <p class="letter">W</p>
+            </div>
+            <div class="key one">
+                <p class="letter">E</p>
+            </div>
+            <div class="key one">
+                <p class="letter">R</p>
+            </div>
+            <div class="key one">
+                <p class="letter">T</p>
+            </div>
+            <div class="key one">
+                <p class="letter">Y</p>
+            </div>
+            <div class="key one">
+                <p class="letter">U</p>
+            </div>
+            <div class="key one">
+                <p class="letter">I</p>
+            </div>
+            <div class="key one">
+                <p class="letter">O</p>
+            </div>
+            <div class="key one">
+                <p class="letter">P</p>
+            </div>
         </section>
 
         <section class="key-row">
 
-            <div class="key one">A</div>
-            <div class="key one">S</div>
-            <div class="key one">D</div>
-            <div class="key one">F</div>
-            <div class="key one">G</div>
-            <div class="key one">H</div>
-            <div class="key one">J</div>
-            <div class="key one">K</div>
-            <div class="key one">L</div>
+            <div class="key one">
+                <p class="letter">A</p>
+            </div>
+            <div class="key one">
+                <p class="letter">S</p>
+            </div>
+            <div class="key one">
+                <p class="letter">D</p>
+            </div>
+            <div class="key one">
+                <p class="letter">F</p>
+            </div>
+            <div class="key one">
+                <p class="letter">G</p>
+            </div>
+            <div class="key one">
+                <p class="letter">H</p>
+            </div>
+            <div class="key one">
+                <p class="letter">J</p>
+            </div>
+            <div class="key one">
+                <p class="letter">K</p>
+            </div>
+            <div class="key one">
+                <p class="letter">L</p>
+            </div>
         </section>
 
         <section class="key-row">
-            <div class="key-two ent">ENT</div>
-            <div class="key one">Z</div>
-            <div class="key one">X</div>
-            <div class="key one">C</div>
-            <div class="key one">V</div>
-            <div class="key one">B</div>
-            <div class="key one">N</div>
-            <div class="key one">M</div>
-            <div class="key-two del">&#60;-</div>
+            <div class="key-two ent">
+                <p class="ent">ENT</p>
+            </div>
+            <div class="key one">
+                <p class="letter">Z</p>
+            </div>
+            <div class="key one">
+                <p class="letter">X</p>
+            </div>
+            <div class="key one">
+                <p class="letter">C</p>
+            </div>
+            <div class="key one">
+                <p class="letter">V</p>
+            </div>
+            <div class="key one">
+                <p class="letter">B</p>
+            </div>
+            <div class="key one">
+                <p class="letter">N</p>
+            </div>
+            <div class="key one">
+                <p class="letter">M</p>
+            </div>
+            <div class="key-two del">
+                <p class="del">&#60;-</p>
+            </div>
         </section>
 
     </div>
@@ -99,8 +119,7 @@
     <button class="black">wrong letter</button>
     <button class="default">default key</button>
     <p class="output"></p>
-
-
+      
 </body>
 
 </html>
