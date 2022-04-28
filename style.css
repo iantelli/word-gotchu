@@ -163,3 +163,45 @@ div[class*='black']:hover {
     background-size: 100% 100%;
     flex: 0.5;
 }
+
+
+/* Key presses */
+
+.key.one.pressed {
+    background: url("static/GUI/Buttons/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+}
+
+.key-two.pressed {
+    background: url("static/GUI/Buttons/Keyboard/Enter_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 1;
+}
+
+.key.one.pressed.yellow {
+    background: url("static/GUI/Buttons/Keyboard/Letter_Yellow_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+}
+
+.key.one.pressed.black {
+    background: url("static/GUI/Buttons/Keyboard/Letter_Black_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+}
+
+.key.one.pressed.green {
+    background: url("static/GUI/Buttons/Keyboard/Letter_Green_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+}
+
+.letter.pressed, .del.pressed, .ent.pressed {
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+
+.key.one.yellow > .letter {
+    color: black;
+}
