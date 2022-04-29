@@ -1,16 +1,16 @@
-const http = require("http");
-const socketio = require("socket.io")
 require("dotenv").config();
+const http = require("http");
+const socketIO = require("socket.io")
 
-const app = require("./app.js");
-const server = http.createServer(app)
-const io = socketio(server);
+const app = require('./app.js');
+const server = http.createServer(app);
+const io = socketIO(server)
 
 io.on("connection", (socket) => {
-  console.log("New WS connection")
+  console.log("New ws connection...")
 })
 
-const PORT = process.env.PORT || 8080;
-const URL = process.env.URL || `http://localhost:${PORT}/`  
+const port = process.env.PORT || 8080;
+const url = process.env.URL || `http://localhost:${port}/`
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT} \nwebsite: ${URL}`));
+server.listen(port, () => console.log(`Server running on port ${port} \nwebsite: ${url}`));

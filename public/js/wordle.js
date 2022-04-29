@@ -5,13 +5,17 @@ function startNewGame() {
     document.querySelectorAll("span.letter").forEach(element => {
         element.remove();
     });
+    document.querySelectorAll("div.key").forEach(element => {
+        element.classList.remove("green", "yellow", "black");
+    });
 }
-
 
 document.querySelector("button").addEventListener("click", event => {
     event.preventDefault();
     axios.post("/api/v1/lobby", {
-        word: document.querySelector("input.submitWord").value
+        word: document.querySelector("input.submitWord").value.toLowerCase(),
+        id: window.location.pathname.split("/")[2],
+        player
     })
     .then(response => {
         let div = document.createElement("div");
@@ -27,17 +31,21 @@ document.querySelector("button").addEventListener("click", event => {
         
         // Adding colour classes to the correct/incorrect letters
         if (input.value.length === 5) {
-            (input.value.split("")).forEach((letter, index) => {
+            (input.value.toLowerCase().split("")).forEach((letter, index) => {
                 let span = document.createElement("span");
                 span.classList.add("letter");
                 if (word.correctCharacterPlacements[index] === letter) {
                     span.classList.add("correctCharacterPlacement");
+                    document.querySelector(`#${letter}`).classList.add("green");
                 }
-                if (word.correctCharacters.includes(letter)) {
+                else if (word.correctCharacters.includes(letter)) {
                     span.classList.add("correctCharacter");
+                    document.querySelector(`#${letter}`).classList.add("yellow");
                 } else if (word.incorrectCharacters.includes(letter)) {
                     span.classList.add("incorrectCharacter");
+                    document.querySelector(`#${letter}`).classList.add("black");
                 }
+                div.classList.add("wordleContainer");
                 span.appendChild(document.createTextNode(letter));
                 div.appendChild(span);
                 answerDiv.appendChild(div);
@@ -57,7 +65,9 @@ document.querySelector("button").addEventListener("click", event => {
         totalGuesses.innerHTML = "Total guesses: " + word.totalGuesses;
         if (word.completed) {
             axios.post("/api/v1/lobbyWin", {
-                word
+                word,
+                id: window.location.pathname.split("/")[2],
+                player
             })
             completed.innerHTML = `correct! The word was ${word.correctCharacterPlacements.join("")}`;
             startNewGame();
@@ -65,7 +75,9 @@ document.querySelector("button").addEventListener("click", event => {
         }
         if (word.totalGuesses == 5 && !word.completed) {
             axios.post("/api/v1/lobbyLose", {
-                word
+                word,
+                id: window.location.pathname.split("/")[2],
+                player
             })
             completed.innerHTML = `Too many incorrect guesses! Start a new game!`;
             startNewGame();
@@ -74,6 +86,41 @@ document.querySelector("button").addEventListener("click", event => {
     .catch(error => {
         console.log(error)
     })
+})
+
+document.querySelector(".keyboard").addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.classList.contains("letter")) {
+        document.querySelector("input.submitWord").value += event.target.innerHTML;
+    }
+    else if (event.target.classList.contains("del")) {
+        document.querySelector("input.submitWord").value = document.querySelector("input.submitWord").value.slice(0, -1);
+    }
+    else if (event.target.classList.contains("ent")) {
+        document.querySelector("button.submitWordle").click();
+    }
+})
+
+// Change keys on press
+
+const allKeys = [..."abcdefghijklmnopqrstuvwxyz", "enter", "backspace"]
+
+document.addEventListener("keydown", function (event) {
+    const keyPressed = event.key.toLowerCase();
+    if (allKeys.includes(event.key.toLowerCase())) {
+        const key = document.querySelector("#" + keyPressed);
+        key.classList.add("pressed");
+        key.children[0].classList.add("pressed")
+    }
+})
+
+document.addEventListener("keyup", function (event) {
+    const keyPressed = event.key.toLowerCase();
+    if (allKeys.includes(event.key.toLowerCase())) {
+        const key = document.querySelector("#" + keyPressed);
+        key.classList.remove("pressed");
+        key.children[0].classList.remove("pressed")
+    }
 })
 
 startNewGame()
