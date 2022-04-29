@@ -10,13 +10,11 @@ function startNewGame() {
     });
 }
 
-
-
-
 document.querySelector("button").addEventListener("click", event => {
     event.preventDefault();
     axios.post("/api/v1/lobby", {
-        word: document.querySelector("input.submitWord").value.toLowerCase()
+        word: document.querySelector("input.submitWord").value.toLowerCase(),
+        id: window.location.pathname.split("/")[2]
     })
     .then(response => {
         let div = document.createElement("div");
@@ -66,7 +64,8 @@ document.querySelector("button").addEventListener("click", event => {
         totalGuesses.innerHTML = "Total guesses: " + word.totalGuesses;
         if (word.completed) {
             axios.post("/api/v1/lobbyWin", {
-                word
+                word,
+                id: window.location.pathname.split("/")[2]
             })
             completed.innerHTML = `correct! The word was ${word.correctCharacterPlacements.join("")}`;
             startNewGame();
@@ -74,7 +73,8 @@ document.querySelector("button").addEventListener("click", event => {
         }
         if (word.totalGuesses == 5 && !word.completed) {
             axios.post("/api/v1/lobbyLose", {
-                word
+                word,
+                id: window.location.pathname.split("/")[2]
             })
             completed.innerHTML = `Too many incorrect guesses! Start a new game!`;
             startNewGame();
