@@ -17,23 +17,26 @@ router.get("/lobby", (req, res) => {
 
 router.post("/lobby", (req, res) => {
   const word = req.body.word
-  db.guessWord(word);
-  const lobby = db.getLobby();
-  const correctCharacters = Array.from(lobby.currentGame.correctCharacters);
-  const incorrectCharacters = Array.from(lobby.currentGame.incorrectCharacters);
-  const correctCharacterPlacements = lobby.currentGame.correctCharacterPlacements;
-  const totalGuesses = lobby.currentGame.totalGuesses;
-  const completed = lobby.currentGame.completed;
-  console.log(lobby.currentGame.answer);
-  res.send({
-    word: {
-      correctCharacterPlacements,
-      correctCharacters,
-      incorrectCharacters,
-      totalGuesses,
-      completed
-    }
-  })
+  const wordList = db.getWordList();
+  if (wordList.indexOf(word) > -1) {
+    db.guessWord(word);
+    const lobby = db.getLobby();
+    const correctCharacters = Array.from(lobby.currentGame.correctCharacters);
+    const incorrectCharacters = Array.from(lobby.currentGame.incorrectCharacters);
+    const correctCharacterPlacements = lobby.currentGame.correctCharacterPlacements;
+    const totalGuesses = lobby.currentGame.totalGuesses;
+    const completed = lobby.currentGame.completed;
+    console.log(lobby.currentGame.answer);
+    res.send({
+      word: {
+        correctCharacterPlacements,
+        correctCharacters,
+        incorrectCharacters,
+        totalGuesses,
+        completed
+      }
+    })
+  }
 })
 
 router.post("/lobbyWin", (req, res) => {
