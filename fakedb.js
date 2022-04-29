@@ -20,7 +20,6 @@ function getLobby(id) {
       totalCorrect: 0,
       totalIncorrect: 0,
       prevGames: [],
-      startTime: Date.now(),
       isOver: false
     }
   }

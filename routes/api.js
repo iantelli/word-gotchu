@@ -50,8 +50,25 @@ router.post("/lobbyLose", (req, res) => {
   lobby.prevGames.push(game);
   lobby.currentGame = db.createGame(id);
   lobby.totalIncorrect++;
-  res.status(200).send()
+  res.status(200).send({})
   console.log(lobby);
+})
+
+router.post("/getPlayers", (req, res) => {
+  const id = req.body.id;
+  const player = req.body.player
+  const lobby = db.getLobby(id);
+
+  let otherPlayer = false;
+  if (player === 1 && lobby.playerTwo) {
+    otherPlayer = true
+  }
+
+  if (player === 2 && lobby.playerOne) {
+    otherPlayer = true
+  }
+
+  res.status(200).send({ otherPlayer })
 })
 
 
