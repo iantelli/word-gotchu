@@ -15,23 +15,29 @@
     background-clip: text;
     box-sizing: border-box;
     gap: 8px;
+    resize: none;
 }
 
 .key-row.row-one {
     max-width: 650px;
+    min-width: 650px;
 }
 
 .key-row.row-two {
     max-width: 610px;
+    min-width: 610px;
 }
 
 .key-row.row-three {
     max-width: 650px;
+    min-width: 650px;
     justify-content: center;
 }
 
 .one {
     font-size: 2vw;
+    resize: none;
+    width: 100%;
 }
 
 .key-two del {
@@ -39,7 +45,9 @@
 }
 
 .key-two {
-    font-size: 1.5vw
+    font-size: 1.5vw;
+    resize: none;
+    width: 100%;
 }
 
 .letter {
@@ -65,6 +73,7 @@
     background: url("../images/GUI/Menus/Keyboard Back.png") no-repeat center;
     background-size: 100% 100%;
     /* width: 50vw; */
+    max-width: 750px;
     width: 750px;
     height: 250px;
     /* padding-top: -50px; */
