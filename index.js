@@ -56,5 +56,6 @@ document.addEventListener("keyup", function (event) {
     if (allKeys.includes(event.key.toLowerCase())) {
         const key = document.querySelector("#" + keyPressed);
         key.classList.remove("pressed");
+        key.children[0].classList.remove("pressed")
     }
 })
