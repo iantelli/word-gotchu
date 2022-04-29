@@ -13,7 +13,8 @@ function startGame() {
     }
     if (timer <= 0) {
       clearInterval(timerID)
-      document.getElementById("timer").innerHTML = "Done!";
+      document.getElementById("timer").innerHTML = "";
+      document.querySelector(".container").innerHTML = "Done!"
     }
   }, 1000);
 }

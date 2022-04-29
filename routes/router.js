@@ -13,9 +13,6 @@ router.get("/lobby", (req, res) => {
 router.get("/lobby/:id", (req, res) => {
   const id = req.params.id;
   const lobby = db.getLobby(id);
-  if (!lobby.currentGame) {
-    db.createGame(id);
-  }
 
   let player;
 
@@ -31,8 +28,10 @@ router.get("/lobby/:id", (req, res) => {
     lobby.playerTwo = true;
   }
 
+  if (!lobby.currentGame) {
+    db.createGame(id, player);
+  }
 
-  console.log(lobby)
   console.log(player)
   console.log(req.session)
 

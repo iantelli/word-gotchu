@@ -26,12 +26,12 @@ function getLobby(id) {
   return lobbies[id]
 }
 
-function createGame(id) {
+function createGame(id, player) {
   if (!lobbies[id]) {
     return undefined;
   }
-
-  lobbies[id].currentGame = {
+  if (!lobbies[id].currentGame) lobbies[id].currentGame = {};
+  lobbies[id].currentGame[player] = {
     totalGuesses: 0,
     completed: false,
     correctCharacterPlacements: new Array(5).fill("_"),
@@ -42,37 +42,38 @@ function createGame(id) {
 
   lobbies[id].numOfGames++;
 
-  return lobbies[id].currentGame
+  return lobbies[id].currentGame[player]
 }
 
-function getCurrentGame(id) {
-  return lobbies[id].currentGame
+function getCurrentGame(id, player) {
+  return lobbies[id].currentGame[player]
 }
 
 function wordleRandom() {
   return words[Math.floor(Math.random() * words.length)];
 }
 
-function guessWord(word, id) {
-  if (word.length != 5) {
-    return;
-  }
+function guessWord(word, id, player) {
+  // if (word.length != 5) {
+  //   return;
+  // }
+  if (!lobbies[id].currentGame[player]) createGame(id, player)
 
-  lobbies[id].currentGame.totalGuesses++;
+  lobbies[id].currentGame[player].totalGuesses++;
 
-  if (word === lobbies[id].currentGame.answer) {
-    lobbies[id].currentGame.completed = true;
+  if (word === lobbies[id].currentGame[player].answer) {
+    lobbies[id].currentGame[player].completed = true;
   }
   word.split("").forEach((letter, index) => {
 
-    if (!lobbies[id].currentGame.answer.includes(letter)) {
-      lobbies[id].currentGame.incorrectCharacters.add(letter);
+    if (!lobbies[id].currentGame[player].answer.includes(letter)) {
+      lobbies[id].currentGame[player].incorrectCharacters.add(letter);
       return
     }
 
-    lobbies[id].currentGame.correctCharacters.add(letter);
-    if (word[index] === lobbies[id].currentGame.answer[index]) {
-      lobbies[id].currentGame.correctCharacterPlacements[index] = letter
+    lobbies[id].currentGame[player].correctCharacters.add(letter);
+    if (word[index] === lobbies[id].currentGame[player].answer[index]) {
+      lobbies[id].currentGame[player].correctCharacterPlacements[index] = letter
     }
   })
 }
