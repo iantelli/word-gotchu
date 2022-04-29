@@ -13,8 +13,8 @@
     <div class="container">
         <div>
             <form>
-                <input type="text" class="submitWord" name="word" placeholder="Enter a word">
-                <button>Submit</button>
+                <input style="text-transform: lowercase" type="text" class="submitWord" name="word" placeholder="Enter a word">
+                <button class="submitWordle">Submit</button>
             </form>
             <span class="correctCharacters"></span><br>
             <span class="incorrectCharacters"></span><br> 
@@ -24,9 +24,10 @@
             </div>
             <span class="completed"></span><br>
         </div>
+        
         <div class="keyboard">
 
-            <section class="key-row">
+            <section class="key-row row-one">
                 <div class="key one" id="q">
                     <p class="letter">Q</p>
                 </div>
@@ -58,9 +59,9 @@
                     <p class="letter">P</p>
                 </div>
             </section>
-
-            <section class="key-row">
-
+    
+            <section class="key-row row-two">
+    
                 <div class="key one" id="a">
                     <p class="letter">A</p>
                 </div>
@@ -89,10 +90,10 @@
                     <p class="letter">L</p>
                 </div>
             </section>
-
-            <section class="key-row">
+    
+            <section class="key-row row-three">
                 <div class="key-two ent" id="enter">
-                    <p class="ent">ENT</p>
+                    <p class="ent">ENTER</p>
                 </div>
                 <div class="key one" id="z">
                     <p class="letter">Z</p>
@@ -116,13 +117,10 @@
                     <p class="letter">M</p>
                 </div>
                 <div class="key-two del" id="backspace">
-                    <p class="del">&#60;-</p>
+                    <p class="del">&#8592</p>
                 </div>
             </section>
-
-        </div>
-        </section>
-
+    
         </div>
 
         </div>

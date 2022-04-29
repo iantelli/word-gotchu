@@ -11,10 +11,12 @@ function startNewGame() {
 }
 
 
+
+
 document.querySelector("button").addEventListener("click", event => {
     event.preventDefault();
     axios.post("/api/v1/lobby", {
-        word: document.querySelector("input.submitWord").value
+        word: document.querySelector("input.submitWord").value.toLowerCase()
     })
     .then(response => {
         let div = document.createElement("div");
@@ -30,7 +32,7 @@ document.querySelector("button").addEventListener("click", event => {
         
         // Adding colour classes to the correct/incorrect letters
         if (input.value.length === 5) {
-            (input.value.split("")).forEach((letter, index) => {
+            (input.value.toLowerCase().split("")).forEach((letter, index) => {
                 let span = document.createElement("span");
                 span.classList.add("letter");
                 if (word.correctCharacterPlacements[index] === letter) {
@@ -83,7 +85,18 @@ document.querySelector("button").addEventListener("click", event => {
     })
 })
 
-
+document.querySelector(".keyboard").addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.classList.contains("letter")) {
+        document.querySelector("input.submitWord").value += event.target.innerHTML;
+    }
+    else if (event.target.classList.contains("del")) {
+        document.querySelector("input.submitWord").value = document.querySelector("input.submitWord").value.slice(0, -1);
+    }
+    else if (event.target.classList.contains("ent")) {
+        document.querySelector("button.submitWordle").click();
+    }
+})
 
 // Change keys on press
 
@@ -92,7 +105,6 @@ const allKeys = [..."abcdefghijklmnopqrstuvwxyz", "enter", "backspace"]
 document.addEventListener("keydown", function (event) {
     const keyPressed = event.key.toLowerCase();
     if (allKeys.includes(event.key.toLowerCase())) {
-        console.log(event.key.toLowerCase())
         const key = document.querySelector("#" + keyPressed);
         key.classList.add("pressed");
         key.children[0].classList.add("pressed")

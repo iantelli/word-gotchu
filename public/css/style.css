@@ -14,35 +14,61 @@
     -moz-background-clip: text;
     background-clip: text;
     box-sizing: border-box;
+    gap: 8px;
+}
+
+.key-row.row-one {
+    max-width: 650px;
+}
+
+.key-row.row-two {
+    max-width: 610px;
+}
+
+.key-row.row-three {
+    max-width: 650px;
+    justify-content: center;
 }
 
 .one {
     font-size: 2vw;
-
 }
 
 .key-two del {
-    margin-left: 0;
+    padding-left: 10px;
 }
 
 .key-two {
     font-size: 1.5vw
 }
 
+.letter {
+    font-size: large;
+}
+
+.del p {
+    font-size: xx-large;
+    margin-top: -5px;
+}
+
+.ent {
+    font-size: small;
+}
+
 
 .keyboard {
-    position: fixed;
-    left: 50%;
-    bottom:20px;
-    transform: translate(-50%, 0);
+    position:fixed;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background: url("../images/GUI/Menus/Keyboard Back.png") no-repeat center;
     background-size: 100% 100%;
-    width: 50vw;
-
+    /* width: 50vw; */
+    width: 750px;
+    height: 250px;
+    /* padding-top: -50px; */
+    bottom:1%;
 }
 
 .key-row {
@@ -50,11 +76,10 @@
     margin: 0 auto 7px;
     line-height: 50px;
     width: 47vw;
-
 }
 
 .key-row:nth-of-type(1) {
-    margin-top: 5vh;
+    margin-top: 32px;
 }
 
 .key-row:nth-of-type(3) {
@@ -63,7 +88,6 @@
 
 
 .key, .letter, .del, .ent, .key-two {
-    margin: 0 0.1vw 0 0;
     text-align: center;
     color: #eee;
     align-items: center;
@@ -73,21 +97,37 @@
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; 
 }
 
-.key:hover>.letter, .key-two:hover>.del, .key-two:hover>.ent {
-    margin-top: 1vh;
+.key, .letter, .ent, .key-two {
+    margin: 0 0.1vw 0 0;
+}
+
+.del {
+    margin: 0 0.1vw 0 0;
+}
+
+/* .key-row div {
+    gap: 0.5em;
+} */
+
+.key:hover>.letter, .key-two:hover>.ent {
+    margin-top: 5px;
+}
+
+.key-two:hover>.del {
+    margin-top: 0px;
 }
 
 .key-two {
     background: url("../images/GUI/Buttons/Keyboard/Enter_Blank.svg") no-repeat center;
     background-size: 100% 100%;
-    flex: 1;
+    flex: 0.75;
     text-align: center;
 }
 
 .key-two:hover {
     background: url("../images/GUI/Buttons/Keyboard/Enter_Blank_Pressed.svg") no-repeat center;
     background-size: 100% 100%;
-    flex: 1;
+    /* flex: 1; */
     text-align: center;
 }
 
@@ -180,7 +220,7 @@ div[class*='black']:hover {
 .key-two.pressed {
     background: url("../images/GUI/Buttons/Keyboard/Enter_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
-    flex: 1;
+    /* flex: 0.6; */
 }
 
 .key.one.pressed.yellow {
@@ -201,14 +241,18 @@ div[class*='black']:hover {
     flex: 0.5;
 }
 
-.letter.pressed, .del.pressed, .ent.pressed {
+.letter.pressed {
     margin-top: 5px;
     margin-bottom: -5px;
 }
 
-/* .key.one.yellow > .letter {
-    color: black;
-} */
+#backspace.pressed p {
+    margin-top: -1px;
+}
+
+#enter.pressed p {
+    margin-top: 3px;
+}
 
 
 .correctCharacter {
@@ -235,6 +279,6 @@ div[class*='black']:hover {
 
 
 .container {
-    width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
