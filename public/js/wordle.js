@@ -5,6 +5,9 @@ function startNewGame() {
     document.querySelectorAll("span.letter").forEach(element => {
         element.remove();
     });
+    document.querySelectorAll("div.key").forEach(element => {
+        element.classList.remove("green", "yellow", "black");
+    });
 }
 
 
@@ -32,12 +35,16 @@ document.querySelector("button").addEventListener("click", event => {
                 span.classList.add("letter");
                 if (word.correctCharacterPlacements[index] === letter) {
                     span.classList.add("correctCharacterPlacement");
+                    document.querySelector(`#${letter}`).classList.add("green");
                 }
-                if (word.correctCharacters.includes(letter)) {
+                else if (word.correctCharacters.includes(letter)) {
                     span.classList.add("correctCharacter");
+                    document.querySelector(`#${letter}`).classList.add("yellow");
                 } else if (word.incorrectCharacters.includes(letter)) {
                     span.classList.add("incorrectCharacter");
+                    document.querySelector(`#${letter}`).classList.add("black");
                 }
+                div.classList.add("wordleContainer");
                 span.appendChild(document.createTextNode(letter));
                 div.appendChild(span);
                 answerDiv.appendChild(div);
@@ -74,6 +81,31 @@ document.querySelector("button").addEventListener("click", event => {
     .catch(error => {
         console.log(error)
     })
+})
+
+
+
+// Change keys on press
+
+const allKeys = [..."abcdefghijklmnopqrstuvwxyz", "enter", "backspace"]
+
+document.addEventListener("keydown", function (event) {
+    const keyPressed = event.key.toLowerCase();
+    if (allKeys.includes(event.key.toLowerCase())) {
+        console.log(event.key.toLowerCase())
+        const key = document.querySelector("#" + keyPressed);
+        key.classList.add("pressed");
+        key.children[0].classList.add("pressed")
+    }
+})
+
+document.addEventListener("keyup", function (event) {
+    const keyPressed = event.key.toLowerCase();
+    if (allKeys.includes(event.key.toLowerCase())) {
+        const key = document.querySelector("#" + keyPressed);
+        key.classList.remove("pressed");
+        key.children[0].classList.remove("pressed")
+    }
 })
 
 startNewGame()
