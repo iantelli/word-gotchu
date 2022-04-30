@@ -10,7 +10,7 @@
   },
   "rewrites": [{
     "source": "**",
-    "destination": "lobby.ejs"
+    "destination": "/lobby.ejs"
   }],
   "functions": {
     "predeploy": [
