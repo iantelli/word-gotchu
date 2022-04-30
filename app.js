@@ -20,6 +20,7 @@ app.use(express.static("public"));
 app.use("/", router);
 app.use("/api/v1", apiRouter)
 
+
 // Error Handling 
 app.use((req, res, next) => {
   const error = new Error(`Not Found - ${req.originalUrl}`);
@@ -34,5 +35,6 @@ app.use((err, req, res, next) => {
     message: err.message
   })
 })
+
 
 module.exports = app;
