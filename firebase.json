@@ -9,7 +9,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/lobby.ejs"
+        "destination": "/index.ejs"
       }
     ],
     "cleanUrls": true
