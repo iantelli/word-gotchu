@@ -20,7 +20,6 @@ app.use(cors({option: true}));
 // });
 
 
-
 app.get("/expressTest", (req, res) => {
   res.render("../public/express.html");
 });
