@@ -26,7 +26,7 @@ app.get("/expressTest", (req, res) => {
 });
 
 app.get("/id/:id", (req, res) => {
-  res.sendFile(path.join(__dirname + "/../public/id.html"));
+  res.sendFile(path.join(__dirname + ".." + "/public/id.html"));
 });
 
 app.get("/testSend", (req, res) => {
