@@ -21,11 +21,11 @@ app.use(cors({option: true}));
 
 
 app.get("/expressTest", (req, res) => {
-  res.render("../public/express.html");
+  res.sendFile("../public/express.html");
 });
 
 app.get("/id/:id", (req, res) => {
-  res.render("../public/id.html");
+  res.sendFile("../public/id.html");
 });
 
 exports.app = functions.https.onRequest(app);
