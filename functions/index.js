@@ -22,18 +22,15 @@ app.use(cors({option: true}));
 
 
 app.get("/expressTest", (req, res) => {
-  res.sendFile(path.join(__dirname + ".." + "/public/express.html"));
+  res.sendFile(path.join(__dirname + "/../public/views/express.html"));
 });
 
 app.get("/id/:id", (req, res) => {
-  res.sendFile(path.join(__dirname + ".." + "/public/id.html"));
+  res.sendFile(path.join(__dirname + "/../public/views/id.html"));
 });
 
 app.get("/testSend", (req, res) => {
   res.status(200).send("Connected!");
 });
-
-console.log(__dirname);
-
 
 exports.app = functions.https.onRequest(app);
