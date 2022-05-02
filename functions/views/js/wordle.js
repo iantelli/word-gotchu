@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 function startNewGame() {
     document.querySelector("span.correctCharacters").innerHTML = "Correct Characters: "
     document.querySelector("span.incorrectCharacters").innerHTML = "Incorrect Characters: "
