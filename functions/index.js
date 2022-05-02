@@ -22,7 +22,7 @@ app.use(cors({option: true}));
 
 
 app.get("/expressTest", (req, res) => {
-  res.sendFile(path.join(__dirname + "/../public/express.html"));
+  res.sendFile(path.join(__dirname + ".." + "/public/express.html"));
 });
 
 app.get("/id/:id", (req, res) => {
