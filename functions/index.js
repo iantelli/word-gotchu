@@ -1,4 +1,4 @@
-// const functions = require("firebase-functions");
+const functions = require("firebase-functions");
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -12,6 +12,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
+const cors = require("cors");
 
 const router = require("./routes/router");
 const apiRouter = require("./routes/api");
@@ -27,6 +28,8 @@ app.use(cookieSession({
   keys: ["cookieMonsterProtection1", "cookieMonsterProtection2"],
 }));
 app.use(express.static("public"));
+
+app.use(cors({option: true}));
 
 app.use("/", router);
 app.use("/api/v1", apiRouter);
@@ -48,4 +51,6 @@ app.use((err, req, res, next) => {
 });
 
 
-module.exports = app;
+exports.widgets = functions.https.onRequest(app);
+
+// module.exports = app;
