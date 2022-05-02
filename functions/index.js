@@ -19,19 +19,14 @@ app.use(cors({option: true}));
 //   res.send("Hello from Firebase!");
 // });
 
-app.set("view engine", "ejs");
 
 
 app.get("/expressTest", (req, res) => {
-  const date = Date.now();
-  const data = `Hello from Express! ${date}`;
-  res.render("../public/test.ejs", {data});
+  res.render("../public/express.html");
 });
 
-app.get("/app/:id", (req, res) => {
-  const id = req.params.id;
-  const data = `Hello from Express! ${id}`;
-  res.render("../public/test.ejs", {data});
+app.get("/id/:id", (req, res) => {
+  res.render("../public/id.html");
 });
 
 exports.app = functions.https.onRequest(app);
