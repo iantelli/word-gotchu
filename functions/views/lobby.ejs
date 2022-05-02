@@ -13,8 +13,9 @@
 <body>
   <% if (player) { %>
   <!-- <script>
-    const player = <%= playerData %>
+    const player = "<%= playerData %>";
   </script> -->
+  <% const player = <%= playerData %>; %>
   <div class="container">
     <div>
       <h1>Player <%= playerData %> </h1>
