@@ -34,4 +34,4 @@ app.get("/app/:id", (req, res) => {
   res.render("../public/test.ejs", {data});
 });
 
-exports.widgets = functions.https.onRequest(app);
+exports.app = functions.https.onRequest(app);
