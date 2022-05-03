@@ -76,3 +76,9 @@ app.get("/", (req, res) => {
 });
 
 exports.app = functions.https.onRequest(app);
+
+
+exports.sendText = functions.https.onCall((data, context) => {
+  const someString = data.text;
+  return someString;
+});

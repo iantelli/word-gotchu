@@ -1,5 +1,23 @@
 const socket = io()
 
+import { initializeApp } from 'firebase/app';
+import { getFunctions, httpsCallable } from "firebase/functions";
+
+const app = initializeApp({
+  projectId: process.env.PROJECT_ID,
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+})
+
+const functions = getFunctions(app);
+
+const textTest = httpsCallable(functions, "sendText");
+textTest({ text: "Some test string" })
+  .then(response => {
+    document.querySelector("#testspan").innerHTML = response.data.text;
+  })
+  .catch(error => console.log(err));
+
 let intervalID;
 
 function startGame() {
