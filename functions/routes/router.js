@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/lobby", (req, res) => {
-  res.redirect(`/lobby/${"TEST"}`);
+  res.redirect(`/app/lobby/${"TEST"}`);
 });
 
 router.get("/lobby/:id", (req, res) => {
