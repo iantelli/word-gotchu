@@ -1,43 +1,32 @@
-const functions = require("firebase-functions");
+const firebase = require("firebase");
+const functions = require("firebase/functions");
 
-// const express = require("express");
-// const bodyParser = require("body-parser");
-// const cors = require("cors");
-// const path = require("path");
+firebase.initializeApp({
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  databaseURL: process.env.DATABASE_URL,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID,
+});
 
-// const app = express();
-
+const database = firebase.database();
+const dbRef = database.ref();
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
 
-// exports.helloWorld = functions.https.onRequest((req, res) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   res.send("Hello from Firebase!");
-// });
-
-
-// app.get("/expressTest", (req, res) => {
-//   res.sendFile(path.join(__dirname + "/views/express.html"));
-// });
-
-// app.get("/id/:id", (req, res) => {
-//   res.sendFile(path.join(__dirname + "/views/id.html"));
-// });
-
-// app.get("/testSend", (req, res) => {
-//   res.status(200).send("Connected!");
-// });
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const cookieSession = require("cookie-session");
-
-
-const router = require("./routes/router");
-const apiRouter = require("./routes/api");
 const cors = require("cors");
+// const path = require("path");
+
+// const router = require("./routes/router");
+// const apiRouter = require("./routes/api");
 
 const app = express();
 
@@ -45,40 +34,29 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors({option: true}));
 
-app.set("view engine", "ejs");
-app.use(cookieSession({
-  name: "player",
-  keys: ["cookieMonsterProtection1", "cookieMonsterProtection2"],
-}));
-app.use(express.static("public"));
-
-app.use("/", router);
-app.use("/api/v1", apiRouter);
-
-
-// Error Handling
-app.use((req, res, next) => {
-  const error = new Error(`Not Found - ${req.originalUrl}`);
-  res.status(404);
-  next(error);
-});
-
-app.use((err, req, res, next) => {
-  const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
-  res.status(statusCode);
-  res.json({
-    message: err.message,
-  });
-});
-
-app.get("/", (req, res) => {
-  res.render("index.ejs");
+app.get("/test", (req, res) => {
+  res.status(200).send("Connected!");
 });
 
 exports.app = functions.https.onRequest(app);
 
 
-exports.sendText = functions.https.onCall((data, context) => {
-  const someString = data.text;
-  return someString;
+exports.helloWorld = functions.https.onRequest((req, res) => {
+  functions.logger.info("Hello logs!", {structuredData: true});
+  res.send("Hello from Firebase!");
+});
+
+exports.getPlayerById = functions.https.onCall((data, context) => {
+  const id = data.id;
+  dbRef.child("users").child(id).once
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          return snapshot.val();
+        } else {
+          return null;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 });
