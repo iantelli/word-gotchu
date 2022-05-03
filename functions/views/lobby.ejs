@@ -11,11 +11,10 @@
 </head>
 
 <body>
-  <% if (player) { %>
-  <!-- <script>
-    const player = "<%= playerData %>";
-  </script> -->
-  <% const player =  playerData; %>
+  <% if (playerData) { %>
+  <script>
+    const player = JSON.parse("<%= playerData %>");
+  </script>
   <div class="container">
     <div>
       <h1>Player <%= playerData %> </h1>
