@@ -1,8 +1,6 @@
-div {
-    display: inline-block;
-}
-
 /* gui_abilities */
+
+// cat gui abilities
 .cat1_ability_full {
 	background: url('sprite_sheet.png') no-repeat -648px -1194px;
 	width: 192px;
@@ -49,6 +47,7 @@ div {
 	height: 192px;
 }
 
+// dog gui abilities
 .dog1_ability_full {
 	background: url('sprite_sheet.png') no-repeat -1448px -520px;
 	width: 192px;
@@ -95,6 +94,7 @@ div {
 	height: 192px;
 }
 
+// turtle gui abilities
 .turtle1_ability_full {
 	background: url('sprite_sheet.png') no-repeat -1235px -1107px;
 	width: 192px;
@@ -141,6 +141,7 @@ div {
 	height: 192px;
 }
 
+// overlay gui abilities
 .overlay_cd_full {
 	background: url('sprite_sheet.png') no-repeat -1621px 0;
 	width: 192px;
