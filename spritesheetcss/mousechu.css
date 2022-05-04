@@ -1,0 +1,151 @@
+/* General dimensions for the character gotchu sprites */
+
+.mousechu1_gif,.mousechu1_lose_gif,.mousechu1_win_gif {
+    background: url('sprite_sheet.png') no-repeat;
+	width: 42px;
+	height: 51px;
+    display: inline-block;
+}
+.mousechu2_gif,.mousechu2_lose_gif,.mousechu2_win_gif {
+    background: url('sprite_sheet.png') no-repeat;
+	width: 50px;
+	height: 53px;
+    display: inline-block;
+}
+
+.mousechu3_gif,.mousechu3_lose_gif,.mousechu3_win_gif {
+    background: url('sprite_sheet.png') no-repeat;
+	width: 57px;
+	height: 60px;
+    display: inline-block;
+
+}
+
+/* mousechu1 */
+.mousechu1_gif {
+    animation: mousechu1 1.5s steps(2) infinite;
+}
+@keyframes mousechu1 {
+    from {
+        background-position: -215px -678px;
+    }
+
+    to {
+        background-position: -311px -678px;
+    }
+
+}
+
+.mousechu1_lose_gif {
+    animation: mousechu1_lose 1.5s steps(2) infinite;
+}
+@keyframes mousechu1_lose {
+    from {
+        background-position: -212px -742px;
+    }
+
+    to {
+        background-position: -314px -740px;
+    }
+
+}
+
+.mousechu1_win_gif {
+    animation: mousechu1_win 1.5s steps(2) infinite;
+}
+@keyframes mousechu1_win {
+    from {
+        background-position: -211px -807px;
+    }
+
+    to {
+        background-position: -313px -807px;
+    }
+
+}
+
+/* mousechu2 */
+.mousechu2_gif {
+    animation: mousechu2 1.5s steps(2) infinite;
+
+}
+@keyframes mousechu2 {
+    from {
+        background-position: -352px -676px;
+    }
+
+    to {
+        background-position: -472px -676px;
+    }
+
+}
+.mousechu2_lose_gif {
+    animation: mousechu2_lose 1.5s steps(2) infinite;
+}
+@keyframes mousechu2_lose {
+    from {
+        background-position: -352px -735px;
+    }
+
+    to {
+        background-position: -454px -734px;
+    }
+
+}
+
+.mousechu2_win_gif {
+    animation: mousechu2_win 1.5s steps(2) infinite;
+}
+@keyframes mousechu2_win {
+    from {
+        background-position: -352px -805px;
+    }
+
+    to {
+        background-position: -462px -804px;
+    }
+
+}
+
+/* mousechu3 */
+.mousechu3_gif {
+    animation: mousechu3 1.5s steps(2) infinite;
+
+}
+@keyframes mousechu3 {
+    from {
+        background-position: -526px -674px;
+    }
+
+    to {
+        background-position: -678px -674px;
+    }
+
+}
+.mousechu3_lose_gif {
+    animation: mousechu3_lose 1.5s steps(2) infinite;
+}
+@keyframes mousechu3_lose {
+    from {
+        background-position: -528px -742px;
+    }
+
+    to {
+        background-position: -680px -742px;
+    }
+
+}
+
+.mousechu3_win_gif {
+    animation: mousechu3_win 1.5s steps(2) infinite;
+}
+@keyframes mousechu3_win {
+    from {
+        background-position: -528px -806px;
+    }
+
+    to {
+        background-position: -680px -806px;
+    }
+
+}

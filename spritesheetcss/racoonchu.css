@@ -1,0 +1,151 @@
+/* General dimensions for the character gotchu sprites */
+
+.racoonchu1_gif,.racoonchu1_lose_gif,.racoonchu1_win_gif {
+    background: url('sprite_sheet.png') no-repeat;
+	width: 42px;
+	height: 46px;
+    display: inline-block;
+}
+.racoonchu2_gif,.racoonchu2_lose_gif,.racoonchu2_win_gif {
+    background: url('sprite_sheet.png') no-repeat;
+	width: 48px;
+	height: 54px;
+    display: inline-block;
+}
+
+.racoonchu3_gif,.racoonchu3_lose_gif,.racoonchu3_win_gif {
+    background: url('sprite_sheet.png') no-repeat;
+	width: 48px;
+	height: 54px;
+    display: inline-block;
+
+}
+
+/* racoonchu1 */
+.racoonchu1_gif {
+    animation: racoonchu1 1.5s steps(2) infinite;
+}
+@keyframes racoonchu1 {
+    from {
+        background-position: -209px -901px;
+    }
+
+    to {
+        background-position: -321px -901px;
+    }
+
+}
+
+.racoonchu1_lose_gif {
+    animation: racoonchu1_lose 1.5s steps(2) infinite;
+}
+@keyframes racoonchu1_lose {
+    from {
+        background-position: -209px -960px;
+    }
+
+    to {
+        background-position: -321px -958px;
+    }
+
+}
+
+.racoonchu1_win_gif {
+    animation: racoonchu1_win 1.5s steps(2) infinite;
+}
+@keyframes racoonchu1_win {
+    from {
+        background-position: -204px -1012px;
+    }
+
+    to {
+        background-position: -322px -1014px;
+    }
+
+}
+
+/* racoonchu2 */
+.racoonchu2_gif {
+    animation: racoonchu2 1.5s steps(2) infinite;
+
+}
+@keyframes racoonchu2 {
+    from {
+        background-position: -352px -889px;
+    }
+
+    to {
+        background-position: -468px -887px;
+    }
+
+}
+.racoonchu2_lose_gif {
+    animation: racoonchu2_lose 1.5s steps(2) infinite;
+}
+@keyframes racoonchu2_lose {
+    from {
+        background-position: -353px -955px;
+    }
+
+    to {
+        background-position: -465px -953px;
+    }
+
+}
+
+.racoonchu2_win_gif {
+    animation: racoonchu2_win 1.5s steps(2) infinite;
+}
+@keyframes racoonchu2_win {
+    from {
+        background-position: -352px -1010px;
+    }
+
+    to {
+        background-position: -466px -1010px;
+    }
+
+}
+
+/* racoonchu3 */
+.racoonchu3_gif {
+    animation: racoonchu3 1.5s steps(2) infinite;
+
+}
+@keyframes racoonchu3 {
+    from {
+        background-position: -539px -894px;
+    }
+
+    to {
+        background-position: -667px -892px;
+    }
+
+}
+.racoonchu3_lose_gif {
+    animation: racoonchu3_lose 1.5s steps(2) infinite;
+}
+@keyframes racoonchu3_lose {
+    from {
+        background-position: -536px -959px;
+    }
+
+    to {
+        background-position: -670px -955px;
+    }
+
+}
+
+.racoonchu3_win_gif {
+    animation: racoonchu3_win 1.5s steps(2) infinite;
+}
+@keyframes racoonchu3_win {
+    from {
+        background-position: -534px -1016px;
+    }
+
+    to {
+        background-position: -672px -1014px;
+    }
+
+}
