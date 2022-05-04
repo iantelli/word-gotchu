@@ -4,21 +4,21 @@ div {
 
 /* General dimensions for the catchu sprites */
 .catchu1_gif, .catchu1_lose_gif, .catchu1_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 39px;
   height: 47px;
   display: inline-block;
 }
 
 .catchu2_gif, .catchu2_lose_gif, .catchu2_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 52px;
   height: 47px;
   display: inline-block;
 }
 
 .catchu3_gif, .catchu3_lose_gif, .catchu3_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 58px;
   height: 54px;
   display: inline-block;
@@ -236,21 +236,21 @@ div {
 
 /* General dimensions for the dogchu sprites */
 .dogchu1_gif, .dogchu1_lose_gif, .dogchu1_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 36px;
   height: 47px;
   display: inline-block;
 }
 
 .dogchu2_gif, .dogchu2_lose_gif, .dogchu2_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 46px;
   height: 51px;
   display: inline-block;
 }
 
 .dogchu3_gif, .dogchu3_lose_gif, .dogchu3_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 60px;
   height: 51px;
   display: inline-block;
@@ -467,21 +467,21 @@ div {
 }
 
 .turtlechu1_gif, .turtlechu1_lose_gif, .turtlechu1_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 32px;
   height: 48px;
   display: inline-block;
 }
 
 .turtlechu2_gif, .turtlechu2_lose_gif, .turtlechu2_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 42px;
   height: 48px;
   display: inline-block;
 }
 
 .turtlechu3_gif, .turtlechu3_lose_gif, .turtlechu3_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 58px;
   height: 54px;
   display: inline-block;
@@ -699,21 +699,21 @@ div {
 
 /* General dimensions for the character gotchu sprites */
 .mousechu1_gif, .mousechu1_lose_gif, .mousechu1_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 42px;
   height: 51px;
   display: inline-block;
 }
 
 .mousechu2_gif, .mousechu2_lose_gif, .mousechu2_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 50px;
   height: 53px;
   display: inline-block;
 }
 
 .mousechu3_gif, .mousechu3_lose_gif, .mousechu3_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 57px;
   height: 60px;
   display: inline-block;
@@ -931,21 +931,21 @@ div {
 
 /* General dimensions for the character gotchu sprites */
 .racoonchu1_gif, .racoonchu1_lose_gif, .racoonchu1_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 42px;
   height: 46px;
   display: inline-block;
 }
 
 .racoonchu2_gif, .racoonchu2_lose_gif, .racoonchu2_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 48px;
   height: 54px;
   display: inline-block;
 }
 
 .racoonchu3_gif, .racoonchu3_lose_gif, .racoonchu3_win_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 48px;
   height: 54px;
   display: inline-block;
@@ -1163,7 +1163,7 @@ div {
 
 /* gatcha page*/
 .gatcha_gif {
-  background: url("sprite_sheet.png") no-repeat;
+  background: url("public/images/sprite_sheet.png") no-repeat;
   width: 212px;
   height: 204px;
   display: inline-block;
@@ -1190,499 +1190,499 @@ div {
 }
 
 .blue_egg {
-  background: url("sprite_sheet.png") no-repeat -605px -1486px;
+  background: url("public/images/sprite_sheet.png") no-repeat -605px -1486px;
   width: 28px;
   height: 37px;
 }
 
 .green_egg {
-  background: url("sprite_sheet.png") no-repeat -605px -1528px;
+  background: url("public/images/sprite_sheet.png") no-repeat -605px -1528px;
   width: 28px;
   height: 37px;
 }
 
 .red_egg {
-  background: url("sprite_sheet.png") no-repeat -605px -1570px;
+  background: url("public/images/sprite_sheet.png") no-repeat -605px -1570px;
   width: 28px;
   height: 37px;
 }
 
 .gotchu_gacha {
-  background: url("sprite_sheet.png") no-repeat -17px -1202px;
+  background: url("public/images/sprite_sheet.png") no-repeat -17px -1202px;
   width: 597px;
   height: 107px;
 }
 
 /* gui_abilities */
 .cat1_ability_full {
-  background: url("sprite_sheet.png") no-repeat -648px -1194px;
+  background: url("public/images/sprite_sheet.png") no-repeat -648px -1194px;
   width: 192px;
   height: 192px;
 }
 
 .cat1_ability_empty {
-  background: url("sprite_sheet.png") no-repeat -842px -1194px;
+  background: url("public/images/sprite_sheet.png") no-repeat -842px -1194px;
   width: 192px;
   height: 192px;
 }
 
 .cat1_ability_half {
-  background: url("sprite_sheet.png") no-repeat -1036px -1194px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1036px -1194px;
   width: 192px;
   height: 192px;
 }
 
 .cat2_ability_full {
-  background: url("sprite_sheet.png") no-repeat -648px -1388px;
+  background: url("public/images/sprite_sheet.png") no-repeat -648px -1388px;
   width: 192px;
   height: 192px;
 }
 
 .cat2_ability_empty {
-  background: url("sprite_sheet.png") no-repeat -842px -1388px;
+  background: url("public/images/sprite_sheet.png") no-repeat -842px -1388px;
   width: 192px;
   height: 192px;
 }
 
 .cat2_ability_half {
-  background: url("sprite_sheet.png") no-repeat -842px -1388px;
+  background: url("public/images/sprite_sheet.png") no-repeat -842px -1388px;
   width: 192px;
   height: 192px;
 }
 
 .cat3_ability_full {
-  background: url("sprite_sheet.png") no-repeat -648px -1582px;
+  background: url("public/images/sprite_sheet.png") no-repeat -648px -1582px;
   width: 192px;
   height: 192px;
 }
 
 .cat3_ability_empty {
-  background: url("sprite_sheet.png") no-repeat -842px -1582px;
+  background: url("public/images/sprite_sheet.png") no-repeat -842px -1582px;
   width: 192px;
   height: 192px;
 }
 
 .cat3_ability_half {
-  background: url("sprite_sheet.png") no-repeat -1036px -1582px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1036px -1582px;
   width: 192px;
   height: 192px;
 }
 
 .dog1_ability_full {
-  background: url("sprite_sheet.png") no-repeat -1448px -520px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1448px -520px;
   width: 192px;
   height: 192px;
 }
 
 .dog1_ability_empty {
-  background: url("sprite_sheet.png") no-repeat -1642px -520px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1642px -520px;
   width: 192px;
   height: 192px;
 }
 
 .dog1_ability_half {
-  background: url("sprite_sheet.png") no-repeat -1836px -520px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1836px -520px;
   width: 192px;
   height: 192px;
 }
 
 .dog2_ability_full {
-  background: url("sprite_sheet.png") no-repeat -1448px -714px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1448px -714px;
   width: 192px;
   height: 192px;
 }
 
 .dog2_ability_empty {
-  background: url("sprite_sheet.png") no-repeat -1642px -714px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1642px -714px;
   width: 192px;
   height: 192px;
 }
 
 .dog2_ability_half {
-  background: url("sprite_sheet.png") no-repeat -1836px -714px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1836px -714px;
   width: 192px;
   height: 192px;
 }
 
 .dog3_ability_full {
-  background: url("sprite_sheet.png") no-repeat -1448px -908px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1448px -908px;
   width: 192px;
   height: 192px;
 }
 
 .dog3_ability_empty {
-  background: url("sprite_sheet.png") no-repeat -1642px -908px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1642px -908px;
   width: 192px;
   height: 192px;
 }
 
 .dog3_ability_half {
-  background: url("sprite_sheet.png") no-repeat -1836px -908px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1836px -908px;
   width: 192px;
   height: 192px;
 }
 
 .turtle1_ability_full {
-  background: url("sprite_sheet.png") no-repeat -1235px -1107px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1235px -1107px;
   width: 192px;
   height: 192px;
 }
 
 .turtle1_ability_empty {
-  background: url("sprite_sheet.png") no-repeat -1429px -1107px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1429px -1107px;
   width: 192px;
   height: 192px;
 }
 
 .turtle1_ability_half {
-  background: url("sprite_sheet.png") no-repeat -1623px -1107px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1623px -1107px;
   width: 192px;
   height: 192px;
 }
 
 .turtle2_ability_full {
-  background: url("sprite_sheet.png") no-repeat -1235px -1301px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1235px -1301px;
   width: 192px;
   height: 192px;
 }
 
 .turtle2_ability_empty {
-  background: url("sprite_sheet.png") no-repeat -1429px -1301px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1429px -1301px;
   width: 192px;
   height: 192px;
 }
 
 .turtle2_ability_half {
-  background: url("sprite_sheet.png") no-repeat -1623px -1301px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1623px -1301px;
   width: 192px;
   height: 192px;
 }
 
 .turtle3_ability_full {
-  background: url("sprite_sheet.png") no-repeat -1235px -1495px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1235px -1495px;
   width: 192px;
   height: 192px;
 }
 
 .turtle3_ability_empty {
-  background: url("sprite_sheet.png") no-repeat -1429px -1495px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1429px -1495px;
   width: 192px;
   height: 192px;
 }
 
 .turtle3_ability_half {
-  background: url("sprite_sheet.png") no-repeat -1623px -1495px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1623px -1495px;
   width: 192px;
   height: 192px;
 }
 
 .overlay_cd_full {
-  background: url("sprite_sheet.png") no-repeat -1621px 0;
+  background: url("public/images/sprite_sheet.png") no-repeat -1621px 0;
   width: 192px;
   height: 192px;
 }
 
 .overlay_cd_empty {
-  background: url("sprite_sheet.png") no-repeat -1813px 0;
+  background: url("public/images/sprite_sheet.png") no-repeat -1813px 0;
   width: 192px;
   height: 192px;
 }
 
 /* gui_buttons */
 .long_empty_button {
-  background: url("sprite_sheet.png") no-repeat -1621px -455px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1621px -455px;
   width: 128px;
   height: 40px;
 }
 
 .long_empty_button_pressed {
-  background: url("sprite_sheet.png") no-repeat -1749px -455px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1749px -455px;
   width: 128px;
   height: 40px;
 }
 
 .small_empty_button {
-  background: url("sprite_sheet.png") no-repeat -1717px -1813px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1717px -1813px;
   width: 64px;
   height: 46px;
 }
 
 .small_empty_button_pressed {
-  background: url("sprite_sheet.png") no-repeat -1781px -1813px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1781px -1813px;
   width: 64px;
   height: 46px;
 }
 
 .gatcha_button {
-  background: url("sprite_sheet.png") no-repeat -1882px -455px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1882px -455px;
   width: 64px;
   height: 46px;
 }
 
 .gatcha_button_pressed {
-  background: url("sprite_sheet.png") no-repeat -1946px -455px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1946px -455px;
   width: 64px;
   height: 46px;
 }
 
 .gotchu_dome_button {
-  background: url("sprite_sheet.png") no-repeat -1321px -1798px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1321px -1798px;
   width: 103px;
   height: 56px;
 }
 
 .gatchu_dome_button_pressed {
-  background: url("sprite_sheet.png") no-repeat -1424px -1798px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1424px -1798px;
   width: 103px;
   height: 56px;
 }
 
 .home_button {
-  background: url("sprite_sheet.png") no-repeat -1954px -1572px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1954px -1572px;
   width: 64px;
   height: 46px;
 }
 
 .home_button_pressed {
-  background: url("sprite_sheet.png") no-repeat -2018px -1572px;
+  background: url("public/images/sprite_sheet.png") no-repeat -2018px -1572px;
   width: 64px;
   height: 46px;
 }
 
 .roll_button {
-  background: url("sprite_sheet.png") no-repeat 0 -1128px;
+  background: url("public/images/sprite_sheet.png") no-repeat 0 -1128px;
   width: 150px;
   height: 60px;
 }
 
 .roll_button_pressed {
-  background: url("sprite_sheet.png") no-repeat -150px -1128px;
+  background: url("public/images/sprite_sheet.png") no-repeat -150px -1128px;
   width: 150px;
   height: 60px;
 }
 
 .settings_button {
-  background: url("sprite_sheet.png") no-repeat -605px -1412px;
+  background: url("public/images/sprite_sheet.png") no-repeat -605px -1412px;
   width: 32px;
   height: 32px;
 }
 
 /* gui_menus */
 .battle_popup {
-  background: url("sprite_sheet.png") no-repeat -2271px 0;
+  background: url("public/images/sprite_sheet.png") no-repeat -2271px 0;
   width: 128px;
   height: 102px;
 }
 
 .crown_popup {
-  background: url("sprite_sheet.png") no-repeat -2271px -107px;
+  background: url("public/images/sprite_sheet.png") no-repeat -2271px -107px;
   width: 128px;
   height: 102px;
 }
 
 .empty_popup {
-  background: url("sprite_sheet.png") no-repeat -1821px -1572px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1821px -1572px;
   width: 128px;
   height: 102px;
 }
 
 .gui_bar {
-  background: url("sprite_sheet.png") no-repeat -1231px -1052px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1231px -1052px;
   width: 144px;
   height: 40px;
 }
 
 .bottom_bar {
-  background: url("sprite_sheet.png") no-repeat -1234px -1693px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1234px -1693px;
   width: 450px;
   height: 100px;
 }
 
 .wordle_bar {
-  background: url("sprite_sheet.png") no-repeat -1689px -1693px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1689px -1693px;
   width: 180px;
   height: 64px;
 }
 
 .wordle_bar_grid {
-  background: url("sprite_sheet.png") no-repeat -1532px -1798px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1532px -1798px;
   width: 180px;
   height: 64px;
 }
 
 .keyboard_back {
-  background: url("sprite_sheet.png") no-repeat -1621px -197px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1621px -197px;
   width: 384px;
   height: 124px;
 }
 
 .keyboard_inv_back {
-  background: url("sprite_sheet.png") no-repeat -1621px -326px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1621px -326px;
   width: 384px;
   height: 124px;
 }
 
 .keyboard_w_grid {
-  background: url("sprite_sheet.png") no-repeat -842px -1052px;
+  background: url("public/images/sprite_sheet.png") no-repeat -842px -1052px;
   width: 384px;
   height: 124px;
 }
 
 .cat_card {
-  background: url("sprite_sheet.png") no-repeat -1821px -1367px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1821px -1367px;
   width: 250px;
   height: 200px;
 }
 
 .dog_card {
-  background: url("sprite_sheet.png") no-repeat -2082px -1044px;
+  background: url("public/images/sprite_sheet.png") no-repeat -2082px -1044px;
   width: 250px;
   height: 200px;
 }
 
 .turtle_card {
-  background: url("sprite_sheet.png") no-repeat -2082px -1249px;
+  background: url("public/images/sprite_sheet.png") no-repeat -2082px -1249px;
   width: 250px;
   height: 200px;
 }
 
 /* Blank keyboard keys */
 .grey_key {
-  background: url("sprite_sheet.png") no-repeat -1061px -1798px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1061px -1798px;
   width: 30px;
   height: 32px;
 }
 
 .grey_key_pressed {
-  background: url("sprite_sheet.png") no-repeat -1093px -1800px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1093px -1800px;
   width: 30px;
   height: 30px;
 }
 
 .green_key {
-  background: url("sprite_sheet.png") no-repeat -1125px -1798px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1125px -1798px;
   width: 30px;
   height: 32px;
 }
 
 .green_key_pressed {
-  background: url("sprite_sheet.png") no-repeat -1157px -1800px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1157px -1800px;
   width: 30px;
   height: 30px;
 }
 
 .orange_key {
-  background: url("sprite_sheet.png") no-repeat -1253px -1798px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1253px -1798px;
   width: 30px;
   height: 32px;
 }
 
 .orange_key_pressed {
-  background: url("sprite_sheet.png") no-repeat -1285px -1800px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1285px -1800px;
   width: 30px;
   height: 30px;
 }
 
 .black_key {
-  background: url("sprite_sheet.png") no-repeat -1189px -1798px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1189px -1798px;
   width: 30px;
   height: 32px;
 }
 
 .black_key_pressed {
-  background: url("sprite_sheet.png") no-repeat -1221px -1800px;
+  background: url("public/images/sprite_sheet.png") no-repeat -1221px -1800px;
   width: 30px;
   height: 30px;
 }
 
 .long_key {
-  background: url("sprite_sheet.png") no-repeat -2295px -416px;
+  background: url("public/images/sprite_sheet.png") no-repeat -2295px -416px;
   width: 48px;
   height: 32px;
 }
 
 .long_key_pressed {
-  background: url("sprite_sheet.png") no-repeat -2343px -416px;
+  background: url("public/images/sprite_sheet.png") no-repeat -2343px -416px;
   width: 48px;
   height: 32px;
 }
 
 /* gui */
 .ability_gui {
-  background: url("sprite_sheet.png") no-repeat -2295px -214px;
+  background: url("public/images/sprite_sheet.png") no-repeat -2295px -214px;
   width: 96px;
   height: 96px;
 }
 
 .gotchu_gui {
-  background: url("sprite_sheet.png") no-repeat -605px -1449px;
+  background: url("public/images/sprite_sheet.png") no-repeat -605px -1449px;
   width: 32px;
   height: 32px;
 }
 
 .healthbar_bar_gui {
-  background: url("sprite_sheet.png") no-repeat -756px -1129px;
+  background: url("public/images/sprite_sheet.png") no-repeat -756px -1129px;
   width: 78px;
   height: 8px;
 }
 
 .healthbar_border_gui {
-  background: url("sprite_sheet.png") no-repeat -755px -1143px;
+  background: url("public/images/sprite_sheet.png") no-repeat -755px -1143px;
   width: 80px;
   height: 10px;
 }
 
 .hp_heart_gui {
-  background: url("sprite_sheet.png") no-repeat -605px -1612px;
+  background: url("public/images/sprite_sheet.png") no-repeat -605px -1612px;
   width: 16px;
   height: 16px;
 }
 
 .profile_icon_selected_gui {
-  background: url("sprite_sheet.png") no-repeat -605px -1336px;
+  background: url("public/images/sprite_sheet.png") no-repeat -605px -1336px;
   width: 35px;
   height: 34px;
 }
 
 .profile_icon_gui {
-  background: url("sprite_sheet.png") no-repeat -605px -1375px;
+  background: url("public/images/sprite_sheet.png") no-repeat -605px -1375px;
   width: 33px;
   height: 32px;
 }
 
 .red_bar_border_gui {
-  background: url("sprite_sheet.png") no-repeat -755px -1158px;
+  background: url("public/images/sprite_sheet.png") no-repeat -755px -1158px;
   width: 80px;
   height: 10px;
 }
 
 .red_bar_gui {
-  background: url("sprite_sheet.png") no-repeat -756px -1174px;
+  background: url("public/images/sprite_sheet.png") no-repeat -756px -1174px;
   width: 78px;
   height: 8px;
 }
 
 .story_gui {
-  background: url("sprite_sheet.png") no-repeat -2295px -315px;
+  background: url("public/images/sprite_sheet.png") no-repeat -2295px -315px;
   width: 96px;
   height: 96px;
 }
 
 .top_gui {
-  background: url("sprite_sheet.png") no-repeat -605px -1780px;
+  background: url("public/images/sprite_sheet.png") no-repeat -605px -1780px;
   width: 450px;
   height: 65px;
 }
 
 /* titles */
 .wordgotchu_logo {
-  background: url("sprite_sheet.png") no-repeat 0 -1336px;
+  background: url("public/images/sprite_sheet.png") no-repeat 0 -1336px;
   width: 600px;
   height: 528px;
 }
 
 .wordgotchu_pixel_logo_transparent {
-  background: url("sprite_sheet.png") no-repeat -871px -725px;
+  background: url("public/images/sprite_sheet.png") no-repeat -871px -725px;
   width: 557px;
   height: 112px;
 }
