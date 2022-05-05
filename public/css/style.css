@@ -3,6 +3,7 @@
 @font-face {
     font-family: kongText;
     src: url('kongtext.ttf');
+
 }
 
 .key-row {
@@ -16,56 +17,66 @@
     box-sizing: border-box;
     gap: 8px;
     resize: none;
+
 }
 
 .key-row.row-one {
     max-width: 650px;
     min-width: 650px;
+
 }
 
 .key-row.row-two {
     max-width: 610px;
     min-width: 610px;
+
 }
 
 .key-row.row-three {
     max-width: 650px;
     min-width: 650px;
     justify-content: center;
+
 }
 
 .one {
     font-size: 2vw;
     resize: none;
     width: 100%;
+
 }
 
 .key-two del {
     padding-left: 10px;
+
 }
 
 .key-two {
     font-size: 1.5vw;
     resize: none;
     width: 100%;
+
 }
 
 .letter {
     font-size: large;
+
 }
 
 .del p {
     font-size: xx-large;
     margin-top: -5px;
+
 }
 
 .ent {
     font-size: small;
+
 }
 
 
 .keyboard {
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -77,7 +88,9 @@
     width: 750px;
     height: 250px;
     /* padding-top: -50px; */
-    bottom: 1%;
+    bottom: 0;
+    transform: scale(0.8);
+
 }
 
 .key-row {
@@ -85,14 +98,17 @@
     margin: 0 auto 7px;
     line-height: 50px;
     width: 47vw;
+
 }
 
 .key-row:nth-of-type(1) {
     margin-top: 32px;
+
 }
 
 .key-row:nth-of-type(3) {
     margin-bottom: 5vh;
+
 }
 
 
@@ -108,6 +124,7 @@
     height: 57px;
     cursor: pointer;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+
 }
 
 .key,
@@ -115,10 +132,12 @@
 .ent,
 .key-two {
     margin: 0 0.1vw 0 0;
+
 }
 
 .del {
     margin: 0 0.1vw 0 0;
+
 }
 
 /* .key-row div {
@@ -128,10 +147,12 @@
 .key:hover>.letter,
 .key-two:hover>.ent {
     margin-top: 5px;
+
 }
 
 .key-two:hover>.del {
     margin-top: 0px;
+
 }
 
 .key-two {
@@ -139,6 +160,7 @@
     background-size: 100% 100%;
     flex: 0.75;
     text-align: center;
+
 }
 
 .key-two:hover {
@@ -146,6 +168,7 @@
     background-size: 100% 100%;
     /* flex: 1; */
     text-align: center;
+
 }
 
 /* Default grey keys */
@@ -154,25 +177,30 @@
     background: url("../images/GUI/Buttons/Keyboard/Letter_Gray_Blank.svg") no-repeat center;
     background-size: 100% 100%;
     flex: 0.5;
+
 }
 
 .one {
     cursor: pointer;
     position: relative;
+
 }
 
 .one:hover {
     background: url("../images/GUI/Buttons/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
+
 }
 
 .key-two:active,
 .one:active {
     transform: scale(.9);
+
 }
 
 .key-two:nth-of-type(1) {
     margin-right: 0.417vw;
+
 }
 
 /* .key-row:nth-of-type(2) {
@@ -185,6 +213,7 @@ div.key[class*='green'] {
     background: url("../images/GUI/Buttons/Keyboard/Letter_Green_Blank.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
+
 }
 
 
@@ -200,6 +229,7 @@ div[class*='yellow'] {
     background: url("../images/GUI/Buttons/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
+
 }
 
 
@@ -224,6 +254,7 @@ div[class*='black']:hover {
     background: url("../images/GUI/Buttons/Keyboard/Letter_Black_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
+
 }
 
 
@@ -233,57 +264,67 @@ div[class*='black']:hover {
     background: url("../images/GUI/Buttons/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
+
 }
 
 .key-two.pressed {
     background: url("../images/GUI/Buttons/Keyboard/Enter_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
-    /* flex: 0.6; */
+
 }
 
 .key.one.pressed.yellow {
     background: url("../images/GUI/Buttons/Keyboard/Letter_Yellow_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
+
 }
 
 .key.one.pressed.black {
     background: url("../images/GUI/Buttons/Keyboard/Letter_Black_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
+
 }
 
 .key.one.pressed.green {
     background: url("../images/GUI/Buttons/Keyboard/Letter_Green_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
+
 }
 
 .letter.pressed {
     margin-top: 5px;
     margin-bottom: -5px;
+
 }
 
 #backspace.pressed p {
     margin-top: -1px;
+
 }
 
 #enter.pressed p {
     margin-top: 3px;
+
 }
 
 
 .correctCharacter {
     background: url("../images/GUI/Buttons/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
+
 }
 
 .incorrectCharacter {
     background: url("../images/GUI/Buttons/Keyboard/Letter_Black_Blank.svg") no-repeat;
+
 }
 
 
 .correctCharacterPlacement {
     background: url("../images/GUI/Buttons/Keyboard/Letter_Green_Blank.svg") no-repeat;
+
 }
 
 .answerContainer {
@@ -293,134 +334,208 @@ div[class*='black']:hover {
     justify-content: center;
     width: 100%;
     height: 100%;
+
 }
 
 
 .container {
     display: flex;
     justify-content: center;
+
 }
 
-html, body {
-    background-color: black; 
+html,
+body {
+    background-color: black;
     font-family: kongText;
     color: white;
-    margin: 0; 
+    margin: 0;
     height: 100%;
     overflow: hidden;
-  }
+
+}
+
+
 
 /* game page */
 .background {
     background: url("../images/assets_spritesheet.png") no-repeat -0px -1029px;
     width: 1440px;
     height: 1024px;
-    margin:auto;
+    margin: auto;
+
 }
+
 .top_gui_bar {
     background: url("../images/assets_spritesheet.png") no-repeat 0 -2058px;
     width: 1125px;
     height: 170px;
-    margin:auto;
+    margin: auto;
     margin-top: 20px;
+
 }
 
 .profile_icon_left {
     background: url("../images/assets_spritesheet.png") no-repeat -2100px -1552px;
-    width:83px;
-    height:80px;
+    width: 83px;
+    height: 80px;
     float: left;
     position: relative;
-    top:12px;
+    top: 12px;
     left: 30px;
+
 }
 
 .profile_icon_right {
     background: url("../images/assets_spritesheet.png") no-repeat -2100px -1552px;
-    width:83px;
-    height:80px;
+    width: 83px;
+    height: 80px;
     float: right;
     position: relative;
-    top:12px;
+    top: 12px;
     right: 30px;
+
 }
 
 .dogchu_icon {
     background: url("../images/dog_icon.png");
-    width:83px;
-    height:80px;
+    width: 83px;
+    height: 80px;
+
 }
-.dogchu_healthbar_border{
+
+.dogchu_username,.catchu_username {
+    color:gold;
+
+
+}
+
+.dogchu_username,.catchu_username, .dogchu_score,.catchu_score {
+    font-size: 24px;
+    position: absolute;
+    top: 50px;
+
+}
+
+.dogchu_score {
+    left: 360px;
+    
+}
+
+.catchu_score {
+    right: 360px;
+    
+}
+
+.dogchu_username {
+    left: 86px;
+
+}
+
+.catchu_username {
+    right: 86px;
+    
+}
+
+.dogchu_healthbar_border,
+.catchu_healthbar_border {
     background: url("../images/assets_spritesheet.png") no-repeat -934px -2358px;
 
 }
-.dogchu_healthbar {
+
+.dogchu_healthbar,
+.catchu_healthbar {
     background: url("../images/assets_spritesheet.png") no-repeat -581px -2342px;
+
 }
-.dogchu_healthbar_border,.dogchu_healthbar{
-    width:348px;
-    height:43px;
+
+.dogchu_healthbar_border,
+.dogchu_healthbar {
+    width: 348px;
+    height: 43px;
     position: absolute;
     top: 5px;
-    left:86px;
+    left: 86px;
+
 }
+
 .catchu_icon {
     background: url("../images/cat_icon.png");
-    width:83px;
-    height:80px;
-}
-.catchu_healthbar_border {
-    background: url("../images/assets_spritesheet.png") no-repeat -934px -2358px;
+    width: 83px;
+    height: 80px;
+
 }
 
+.catchu_healthbar,
 .catchu_healthbar_border {
     position: absolute;
+    width: 348px;
+    height: 43px;
     top: 5px;
-    right:86px;
+    right: 86px;
+
 }
+
+.clock {
+    color:black;
+    font-size: 26px;
+    position: absolute;
+    top: 85px;
+    left: 910px;
+
+
+}
+
 .settings_button {
     background: url("../images/assets_spritesheet.png") no-repeat -1363px -2329px;
-    width:100px;
-    height:100px;
-    float:right;
-    position:absolute;
-    top:20px;
-    right:280px;
+    width: 100px;
+    height: 100px;
+    float: right;
+    position: absolute;
+    top: 20px;
+    right: 280px;
+
 }
 
 .wordle_bar {
     display: flex;
     background: url("../images/assets_spritesheet.png") no-repeat -1130px -2058px;
-    width:270px;
-    height:96px;
+    width: 270px;
+    height: 96px;
     margin: auto;
-    margin-bottom: 1px;
+    margin-bottom: 5px;
     align-items: center;
     justify-content: center;
+
 }
 
 .letter_slots {
     background: url("../images/assets_spritesheet.png") no-repeat -2188px -1608px;
-    width:51px;
-    height:51px;
+    width: 51px;
+    height: 51px;
     display: inline-block;
-    margin-right:-2px;
+    margin-right: -2px;
+
 }
 
 .dogchu_character {
     background: url("../images/assets_spritesheet.png") no-repeat -1882px -1805px;
-    width:432px;
-    height:432px;
+    width: 432px;
+    height: 432px;
     position: absolute;
     bottom: 50px;
-    left: 300px;
+    left: 330px;
+    transform: scaleX(-1);
+
 }
 
 .catchu_character {
     background: url("../images/assets_spritesheet.png") no-repeat -1445px -1805px;
-    width:432px;
-    height:432px;
+    width: 432px;
+    height: 432px;
     position: absolute;
     bottom: 50px;
-    right: 300px;
+    right: 330px;
+    transform: scaleX(-1);
+
 }
