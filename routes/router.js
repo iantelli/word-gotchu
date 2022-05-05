@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get("/", (req, res) => {
-  res.render("index")
+  res.render("index.ejs");
 })
 
 router.get("/lobby", (req, res) => {
