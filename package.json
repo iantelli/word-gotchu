@@ -24,7 +24,7 @@
     "dotenv": "^16.0.0",
     "ejs": "^3.1.7",
     "express": "^4.17.3",
-    "firebase-functions": "^3.21.0"
+    "firebase": "^9.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

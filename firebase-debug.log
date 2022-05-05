@@ -1,0 +1,34 @@
+[debug] [2022-05-05T21:28:45.182Z] ----------------------------------------------------------------------
+[debug] [2022-05-05T21:28:45.183Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sean\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2022-05-05T21:28:45.183Z] CLI Version:   10.8.0
+[debug] [2022-05-05T21:28:45.183Z] Platform:      win32
+[debug] [2022-05-05T21:28:45.183Z] Node Version:  v17.0.1
+[debug] [2022-05-05T21:28:45.184Z] Time:          Thu May 05 2022 14:28:45 GMT-0700 (Pacific Daylight Time)
+[debug] [2022-05-05T21:28:45.184Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-05T21:28:45.224Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"cleanURLs"}
+[debug] [2022-05-05T21:28:45.228Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-05T21:28:45.228Z] > authorizing via signed-in user (sean.ng.9cs.com@gmail.com)
+[debug] [2022-05-05T21:28:45.228Z] [iam] checking project wordgotchu for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-05T21:28:45.230Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/wordgotchu:testIamPermissions [none]
+[debug] [2022-05-05T21:28:45.230Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wordgotchu:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-05T21:28:45.396Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/wordgotchu:testIamPermissions 200
+[debug] [2022-05-05T21:28:45.396Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wordgotchu:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-05T21:28:45.397Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wordgotchu [none]
+[debug] [2022-05-05T21:28:45.535Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wordgotchu 200
+[debug] [2022-05-05T21:28:45.535Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wordgotchu {"projectId":"wordgotchu","projectNumber":"864605245451","displayName":"WordGotchu","name":"projects/wordgotchu","resources":{"hostingSite":"wordgotchu","realtimeDatabaseInstance":"wordgotchu-default-rtdb","storageBucket":"wordgotchu.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'wordgotchu'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-05-05T21:28:45.537Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wordgotchu [none]
+[debug] [2022-05-05T21:28:45.676Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wordgotchu 200
+[debug] [2022-05-05T21:28:45.676Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wordgotchu {"projectId":"wordgotchu","projectNumber":"864605245451","displayName":"WordGotchu","name":"projects/wordgotchu","resources":{"hostingSite":"wordgotchu","realtimeDatabaseInstance":"wordgotchu-default-rtdb","storageBucket":"wordgotchu.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[debug] [2022-05-05T21:28:45.731Z] TypeError: (cfg.rewrites || []).filter is not a function
+    at validateDeploy (C:\Users\Sean\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\validate.js:14:64)
+    at prepare (C:\Users\Sean\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\prepare.js:31:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async chain (C:\Users\Sean\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:32:9)
+    at async deploy (C:\Users\Sean\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:67:5)
+[error] 
+[error] Error: An unexpected error has occurred.
