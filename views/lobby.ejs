@@ -7,18 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lobby</title>
   <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/axios.js"></script>
 </head>
 
 <body>
-  <% if (player) { %>
-  <script>
-    const player = <%= player %>
-  </script>
   <div class="container">
     <div>
-      <h1>Player <%= player %> </h1>
+      <h1>Player <span id="playernum"></span></h1>
       <span id="timer">Wating for other player...</span>
+      <span id="testspan"></span>
       <form>
         <input style="text-transform: lowercase" type="text" class="submitWord" name="word" placeholder="Enter a word">
         <button class="submitWordle">Submit</button>
@@ -131,13 +127,28 @@
     </div>
 
   </div>
-  </div>
-  <% } else { %>
-  <p>sorry there is already 2 players in this game</p>
-  <% } %>
+
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCpzcKwCrIbF6nbzefNONYlTyvtPeFqa2E",
+      authDomain: "wordgotchu.firebaseapp.com",
+      databaseURL: "https://wordgotchu-default-rtdb.firebaseio.com",
+      projectId: "wordgotchu",
+      storageBucket: "wordgotchu.appspot.com",
+      messagingSenderId: "864605245451",
+      appId: "1:864605245451:web:844c3beee20a79a33f370e",
+      measurementId: "G-9LW3YP7LVV"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="/js/words.js"></script>
+  <script src="/js/keybord.js"></script>
+  <script src="/js/wordle.js"></script>
+  <script src="/js/lobby.js"></script>
 </body>
-<script src="/socket.io/socket.io.js"></script>
-<script type="module" src="/js/wordle.js"></script>
-<script src="/js/index.js"></script>
 
 </html>
