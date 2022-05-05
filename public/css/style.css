@@ -361,10 +361,14 @@ body {
 .background {
     background: url("../images/assets_spritesheet.png") no-repeat -0px -1029px;
     width: 1440px;
-    max-height: 1024px;
-    margin: auto;
+    height: 1024px;
     position:relative;
-    transform-origin: top left;
+    transform: scale(.77);
+    transform-origin: top;
+}
+
+.container {
+    resize: both;
 }
 
 .top_gui_bar {
@@ -554,9 +558,6 @@ input[type="text"]
     font-family: kongText;
     letter-spacing: 35px;
     width:220px;
-    background: rgba(0, 0, 0, 0);
-    border: none;
-    outline: none;
-    color:white
+    
 }
 

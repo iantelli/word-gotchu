@@ -40,20 +40,21 @@ function checkForOtherPlayer() {
 
 intervalID = setInterval(checkForOtherPlayer, 1000)
 
-const backgroundElement = document.querySelector(".background")
+// const backgroundElement = document.querySelector(".background")
 
-function reScaleWhatever() {
-  const scale = window.innerWidth/1440
-  backgroundElement.style.transform = `scale(${scale}`
-  const y = 1024 * (1029/(backgroundElement.offsetHeight+35))
-  const backgroundStyle = `url("../images/assets_spritesheet.png") no-repeat -0px -${y}px`
-  backgroundElement.style.background = backgroundStyle
-  backgroundElement.style.height = `${window.innerHeight*(1/scale)}px`
-  console.log(backgroundStyle)
+// function reScaleWhatever() {
+//   const scale = window.innerWidth/1440
+//   backgroundElement.style.transform = `scale(${scale}`
+//   const y = 1024 * (1029/(backgroundElement.offsetHeight+35))
+//   const backgroundStyle = `url("../images/assets_spritesheet.png") no-repeat -0px -${y}px`
+//   backgroundElement.style.background = backgroundStyle
+//   backgroundElement.style.height = `${window.innerHeight*(1/scale)}px`
+//   console.log(backgroundStyle)
 
-}
-window.addEventListener("resize", event => {
-  reScaleWhatever()
-})
+// }
+// window.addEventListener("resize", event => {
+//   reScaleWhatever()
+// })
 
-reScaleWhatever()
+// reScaleWhatever()
+
