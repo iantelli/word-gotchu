@@ -71,7 +71,8 @@ html, body {
   height: 104px;
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10%;
+  margin-bottom: 5%;
   margin-left: 20%;
 }
 
@@ -83,6 +84,7 @@ html, body {
   align-items: center;
   text-align: center;
   padding-top: 8px;
+  margin-bottom: 1%;
 }
 
 .backButton {
@@ -107,7 +109,11 @@ html, body {
 }
 
 .create_room_bar div.createRoomDiv {
-  margin-top: 10%;
+  margin-top: 7%;
+}
+
+.createRoomDiv span {
+  font-size: 24px;
 }
 
 .joinRoom {
