@@ -1,0 +1,59 @@
+div {
+  display: inline-block;
+}
+
+@font-face {
+  font-family: kongText;
+  src: url('kongtext.ttf');
+}
+
+html, body {
+  background-color: black; 
+  font-family: kongText;
+  color: white;
+  margin: 0; 
+  height: 100%; 
+  overflow: hidden
+}
+
+.wordle_bar2 {
+  background: url(../images/sprite_sheet.png) no-repeat -1445px -1029px;
+  width: 695px;
+  height: 248px;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+
+.battle_arena_bg {
+  background: url(../images/sprite_sheet.png) no-repeat -1445px -0px;
+  width: 1440px;
+  height: 1024px;
+  transform: translate(-50%, -0%);
+  position: fixed;
+  left: 50%;
+  bottom: 0px;
+  margin: 0 auto;
+}
+
+.createRoom {
+  font-size: 30px;
+  text-align: center;
+}
+
+.joinRoom {
+  font-size: 30px;
+  text-align: center;
+}
+
+.createRoom:hover {
+  text-decoration: underline;
+}
+
+.joinRoom:hover {
+  text-decoration: underline;
+}

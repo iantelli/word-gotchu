@@ -295,3 +295,10 @@ div[class*='black']:hover {
 .hidden {
     display: none;
 }
+
+.wordleContainer {
+    width: 695px;
+    height: 248px;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+}

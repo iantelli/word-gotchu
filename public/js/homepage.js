@@ -14,8 +14,8 @@ document.addEventListener("click", event => {
     if (event.target.classList.contains("createRoom")) {
         let roomCode = createRoom();
         let newRoomCode = document.createElement("span");
-        document.querySelector("button.createRoom").classList.toggle("hidden");
-        document.querySelector("button.joinRoom").classList.toggle("hidden");
+        document.querySelector("p.createRoom").classList.toggle("hidden");
+        document.querySelector("p.joinRoom").classList.toggle("hidden");
         document.querySelector("button.backButton").classList.toggle("hidden");
         let startButton = document.createElement("button");
         startButton.classList.add("startButton");
@@ -30,8 +30,8 @@ document.addEventListener("click", event => {
     if (event.target.classList.contains("joinRoom")) {
         let roomCodeInput = document.createElement("input");
         let joinRoomButton = document.createElement("button");
-        document.querySelector("button.createRoom").classList.toggle("hidden");
-        document.querySelector("button.joinRoom").classList.toggle("hidden");
+        document.querySelector("p.createRoom").classList.toggle("hidden");
+        document.querySelector("p.joinRoom").classList.toggle("hidden");
         document.querySelector("button.backButton").classList.toggle("hidden");
         roomCodeInput.classList.add("roomCodeInput");
         joinRoomButton.classList.add("joinRoomButton");
@@ -49,8 +49,8 @@ document.addEventListener("click", event => {
     }
 
     if (event.target.classList.contains("backButton")) {
-      document.querySelector("button.createRoom").classList.toggle("hidden");
-      document.querySelector("button.joinRoom").classList.toggle("hidden");
+      document.querySelector("p.createRoom").classList.toggle("hidden");
+      document.querySelector("p.joinRoom").classList.toggle("hidden");
       document.querySelector("button.backButton").classList.toggle("hidden");
       document.querySelector("div.newRoom").innerHTML = "";
     }
