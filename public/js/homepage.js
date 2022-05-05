@@ -1,3 +1,4 @@
+(function () { 
 function createRoom() {
     let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let roomCode = "";
@@ -72,3 +73,4 @@ document.addEventListener("click", event => {
         document.querySelector("div.joinRoom").innerHTML = "";
     }
 });
+})();
