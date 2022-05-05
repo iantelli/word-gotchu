@@ -38,4 +38,7 @@ function checkForOtherPlayer() {
     })
 }
 
+
+
+
 intervalID = setInterval(checkForOtherPlayer, 1000)

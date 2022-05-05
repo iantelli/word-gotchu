@@ -1,0 +1,153 @@
+div {
+  display: inline-block;
+}
+
+@font-face {
+  font-family: kongText;
+  src: url('kongtext.ttf');
+}
+
+html, body {
+  background-color: black; 
+  font-family: kongText;
+  color: white;
+  margin: 0; 
+  height: 100%; 
+  overflow: hidden
+}
+
+.wordle_bar2 {
+  background: url(../images/sprite_sheet.png) no-repeat -1445px -1029px;
+  width: 695px;
+  height: 248px;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.battle_arena_bg {
+  background: url(../images/sprite_sheet.png) no-repeat -1445px -0px;
+  width: 1440px;
+  height: 1024px;
+  transform: translate(-50%, -0%);
+  position: fixed;
+  left: 50%;
+  bottom: 0px;
+  margin: 0 auto;
+}
+
+.battle_menu {
+  background: url(../images/sprite_sheet.png) no-repeat -2145px -1029px;
+  width: 650px;
+  height: 518px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  justify-content: center;
+}
+
+.join_battle_menu {
+  background: url(../images/sprite_sheet.png) no-repeat -2145px -1029px;
+  width: 650px;
+  height: 518px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  justify-content: center;
+}
+
+.create_room_bar {
+  background: url(../images/sprite_sheet.png) no-repeat -581px -2233px;
+  width: 388px;
+  height: 104px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  margin-left: 20%;
+}
+
+.copy_btn {
+  background: url(../images/sprite_sheet.png) no-repeat -581px -2390px;
+  width: 123px;
+  height: 34px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 8px;
+  margin-bottom: 1%;
+}
+
+.backButton {
+  background: url(../images/sprite_sheet.png) no-repeat -1363px -2242px;
+  width: 260px;
+  height: 82px;
+  margin-top:70px;
+  margin-left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.room_code {
+  background: url(../images/sprite_sheet.png) no-repeat -2145px -0px;
+}
+
+.createRoom {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.create_room_bar div.createRoomDiv {
+  margin-top: 7%;
+}
+
+.createRoomDiv span {
+  font-size: 24px;
+}
+
+.joinRoom {
+  font-size: 32px;
+  text-align: center;
+}
+
+.createRoom:hover {
+  text-decoration: underline;
+}
+
+.joinRoom:hover {
+  text-decoration: underline;
+}
+
+.menu_title {
+  font-size: 36px;
+  margin-bottom:-1px;
+}
+
+.menu_title.create {
+  margin-top: 10%;
+}
+
+.menu_header {
+  width:85%;
+  height:1px;
+  border-width:0;
+  color:#FCE1A2;
+  background-color:#FCE1A2;
+  opacity:0.31;
+}
+
+span.backButtonText {
+  pointer-events: none;
+  transform: translate(-0px, -10px);
+}
