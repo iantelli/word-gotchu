@@ -1,4 +1,5 @@
 node_modules
+hidden
+config.json
 .env
 .firebase
-hidden
