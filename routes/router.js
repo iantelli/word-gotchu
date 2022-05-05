@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get("/", (req, res) => {
-  res.render("index")
+  res.render("../public/index.html")
 })
 
 router.get("/lobby", (req, res) => {
@@ -9,7 +9,7 @@ router.get("/lobby", (req, res) => {
 })
 
 router.get("/lobby/:id", (req, res) => {
-  res.render("lobby")
+  res.render("../public/lobby.html")
 })
 
 module.exports = router;

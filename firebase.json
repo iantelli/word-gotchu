@@ -6,6 +6,12 @@
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
+  "rewrites": [
+    {
+      "source": "/",
+      "function": "app"
+    }
+  ],
   "hosting": {
     "public": "public",
     "ignore": [
