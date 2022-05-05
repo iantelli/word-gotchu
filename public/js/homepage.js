@@ -22,6 +22,7 @@ document.addEventListener("click", event => {
         document.querySelector("div.backButton").classList.toggle("hidden");
         document.querySelector("div.backButton").classList.add("createRoomBackBtn");
         btn.classList.add("copy_btn");
+        roomCodeText.classList.add("roomCodeText");
         newRoomCode.innerHTML += "Room Code: " + roomCode;
         btn.innerHTML = "Copy";
         btn.addEventListener("click", event => {
@@ -63,6 +64,8 @@ document.addEventListener("click", event => {
         document.querySelector("div.backButton").classList.toggle("hidden");
         document.querySelector("div.backButton").classList.remove("createRoomBackBtn");
         document.querySelector("div.createRoomDiv").innerHTML = "";
+        document.querySelector("div.copy_btn").remove();
+        document.querySelector("p.roomCodeText").remove();
     }
 
     if (event.target.classList.contains("backButton") && event.target.classList.contains("joinRoomBackBtn")) {
