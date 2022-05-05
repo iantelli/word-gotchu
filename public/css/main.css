@@ -49,6 +49,7 @@ html, body {
   margin-right: -50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  justify-content: center;
 }
 
 .join_battle_menu {
@@ -61,6 +62,7 @@ html, body {
   margin-right: -50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  justify-content: center;
 }
 
 .create_room_bar {
@@ -74,6 +76,8 @@ html, body {
   background: url(../images/sprite_sheet.png) no-repeat -581px -2390px;
   width: 123px;
   height: 34px;
+  justify-content: center;
+  align-items: center;
 }
 
 .backButton {
@@ -82,8 +86,9 @@ html, body {
   height: 82px;
   margin-top:70px;
   margin-left: 30px;
-  text-align: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .room_code {

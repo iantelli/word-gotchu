@@ -292,7 +292,7 @@ div[class*='black']:hover {
     justify-content: center;
 }
 
-.hidden {
+div.hidden {
     display: none;
 }
 
