@@ -558,6 +558,10 @@ input[type="text"]
     font-family: kongText;
     letter-spacing: 35px;
     width:220px;
+    background: none;
+    box-shadow: none;
+    border:none;
+    color:white
     
 }
 
