@@ -14,31 +14,36 @@ document.addEventListener("click", event => {
     if (event.target.classList.contains("createRoom")) {
         let roomCode = createRoom();
         let newRoomCode = document.createElement("span");
-        document.querySelector("p.createRoom").classList.toggle("hidden");
-        document.querySelector("p.joinRoom").classList.toggle("hidden");
-        document.querySelector("button.backButton").classList.toggle("hidden");
-        let startButton = document.createElement("button");
-        startButton.classList.add("startButton");
+        let btn = document.createElement("div");
+        document.querySelector("div.wordle_bar2").classList.toggle("hidden");
+        document.querySelector("div.battle_menu").classList.toggle("hidden");
+        document.querySelector("div.backButton").classList.toggle("hidden");
+        document.querySelector("div.backButton").classList.add("createRoomBackBtn");
+        btn.classList.add("copy_btn");
         newRoomCode.innerHTML += "Room Code: " + roomCode;
-        document.querySelector("div.newRoom").appendChild(newRoomCode);
-        document.querySelector("div.newRoom").appendChild(startButton);
-        startButton.setAttribute('onclick', "location.href='/lobby/" + roomCode + "'");
-        startButton.innerHTML = "Start Game";
-        startButton.type = "button";
+        btn.innerHTML = "Copy";
+        btn.addEventListener("click", event => {
+            event.preventDefault();
+            navigator.clipboard.writeText(roomCode);
+            btn.innerHTML = "Copied!";
+        });
+        document.querySelector("div.createRoomDiv").appendChild(newRoomCode);
+        document.querySelector("div.createRoomDiv").appendChild(btn);
     }
 
     if (event.target.classList.contains("joinRoom")) {
         let roomCodeInput = document.createElement("input");
         let joinRoomButton = document.createElement("button");
-        document.querySelector("p.createRoom").classList.toggle("hidden");
-        document.querySelector("p.joinRoom").classList.toggle("hidden");
-        document.querySelector("button.backButton").classList.toggle("hidden");
+        document.querySelector("div.wordle_bar2").classList.toggle("hidden");
+        document.querySelector("div.join_battle_menu").classList.toggle("hidden");
+        document.querySelector("div.backButton").classList.toggle("hidden");
+        document.querySelector("div.backButton").classList.add("joinRoomBackBtn");
         roomCodeInput.classList.add("roomCodeInput");
         joinRoomButton.classList.add("joinRoomButton");
         roomCodeInput.type = "text";
         roomCodeInput.placeholder = "Enter Room Code";
-        document.querySelector("div.newRoom").appendChild(roomCodeInput);
-        document.querySelector("div.newRoom").appendChild(joinRoomButton);
+        document.querySelector("div.joinRoom").appendChild(roomCodeInput);
+        document.querySelector("div.joinRoom").appendChild(joinRoomButton);
         joinRoomButton.innerHTML = "Join Room";
         joinRoomButton.type = "button";
         joinRoomButton.addEventListener("click", event => {
@@ -48,10 +53,19 @@ document.addEventListener("click", event => {
         });
     }
 
-    if (event.target.classList.contains("backButton")) {
-      document.querySelector("p.createRoom").classList.toggle("hidden");
-      document.querySelector("p.joinRoom").classList.toggle("hidden");
-      document.querySelector("button.backButton").classList.toggle("hidden");
-      document.querySelector("div.newRoom").innerHTML = "";
+    if (event.target.classList.contains("backButton") && event.target.classList.contains("createRoomBackBtn")) {
+        document.querySelector("div.wordle_bar2").classList.toggle("hidden");
+        document.querySelector("div.battle_menu").classList.toggle("hidden");
+        document.querySelector("div.backButton").classList.toggle("hidden");
+        document.querySelector("div.backButton").classList.remove("createRoomBackBtn");
+        document.querySelector("div.createRoomDiv").innerHTML = "";
+    }
+
+    if (event.target.classList.contains("backButton") && event.target.classList.contains("joinRoomBackBtn")) {
+        document.querySelector("div.backButton").classList.remove("joinRoomBackBtn");
+        document.querySelector("div.wordle_bar2").classList.toggle("hidden");
+        document.querySelector("div.join_battle_menu").classList.toggle("hidden");
+        document.querySelector("div.backButton").classList.toggle("hidden");
+        document.querySelector("div.joinRoom").innerHTML = "";
     }
 });

@@ -26,7 +26,6 @@ html, body {
   bottom: 20px;
   margin: 0 auto;
   text-align: center;
-  align-items: center;
 }
 
 .battle_arena_bg {
@@ -40,13 +39,65 @@ html, body {
   margin: 0 auto;
 }
 
-.createRoom {
-  font-size: 30px;
+.battle_menu {
+  background: url(../images/sprite_sheet.png) no-repeat -2145px -1029px;
+  width: 650px;
+  height: 518px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
+.join_battle_menu {
+  background: url(../images/sprite_sheet.png) no-repeat -2145px -1029px;
+  width: 650px;
+  height: 518px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.create_room_bar {
+  background: url(../images/sprite_sheet.png) no-repeat -581px -2233px;
+  width: 388px;
+  height: 104px;
+  margin-top: 30px;
+}
+
+.copy_btn {
+  background: url(../images/sprite_sheet.png) no-repeat -581px -2390px;
+  width: 123px;
+  height: 34px;
+}
+
+.backButton {
+  background: url(../images/sprite_sheet.png) no-repeat -1363px -2242px;
+  width: 260px;
+  height: 82px;
+  margin-top:70px;
+  margin-left: 30px;
+  text-align: center;
+  justify-content: center;
+}
+
+.room_code {
+  background: url(../images/sprite_sheet.png) no-repeat -2145px -0px;
+}
+
+.createRoom {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 1px;
+}
+
 .joinRoom {
-  font-size: 30px;
+  font-size: 32px;
   text-align: center;
 }
 
@@ -56,4 +107,18 @@ html, body {
 
 .joinRoom:hover {
   text-decoration: underline;
+}
+
+.menu_title {
+  font-size: 36px;
+  margin-bottom:-1px;
+}
+
+.menu_header {
+  width:85%;
+  height:1px;
+  border-width:0;
+  color:#FCE1A2;
+  background-color:#FCE1A2;
+  opacity:0.31;
 }
