@@ -6,19 +6,17 @@
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
-  "rewrites": [
-    {
-      "source": "/",
-      "function": "app"
-    }
-  ],
   "hosting": {
     "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "rewrites": {
+      "source": "**",
+      "function": "app"
+    }
   },
   "storage": {
     "rules": "storage.rules"
@@ -52,5 +50,6 @@
   "remoteconfig": {},
   "functions": {
     "source": "functions"
-  }
+  },
+  "cleanURLs": true
 }

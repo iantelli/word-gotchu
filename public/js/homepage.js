@@ -54,7 +54,7 @@ document.addEventListener("click", event => {
         joinRoomButton.addEventListener("click", event => {
             event.preventDefault();
             let roomCode = roomCodeInput.value;
-            location.href = "/lobby/" + roomCode;
+            location.href = "/app/lobby/" + roomCode;
         });
     }
 

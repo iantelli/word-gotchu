@@ -6,7 +6,7 @@
   let lobbyRef;
   let allPlayersRef;
   let currentWordleRef;
-  let lobbyId = window.location.pathname.split("/")[2];
+  let lobbyId = window.location.pathname.split("/")[3];
 
   function startNewWordle() {
     playerRef.update({
