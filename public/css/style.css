@@ -361,9 +361,10 @@ body {
 .background {
     background: url("../images/assets_spritesheet.png") no-repeat -0px -1029px;
     width: 1440px;
-    height: 1024px;
+    max-height: 1024px;
     margin: auto;
-
+    position:relative;
+    transform-origin: top left;
 }
 
 .top_gui_bar {
@@ -372,6 +373,7 @@ body {
     height: 170px;
     margin: auto;
     margin-top: 20px;
+    position: relative;
 
 }
 
@@ -406,7 +408,6 @@ body {
 
 .dogchu_username,.catchu_username {
     color:gold;
-
 
 }
 
@@ -480,8 +481,8 @@ body {
     color:black;
     font-size: 26px;
     position: absolute;
-    top: 85px;
-    left: 910px;
+    top: 67px;
+    left: 513px;
 
 
 }
@@ -492,8 +493,8 @@ body {
     height: 100px;
     float: right;
     position: absolute;
-    top: 20px;
-    right: 280px;
+    top: 1px;
+    right: -105px;
 
 }
 
@@ -503,7 +504,7 @@ body {
     width: 270px;
     height: 96px;
     margin: auto;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     align-items: center;
     justify-content: center;
 
@@ -523,8 +524,8 @@ body {
     width: 432px;
     height: 432px;
     position: absolute;
-    bottom: 50px;
-    left: 330px;
+    bottom: 150px;
+    left: 100px;
     transform: scaleX(-1);
 
 }
@@ -534,8 +535,28 @@ body {
     width: 432px;
     height: 432px;
     position: absolute;
-    bottom: 50px;
-    right: 330px;
+    bottom: 150px;
+    right: 100px;
     transform: scaleX(-1);
 
 }
+
+/* form styling */
+form {
+    position: absolute;
+    left:42.5%;
+    top:22%
+}
+
+input[type="text"]
+{
+    font-size:15px;
+    font-family: kongText;
+    letter-spacing: 35px;
+    width:220px;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    color:white
+}
+

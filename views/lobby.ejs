@@ -23,7 +23,7 @@
             <div class="dogchu_healthbar"></div>
             <div class="dogchu_score">100</div>
           </div>
-          <div class="clock">1:00</div>
+          <div id="timer" class="clock">1:00</div>
           <div class="profile_icon_right">
             <div class="catchu_icon"></div>
             <div class="catchu_username">USERNAME</div>
@@ -79,8 +79,8 @@
           <div class="catchu_character"></div>
         </div>
         <form>
-          <input style="text-transform: lowercase" type="text" class="submitWord" name="word"
-            placeholder="Enter a word">
+          <input style="text-transform: uppercase" type="text" class="submitWord" name="word"
+            placeholder="" maxlength="5">
           <button class="submitWordle">Submit</button>
         </form>
         <span class="correctCharacters"></span><br>
