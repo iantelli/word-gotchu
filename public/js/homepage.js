@@ -15,6 +15,7 @@ document.addEventListener("click", event => {
         let roomCode = createRoom();
         let newRoomCode = document.createElement("span");
         let btn = document.createElement("div");
+        let roomCodeText = document.createElement("p");
         document.querySelector("div.wordle_bar2").classList.toggle("hidden");
         document.querySelector("div.battle_menu").classList.toggle("hidden");
         document.querySelector("div.backButton").classList.toggle("hidden");
@@ -27,8 +28,10 @@ document.addEventListener("click", event => {
             navigator.clipboard.writeText(roomCode);
             btn.innerHTML = "Copied!";
         });
+        roomCodeText.innerText = "Share this code to your friend!";
         document.querySelector("div.createRoomDiv").appendChild(newRoomCode);
-        document.querySelector("div.createRoomDiv").appendChild(btn);
+        document.querySelector("div.battle_menu").appendChild(btn);
+        document.querySelector("div.battle_menu").appendChild(roomCodeText);
     }
 
     if (event.target.classList.contains("joinRoom")) {

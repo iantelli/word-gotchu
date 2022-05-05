@@ -69,7 +69,10 @@ html, body {
   background: url(../images/sprite_sheet.png) no-repeat -581px -2233px;
   width: 388px;
   height: 104px;
+  display: flex;
+  justify-content: center;
   margin-top: 30px;
+  margin-left: 20%;
 }
 
 .copy_btn {
@@ -78,6 +81,8 @@ html, body {
   height: 34px;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding-top: 8px;
 }
 
 .backButton {
@@ -101,6 +106,10 @@ html, body {
   margin-top: 1px;
 }
 
+.create_room_bar div.createRoomDiv {
+  margin-top: 10%;
+}
+
 .joinRoom {
   font-size: 32px;
   text-align: center;
@@ -117,6 +126,10 @@ html, body {
 .menu_title {
   font-size: 36px;
   margin-bottom:-1px;
+}
+
+.menu_title.create {
+  margin-top: 10%;
 }
 
 .menu_header {
