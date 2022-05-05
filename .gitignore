@@ -3,3 +3,4 @@ hidden
 config.json
 .env
 .firebase
+.DS_Store

@@ -1,180 +1,180 @@
 
 .battle-arena-bg2_readyScene2 {
-    background-image: url("/images/battle-arena-bg2_readyScene2.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 0px 0px;
     width: 1440px;
     height: 1024px;
 }
 
 .battle_menu {
-    background-image: url("/images/battle_menu.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1445px 1282px;
     width: 650px;
     height: 518px;
 }
 
 .catchu_1 {
-    background-image: url("/images/catchu_1.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1445px 1805px;
     width: 432px;
     height: 432px;
 }
 
 .dogchu_1 {
-    background-image: url("/images/dogchu_1.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1882px 1805px;
     width: 432px;
     height: 432px;
 }
 
 .empty_button_1 {
-    background-image: url("/images/empty_button_1.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1130px 2159px;
     width: 200px;
     height: 63px;
 }
 
 .empty_button_2 {
-    background-image: url("/images/empty_button_2.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1363px 2242px;
     width: 260px;
     height: 82px;
 }
 
 .empty_button_3 {
-    background-image: url("/images/empty_button_3.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 974px 2233px;
     width: 384px;
     height: 120px;
 }
 
 .empty_popup {
-    background-image: url("/images/empty_popup.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 2145px 1029px;
     width: 650px;
     height: 518px;
 }
 
 .gotchu_dome_bg {
-    background-image: url("/images/gotchu_dome_bg.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1445px 0px;
     width: 1440px;
     height: 1024px;
 }
 
 .group_1 {
-    background-image: url("/images/group_1.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 0px 1029px;
     width: 1440px;
     height: 1024px;
 }
 
 .gui_bar_1 {
-    background-image: url("/images/gui_bar_1.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 581px 2233px;
     width: 388px;
     height: 104px;
 }
 
 .gui_bar_2 {
-    background-image: url("/images/gui_bar_2.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 581px 2390px;
     width: 123px;
     height: 34px;
 }
 
 .healthbar_bar {
-    background-image: url("/images/healthbar_bar.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 581px 2342px;
     width: 348px;
     height: 43px;
 }
 
 .healthbar_border {
-    background-image: url("/images/healthbar_border.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 934px 2358px;
     width: 348px;
     height: 43px;
 }
 
 .keyboard_back_1 {
-    background-image: url("/images/keyboard_back_1.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 0px 2233px;
     width: 576px;
     height: 186px;
 }
 
 .letter_black {
-    background-image: url("/images/letter_black.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1287px 2358px;
     width: 51px;
     height: 51px;
 }
 
 .letter_black_pressed {
-    background-image: url("/images/letter_black_pressed.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 2188px 1552px;
     width: 51px;
     height: 51px;
 }
 
 .letter_gray_long {
-    background-image: url("/images/letter_gray_long.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1335px 2159px;
     width: 78px;
     height: 51px;
 }
 
 .letter_gray_long_pressed {
-    background-image: url("/images/letter_gray_long_pressed.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 2100px 1637px;
     width: 78px;
     height: 51px;
 }
 
 .letter_gray_pressed {
-    background-image: url("/images/letter_gray_pressed.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 2100px 1693px;
     width: 51px;
     height: 51px;
 }
 
 .letter_gray-1 {
-    background-image: url("/images/letter_gray-1.png") no-repeat;
+    background-image: url("/images/assets_spritesheet.png") no-repeat 2188px 1608px;
     width: 51px;
     height: 51px;
 }
 
 .letter_green {
-    background-image: url("/images/letter_green.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 2244px 1552px;
     width: 51px;
     height: 51px;
 }
 
 .letter_green_pressed {
-    background-image: url("/images/letter_green_pressed.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1468px 2329px;
     width: 51px;
     height: 51px;
 }
 
 .letter_yellow {
-    background-image: url("/images/letter_yellow.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 2800px 1029px;
     width: 51px;
     height: 51px;
 }
 
 .letter_yellow_pressed {
-    background-image: url("/images/letter_yellow_pressed.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 2100px 1749px;
     width: 51px;
     height: 51px;
 }
 
 .profile_icon_2 {
-    background-image: url("/images/profile_icon_2.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 2100px 1552px;
     width: 83px;
     height: 80px;
 }
 
 .settings1_1 {
-    background-image: url("/images/settings1_1.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1363px 2329px;
     width: 100px;
     height: 100px;
 }
 
 .top_gui1_2_1 {
-    background-image: url("/images/top_gui12_1.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 0px 2058px;
     width: 1125px;
     height: 170px;
 }
 
 .wordlebar_1 {
-    background-image: url("/images/wordlebar_1.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1130px 2058px;
     width: 270px;
     height: 96px;
 }
 
 .wordlebar_2 {
-    background-image: url("/images/wordlebar_2.png") no-repeat;
+    background-image: url("../images/assets_spritesheet.png") no-repeat 1445px 1029px;
     width: 695px;
     height: 248px;
 }
