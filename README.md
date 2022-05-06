@@ -4,9 +4,8 @@ Pixel styled web platform game based on Wordle and original characters known as 
 Now hosted on [Heroku](https://wordgotchu.herokuapp.com/).
 
 ## Gameplay
----
 
 *Defeat opponents in a wordle-styled match*
 
-![wordgotchu gameplay](https://imgur.com/a/SVjhk58)
+![wordgotchu gameplay](/public/images/Gotchu_Dome_Match_Screen.png)
 
