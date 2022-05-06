@@ -5,7 +5,7 @@ Now hosted on [Heroku](https://wordgotchu.herokuapp.com/).
 
 ## Gameplay
 
-*Defeat opponents in a wordle-styled match*
+*Defeat opponents or play against friends in a wordle-styled match*
 
 ![wordgotchu gameplay](/public/images/readme/Gotchu_Dome_Match_Screen.png)
 
