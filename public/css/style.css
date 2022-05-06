@@ -550,7 +550,7 @@ form {
 input[type="text"] {
     font-size: 15px;
     font-family: kongText;
-    letter-spacing: 35px;
+    /* letter-spacing: 35px; */
     width: 220px;
     background: none;
     box-shadow: none;
