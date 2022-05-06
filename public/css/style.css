@@ -46,16 +46,20 @@
 
 }
 
-.key-two del {
-    padding-left: 10px;
+.key-two .del {
+    padding-top: 5px;
+    transform: scale(1.75, 1.5);
+    transform: scaleX(-1.5);
+}
 
+.key-two .del:hover {
+    padding-top: 4px;
 }
 
 .key-two {
     font-size: 1.5vw;
     resize: none;
     width: 100%;
-
 }
 
 .letter {
@@ -81,7 +85,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background: url("../images/GUI/Menus/Keyboard Back.png") no-repeat center;
+    background: url("../images/Keyboard/Keyboard_Back.png") no-repeat center;
     background-size: 100% auto;
     /* width: 50vw; */
     max-width: 750px;
@@ -156,7 +160,7 @@
 }
 
 .key-two {
-    background: url("../images/GUI/Buttons/Keyboard/Enter_Blank.svg") no-repeat center;
+    background: url("../images/Keyboard/Enter_Blank.svg") no-repeat center;
     background-size: 100% 100%;
     flex: 0.75;
     text-align: center;
@@ -164,7 +168,7 @@
 }
 
 .key-two:hover {
-    background: url("../images/GUI/Buttons/Keyboard/Enter_Blank_Pressed.svg") no-repeat center;
+    background: url("../images/Keyboard/Enter_Blank_Pressed.svg") no-repeat center;
     background-size: 100% 100%;
     /* flex: 1; */
     text-align: center;
@@ -174,7 +178,7 @@
 /* Default grey keys */
 
 .one {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Gray_Blank.svg") no-repeat center;
+    background: url("../images/Keyboard/Letter_Gray_Blank.svg") no-repeat center;
     background-size: 100% 100%;
     flex: 0.5;
 
@@ -187,7 +191,7 @@
 }
 
 .one:hover {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
 
 }
@@ -210,7 +214,7 @@
 /* Correct letters, correct position */
 
 div.key[class*='green'] {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Green_Blank.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Green_Blank.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
 
@@ -218,7 +222,7 @@ div.key[class*='green'] {
 
 
 div.key[class*='green']:hover {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Green_Blank_Pressed.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Green_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
 
@@ -226,7 +230,7 @@ div.key[class*='green']:hover {
 
 /* Correct letters, wrong position */
 div[class*='yellow'] {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
 
@@ -234,7 +238,7 @@ div[class*='yellow'] {
 
 
 div[class*='yellow']:hover {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Yellow_Blank_Pressed.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Yellow_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
 
@@ -243,7 +247,7 @@ div[class*='yellow']:hover {
 
 /* Wrong letters */
 div[class*='black'] {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Black_Blank.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Black_Blank.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
 
@@ -251,7 +255,7 @@ div[class*='black'] {
 
 
 div[class*='black']:hover {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Black_Blank_Pressed.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Black_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
 
@@ -261,34 +265,34 @@ div[class*='black']:hover {
 /* Key presses */
 
 .key.one.pressed {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
 
 }
 
 .key-two.pressed {
-    background: url("../images/GUI/Buttons/Keyboard/Enter_Blank_Pressed.svg") no-repeat;
+    background: url("../images/Keyboard/Enter_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
 
 }
 
 .key.one.pressed.yellow {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Yellow_Blank_Pressed.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Yellow_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
 
 }
 
 .key.one.pressed.black {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Black_Blank_Pressed.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Black_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
 
 }
 
 .key.one.pressed.green {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Green_Blank_Pressed.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Green_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
     flex: 0.5;
 
@@ -312,18 +316,18 @@ div[class*='black']:hover {
 
 
 .correctCharacter {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
 
 }
 
 .incorrectCharacter {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Black_Blank.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Black_Blank.svg") no-repeat;
 
 }
 
 
 .correctCharacterPlacement {
-    background: url("../images/GUI/Buttons/Keyboard/Letter_Green_Blank.svg") no-repeat;
+    background: url("../images/Keyboard/Letter_Green_Blank.svg") no-repeat;
 
 }
 
@@ -408,52 +412,52 @@ body {
 
 }
 
-.dogchu_username, .catchu_username {
+.player1_username, .player2_username {
     color: gold;
 
 }
 
-.dogchu_username, .catchu_username, .dogchu_score, .catchu_score {
+.player1_username, .player2_username, .player1_score, .player2_score {
     font-size: 24px;
     position: absolute;
     top: 50px;
 
 }
 
-.dogchu_score {
+.player1_score {
     left: 360px;
 
 }
 
-.catchu_score {
+.player2_score {
     right: 360px;
 
 }
 
-.dogchu_username {
+.player1_username {
     left: 86px;
 
 }
 
-.catchu_username {
+.player2_username {
     right: 86px;
 
 }
 
-.dogchu_healthbar_border,
-.catchu_healthbar_border {
+.player1_healthbar_border,
+.player2_healthbar_border {
     background: url("../images/assets_spritesheet.png") no-repeat -934px -2358px;
 
 }
 
-.dogchu_healthbar,
-.catchu_healthbar {
+.player1_healthbar,
+.player2_healthbar {
     background: url("../images/assets_spritesheet.png") no-repeat -581px -2342px;
 
 }
 
-.dogchu_healthbar_border,
-.dogchu_healthbar {
+.player1_healthbar_border,
+.player1_healthbar {
     width: 348px;
     height: 43px;
     position: absolute;
@@ -469,8 +473,8 @@ body {
 
 }
 
-.catchu_healthbar,
-.catchu_healthbar_border {
+.player2_healthbar,
+.player2_healthbar_border {
     position: absolute;
     width: 348px;
     height: 43px;
@@ -506,7 +510,7 @@ body {
     width: 270px;
     height: 96px;
     margin: auto;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     align-items: center;
     justify-content: center;
 
@@ -521,23 +525,23 @@ body {
 
 }
 
-.dogchu_character {
+.player1_character {
     background: url("../images/assets_spritesheet.png") no-repeat -1882px -1805px;
     width: 432px;
     height: 432px;
     position: absolute;
-    bottom: 150px;
+    bottom: 100px;
     left: 100px;
     transform: scaleX(-1);
 
 }
 
-.catchu_character {
+.player2_character {
     background: url("../images/assets_spritesheet.png") no-repeat -1445px -1805px;
     width: 432px;
     height: 432px;
     position: absolute;
-    bottom: 150px;
+    bottom: 100px;
     right: 100px;
     transform: scaleX(-1);
 
