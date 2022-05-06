@@ -7,5 +7,10 @@ Now hosted on [Heroku](https://wordgotchu.herokuapp.com/).
 
 *Defeat opponents in a wordle-styled match*
 
-![wordgotchu gameplay](/public/images/Gotchu_Dome_Match_Screen.png)
+![wordgotchu gameplay](/public/images/readme/Gotchu_Dome_Match_Screen.png)
 
+## Gotchus
+
+*Earn currency by defeating opponents and spend it at the gotchu gacha! There are a variety of gotchus with unique abilities to collect*
+
+![wordgotchu gacha](/public/images/readme/Gotchu_Gacha_Page_Mockup.png)
