@@ -47,7 +47,7 @@ function reScaleWhatever() {
   const scaleHeight = window.innerHeight/1024
   backgroundElement.style.transform = `scale(${scaleWidth,scaleHeight}`
   const y = 1024 * (1029/(backgroundElement.offsetHeight+35))
-  const backgroundStyle = `url("../images/assets_spritesheet.png") no-repeat -0px -${y}px`
+  const backgroundStyle = `url("../images/sprite_sheet.png") no-repeat -0px -${y}px`
   backgroundElement.style.background = backgroundStyle
   backgroundElement.style.width = `${window.innerWidth*(1/scale)}px`
   console.log(backgroundStyle)
