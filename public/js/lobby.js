@@ -62,11 +62,11 @@
       })
     })
   }
-  
+
   // Change keys on press
 
   const allKeys = [..."abcdefghijklmnopqrstuvwxyz", "enter", "backspace"]
-  
+
   document.addEventListener("keydown", function (event) {
     const keyPressed = event.key.toLowerCase();
     if (allKeys.includes(event.key.toLowerCase())) {
@@ -113,7 +113,7 @@
             document.querySelector(`#${letter}`).classList.add("black");
           }
         })
-        
+
         //TODO MOVE TO BACKEND BIG CHEATS
         if (word.completed) {
           playerRef.get().then((snapshot) => {
@@ -164,7 +164,12 @@
 
   function initGame() {
     allPlayersRef.on("child_changed", (snapshot) => {
-
+      allPlayersRef.get().then((snapshot2) => {
+        let allPlayers = snapshot2.val() || {};
+        Object.values(allPlayers).forEach((player) => {
+          document.querySelector(`.player${player.num}_score`).innerHTML = player.score;
+        })
+      })
       //On new player
       const addedPlayer = snapshot.val();
       if (addedPlayer.num === 2 && !gamStarted) {
