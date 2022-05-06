@@ -2,10 +2,11 @@
 // lobbies should have a val for is full? one for each player a start time a score maybe
 (function () {
   let playerId;
+  let playerNum;
   let playerRef;
   let lobbyRef;
   let allPlayersRef;
-  let currentWordleRef;
+  let gamStarted = false;
   let lobbyId = window.location.pathname.split("/")[2];
   let keyCount = 1;
   let userGuessCount = 1;
@@ -28,7 +29,7 @@
   function guessWord(word) {
     return new Promise((resolve, reject) => {
 
-      currentWordleRef = firebase.database().ref(`lobbies/${lobbyId}/players/${playerId}/currentWordle`);
+      let currentWordleRef = firebase.database().ref(`lobbies/${lobbyId}/players/${playerId}/currentWordle`);
       currentWordleRef.get().then((snapshot) => {
         let wordleSnapshot = snapshot.val()
         if (!wordleSnapshot.correctCharacters) wordleSnapshot.correctCharacters = [];
@@ -61,7 +62,7 @@
       })
     })
   }
-
+  
   // Change keys on press
 
   const allKeys = [..."abcdefghijklmnopqrstuvwxyz", "enter", "backspace"]
@@ -162,63 +163,81 @@
   })
 
   function initGame() {
-    //for lobbies `lobbies/${lobbyId}`
+    allPlayersRef.on("child_changed", (snapshot) => {
 
-    // currentWordleRef.on("value", (snapshot) => {
-    //   wordle = snapshot.val() || {};
-    // })
+      //On new player
+      const addedPlayer = snapshot.val();
+      if (addedPlayer.num === 2 && !gamStarted) {
+        document.querySelector(`.player${addedPlayer.num}_username`).innerHTML = `Them`;
+        gamStarted = true;
+        startGame();
+      }
+    })
 
-    // allPlayersRef.on("value", (snapshot) => {
-    //   //On change
-    //   players = snapshot.val() || {};
-    //   Object.keys(players).forEach((key) => {
-    //     const playerState = players[key];
-    //   })
-
-
-    // })
-
-    // allPlayersRef.on("child_node", (snapshot) => {
-    //   //On new player
-    //   const addedPlayer = snapshot.val();
-    //   if (Object.keys(players).length >= 2) {
-    //     //do something lobby is full
-    //     document.querySelector(".container").innerHTML = "Sorry there are already 2 players in this game."
-    //   } else if (addedPlayer.id !== playerId) {
-    //     startGame();
-    //   }
-    // })
-
-    // allPlayersRef.on("child_removed", (snapshot) => {
-    //   const removedKey = snapshot.val().id;
-    //   document.querySelector(".container").innerHTML = "Opponent Disconnected!"
-    //   delete players[removedKey]
-    // })
+    allPlayersRef.on("child_removed", (snapshot) => {
+      const removedKey = snapshot.val().id;
+      document.querySelector(".wordle_bars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
+      document.querySelector(".wordle_bars").innerHTML = "Opponent Disconnected!"
+    })
   }
 
-  // function startGame() {
-  //   lobbyRef.set({
-  //     startTime: Date.now()
-  //   })
+  function startGame() {
+    const timerElement = document.getElementById("timer");
+    const cd = 10;
+    const time = (0 * 60) + cd;
+    let timer = time;
+    let timerID;
+    let started = false;
 
-  //   let timer = 60;
-  //   let timerID;
+    function secondsToMS(d) {
+      d = Number(d);
+      var m = Math.floor(d % 3600 / 60);
+      var s = Math.floor(d % 3600 % 60);
 
-  //   // add code here to insert the game screen into the lobby cause no ejs
-  //   //have the lobby.ejs to lobby.html file to just be a blank page with Wating for player...
-  //   timerID = setInterval(() => {
-  //     if (timer > 0) {
-  //       timer--;
-  //       document.getElementById("timer").innerHTML = `Time remaining: ${timer} seconds`;
-  //     }
-  //     if (timer <= 0) {
-  //       clearInterval(timerID)
-  //       document.getElementById("timer").innerHTML = "";
-  //       document.querySelector(".container").innerHTML = "Done!"
-  //     }
-  //   }, 1000);
-  //   startNewWordle()
-  // }
+      var mDisplay = m > 0 ? (m < 10 ? `${m}` : m) : "0";
+      var sDisplay = s > 0 ? (s < 10 ? `0${s}` : s) : "00";
+      return `${mDisplay}:${sDisplay}`;
+    }
+
+    timerID = setInterval(() => {
+      if (timer > 0) {
+        timer--;
+        if (!started && timer <= time - cd) {
+          started = true;
+          document.querySelector(".wordle_bars").style = "display: block;";
+          document.querySelector(".keyboard").style = "display: block;";
+        }
+
+        timerElement.innerHTML = secondsToMS(timer)
+      }
+      if (timer <= 0) {
+        clearInterval(timerID)
+        timerElement.innerHTML = "Done!"
+        timerElement.style = "font-size: 21px; left: 516px;"
+        document.querySelector(".wordle_bars").style = "display: none;";
+        document.querySelector(".keyboard").style = "display: none;";
+
+        allPlayersRef.get().then((snapshot) => {
+          let allPlayers = snapshot.val() || {};
+          let scores = {};
+          Object.values(allPlayers).forEach((player) => {
+            document.querySelector(`.player${player.num}_score`).innerHTML = player.score;
+            scores[player.num] = player.score;
+          })
+          let keysSorted = Object.keys(scores).sort(function (a, b) { return scores[b] - scores[a] })
+          document.querySelector(".wordle_bars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
+
+          if (scores[keysSorted[0]] === scores[keysSorted[1]]) {
+            document.querySelector(".wordle_bars").innerHTML = "Draw!"
+          } else if (keysSorted[0] === playerNum.toString()) {
+            document.querySelector(".wordle_bars").innerHTML = "You Win!"
+          } else {
+            document.querySelector(".wordle_bars").innerHTML = "You Lose!"
+          }
+        })
+      }
+    }, 1000);
+  }
 
   //Login/Logout
   firebase.auth().onAuthStateChanged((user) => {
@@ -241,14 +260,19 @@
       })
 
       allPlayersRef.get().then((snapshot) => {
-        let playerNum = Object.entries(snapshot.val()).length
+        let allPlayers = snapshot.val() || {};
+        playerNum = Object.entries(allPlayers).length
         playerRef.update({
           num: playerNum
         })
-        // document.getElementById("playernum").innerHTML = playerNum;
+        document.querySelector(`.player${playerNum}_username`).innerHTML = `Me`;
+        document.querySelector(`.player${playerNum}_username`).style = "color: red;"
+        if (playerNum !== 1) document.querySelector(`.player1_username`).innerHTML = `Them`;
+
       })
 
       playerRef.onDisconnect().remove();
+      lobbyRef.onDisconnect().remove();
 
       initGame();
     }
