@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lobby</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="background" class="background">
+    <div id="container" class="container">
+      <div>
+        <!-- <span id="timer">Wating for other player...</span> -->
+        <div class="top_gui_bar">
+          <div class="profile_icon_left">
+            <div class="dogchu_icon"></div>
+            <div class="player1_username">...</div>
+            <div class="player1_healthbar_border"></div>
+            <div class="player1_healthbar"></div>
+            <div class="player1_score">0</div>
+          </div>
+          <div id="timer" class="clock">1:05</div>
+          <div class="profile_icon_right">
+            <div class="catchu_icon"></div>
+            <div class="player2_username">...</div>
+            <div class="player2_healthbar_border"></div>
+            <div class="player2_healthbar"></div>
+            <div class="player2_score">0</div>
+
+          </div>
+          <div class="settings_button"></div>
+
+        </div>
+
+
+        <div class="wordle_bars" style="display: none;">
+          <div class="wordle_bar bar_1">
+            <div class="letter_slots slot_1"></div>
+            <div class="letter_slots slot_2"></div>
+            <div class="letter_slots slot_3"></div>
+            <div class="letter_slots slot_4"></div>
+            <div class="letter_slots slot_5"></div>
+          </div>
+          <div class="wordle_bar bar_2">
+            <div class="letter_slots slot_1"></div>
+            <div class="letter_slots slot_2"></div>
+            <div class="letter_slots slot_3"></div>
+            <div class="letter_slots slot_4"></div>
+            <div class="letter_slots slot_5"></div>
+          </div>
+          <div class="wordle_bar bar_3">
+            <div class="letter_slots slot_1"></div>
+            <div class="letter_slots slot_2"></div>
+            <div class="letter_slots slot_3"></div>
+            <div class="letter_slots slot_4"></div>
+            <div class="letter_slots slot_5"></div>
+          </div>
+          <div class="wordle_bar bar_4">
+            <div class="letter_slots slot_1"></div>
+            <div class="letter_slots slot_2"></div>
+            <div class="letter_slots slot_3"></div>
+            <div class="letter_slots slot_4"></div>
+            <div class="letter_slots slot_5"></div>
+          </div>
+          <div class="wordle_bar bar_5">
+            <div class="letter_slots slot_1"></div>
+            <div class="letter_slots slot_2"></div>
+            <div class="letter_slots slot_3"></div>
+            <div class="letter_slots slot_4"></div>
+            <div class="letter_slots slot_5"></div>
+          </div>
+          <div class="wordle_bar bar_6">
+            <div class="letter_slots slot_1"></div>
+            <div class="letter_slots slot_2"></div>
+            <div class="letter_slots slot_3"></div>
+            <div class="letter_slots slot_4"></div>
+            <div class="letter_slots slot_5"></div>
+          </div>
+        </div>
+        <div class="gochu_characters">
+          <div class="player1_character"></div>
+          <div class="player2_character"></div>
+        </div>
+
+        <span class="completed"></span><br>
+      </div>
+      <div class="keyboard" style="display: none;">
+        <section class="key-row row-one">
+          <div class="key one" id="q">
+            <p class="letter">Q</p>
+          </div>
+          <div class="key one" id="w">
+            <p class="letter">W</p>
+          </div>
+          <div class="key one" id="e">
+            <p class="letter">E</p>
+          </div>
+          <div class="key one" id="r">
+            <p class="letter">R</p>
+          </div>
+          <div class="key one" id="t">
+            <p class="letter">T</p>
+          </div>
+          <div class="key one" id="y">
+            <p class="letter">Y</p>
+          </div>
+          <div class="key one" id="u">
+            <p class="letter">U</p>
+          </div>
+          <div class="key one" id="i">
+            <p class="letter">I</p>
+          </div>
+          <div class="key one" id="o">
+            <p class="letter">O</p>
+          </div>
+          <div class="key one" id="p">
+            <p class="letter">P</p>
+          </div>
+        </section>
+        <section class="key-row row-two">
+          <div class="key one" id="a">
+            <p class="letter">A</p>
+          </div>
+          <div class="key one" id="s">
+            <p class="letter">S</p>
+          </div>
+          <div class="key one" id="d">
+            <p class="letter">D</p>
+          </div>
+          <div class="key one" id="f">
+            <p class="letter">F</p>
+          </div>
+          <div class="key one" id="g">
+            <p class="letter">G</p>
+          </div>
+          <div class="key one" id="h">
+            <p class="letter">H</p>
+          </div>
+          <div class="key one" id="j">
+            <p class="letter">J</p>
+          </div>
+          <div class="key one" id="k">
+            <p class="letter">K</p>
+          </div>
+          <div class="key one" id="l">
+            <p class="letter">L</p>
+          </div>
+        </section>
+        <section class="key-row row-three">
+          <div class="key-two ent" id="enter">
+            <p class="ent">ENTER</p>
+          </div>
+          <div class="key one" id="z">
+            <p class="letter">Z</p>
+          </div>
+          <div class="key one" id="x">
+            <p class="letter">X</p>
+          </div>
+          <div class="key one" id="c">
+            <p class="letter">C</p>
+          </div>
+          <div class="key one" id="v">
+            <p class="letter">V</p>
+          </div>
+          <div class="key one" id="b">
+            <p class="letter">B</p>
+          </div>
+          <div class="key one" id="n">
+            <p class="letter">N</p>
+          </div>
+          <div class="key one" id="m">
+            <p class="letter">M</p>
+          </div>
+          <div class="key-two del" id="backspace">
+            <p class="del">&#x279E</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCpzcKwCrIbF6nbzefNONYlTyvtPeFqa2E",
+    authDomain: "wordgotchu.firebaseapp.com",
+    databaseURL: "https://wordgotchu-default-rtdb.firebaseio.com",
+    projectId: "wordgotchu",
+    storageBucket: "wordgotchu.appspot.com",
+    messagingSenderId: "864605245451",
+    appId: "1:864605245451:web:844c3beee20a79a33f370e",
+    measurementId: "G-9LW3YP7LVV"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="/js/words.js"></script>
+<script src="/js/keybord.js"></script>
+<script src="/js/wordle.js"></script>
+<script src="/js/lobby.js"></script>
+
+</html>
