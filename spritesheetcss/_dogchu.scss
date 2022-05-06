@@ -1,0 +1,151 @@
+/* General dimensions for the dogchu sprites */
+
+.dogchu1_gif,.dogchu1_lose_gif,.dogchu1_win_gif {
+    background: url('sprite_sheet.png') no-repeat;
+	width: 36px;
+	height: 47px;
+    display: inline-block;
+}
+.dogchu2_gif,.dogchu2_lose_gif,.dogchu2_win_gif {
+    background: url('sprite_sheet.png') no-repeat;
+    width: 46px;
+    height: 51px;
+    display: inline-block;
+}
+
+.dogchu3_gif,.dogchu3_lose_gif,.dogchu3_win_gif {
+    background: url('sprite_sheet.png') no-repeat;
+	width: 60px;
+	height: 51px;
+    display: inline-block;
+
+}
+
+/* dogchu1 */
+.dogchu1_gif {
+    animation: dogchu1 1.5s steps(2) infinite;
+}
+@keyframes dogchu1 {
+    from {
+        background-position: -218px -276px;
+    }
+
+    to {
+        background-position: -310px -276px;
+    }
+
+}
+
+.dogchu1_lose_gif {
+    animation: dogchu1_lose 1.5s steps(2) infinite;
+}
+@keyframes dogchu1_lose {
+    from {
+        background-position: -217px -336px;
+    }
+
+    to {
+        background-position: -309px -336px;
+    }
+
+}
+
+.dogchu1_win_gif {
+    animation: dogchu1_win 1.5s steps(2) infinite;
+}
+@keyframes dogchu1_win {
+    from {
+        background-position: -215px -390px;
+    }
+
+    to {
+        background-position: -311px -390px;
+    }
+
+}
+
+/* dogchu2 */
+.dogchu2_gif {
+    animation: dogchu2 1.5s steps(2) infinite;
+
+}
+@keyframes dogchu2 {
+    from {
+        background-position: -361px -272px;
+    }
+
+    to {
+        background-position: -471px -272px;
+    }
+
+}
+.dogchu2_lose_gif {
+    animation: dogchu2_lose 1.5s steps(2) infinite;
+}
+@keyframes dogchu2_lose {
+    from {
+        background-position: -361px -329px;
+    }
+
+    to {
+        background-position: -483px -331px;
+    }
+
+}
+
+.dogchu2_win_gif {
+    animation: dogchu2_win 1.5s steps(2) infinite;
+}
+@keyframes dogchu2_win {
+    from {
+        background-position: -363px -386px;
+    }
+
+    to {
+        background-position: -481px  -386px;
+    }
+
+}
+
+/* dogchu3 */
+.dogchu3_gif {
+    animation: dogchu3 1.5s steps(2) infinite;
+
+}
+@keyframes dogchu3 {
+    from {
+        background-position: -529px -263px;
+    }
+
+    to {
+        background-position: -659px -261px;
+    }
+
+}
+.dogchu3_lose_gif {
+    animation: dogchu3_lose 1.5s steps(2) infinite;
+}
+@keyframes dogchu3_lose {
+    from {
+        background-position: -526px -329px;
+    }
+
+    to {
+        background-position: -662px -329px;
+    }
+
+}
+
+.dogchu3_win_gif {
+    animation: dogchu3_win 1.5s steps(2) infinite;
+}
+@keyframes dogchu3_win {
+    from {
+        background-position: -526px -387px;
+    }
+
+    to {
+        background-position: -668px -387px;
+    }
+
+}

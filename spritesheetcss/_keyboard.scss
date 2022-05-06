@@ -1,0 +1,113 @@
+/* Blank keyboard keys */
+.grey_key {
+	background: url('sprite_sheet.png') no-repeat -1061px -1798px;
+	width: 30px;
+	height: 32px;
+}
+.grey_key_pressed {
+    background: url('sprite_sheet.png') no-repeat -1093px -1800px;
+	width: 30px;
+	height: 30px;
+}
+
+.green_key {
+	background: url('sprite_sheet.png') no-repeat -1125px -1798px;
+	width: 30px;
+	height: 32px;
+}
+.green_key_pressed {
+    background: url('sprite_sheet.png') no-repeat -1157px -1800px;
+	width: 30px;
+	height: 30px;
+}
+
+.orange_key {
+	background: url('sprite_sheet.png') no-repeat -1253px -1798px;
+	width: 30px;
+	height: 32px;
+}
+.orange_key_pressed {
+    background: url('sprite_sheet.png') no-repeat -1285px -1800px;
+	width: 30px;
+	height: 30px;
+}
+
+.black_key {
+	background: url('sprite_sheet.png') no-repeat -1189px -1798px;
+	width: 30px;
+	height: 32px;
+}
+.black_key_pressed {
+    background: url('sprite_sheet.png') no-repeat -1221px -1800px;
+	width: 30px;
+	height: 30px;
+}
+
+.long_key {
+	background: url('sprite_sheet.png') no-repeat -2295px -416px;
+	width: 48px;
+	height: 32px;
+}
+.long_key_pressed {
+    background: url('sprite_sheet.png') no-repeat -2343px -416px;
+	width: 48px;
+	height: 32px;
+}
+
+
+/* gui */
+.ability_gui {
+	background: url('sprite_sheet.png') no-repeat -2295px -214px;
+	width: 96px;
+	height: 96px;
+}
+.gotchu_gui {
+	background: url('sprite_sheet.png') no-repeat -605px -1449px;
+	width: 32px;
+	height: 32px;
+}
+.healthbar_bar_gui {
+	background: url('sprite_sheet.png') no-repeat -756px -1129px;
+	width: 78px;
+	height: 8px;
+}
+.healthbar_border_gui {
+	background: url('sprite_sheet.png') no-repeat -755px -1143px;
+	width: 80px;
+	height: 10px;
+}
+.hp_heart_gui {
+	background: url('sprite_sheet.png') no-repeat -605px -1612px;
+	width: 16px;
+	height: 16px;
+}
+.profile_icon_selected_gui {
+	background: url('sprite_sheet.png') no-repeat -605px -1336px;
+	width: 35px;
+	height: 34px;
+}
+.profile_icon_gui {
+	background: url('sprite_sheet.png') no-repeat -605px -1375px;
+	width: 33px;
+	height: 32px;
+}
+.red_bar_border_gui {
+	background: url('sprite_sheet.png') no-repeat -755px -1158px;
+	width: 80px;
+	height: 10px;
+}
+.red_bar_gui {
+	background: url('sprite_sheet.png') no-repeat -756px -1174px;
+	width: 78px;
+	height: 8px;
+}
+.story_gui {
+	background: url('sprite_sheet.png') no-repeat -2295px -315px;
+	width: 96px;
+	height: 96px;
+}
+.top_gui {
+	background: url('sprite_sheet.png') no-repeat -605px -1780px;
+	width: 450px;
+	height: 65px;
+}

@@ -1,0 +1,41 @@
+/* gatcha page*/
+
+.gatcha_gif {
+    background: url('sprite_sheet.png') no-repeat;
+	width: 212px;
+	height: 204px;
+    display: inline-block;
+    animation: gatcha 1.5s steps(2) infinite;
+}
+
+@keyframes gatcha {
+    from {
+        background-position: -861px -27px;
+    }
+
+    to {
+        background-position: -1377px -27px;
+    }
+
+}
+
+.blue_egg {
+    background: url('sprite_sheet.png') no-repeat -605px -1486px;
+	width: 28px;
+	height: 37px;
+}
+.green_egg {
+    background: url('sprite_sheet.png') no-repeat -605px -1528px;
+	width: 28px;
+	height: 37px;
+}
+.red_egg {
+    background: url('sprite_sheet.png') no-repeat -605px -1570px;
+	width: 28px;
+	height: 37px;
+}
+.gotchu_gacha {
+    background: url('sprite_sheet.png') no-repeat -17px -1202px;
+	width: 597px;
+	height: 107px;
+}

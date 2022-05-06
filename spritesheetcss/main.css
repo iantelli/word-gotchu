@@ -1,0 +1,1689 @@
+div {
+  display: inline-block;
+}
+
+/* General dimensions for the catchu sprites */
+.catchu1_gif, .catchu1_lose_gif, .catchu1_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 39px;
+  height: 47px;
+  display: inline-block;
+}
+
+.catchu2_gif, .catchu2_lose_gif, .catchu2_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 52px;
+  height: 47px;
+  display: inline-block;
+}
+
+.catchu3_gif, .catchu3_lose_gif, .catchu3_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 58px;
+  height: 54px;
+  display: inline-block;
+}
+
+/* catchu1 */
+.catchu1_gif {
+  -webkit-animation: catchu1 1.5s steps(2) infinite;
+          animation: catchu1 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes catchu1 {
+  from {
+    background-position: -217px -47px;
+  }
+  to {
+    background-position: -313px -43px;
+  }
+}
+
+@keyframes catchu1 {
+  from {
+    background-position: -217px -47px;
+  }
+  to {
+    background-position: -313px -43px;
+  }
+}
+
+.catchu1_lose_gif {
+  -webkit-animation: catchu1_lose 1.5s steps(2) infinite;
+          animation: catchu1_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes catchu1_lose {
+  from {
+    background-position: -217px -98px;
+  }
+  to {
+    background-position: -313px -98px;
+  }
+}
+
+@keyframes catchu1_lose {
+  from {
+    background-position: -217px -98px;
+  }
+  to {
+    background-position: -313px -98px;
+  }
+}
+
+.catchu1_win_gif {
+  -webkit-animation: catchu1_win 1.5s steps(2) infinite;
+          animation: catchu1_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes catchu1_win {
+  from {
+    background-position: -217px -149px;
+  }
+  to {
+    background-position: -311px -149px;
+  }
+}
+
+@keyframes catchu1_win {
+  from {
+    background-position: -217px -149px;
+  }
+  to {
+    background-position: -311px -149px;
+  }
+}
+
+/* catchu2 */
+.catchu2_gif {
+  -webkit-animation: catchu2 1.5s steps(2) infinite;
+          animation: catchu2 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes catchu2 {
+  from {
+    background-position: -364px -46px;
+  }
+  to {
+    background-position: -484px -47px;
+  }
+}
+
+@keyframes catchu2 {
+  from {
+    background-position: -364px -46px;
+  }
+  to {
+    background-position: -484px -47px;
+  }
+}
+
+.catchu2_lose_gif {
+  -webkit-animation: catchu2_lose 1.5s steps(2) infinite;
+          animation: catchu2_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes catchu2_lose {
+  from {
+    background-position: -360px -104px;
+  }
+  to {
+    background-position: -484px -100px;
+  }
+}
+
+@keyframes catchu2_lose {
+  from {
+    background-position: -360px -104px;
+  }
+  to {
+    background-position: -484px -100px;
+  }
+}
+
+.catchu2_win_gif {
+  -webkit-animation: catchu2_win 1.5s steps(2) infinite;
+          animation: catchu2_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes catchu2_win {
+  from {
+    background-position: -360px -157px;
+  }
+  to {
+    background-position: -486px -156px;
+  }
+}
+
+@keyframes catchu2_win {
+  from {
+    background-position: -360px -157px;
+  }
+  to {
+    background-position: -486px -156px;
+  }
+}
+
+/* catchu3 */
+.catchu3_gif {
+  -webkit-animation: catchu3 1.5s steps(2) infinite;
+          animation: catchu3 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes catchu3 {
+  from {
+    background-position: -531px -40px;
+  }
+  to {
+    background-position: -693px -40px;
+  }
+}
+
+@keyframes catchu3 {
+  from {
+    background-position: -531px -40px;
+  }
+  to {
+    background-position: -693px -40px;
+  }
+}
+
+.catchu3_lose_gif {
+  -webkit-animation: catchu3_lose 1.5s steps(2) infinite;
+          animation: catchu3_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes catchu3_lose {
+  from {
+    background-position: -532px -101px;
+  }
+  to {
+    background-position: -692px -99px;
+  }
+}
+
+@keyframes catchu3_lose {
+  from {
+    background-position: -532px -101px;
+  }
+  to {
+    background-position: -692px -99px;
+  }
+}
+
+.catchu3_win_gif {
+  -webkit-animation: catchu3_win 1.5s steps(2) infinite;
+          animation: catchu3_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes catchu3_win {
+  from {
+    background-position: -531px -158px;
+  }
+  to {
+    background-position: -697px -162px;
+  }
+}
+
+@keyframes catchu3_win {
+  from {
+    background-position: -531px -158px;
+  }
+  to {
+    background-position: -697px -162px;
+  }
+}
+
+/* General dimensions for the dogchu sprites */
+.dogchu1_gif, .dogchu1_lose_gif, .dogchu1_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 36px;
+  height: 47px;
+  display: inline-block;
+}
+
+.dogchu2_gif, .dogchu2_lose_gif, .dogchu2_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 46px;
+  height: 51px;
+  display: inline-block;
+}
+
+.dogchu3_gif, .dogchu3_lose_gif, .dogchu3_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 60px;
+  height: 51px;
+  display: inline-block;
+}
+
+/* dogchu1 */
+.dogchu1_gif {
+  -webkit-animation: dogchu1 1.5s steps(2) infinite;
+          animation: dogchu1 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes dogchu1 {
+  from {
+    background-position: -218px -276px;
+  }
+  to {
+    background-position: -310px -276px;
+  }
+}
+
+@keyframes dogchu1 {
+  from {
+    background-position: -218px -276px;
+  }
+  to {
+    background-position: -310px -276px;
+  }
+}
+
+.dogchu1_lose_gif {
+  -webkit-animation: dogchu1_lose 1.5s steps(2) infinite;
+          animation: dogchu1_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes dogchu1_lose {
+  from {
+    background-position: -217px -336px;
+  }
+  to {
+    background-position: -309px -336px;
+  }
+}
+
+@keyframes dogchu1_lose {
+  from {
+    background-position: -217px -336px;
+  }
+  to {
+    background-position: -309px -336px;
+  }
+}
+
+.dogchu1_win_gif {
+  -webkit-animation: dogchu1_win 1.5s steps(2) infinite;
+          animation: dogchu1_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes dogchu1_win {
+  from {
+    background-position: -215px -390px;
+  }
+  to {
+    background-position: -311px -390px;
+  }
+}
+
+@keyframes dogchu1_win {
+  from {
+    background-position: -215px -390px;
+  }
+  to {
+    background-position: -311px -390px;
+  }
+}
+
+/* dogchu2 */
+.dogchu2_gif {
+  -webkit-animation: dogchu2 1.5s steps(2) infinite;
+          animation: dogchu2 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes dogchu2 {
+  from {
+    background-position: -361px -272px;
+  }
+  to {
+    background-position: -471px -272px;
+  }
+}
+
+@keyframes dogchu2 {
+  from {
+    background-position: -361px -272px;
+  }
+  to {
+    background-position: -471px -272px;
+  }
+}
+
+.dogchu2_lose_gif {
+  -webkit-animation: dogchu2_lose 1.5s steps(2) infinite;
+          animation: dogchu2_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes dogchu2_lose {
+  from {
+    background-position: -361px -329px;
+  }
+  to {
+    background-position: -483px -331px;
+  }
+}
+
+@keyframes dogchu2_lose {
+  from {
+    background-position: -361px -329px;
+  }
+  to {
+    background-position: -483px -331px;
+  }
+}
+
+.dogchu2_win_gif {
+  -webkit-animation: dogchu2_win 1.5s steps(2) infinite;
+          animation: dogchu2_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes dogchu2_win {
+  from {
+    background-position: -363px -386px;
+  }
+  to {
+    background-position: -481px  -386px;
+  }
+}
+
+@keyframes dogchu2_win {
+  from {
+    background-position: -363px -386px;
+  }
+  to {
+    background-position: -481px  -386px;
+  }
+}
+
+/* dogchu3 */
+.dogchu3_gif {
+  -webkit-animation: dogchu3 1.5s steps(2) infinite;
+          animation: dogchu3 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes dogchu3 {
+  from {
+    background-position: -529px -263px;
+  }
+  to {
+    background-position: -659px -261px;
+  }
+}
+
+@keyframes dogchu3 {
+  from {
+    background-position: -529px -263px;
+  }
+  to {
+    background-position: -659px -261px;
+  }
+}
+
+.dogchu3_lose_gif {
+  -webkit-animation: dogchu3_lose 1.5s steps(2) infinite;
+          animation: dogchu3_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes dogchu3_lose {
+  from {
+    background-position: -526px -329px;
+  }
+  to {
+    background-position: -662px -329px;
+  }
+}
+
+@keyframes dogchu3_lose {
+  from {
+    background-position: -526px -329px;
+  }
+  to {
+    background-position: -662px -329px;
+  }
+}
+
+.dogchu3_win_gif {
+  -webkit-animation: dogchu3_win 1.5s steps(2) infinite;
+          animation: dogchu3_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes dogchu3_win {
+  from {
+    background-position: -526px -387px;
+  }
+  to {
+    background-position: -668px -387px;
+  }
+}
+
+@keyframes dogchu3_win {
+  from {
+    background-position: -526px -387px;
+  }
+  to {
+    background-position: -668px -387px;
+  }
+}
+
+.turtlechu1_gif, .turtlechu1_lose_gif, .turtlechu1_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 32px;
+  height: 48px;
+  display: inline-block;
+}
+
+.turtlechu2_gif, .turtlechu2_lose_gif, .turtlechu2_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 42px;
+  height: 48px;
+  display: inline-block;
+}
+
+.turtlechu3_gif, .turtlechu3_lose_gif, .turtlechu3_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 58px;
+  height: 54px;
+  display: inline-block;
+}
+
+/* turtlechu1 */
+.turtlechu1_gif {
+  -webkit-animation: turtlechu1 1.5s steps(2) infinite;
+          animation: turtlechu1 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes turtlechu1 {
+  from {
+    background-position: -214px -462px;
+  }
+  to {
+    background-position: -310px -462px;
+  }
+}
+
+@keyframes turtlechu1 {
+  from {
+    background-position: -214px -462px;
+  }
+  to {
+    background-position: -310px -462px;
+  }
+}
+
+.turtlechu1_lose_gif {
+  -webkit-animation: turtlechu1_lose 1.5s steps(2) infinite;
+          animation: turtlechu1_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes turtlechu1_lose {
+  from {
+    background-position: -214px -523px;
+  }
+  to {
+    background-position: -310px -523px;
+  }
+}
+
+@keyframes turtlechu1_lose {
+  from {
+    background-position: -214px -523px;
+  }
+  to {
+    background-position: -310px -523px;
+  }
+}
+
+.turtlechu1_win_gif {
+  -webkit-animation: turtlechu1_win 1.5s steps(2) infinite;
+          animation: turtlechu1_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes turtlechu1_win {
+  from {
+    background-position: -214px -584px;
+  }
+  to {
+    background-position: -314px -584px;
+  }
+}
+
+@keyframes turtlechu1_win {
+  from {
+    background-position: -214px -584px;
+  }
+  to {
+    background-position: -314px -584px;
+  }
+}
+
+/* turtlechu2 */
+.turtlechu2_gif {
+  -webkit-animation: turtlechu2 1.5s steps(2) infinite;
+          animation: turtlechu2 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes turtlechu2 {
+  from {
+    background-position: -361px -462px;
+  }
+  to {
+    background-position: -471px -462px;
+  }
+}
+
+@keyframes turtlechu2 {
+  from {
+    background-position: -361px -462px;
+  }
+  to {
+    background-position: -471px -462px;
+  }
+}
+
+.turtlechu2_lose_gif {
+  -webkit-animation: turtlechu2_lose 1.5s steps(2) infinite;
+          animation: turtlechu2_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes turtlechu2_lose {
+  from {
+    background-position: -361px -524px;
+  }
+  to {
+    background-position: -471px -522px;
+  }
+}
+
+@keyframes turtlechu2_lose {
+  from {
+    background-position: -361px -524px;
+  }
+  to {
+    background-position: -471px -522px;
+  }
+}
+
+.turtlechu2_win_gif {
+  -webkit-animation: turtlechu2_win 1.5s steps(2) infinite;
+          animation: turtlechu2_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes turtlechu2_win {
+  from {
+    background-position: -360px -581px;
+  }
+  to {
+    background-position: -472px -583px;
+  }
+}
+
+@keyframes turtlechu2_win {
+  from {
+    background-position: -360px -581px;
+  }
+  to {
+    background-position: -472px -583px;
+  }
+}
+
+/* turtlechu3 */
+.turtlechu3_gif {
+  -webkit-animation: turtlechu3 1.5s steps(2) infinite;
+          animation: turtlechu3 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes turtlechu3 {
+  from {
+    background-position: -528px -458px;
+  }
+  to {
+    background-position: -662px -458px;
+  }
+}
+
+@keyframes turtlechu3 {
+  from {
+    background-position: -528px -458px;
+  }
+  to {
+    background-position: -662px -458px;
+  }
+}
+
+.turtlechu3_lose_gif {
+  -webkit-animation: turtlechu3_lose 1.5s steps(2) infinite;
+          animation: turtlechu3_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes turtlechu3_lose {
+  from {
+    background-position: -529px -517px;
+  }
+  to {
+    background-position: -663px -517px;
+  }
+}
+
+@keyframes turtlechu3_lose {
+  from {
+    background-position: -529px -517px;
+  }
+  to {
+    background-position: -663px -517px;
+  }
+}
+
+.turtlechu3_win_gif {
+  -webkit-animation: turtlechu3_win 1.5s steps(2) infinite;
+          animation: turtlechu3_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes turtlechu3_win {
+  from {
+    background-position: -529px -579px;
+  }
+  to {
+    background-position: -669px -577px;
+  }
+}
+
+@keyframes turtlechu3_win {
+  from {
+    background-position: -529px -579px;
+  }
+  to {
+    background-position: -669px -577px;
+  }
+}
+
+/* General dimensions for the character gotchu sprites */
+.mousechu1_gif, .mousechu1_lose_gif, .mousechu1_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 42px;
+  height: 51px;
+  display: inline-block;
+}
+
+.mousechu2_gif, .mousechu2_lose_gif, .mousechu2_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 50px;
+  height: 53px;
+  display: inline-block;
+}
+
+.mousechu3_gif, .mousechu3_lose_gif, .mousechu3_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 57px;
+  height: 60px;
+  display: inline-block;
+}
+
+/* mousechu1 */
+.mousechu1_gif {
+  -webkit-animation: mousechu1 1.5s steps(2) infinite;
+          animation: mousechu1 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes mousechu1 {
+  from {
+    background-position: -215px -678px;
+  }
+  to {
+    background-position: -311px -678px;
+  }
+}
+
+@keyframes mousechu1 {
+  from {
+    background-position: -215px -678px;
+  }
+  to {
+    background-position: -311px -678px;
+  }
+}
+
+.mousechu1_lose_gif {
+  -webkit-animation: mousechu1_lose 1.5s steps(2) infinite;
+          animation: mousechu1_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes mousechu1_lose {
+  from {
+    background-position: -212px -742px;
+  }
+  to {
+    background-position: -314px -740px;
+  }
+}
+
+@keyframes mousechu1_lose {
+  from {
+    background-position: -212px -742px;
+  }
+  to {
+    background-position: -314px -740px;
+  }
+}
+
+.mousechu1_win_gif {
+  -webkit-animation: mousechu1_win 1.5s steps(2) infinite;
+          animation: mousechu1_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes mousechu1_win {
+  from {
+    background-position: -211px -807px;
+  }
+  to {
+    background-position: -313px -807px;
+  }
+}
+
+@keyframes mousechu1_win {
+  from {
+    background-position: -211px -807px;
+  }
+  to {
+    background-position: -313px -807px;
+  }
+}
+
+/* mousechu2 */
+.mousechu2_gif {
+  -webkit-animation: mousechu2 1.5s steps(2) infinite;
+          animation: mousechu2 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes mousechu2 {
+  from {
+    background-position: -352px -676px;
+  }
+  to {
+    background-position: -472px -676px;
+  }
+}
+
+@keyframes mousechu2 {
+  from {
+    background-position: -352px -676px;
+  }
+  to {
+    background-position: -472px -676px;
+  }
+}
+
+.mousechu2_lose_gif {
+  -webkit-animation: mousechu2_lose 1.5s steps(2) infinite;
+          animation: mousechu2_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes mousechu2_lose {
+  from {
+    background-position: -352px -735px;
+  }
+  to {
+    background-position: -454px -734px;
+  }
+}
+
+@keyframes mousechu2_lose {
+  from {
+    background-position: -352px -735px;
+  }
+  to {
+    background-position: -454px -734px;
+  }
+}
+
+.mousechu2_win_gif {
+  -webkit-animation: mousechu2_win 1.5s steps(2) infinite;
+          animation: mousechu2_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes mousechu2_win {
+  from {
+    background-position: -352px -805px;
+  }
+  to {
+    background-position: -462px -804px;
+  }
+}
+
+@keyframes mousechu2_win {
+  from {
+    background-position: -352px -805px;
+  }
+  to {
+    background-position: -462px -804px;
+  }
+}
+
+/* mousechu3 */
+.mousechu3_gif {
+  -webkit-animation: mousechu3 1.5s steps(2) infinite;
+          animation: mousechu3 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes mousechu3 {
+  from {
+    background-position: -526px -674px;
+  }
+  to {
+    background-position: -678px -674px;
+  }
+}
+
+@keyframes mousechu3 {
+  from {
+    background-position: -526px -674px;
+  }
+  to {
+    background-position: -678px -674px;
+  }
+}
+
+.mousechu3_lose_gif {
+  -webkit-animation: mousechu3_lose 1.5s steps(2) infinite;
+          animation: mousechu3_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes mousechu3_lose {
+  from {
+    background-position: -528px -742px;
+  }
+  to {
+    background-position: -680px -742px;
+  }
+}
+
+@keyframes mousechu3_lose {
+  from {
+    background-position: -528px -742px;
+  }
+  to {
+    background-position: -680px -742px;
+  }
+}
+
+.mousechu3_win_gif {
+  -webkit-animation: mousechu3_win 1.5s steps(2) infinite;
+          animation: mousechu3_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes mousechu3_win {
+  from {
+    background-position: -528px -806px;
+  }
+  to {
+    background-position: -680px -806px;
+  }
+}
+
+@keyframes mousechu3_win {
+  from {
+    background-position: -528px -806px;
+  }
+  to {
+    background-position: -680px -806px;
+  }
+}
+
+/* General dimensions for the character gotchu sprites */
+.racoonchu1_gif, .racoonchu1_lose_gif, .racoonchu1_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 42px;
+  height: 46px;
+  display: inline-block;
+}
+
+.racoonchu2_gif, .racoonchu2_lose_gif, .racoonchu2_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 48px;
+  height: 54px;
+  display: inline-block;
+}
+
+.racoonchu3_gif, .racoonchu3_lose_gif, .racoonchu3_win_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 48px;
+  height: 54px;
+  display: inline-block;
+}
+
+/* racoonchu1 */
+.racoonchu1_gif {
+  -webkit-animation: racoonchu1 1.5s steps(2) infinite;
+          animation: racoonchu1 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes racoonchu1 {
+  from {
+    background-position: -209px -901px;
+  }
+  to {
+    background-position: -321px -901px;
+  }
+}
+
+@keyframes racoonchu1 {
+  from {
+    background-position: -209px -901px;
+  }
+  to {
+    background-position: -321px -901px;
+  }
+}
+
+.racoonchu1_lose_gif {
+  -webkit-animation: racoonchu1_lose 1.5s steps(2) infinite;
+          animation: racoonchu1_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes racoonchu1_lose {
+  from {
+    background-position: -209px -960px;
+  }
+  to {
+    background-position: -321px -958px;
+  }
+}
+
+@keyframes racoonchu1_lose {
+  from {
+    background-position: -209px -960px;
+  }
+  to {
+    background-position: -321px -958px;
+  }
+}
+
+.racoonchu1_win_gif {
+  -webkit-animation: racoonchu1_win 1.5s steps(2) infinite;
+          animation: racoonchu1_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes racoonchu1_win {
+  from {
+    background-position: -204px -1012px;
+  }
+  to {
+    background-position: -322px -1014px;
+  }
+}
+
+@keyframes racoonchu1_win {
+  from {
+    background-position: -204px -1012px;
+  }
+  to {
+    background-position: -322px -1014px;
+  }
+}
+
+/* racoonchu2 */
+.racoonchu2_gif {
+  -webkit-animation: racoonchu2 1.5s steps(2) infinite;
+          animation: racoonchu2 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes racoonchu2 {
+  from {
+    background-position: -352px -889px;
+  }
+  to {
+    background-position: -468px -887px;
+  }
+}
+
+@keyframes racoonchu2 {
+  from {
+    background-position: -352px -889px;
+  }
+  to {
+    background-position: -468px -887px;
+  }
+}
+
+.racoonchu2_lose_gif {
+  -webkit-animation: racoonchu2_lose 1.5s steps(2) infinite;
+          animation: racoonchu2_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes racoonchu2_lose {
+  from {
+    background-position: -353px -955px;
+  }
+  to {
+    background-position: -465px -953px;
+  }
+}
+
+@keyframes racoonchu2_lose {
+  from {
+    background-position: -353px -955px;
+  }
+  to {
+    background-position: -465px -953px;
+  }
+}
+
+.racoonchu2_win_gif {
+  -webkit-animation: racoonchu2_win 1.5s steps(2) infinite;
+          animation: racoonchu2_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes racoonchu2_win {
+  from {
+    background-position: -352px -1010px;
+  }
+  to {
+    background-position: -466px -1010px;
+  }
+}
+
+@keyframes racoonchu2_win {
+  from {
+    background-position: -352px -1010px;
+  }
+  to {
+    background-position: -466px -1010px;
+  }
+}
+
+/* racoonchu3 */
+.racoonchu3_gif {
+  -webkit-animation: racoonchu3 1.5s steps(2) infinite;
+          animation: racoonchu3 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes racoonchu3 {
+  from {
+    background-position: -539px -894px;
+  }
+  to {
+    background-position: -667px -892px;
+  }
+}
+
+@keyframes racoonchu3 {
+  from {
+    background-position: -539px -894px;
+  }
+  to {
+    background-position: -667px -892px;
+  }
+}
+
+.racoonchu3_lose_gif {
+  -webkit-animation: racoonchu3_lose 1.5s steps(2) infinite;
+          animation: racoonchu3_lose 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes racoonchu3_lose {
+  from {
+    background-position: -536px -959px;
+  }
+  to {
+    background-position: -670px -955px;
+  }
+}
+
+@keyframes racoonchu3_lose {
+  from {
+    background-position: -536px -959px;
+  }
+  to {
+    background-position: -670px -955px;
+  }
+}
+
+.racoonchu3_win_gif {
+  -webkit-animation: racoonchu3_win 1.5s steps(2) infinite;
+          animation: racoonchu3_win 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes racoonchu3_win {
+  from {
+    background-position: -534px -1016px;
+  }
+  to {
+    background-position: -672px -1014px;
+  }
+}
+
+@keyframes racoonchu3_win {
+  from {
+    background-position: -534px -1016px;
+  }
+  to {
+    background-position: -672px -1014px;
+  }
+}
+
+/* gatcha page*/
+.gatcha_gif {
+  background: url("sprite_sheet.png") no-repeat;
+  width: 212px;
+  height: 204px;
+  display: inline-block;
+  -webkit-animation: gatcha 1.5s steps(2) infinite;
+          animation: gatcha 1.5s steps(2) infinite;
+}
+
+@-webkit-keyframes gatcha {
+  from {
+    background-position: -861px -27px;
+  }
+  to {
+    background-position: -1377px -27px;
+  }
+}
+
+@keyframes gatcha {
+  from {
+    background-position: -861px -27px;
+  }
+  to {
+    background-position: -1377px -27px;
+  }
+}
+
+.blue_egg {
+  background: url("sprite_sheet.png") no-repeat -605px -1486px;
+  width: 28px;
+  height: 37px;
+}
+
+.green_egg {
+  background: url("sprite_sheet.png") no-repeat -605px -1528px;
+  width: 28px;
+  height: 37px;
+}
+
+.red_egg {
+  background: url("sprite_sheet.png") no-repeat -605px -1570px;
+  width: 28px;
+  height: 37px;
+}
+
+.gotchu_gacha {
+  background: url("sprite_sheet.png") no-repeat -17px -1202px;
+  width: 597px;
+  height: 107px;
+}
+
+/* gui_abilities */
+.cat1_ability_full {
+  background: url("sprite_sheet.png") no-repeat -648px -1194px;
+  width: 192px;
+  height: 192px;
+}
+
+.cat1_ability_empty {
+  background: url("sprite_sheet.png") no-repeat -842px -1194px;
+  width: 192px;
+  height: 192px;
+}
+
+.cat1_ability_half {
+  background: url("sprite_sheet.png") no-repeat -1036px -1194px;
+  width: 192px;
+  height: 192px;
+}
+
+.cat2_ability_full {
+  background: url("sprite_sheet.png") no-repeat -648px -1388px;
+  width: 192px;
+  height: 192px;
+}
+
+.cat2_ability_empty {
+  background: url("sprite_sheet.png") no-repeat -842px -1388px;
+  width: 192px;
+  height: 192px;
+}
+
+.cat2_ability_half {
+  background: url("sprite_sheet.png") no-repeat -842px -1388px;
+  width: 192px;
+  height: 192px;
+}
+
+.cat3_ability_full {
+  background: url("sprite_sheet.png") no-repeat -648px -1582px;
+  width: 192px;
+  height: 192px;
+}
+
+.cat3_ability_empty {
+  background: url("sprite_sheet.png") no-repeat -842px -1582px;
+  width: 192px;
+  height: 192px;
+}
+
+.cat3_ability_half {
+  background: url("sprite_sheet.png") no-repeat -1036px -1582px;
+  width: 192px;
+  height: 192px;
+}
+
+.dog1_ability_full {
+  background: url("sprite_sheet.png") no-repeat -1448px -520px;
+  width: 192px;
+  height: 192px;
+}
+
+.dog1_ability_empty {
+  background: url("sprite_sheet.png") no-repeat -1642px -520px;
+  width: 192px;
+  height: 192px;
+}
+
+.dog1_ability_half {
+  background: url("sprite_sheet.png") no-repeat -1836px -520px;
+  width: 192px;
+  height: 192px;
+}
+
+.dog2_ability_full {
+  background: url("sprite_sheet.png") no-repeat -1448px -714px;
+  width: 192px;
+  height: 192px;
+}
+
+.dog2_ability_empty {
+  background: url("sprite_sheet.png") no-repeat -1642px -714px;
+  width: 192px;
+  height: 192px;
+}
+
+.dog2_ability_half {
+  background: url("sprite_sheet.png") no-repeat -1836px -714px;
+  width: 192px;
+  height: 192px;
+}
+
+.dog3_ability_full {
+  background: url("sprite_sheet.png") no-repeat -1448px -908px;
+  width: 192px;
+  height: 192px;
+}
+
+.dog3_ability_empty {
+  background: url("sprite_sheet.png") no-repeat -1642px -908px;
+  width: 192px;
+  height: 192px;
+}
+
+.dog3_ability_half {
+  background: url("sprite_sheet.png") no-repeat -1836px -908px;
+  width: 192px;
+  height: 192px;
+}
+
+.turtle1_ability_full {
+  background: url("sprite_sheet.png") no-repeat -1235px -1107px;
+  width: 192px;
+  height: 192px;
+}
+
+.turtle1_ability_empty {
+  background: url("sprite_sheet.png") no-repeat -1429px -1107px;
+  width: 192px;
+  height: 192px;
+}
+
+.turtle1_ability_half {
+  background: url("sprite_sheet.png") no-repeat -1623px -1107px;
+  width: 192px;
+  height: 192px;
+}
+
+.turtle2_ability_full {
+  background: url("sprite_sheet.png") no-repeat -1235px -1301px;
+  width: 192px;
+  height: 192px;
+}
+
+.turtle2_ability_empty {
+  background: url("sprite_sheet.png") no-repeat -1429px -1301px;
+  width: 192px;
+  height: 192px;
+}
+
+.turtle2_ability_half {
+  background: url("sprite_sheet.png") no-repeat -1623px -1301px;
+  width: 192px;
+  height: 192px;
+}
+
+.turtle3_ability_full {
+  background: url("sprite_sheet.png") no-repeat -1235px -1495px;
+  width: 192px;
+  height: 192px;
+}
+
+.turtle3_ability_empty {
+  background: url("sprite_sheet.png") no-repeat -1429px -1495px;
+  width: 192px;
+  height: 192px;
+}
+
+.turtle3_ability_half {
+  background: url("sprite_sheet.png") no-repeat -1623px -1495px;
+  width: 192px;
+  height: 192px;
+}
+
+.overlay_cd_full {
+  background: url("sprite_sheet.png") no-repeat -1621px 0;
+  width: 192px;
+  height: 192px;
+}
+
+.overlay_cd_empty {
+  background: url("sprite_sheet.png") no-repeat -1813px 0;
+  width: 192px;
+  height: 192px;
+}
+
+/* gui_buttons */
+.long_empty_button {
+  background: url("sprite_sheet.png") no-repeat -1621px -455px;
+  width: 128px;
+  height: 40px;
+}
+
+.long_empty_button_pressed {
+  background: url("sprite_sheet.png") no-repeat -1749px -455px;
+  width: 128px;
+  height: 40px;
+}
+
+.small_empty_button {
+  background: url("sprite_sheet.png") no-repeat -1717px -1813px;
+  width: 64px;
+  height: 46px;
+}
+
+.small_empty_button_pressed {
+  background: url("sprite_sheet.png") no-repeat -1781px -1813px;
+  width: 64px;
+  height: 46px;
+}
+
+.gatcha_button {
+  background: url("sprite_sheet.png") no-repeat -1882px -455px;
+  width: 64px;
+  height: 46px;
+}
+
+.gatcha_button_pressed {
+  background: url("sprite_sheet.png") no-repeat -1946px -455px;
+  width: 64px;
+  height: 46px;
+}
+
+.gotchu_dome_button {
+  background: url("sprite_sheet.png") no-repeat -1321px -1798px;
+  width: 103px;
+  height: 56px;
+}
+
+.gatchu_dome_button_pressed {
+  background: url("sprite_sheet.png") no-repeat -1424px -1798px;
+  width: 103px;
+  height: 56px;
+}
+
+.home_button {
+  background: url("sprite_sheet.png") no-repeat -1954px -1572px;
+  width: 64px;
+  height: 46px;
+}
+
+.home_button_pressed {
+  background: url("sprite_sheet.png") no-repeat -2018px -1572px;
+  width: 64px;
+  height: 46px;
+}
+
+.roll_button {
+  background: url("sprite_sheet.png") no-repeat 0 -1128px;
+  width: 150px;
+  height: 60px;
+}
+
+.roll_button_pressed {
+  background: url("sprite_sheet.png") no-repeat -150px -1128px;
+  width: 150px;
+  height: 60px;
+}
+
+.settings_button {
+  background: url("sprite_sheet.png") no-repeat -605px -1412px;
+  width: 32px;
+  height: 32px;
+}
+
+/* gui_menus */
+.battle_popup {
+  background: url("sprite_sheet.png") no-repeat -2271px 0;
+  width: 128px;
+  height: 102px;
+}
+
+.crown_popup {
+  background: url("sprite_sheet.png") no-repeat -2271px -107px;
+  width: 128px;
+  height: 102px;
+}
+
+.empty_popup {
+  background: url("sprite_sheet.png") no-repeat -1821px -1572px;
+  width: 128px;
+  height: 102px;
+}
+
+.gui_bar {
+  background: url("sprite_sheet.png") no-repeat -1231px -1052px;
+  width: 144px;
+  height: 40px;
+}
+
+.bottom_bar {
+  background: url("sprite_sheet.png") no-repeat -1234px -1693px;
+  width: 450px;
+  height: 100px;
+}
+
+.wordle_bar {
+  background: url("sprite_sheet.png") no-repeat -1689px -1693px;
+  width: 180px;
+  height: 64px;
+}
+
+.wordle_bar_grid {
+  background: url("sprite_sheet.png") no-repeat -1532px -1798px;
+  width: 180px;
+  height: 64px;
+}
+
+.keyboard_back {
+  background: url("sprite_sheet.png") no-repeat -1621px -197px;
+  width: 384px;
+  height: 124px;
+}
+
+.keyboard_inv_back {
+  background: url("sprite_sheet.png") no-repeat -1621px -326px;
+  width: 384px;
+  height: 124px;
+}
+
+.keyboard_w_grid {
+  background: url("sprite_sheet.png") no-repeat -842px -1052px;
+  width: 384px;
+  height: 124px;
+}
+
+.cat_card {
+  background: url("sprite_sheet.png") no-repeat -1821px -1367px;
+  width: 250px;
+  height: 200px;
+}
+
+.dog_card {
+  background: url("sprite_sheet.png") no-repeat -2082px -1044px;
+  width: 250px;
+  height: 200px;
+}
+
+.turtle_card {
+  background: url("sprite_sheet.png") no-repeat -2082px -1249px;
+  width: 250px;
+  height: 200px;
+}
+
+/* Blank keyboard keys */
+.grey_key {
+  background: url("sprite_sheet.png") no-repeat -1061px -1798px;
+  width: 30px;
+  height: 32px;
+}
+
+.grey_key_pressed {
+  background: url("sprite_sheet.png") no-repeat -1093px -1800px;
+  width: 30px;
+  height: 30px;
+}
+
+.green_key {
+  background: url("sprite_sheet.png") no-repeat -1125px -1798px;
+  width: 30px;
+  height: 32px;
+}
+
+.green_key_pressed {
+  background: url("sprite_sheet.png") no-repeat -1157px -1800px;
+  width: 30px;
+  height: 30px;
+}
+
+.orange_key {
+  background: url("sprite_sheet.png") no-repeat -1253px -1798px;
+  width: 30px;
+  height: 32px;
+}
+
+.orange_key_pressed {
+  background: url("sprite_sheet.png") no-repeat -1285px -1800px;
+  width: 30px;
+  height: 30px;
+}
+
+.black_key {
+  background: url("sprite_sheet.png") no-repeat -1189px -1798px;
+  width: 30px;
+  height: 32px;
+}
+
+.black_key_pressed {
+  background: url("sprite_sheet.png") no-repeat -1221px -1800px;
+  width: 30px;
+  height: 30px;
+}
+
+.long_key {
+  background: url("sprite_sheet.png") no-repeat -2295px -416px;
+  width: 48px;
+  height: 32px;
+}
+
+.long_key_pressed {
+  background: url("sprite_sheet.png") no-repeat -2343px -416px;
+  width: 48px;
+  height: 32px;
+}
+
+/* gui */
+.ability_gui {
+  background: url("sprite_sheet.png") no-repeat -2295px -214px;
+  width: 96px;
+  height: 96px;
+}
+
+.gotchu_gui {
+  background: url("sprite_sheet.png") no-repeat -605px -1449px;
+  width: 32px;
+  height: 32px;
+}
+
+.healthbar_bar_gui {
+  background: url("sprite_sheet.png") no-repeat -756px -1129px;
+  width: 78px;
+  height: 8px;
+}
+
+.healthbar_border_gui {
+  background: url("sprite_sheet.png") no-repeat -755px -1143px;
+  width: 80px;
+  height: 10px;
+}
+
+.hp_heart_gui {
+  background: url("sprite_sheet.png") no-repeat -605px -1612px;
+  width: 16px;
+  height: 16px;
+}
+
+.profile_icon_selected_gui {
+  background: url("sprite_sheet.png") no-repeat -605px -1336px;
+  width: 35px;
+  height: 34px;
+}
+
+.profile_icon_gui {
+  background: url("sprite_sheet.png") no-repeat -605px -1375px;
+  width: 33px;
+  height: 32px;
+}
+
+.red_bar_border_gui {
+  background: url("sprite_sheet.png") no-repeat -755px -1158px;
+  width: 80px;
+  height: 10px;
+}
+
+.red_bar_gui {
+  background: url("sprite_sheet.png") no-repeat -756px -1174px;
+  width: 78px;
+  height: 8px;
+}
+
+.story_gui {
+  background: url("sprite_sheet.png") no-repeat -2295px -315px;
+  width: 96px;
+  height: 96px;
+}
+
+.top_gui {
+  background: url("sprite_sheet.png") no-repeat -605px -1780px;
+  width: 450px;
+  height: 65px;
+}
+
+/* titles */
+.wordgotchu_logo {
+  background: url("sprite_sheet.png") no-repeat 0 -1336px;
+  width: 600px;
+  height: 528px;
+}
+
+.wordgotchu_pixel_logo_transparent {
+  background: url("sprite_sheet.png") no-repeat -871px -725px;
+  width: 557px;
+  height: 112px;
+}
+/*# sourceMappingURL=main.css.map */
