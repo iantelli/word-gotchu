@@ -2,6 +2,7 @@
 // lobbies should have a val for is full? one for each player a start time a score maybe
 (function () {
   let playerId;
+  let playerNum;
   let playerRef;
   let lobbyRef;
   let allPlayersRef;
@@ -139,7 +140,7 @@
 
   function initGame() {
     allPlayersRef.on("child_changed", (snapshot) => {
-      
+
       //On new player
       const addedPlayer = snapshot.val();
       if (addedPlayer.num === 2 && !gamStarted) {
@@ -151,15 +152,15 @@
 
     allPlayersRef.on("child_removed", (snapshot) => {
       const removedKey = snapshot.val().id;
-      document.querySelector(".container").style = "  justify-content: center; align-items: center; height: 100%; color: black;"
-      document.querySelector(".container").innerHTML = "Opponent Disconnected!"
+      document.querySelector(".wordle_bars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
+      document.querySelector(".wordle_bars").innerHTML = "Opponent Disconnected!"
     })
   }
 
   function startGame() {
     const timerElement = document.getElementById("timer");
-    const cd = 5;
-    const time = (1 * 60) + cd;
+    const cd = 10;
+    const time = (0 * 60) + cd;
     let timer = time;
     let timerID;
     let started = false;
@@ -194,9 +195,21 @@
 
         allPlayersRef.get().then((snapshot) => {
           let allPlayers = snapshot.val() || {};
+          let scores = {};
           Object.values(allPlayers).forEach((player) => {
             document.querySelector(`.player${player.num}_score`).innerHTML = player.score;
+            scores[player.num] = player.score;
           })
+          let keysSorted = Object.keys(scores).sort(function (a, b) { return scores[b] - scores[a] })
+          document.querySelector(".wordle_bars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
+
+          if (scores[keysSorted[0]] === scores[keysSorted[1]]) {
+            document.querySelector(".wordle_bars").innerHTML = "Draw!"
+          } else if (keysSorted[0] === playerNum.toString()) {
+            document.querySelector(".wordle_bars").innerHTML = "You Win!"
+          } else {
+            document.querySelector(".wordle_bars").innerHTML = "You Lose!"
+          }
         })
       }
     }, 1000);
@@ -224,7 +237,7 @@
 
       allPlayersRef.get().then((snapshot) => {
         let allPlayers = snapshot.val() || {};
-        let playerNum = Object.entries(allPlayers).length
+        playerNum = Object.entries(allPlayers).length
         playerRef.update({
           num: playerNum
         })
