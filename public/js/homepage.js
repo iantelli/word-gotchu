@@ -47,8 +47,8 @@
             joinRoomButton.classList.add("joinRoomButton");
             roomCodeInput.type = "text";
             roomCodeInput.placeholder = "Enter Room Code";
-            document.querySelector("div.joinRoom").appendChild(roomCodeInput);
-            document.querySelector("div.joinRoom").appendChild(joinRoomButton);
+            document.querySelector("div.joinRoomDiv").appendChild(roomCodeInput);
+            document.querySelector("div.joinRoomDiv").appendChild(joinRoomButton);
             joinRoomButton.innerHTML = "Join Room";
             joinRoomButton.type = "button";
             joinRoomButton.addEventListener("click", event => {
@@ -73,7 +73,7 @@
             document.querySelector("div.wordle_bar2").classList.toggle("hidden");
             document.querySelector("div.join_battle_menu").classList.toggle("hidden");
             document.querySelector("div.backButton").classList.toggle("hidden");
-            document.querySelector("div.joinRoom").innerHTML = "";
+            document.querySelector("div.joinRoomDiv").innerHTML = "";
         }
     });
 })();
