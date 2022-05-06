@@ -184,7 +184,7 @@
   function startGame() {
     const timerElement = document.getElementById("timer");
     const cd = 10;
-    const time = (0 * 60) + cd;
+    const time = (1 * 60) + cd;
     let timer = time;
     let timerID;
     let started = false;
