@@ -308,20 +308,19 @@ div[class*='black']:hover {
 }
 
 
-.correctCharacter {
+div.correctCharacter {
     background: url("../images/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
-
+    background-size: 100% 100%;
 }
 
-.incorrectCharacter {
+div.incorrectCharacter {
     background: url("../images/Keyboard/Letter_Black_Blank.svg") no-repeat;
-
+    background-size: 100% 100%;
 }
 
-
-.correctCharacterPlacement {
-    background: url("../images/Keyboard/Letter_Green_Blank.svg") no-repeat;
-
+div.correctCharacterPlacement {
+    background: url("../images/Keyboard/Letter_Green_Blank.svg") no-repeat !important;
+    background-size: 100% 100% !important;
 }
 
 .answerContainer {
@@ -513,9 +512,10 @@ body {
     background: url("../images/assets_spritesheet.png") no-repeat -2188px -1608px;
     width: 51px;
     height: 51px;
-    display: inline-block;
+    display: flex;
     margin-right: -2px;
-
+    align-items: center;
+    justify-content: center;
 }
 
 .player1_character {
