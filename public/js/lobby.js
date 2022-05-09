@@ -89,7 +89,7 @@
       div.innerHTML += event.key.toUpperCase();
       keyCount++;
     }
-    // // if the key pressed is enter, submit the wordle
+    // if the key pressed is enter, submit the wordle
     if (event.key.toLowerCase() === "enter" && keyCount === 6) {
       let wordArray = [];
       for (let i = 0; i < 5; i++) {
@@ -158,7 +158,51 @@
       keyCount--;
     }
     else if (event.target.classList.contains("ent")) {
-      document.querySelector("button.submitWordle").click();
+      let wordArray = [];
+      for (let i = 0; i < 5; i++) {
+        wordArray.push(document.querySelector("div.bar_" + userGuessCount).children[i].innerHTML)
+      }
+      let wordGuess = wordArray.join("").toLowerCase();
+      guessWord(wordGuess).then((word) => {
+        word.correctCharacters = Array.from(word.correctCharacters);
+        word.incorrectCharacters = Array.from(word.incorrectCharacters);
+
+        (wordGuess.split("")).forEach((letter, index) => {
+          if (word.correctCharacterPlacements[index] === letter) {
+            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacterPlacement");
+            document.querySelector(`#${letter}`).classList.add("green");
+          }
+          else if (word.correctCharacters.includes(letter)) {
+            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacter");
+            document.querySelector(`#${letter}`).classList.add("yellow");
+          } else if (word.incorrectCharacters.includes(letter)) {
+            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("incorrectCharacter");
+            document.querySelector(`#${letter}`).classList.add("black");
+          }
+        })
+
+        //TODO MOVE TO BACKEND BIG CHEATS
+        if (word.completed) {
+          playerRef.get().then((snapshot) => {
+            let player = snapshot.val()
+            playerRef.update({
+              score: player.score + 1
+            })
+          })
+          startNewWordle();
+        }
+        if (word.totalGuesses === 6 && !word.completed) {
+          playerRef.get().then((snapshot) => {
+            let player = snapshot.val()
+            playerRef.update({
+              score: player.score - 1
+            })
+          })
+          startNewWordle();
+        }
+      });
+      keyCount = 1;
+      userGuessCount++;
     }
   })
 
