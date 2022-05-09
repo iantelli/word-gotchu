@@ -7,29 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lobby</title>
   <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/axios.js"></script>
 </head>
 
 <body>
-  <div id = "background" class="background">
+  <div id="background" class="background">
     <div id="container" class="container">
       <div>
         <!-- <span id="timer">Wating for other player...</span> -->
         <div class="top_gui_bar">
           <div class="profile_icon_left">
             <div class="dogchu_icon"></div>
-            <div class="player1_username">USERNAME</div>
+            <div class="player1_username">...</div>
             <div class="player1_healthbar_border"></div>
             <div class="player1_healthbar"></div>
-            <div class="player1_score">100</div>
+            <div class="player1_score">0</div>
           </div>
-          <div id="timer" class="clock">1:00</div>
+          <div id="timer" class="clock">1:05</div>
           <div class="profile_icon_right">
             <div class="catchu_icon"></div>
-            <div class="player2_username">USERNAME</div>
-            <div class="player2_healthbar_border"></div> 
+            <div class="player2_username">...</div>
+            <div class="player2_healthbar_border"></div>
             <div class="player2_healthbar"></div>
-            <div class="player2_score">100</div>
+            <div class="player2_score">0</div>
 
           </div>
           <div class="settings_button"></div>
@@ -37,7 +36,7 @@
         </div>
 
 
-        <div class="wordle_bars">
+        <div class="wordle_bars" style="display: none;">
           <div class="wordle_bar bar_1">
             <div class="letter_slots slot_1"></div>
             <div class="letter_slots slot_2"></div>
@@ -85,19 +84,8 @@
           <div class="player1_character"></div>
           <div class="player2_character"></div>
         </div>
-        <!-- <form>
-          <input style="text-transform: uppercase" type="text" class="submitWord" name="word"
-            placeholder="" maxlength="5">
-          <button class="submitWordle">Submit</button>
-        </form>
-        <span class="correctCharacters"></span><br>
-        <span class="incorrectCharacters"></span><br>
-        <span class="totalGuesses"></span><br>
-        <div class="answerContainer">
-        </div> -->
-        <span class="completed"></span><br>
       </div>
-      <div class="keyboard">
+      <div class="keyboard" style="display: none;">
         <section class="key-row row-one">
           <div class="key one" id="q">
             <p class="letter">Q</p>
@@ -193,8 +181,25 @@
   </div>
   </div>
 </body>
-<script src="/socket.io/socket.io.js"></script>
-<script type="module" src="/js/wordle.js"></script>
-<script src="/js/index.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCpzcKwCrIbF6nbzefNONYlTyvtPeFqa2E",
+    authDomain: "wordgotchu.firebaseapp.com",
+    databaseURL: "https://wordgotchu-default-rtdb.firebaseio.com",
+    projectId: "wordgotchu",
+    storageBucket: "wordgotchu.appspot.com",
+    messagingSenderId: "864605245451",
+    appId: "1:864605245451:web:844c3beee20a79a33f370e",
+    measurementId: "G-9LW3YP7LVV"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="/js/words.js"></script>
+<script src="/js/wordle.js"></script>
+<script src="/js/lobby.js"></script>
 
 </html>

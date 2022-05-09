@@ -6,6 +6,10 @@
 
 }
 
+div.hidden {
+    display: none;
+}
+
 .key-row {
     font-family: kongText;
     background-color: #565656;
@@ -115,7 +119,6 @@
 
 }
 
-
 .key,
 .letter,
 .del,
@@ -128,7 +131,6 @@
     height: 57px;
     cursor: pointer;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-
 }
 
 .key,
@@ -136,12 +138,10 @@
 .ent,
 .key-two {
     margin: 0 0.1vw 0 0;
-
 }
 
 .del {
     margin: 0 0.1vw 0 0;
-
 }
 
 /* .key-row div {
@@ -151,12 +151,10 @@
 .key:hover>.letter,
 .key-two:hover>.ent {
     margin-top: 5px;
-
 }
 
 .key-two:hover>.del {
     margin-top: 0px;
-
 }
 
 .key-two {
@@ -164,7 +162,6 @@
     background-size: 100% 100%;
     flex: 0.75;
     text-align: center;
-
 }
 
 .key-two:hover {
@@ -172,7 +169,6 @@
     background-size: 100% 100%;
     /* flex: 1; */
     text-align: center;
-
 }
 
 /* Default grey keys */
@@ -181,19 +177,16 @@
     background: url("../images/Keyboard/Letter_Gray_Blank.svg") no-repeat center;
     background-size: 100% 100%;
     flex: 0.5;
-
 }
 
 .one {
     cursor: pointer;
     position: relative;
-
 }
 
 .one:hover {
     background: url("../images/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
     background-size: 100% 100%;
-
 }
 
 .key-two:active,
@@ -315,20 +308,19 @@ div[class*='black']:hover {
 }
 
 
-.correctCharacter {
+div.correctCharacter {
     background: url("../images/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
-
+    background-size: 100% 100%;
 }
 
-.incorrectCharacter {
+div.incorrectCharacter {
     background: url("../images/Keyboard/Letter_Black_Blank.svg") no-repeat;
-
+    background-size: 100% 100%;
 }
 
-
-.correctCharacterPlacement {
-    background: url("../images/Keyboard/Letter_Green_Blank.svg") no-repeat;
-
+div.correctCharacterPlacement {
+    background: url("../images/Keyboard/Letter_Green_Blank.svg") no-repeat !important;
+    background-size: 100% 100% !important;
 }
 
 .answerContainer {
@@ -520,9 +512,10 @@ body {
     background: url("../images/assets_spritesheet.png") no-repeat -2188px -1608px;
     width: 51px;
     height: 51px;
-    display: inline-block;
+    display: flex;
     margin-right: -2px;
-
+    align-items: center;
+    justify-content: center;
 }
 
 .player1_character {
@@ -557,7 +550,7 @@ form {
 input[type="text"] {
     font-size: 15px;
     font-family: kongText;
-    letter-spacing: 35px;
+    /* letter-spacing: 35px;  */
     width: 220px;
     background: none;
     box-shadow: none;
