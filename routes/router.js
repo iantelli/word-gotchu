@@ -12,4 +12,8 @@ router.get("/lobby/:id", (req, res) => {
   res.render("lobby")
 })
 
+router.get("/gameover", (req, res) => {
+  res.render("gameEnd")
+})
+
 module.exports = router;
