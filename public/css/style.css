@@ -498,9 +498,9 @@ body {
 
 .wordle_bar {
     display: flex;
-    background: url("../images/assets_spritesheet.png") no-repeat -5922px -0px;
+    background: url("../images/assets_spritesheet.png") no-repeat -6509px -1299px;
     width: 270px;
-    height: 96px;
+    height: 97px;
     margin: auto;
     margin-bottom: 5px;
     align-items: center;
