@@ -101,8 +101,13 @@ html, body {
     position: absolute;
     bottom: 250px;
     left: 600px;
+    animation: gotchuAnimation 1s  steps(2) infinite;
 
 }
+@keyframes gotchuAnimation {
+    from {    background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;}
+    to {    background: url("../images/assets_spritesheet.png") no-repeat -1586px -1682px;}
+  }
 
 .bottomNav >div{
     position: absolute;
