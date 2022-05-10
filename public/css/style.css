@@ -1,0 +1,592 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@font-face {
+    font-family: kongText;
+    src: url('kongtext.ttf');
+
+}
+
+div.hidden {
+    display: none;
+}
+
+.key-row {
+    font-family: kongText;
+    background-color: #565656;
+    color: transparent;
+    text-shadow: 1px 1px 1px white;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    box-sizing: border-box;
+    gap: 8px;
+    resize: none;
+
+}
+
+.key-row.row-one {
+    max-width: 650px;
+    min-width: 650px;
+
+}
+
+.key-row.row-two {
+    max-width: 610px;
+    min-width: 610px;
+
+}
+
+.key-row.row-three {
+    max-width: 650px;
+    min-width: 650px;
+    justify-content: center;
+
+}
+
+.one {
+    font-size: 2vw;
+    resize: none;
+    width: 100%;
+
+}
+
+.key-two .del {
+    padding-top: 5px;
+    transform: scale(1.75, 1.5);
+    transform: scaleX(-1.5);
+}
+
+.key-two .del:hover {
+    padding-top: 4px;
+}
+
+.key-two {
+    font-size: 1.5vw;
+    resize: none;
+    width: 100%;
+}
+
+.letter {
+    font-size: large;
+
+}
+
+.del p {
+    font-size: xx-large;
+    margin-top: -5px;
+
+}
+
+.ent {
+    font-size: small;
+
+}
+
+
+.keyboard {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: url("../images/Keyboard/Keyboard_Back.png") no-repeat center;
+    background-size: 100% auto;
+    /* width: 50vw; */
+    max-width: 750px;
+    width: 750px;
+    height: 250px;
+    /* padding-top: -50px; */
+    bottom: 0;
+    transform: scale(0.8);
+
+}
+
+.key-row {
+    display: flex;
+    margin: 0 auto 7px;
+    line-height: 50px;
+    width: 47vw;
+
+}
+
+.key-row:nth-of-type(1) {
+    margin-top: 32px;
+
+}
+
+.key-row:nth-of-type(3) {
+    margin-bottom: 5vh;
+
+}
+
+.key,
+.letter,
+.del,
+.ent,
+.key-two {
+    text-align: center;
+    color: #eee;
+    align-items: center;
+    align-content: center;
+    height: 57px;
+    cursor: pointer;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
+
+.key,
+.letter,
+.ent,
+.key-two {
+    margin: 0 0.1vw 0 0;
+}
+
+.del {
+    margin: 0 0.1vw 0 0;
+}
+
+/* .key-row div {
+    gap: 0.5em;
+} */
+
+.key:hover>.letter,
+.key-two:hover>.ent {
+    margin-top: 5px;
+}
+
+.key-two:hover>.del {
+    margin-top: 0px;
+}
+
+.key-two {
+    background: url("../images/Keyboard/Enter_Blank.svg") no-repeat center;
+    background-size: 100% 100%;
+    flex: 0.75;
+    text-align: center;
+}
+
+.key-two:hover {
+    background: url("../images/Keyboard/Enter_Blank_Pressed.svg") no-repeat center;
+    background-size: 100% 100%;
+    /* flex: 1; */
+    text-align: center;
+}
+
+/* Default grey keys */
+
+.one {
+    background: url("../images/Keyboard/Letter_Gray_Blank.svg") no-repeat center;
+    background-size: 100% 100%;
+    flex: 0.5;
+}
+
+.one {
+    cursor: pointer;
+    position: relative;
+}
+
+.one:hover {
+    background: url("../images/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+}
+
+.key-two:active,
+.one:active {
+    transform: scale(.9);
+
+}
+
+.key-two:nth-of-type(1) {
+    margin-right: 0.417vw;
+
+}
+
+/* .key-row:nth-of-type(2) {
+    width: 90%;
+} */
+
+/* Correct letters, correct position */
+
+div.key[class*='green'] {
+    background: url("../images/Keyboard/Letter_Green_Blank.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+
+}
+
+
+div.key[class*='green']:hover {
+    background: url("../images/Keyboard/Letter_Green_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+
+}
+
+/* Correct letters, wrong position */
+div[class*='yellow'] {
+    background: url("../images/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+
+}
+
+
+div[class*='yellow']:hover {
+    background: url("../images/Keyboard/Letter_Yellow_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+
+}
+
+
+/* Wrong letters */
+div[class*='black'] {
+    background: url("../images/Keyboard/Letter_Black_Blank.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+
+}
+
+
+div[class*='black']:hover {
+    background: url("../images/Keyboard/Letter_Black_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+
+}
+
+
+/* Key presses */
+
+.key.one.pressed {
+    background: url("../images/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+
+}
+
+.key-two.pressed {
+    background: url("../images/Keyboard/Enter_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.key.one.pressed.yellow {
+    background: url("../images/Keyboard/Letter_Yellow_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+
+}
+
+.key.one.pressed.black {
+    background: url("../images/Keyboard/Letter_Black_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+
+}
+
+.key.one.pressed.green {
+    background: url("../images/Keyboard/Letter_Green_Blank_Pressed.svg") no-repeat;
+    background-size: 100% 100%;
+    flex: 0.5;
+
+}
+
+.letter.pressed {
+    margin-top: 5px;
+    margin-bottom: -5px;
+
+}
+
+#backspace.pressed p {
+    margin-top: -1px;
+
+}
+
+#enter.pressed p {
+    margin-top: 3px;
+
+}
+
+
+div.correctCharacter {
+    background: url("../images/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
+    background-size: 100% 100%;
+}
+
+div.incorrectCharacter {
+    background: url("../images/Keyboard/Letter_Black_Blank.svg") no-repeat;
+    background-size: 100% 100%;
+}
+
+div.correctCharacterPlacement {
+    background: url("../images/Keyboard/Letter_Green_Blank.svg") no-repeat !important;
+    background-size: 100% 100% !important;
+}
+
+.answerContainer {
+    font-family: kongText;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+
+}
+
+html,
+body {
+    background-color: black;
+    font-family: kongText;
+    color: white;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+
+
+/* game page */
+.background {
+    background: url("../images/assets_spritesheet.png") no-repeat -0px -1029px;
+    position:relative;
+    width: 1440px;
+    height: 1024px;
+    /* transform: scale(0.77); */
+    transform-origin: top left;
+    margin: auto;
+
+}
+
+.top_gui_bar {
+    background: url("../images/assets_spritesheet.png") no-repeat 0 -2058px;
+    width: 1125px;
+    height: 170px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+
+}
+
+.profile_icon_left {
+    background: url("../images/assets_spritesheet.png") no-repeat -2100px -1552px;
+    width: 83px;
+    height: 80px;
+    float: left;
+    position: relative;
+    top: 12px;
+    left: 30px;
+
+}
+
+.profile_icon_right {
+    background: url("../images/assets_spritesheet.png") no-repeat -2100px -1552px;
+    width: 83px;
+    height: 80px;
+    float: right;
+    position: relative;
+    top: 12px;
+    right: 30px;
+
+}
+
+.dogchu_icon {
+    background: url("../images/dog_icon.png");
+    width: 83px;
+    height: 80px;
+
+}
+
+.player1_username, .player2_username {
+    color: gold;
+
+}
+
+.player1_username, .player2_username, .player1_score, .player2_score {
+    font-size: 24px;
+    position: absolute;
+    top: 50px;
+
+}
+
+.player1_score {
+    left: 360px;
+
+}
+
+.player2_score {
+    right: 360px;
+
+}
+
+.player1_username {
+    left: 86px;
+
+}
+
+.player2_username {
+    right: 86px;
+
+}
+
+.player1_healthbar_border,
+.player2_healthbar_border {
+    background: url("../images/assets_spritesheet.png") no-repeat -934px -2358px;
+
+}
+
+.player1_healthbar,
+.player2_healthbar {
+    background: url("../images/assets_spritesheet.png") no-repeat -581px -2342px;
+
+}
+
+.player1_healthbar_border,
+.player1_healthbar {
+    width: 348px;
+    height: 43px;
+    position: absolute;
+    top: 5px;
+    left: 86px;
+
+}
+
+.catchu_icon {
+    background: url("../images/cat_icon.png");
+    width: 83px;
+    height: 80px;
+
+}
+
+.player2_healthbar,
+.player2_healthbar_border {
+    position: absolute;
+    width: 348px;
+    height: 43px;
+    top: 5px;
+    right: 86px;
+
+}
+
+.clock {
+    color: black;
+    font-size: 26px;
+    position: absolute;
+    top: 67px;
+    left: 513px;
+
+
+}
+
+.settings_button {
+    background: url("../images/assets_spritesheet.png") no-repeat -1363px -2329px;
+    width: 100px;
+    height: 100px;
+    float: right;
+    position: absolute;
+    top: 1px;
+    right: -105px;
+
+}
+
+.wordle_bar {
+    display: flex;
+    background: url("../images/assets_spritesheet.png") no-repeat -1130px -2058px;
+    width: 270px;
+    height: 96px;
+    margin: auto;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.letter_slots {
+    background: url("../images/assets_spritesheet.png") no-repeat -2188px -1608px;
+    width: 51px;
+    height: 51px;
+    display: flex;
+    margin-right: -2px;
+    align-items: center;
+    justify-content: center;
+}
+
+.player1_character {
+    background: url("../images/assets_spritesheet.png") no-repeat -1882px -1805px;
+    width: 432px;
+    height: 432px;
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+    transform: scaleX(-1);
+
+}
+
+.player2_character {
+    background: url("../images/assets_spritesheet.png") no-repeat -1445px -1805px;
+    width: 432px;
+    height: 432px;
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    transform: scaleX(-1);
+
+}
+
+/* form styling */
+form {
+    position: absolute;
+    left: 42.5%;
+    top: 22%
+}
+
+input[type="text"] {
+    font-size: 15px;
+    font-family: kongText;
+    /* letter-spacing: 35px;  */
+    width: 220px;
+    background: none;
+    box-shadow: none;
+    border: none;
+    color: white
+}
+
+/* On screens that are 1100px wide or less, scale down */
+/* @media screen and (max-width: 1300px) {
+    .background {
+        transform: scale(0.72);
+        transform-origin: top left;
+
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    .background {
+        transform: scale(0.67);
+        transform-origin: top left;
+    }
+
+} */
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+ /* @media screen and (max-width: 1000px) {
+    .background {
+        transform: scale(0.62);
+        transform-origin: top left;
+    }
+    .keyboard {
+        transform: scale(1);
+        transform-origin: bottom center;
+    }
+
+} */
+
+/* every time width of screen decreases by 5px, .background{transform:scale(0.77-0.01)} */
