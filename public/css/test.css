@@ -1,0 +1,71 @@
+@font-face {
+    font-family: kongText;
+    src: url('kongtext.ttf');
+}
+
+html, body {
+    background-color: black;
+    font-family: kongText;
+    color: white;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.storyContainer {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
+    width: 650px;
+    height: 518px;
+    display: flex;
+    /* align-content: center;
+    justify-content: center; */
+    flex-direction: column;
+    transform: scale(1.2);
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.storyContainer > * {
+    transform: scale(calc(1/1.2));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.storyContainer > * > *  {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.storyText {
+    width: 620px;
+    height: 110px;
+    background-color: #CD6C03;
+    margin-top: -25px;
+}
+
+.storyText .lockIcon {
+    display: none;
+}
+
+.topText {
+    padding-top: 30px;
+}
+
+.locked {
+    width: 620px;
+    height: 110px;
+    background-color: #955612;
+    margin-top: -25px;
+}
+
+.lockIcon {
+    background: url(../images/Misc/locked.png) no-repeat center;
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+}
+
+.locked p {
+    display: none;
+}

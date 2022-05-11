@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+    <div class="storyContainer">
+        <h4 class="storyLevelTitle topText">LVL01 STORY</h4>
+        <!-- Use "storyText" class if unlocked, "locked" if locked -->
+        <div class="storyText lvl1">
+            <!-- Should use some sort of conditional to check and grab correct pet story, or just send all with hidden class? -->
+            <p>
+                <%= pet.lvl1Story %>
+            </p>
+        </div>
+        <h4 class="storyLevelTitle">LVL02 STORY</h4>
+        <div class="locked lvl2">
+            <div class="lockIcon"></div>
+            <p>
+            <% if (pet.lvl == 2) { %>
+                <%= pet.lvl2Story %>
+            <% } %>
+            </p>
+        </div>
+        <h4 class="storyLevelTitle">LVL03 STORY</h4>
+        <div class="locked lvl3">
+            <div class="lockIcon"></div>
+            <p>
+            <% if (pet.lvl == 3) { %>
+                <%= pet.lvl3Story %>
+            <% } %>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

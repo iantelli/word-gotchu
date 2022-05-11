@@ -21,4 +21,28 @@ router.get("/gameover", (req, res) => {
   res.render("gameEnd", { gameResult })
 })
 
+router.get("/homepage", (req, res) => {
+  const data = {
+    playerCurrency: 1000,
+    username: "USER",
+  }
+  const pet = {
+    lvl: 1,
+    lvl1Story: "qwerty",
+    lvl2Story: "asdfgh",
+    lvl3Story: "zxcvbn",
+  }
+  res.render("homepage", { data, pet })
+})
+
+router.get("/testpage", (req, res) => {
+  const pet = {
+    lvl: 1,
+    lvl1Story: "qwerty",
+    lvl2Story: "asdfgh",
+    lvl3Story: "zxcvbn",
+  }
+  res.render("testpage", { pet })
+})
+
 module.exports = router;
