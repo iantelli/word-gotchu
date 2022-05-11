@@ -157,7 +157,7 @@
       div.innerHTML = div.innerHTML.slice(0, -1);
       keyCount--;
     }
-    else if (event.target.classList.contains("ent")) {
+    else if (event.target.classList.contains("ent") && keyCount === 6) {
       let wordArray = [];
       for (let i = 0; i < 5; i++) {
         wordArray.push(document.querySelector("div.bar_" + userGuessCount).children[i].innerHTML)

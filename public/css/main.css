@@ -17,7 +17,7 @@ html, body {
 }
 
 .wordle_bar2 {
-  background: url(../images/assets_spritesheet.png) no-repeat -5922px 0px;
+  background: url(../images/assets_spritesheet.png) no-repeat -1445px -1029px;
   width: 695px;
   height: 248px;
   transform: translate(-50%, -50%);
@@ -29,7 +29,7 @@ html, body {
 }
 
 .battle_arena_bg {
-  background: url(../images/assets_spritesheet.png) no-repeat -4477px -1029px;
+  background: url(../images/assets_spritesheet.png) no-repeat -1445px -0px;
   width: 1440px;
   height: 1024px;
   transform: translate(-50%, -0%);
@@ -40,7 +40,7 @@ html, body {
 }
 
 .battle_menu {
-  background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
+  background: url(../images/assets_spritesheet.png) no-repeat -2145px -1029px;
   width: 650px;
   height: 518px;
   position: absolute;
@@ -53,7 +53,7 @@ html, body {
 }
 
 .join_battle_menu {
-  background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
+  background: url(../images/assets_spritesheet.png) no-repeat -2145px -1029px;
   width: 650px;
   height: 518px;
   position: absolute;
@@ -77,7 +77,7 @@ html, body {
 }
 
 .copy_btn {
-  background: url(../images/assets_spritesheet.png) no-repeat -6622px -150px;
+  background: url(../images/assets_spritesheet.png) no-repeat -581px -2390px;
   width: 123px;
   height: 34px;
   justify-content: center;
@@ -88,7 +88,7 @@ html, body {
 }
 
 .backButton {
-  background: url(../images/assets_spritesheet.png) no-repeat -6509px -1487px;
+  background: url(../images/assets_spritesheet.png) no-repeat -1363px -2242px;
   width: 260px;
   height: 82px;
   margin-top:70px;
@@ -99,7 +99,7 @@ html, body {
 }
 
 .room_code {
-  background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
+  background: url(../images/assets_spritesheet.png) no-repeat -2145px -0px;
 }
 
 .createRoom {
