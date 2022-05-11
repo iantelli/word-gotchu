@@ -3,7 +3,6 @@
 @font-face {
     font-family: kongText;
     src: url('kongtext.ttf');
-
 }
 
 div.hidden {
@@ -500,7 +499,7 @@ body {
     display: flex;
     background: url("../images/assets_spritesheet.png") no-repeat -6509px -1299px;
     width: 270px;
-    height: 96px;
+    height: 97px;
     margin: auto;
     margin-bottom: 5px;
     align-items: center;
@@ -519,23 +518,22 @@ body {
 }
 
 .player1_character {
-    background: url("../images/assets_spritesheet.png") no-repeat -513px -841px;
-	width: 105px;
-	height: 144px;
+    background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
+	width: 209px;
+	height: 288px;
     position: absolute;
-    bottom: 100px;
-    left: 100px;
-    transform: scaleX(-1);
+    bottom: 200px;
+    left: 160px;
 
 }
 
 .player2_character {
-    background: url("../images/assets_spritesheet.png") no-repeat -504px -143px;
-    width: 432px;
-    height: 432px;
+    background: url("../images/assets_spritesheet.png") no-repeat -1007px -286px;
+	width: 239px;
+	height: 288px;
     position: absolute;
-    bottom: 100px;
-    right: 100px;
+    bottom: 200px;
+    right: 160px;
     transform: scaleX(-1);
 
 }

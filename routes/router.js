@@ -13,7 +13,12 @@ router.get("/lobby/:id", (req, res) => {
 })
 
 router.get("/gameover", (req, res) => {
-  res.render("gameEnd")
+  const gameResult = {
+    winner: true,
+    xpChange: 25,
+    reward: 100,
+  }
+  res.render("gameEnd", { gameResult })
 })
 
 module.exports = router;
