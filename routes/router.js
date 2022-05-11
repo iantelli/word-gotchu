@@ -14,7 +14,7 @@ router.get("/lobby/:id", (req, res) => {
 
 router.get("/gameover", (req, res) => {
   const gameResult = {
-    winner: true,
+    winner: false,
     xpChange: 25,
     reward: 100,
   }
