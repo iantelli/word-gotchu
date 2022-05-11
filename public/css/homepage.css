@@ -30,7 +30,7 @@ html, body {
 
 }
 
-.topNav >div{
+.topNav > div{
     position: absolute;
     top: 80px;
 }

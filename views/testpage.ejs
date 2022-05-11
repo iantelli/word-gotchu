@@ -8,33 +8,38 @@
     <link rel="stylesheet" href="css/test.css">
 </head>
 <body>
-    <div class="storyContainer">
-        <h4 class="storyLevelTitle topText">LVL01 STORY</h4>
-        <!-- Use "storyText" class if unlocked, "locked" if locked -->
-        <div class="storyText lvl1">
-            <!-- Should use some sort of conditional to check and grab correct pet story, or just send all with hidden class? -->
-            <p>
-                <%= pet.lvl1Story %>
-            </p>
+    <!-- Should insert this into the homepage HTML -->
+    <!-- Also rename the files and add the event listeners -->
+    <div class="manageGotchusContainer">
+        <div class="topBar">
+            <div class="backButton">
+                <h1>BACK</h1>
+            </div>
+            <h1>Select Gotchu</h1>
         </div>
-        <h4 class="storyLevelTitle">LVL02 STORY</h4>
-        <div class="locked lvl2">
-            <div class="lockIcon"></div>
-            <p>
-            <% if (pet.lvl == 2) { %>
-                <%= pet.lvl2Story %>
-            <% } %>
-            </p>
+
+        <div class="centerContent">
+            <div class="levelAndXPContainer">
+                <div class="levelBar">
+                    <p>LVL <%= pet.lvl %></p>
+                </div>
+                <div class="XPBar">
+                    <p>XP <%= pet.xp %>/100 </p>
+                </div>
+            </div>
+            <div class="equippedGotchu"></div>
+            <div class="abilityAndStoryContainer">
+                <div class="storyButton"></div>
+                <div class="abilityButton"></div>
+            </div>
         </div>
-        <h4 class="storyLevelTitle">LVL03 STORY</h4>
-        <div class="locked lvl3">
-            <div class="lockIcon"></div>
-            <p>
-            <% if (pet.lvl == 3) { %>
-                <%= pet.lvl3Story %>
-            <% } %>
-            </p>
+
+        <div class="bottomBar">
+            <div class="catchuIcon selected"></div>
+            <div class="dogchuIcon locked"></div>
+            <div class="turtlechuIcon"></div>
         </div>
     </div>
+    <script src="js/test.js"></script>
 </body>
 </html>

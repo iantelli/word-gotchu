@@ -28,6 +28,7 @@ router.get("/homepage", (req, res) => {
   }
   const pet = {
     lvl: 1,
+    xp: 10,
     lvl1Story: "qwerty",
     lvl2Story: "asdfgh",
     lvl3Story: "zxcvbn",
@@ -38,9 +39,7 @@ router.get("/homepage", (req, res) => {
 router.get("/testpage", (req, res) => {
   const pet = {
     lvl: 1,
-    lvl1Story: "qwerty",
-    lvl2Story: "asdfgh",
-    lvl3Story: "zxcvbn",
+    xp: 10,
   }
   res.render("testpage", { pet })
 })
