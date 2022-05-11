@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+    <!-- Should insert this into the homepage HTML -->
+    <!-- Also rename the files and add the event listeners -->
+    <div class="manageGotchusContainer">
+        <div class="topBar">
+            <div class="backButton">
+                <h1>BACK</h1>
+            </div>
+            <h1>Select Gotchu</h1>
+        </div>
+
+        <div class="centerContent">
+            <div class="levelAndXPContainer">
+                <div class="levelBar">
+                    <p>LVL <%= pet.lvl %></p>
+                </div>
+                <div class="XPBar">
+                    <p>XP <%= pet.xp %>/100 </p>
+                </div>
+            </div>
+            <div class="equippedGotchu"></div>
+            <div class="abilityAndStoryContainer">
+                <div class="storyButton"></div>
+                <div class="abilityButton"></div>
+            </div>
+        </div>
+
+        <div class="bottomBar">
+            <div class="catchuIcon selected"></div>
+            <div class="dogchuIcon locked"></div>
+            <div class="turtlechuIcon"></div>
+        </div>
+    </div>
+    <script src="js/test.js"></script>
+</body>
+</html>

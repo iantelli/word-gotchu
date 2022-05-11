@@ -1,0 +1,229 @@
+@font-face {
+    font-family: kongText;
+    src: url('kongtext.ttf');
+
+}
+
+html, body {
+    background-color: black;
+    font-family: kongText;
+    color: white;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.hidden {
+    display: none !important;
+}
+
+.mainScreenBg {
+    background: url(../images/assets_spritesheet.png) no-repeat -4477px -2058px;
+    width: 1440px;
+    height: 1024px;
+    transform: translate(-50%, -0%);
+    position: fixed;
+    left: 50%;
+    bottom: 0px;
+    margin: 0 auto;
+
+}
+
+.topNav > div{
+    position: absolute;
+    top: 80px;
+}
+
+.userBar {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
+    width: 388px;
+    height: 104px;
+    left: 30px;
+
+}
+
+.userProfileBg {
+    background: url(../images/dog_icon.png);
+    width: 83px;
+    height: 80px;
+    position: absolute;
+    top: 12px;
+    left: 15px;
+
+}
+
+.userName {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    font-size: 30px;
+
+}
+
+.gotchuCoinBar {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
+    width: 388px;
+    height: 104px;
+    right: 170px;
+    transform:scale(0.7);
+
+}
+
+.gotchuCoinIcon {
+    background: url(../images/assets_spritesheet.png) no-repeat -6654px -2060px;
+    width: 70px;
+    height: 68px;
+    position: absolute;
+    transform: scale(1.3);
+    top:17px;
+    left: 20px;
+
+}
+
+.gotchuCoinAmount {
+    font-size: 40px;
+    position: absolute;
+    top: 27px;
+    right: 30px;
+
+}
+
+.settings {
+    background: url(../images/assets_spritesheet.png) no-repeat -6662px -1717px;
+    width: 100px;
+    height: 100px;
+    right:80px;
+}
+
+/* Should do this when we have the asset */
+.settings:hover {}
+
+.gotchuCharacter {
+    background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
+	width: 209px;
+	height: 288px;
+    position: absolute;
+    bottom: 250px;
+    left: 600px;
+    animation: gotchuAnimation 1s  steps(2) infinite;
+
+}
+
+@keyframes gotchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1586px -1682px; }
+}
+
+.bottomNav >div{
+    position: absolute;
+    bottom: 30px;
+
+}
+
+.gotchuButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -1104px;
+    width: 192px;
+    height: 138px;
+    left:30px;
+}
+
+.gotchuButton:hover {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -961px;
+    width: 192px;
+    height: 138px;
+    left:30px;
+}
+
+
+.gachaButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -818px;
+    width: 192px;
+    height: 138px;
+    left:250px;
+}
+
+.gachaButton:hover {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -675px;
+    width: 192px;
+    height: 138px;
+    left:250px;
+}
+
+.gotchuDomeButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6439px -3520px;
+    width: 312px;
+    height: 168px;
+    right:80px;
+}
+
+.gotchuDomeButton:hover {
+    background: url(../images/assets_spritesheet.png) no-repeat -6439px -3347px;
+    width: 312px;
+    height: 168px;
+    right:80px;
+}
+
+/* Story popup css */
+.storyContainer {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
+    width: 650px;
+    height: 518px;
+    display: flex;
+    /* align-content: center;
+    justify-content: center; */
+    flex-direction: column;
+    transform: scale(1.2);
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    /* display: none; */
+}
+
+.storyContainer > * {
+    transform: scale(calc(1/1.2));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.storyContainer > * > *  {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.storyText {
+    width: 620px;
+    height: 110px;
+    background-color: #CD6C03;
+    margin-top: -25px;
+}
+
+.storyText .lockIcon {
+    display: none;
+}
+
+.topText {
+    padding-top: 30px;
+}
+
+.locked {
+    width: 620px;
+    height: 110px;
+    background-color: #955612;
+    margin-top: -25px;
+}
+
+.lockIcon {
+    background: url(../images/Misc/locked.png) no-repeat center;
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+}
+
+.locked p {
+    display: none;
+}
+
+.popups {
+    position: relative;
+}

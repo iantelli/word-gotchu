@@ -1,0 +1,117 @@
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@font-face {
+    font-family: kongText;
+    src: url('kongtext.ttf');
+}
+
+* {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: kongText;
+}
+
+html, body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Top Text */
+.gameResultTitle {
+    margin-top: -1em;
+}
+
+.gameEndBackground {
+    background: url(../images/assets_spritesheet.png) no-repeat -4477px -3087px;
+    width: 1440px;
+    height: 1024px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+/* Player Avatar */
+.catchuWin {
+    background: url(../images/assets_spritesheet.png) no-repeat -1005px -2376px;
+	width: 212px;
+	height: 290px;
+    margin-top: 2em;
+    margin-left: 41.5%;
+}
+
+.catchuLose {
+    background: url(../images/assets_spritesheet.png) no-repeat -1018px -2048px;
+	width: 210px;
+	height: 288px;
+    margin-top: 2em;
+    margin-left:41.5%;
+}
+
+/* XP Gain/Loss */
+.greenXPBar {
+    background: url(../images/assets_spritesheet.png) no-repeat -6439px -3299px;
+    width: 348px;
+    height: 43px;
+    margin-top: 2em;
+}
+
+.redXPBar {
+    background: url(../images/Misc/Red_Border.png) no-repeat center;
+    width: 348px;
+    height: 43px;
+    margin-top: 2em;
+}
+
+/* Reward Bar */
+.rewardContainer {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
+    width: 388px;
+    height: 104px;
+    transform: scale(0.7);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -1em;
+}
+
+.currencyIcon {
+    background: url(../images/assets_spritesheet.png) no-repeat -6654px -2060px;
+    width: 70px;
+    height: 68px;
+}
+
+/* Quit/Rematch Buttons */
+.endGameButtonsContainer {
+    padding-top: 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+.rematchButton, .quitButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1487px;
+    width: 260px;
+    height: 82px;
+    margin: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rematchButton:hover, .quitButton:hover {
+    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1400px;
+    width: 260px;
+    height: 82px;
+    margin: 2em;
+}
+
+.endGameButtonText {
+    margin-top: 0em;
+}
+
+.rematchButton:hover .endGameButtonText, .quitButton:hover .endGameButtonText {
+    margin-top: 1em;
+}

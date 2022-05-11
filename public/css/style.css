@@ -3,7 +3,6 @@
 @font-face {
     font-family: kongText;
     src: url('kongtext.ttf');
-
 }
 
 div.hidden {
@@ -355,7 +354,7 @@ body {
 
 /* game page */
 .background {
-    background: url("../images/assets_spritesheet.png") no-repeat -0px -1029px;
+    background: url("../images/assets_spritesheet.png") no-repeat -4477px -0px;
     position:relative;
     width: 1440px;
     height: 1024px;
@@ -366,7 +365,7 @@ body {
 }
 
 .top_gui_bar {
-    background: url("../images/assets_spritesheet.png") no-repeat 0 -2058px;
+    background: url("../images/assets_spritesheet.png") no-repeat -4477px -4115px;
     width: 1125px;
     height: 170px;
     margin: auto;
@@ -376,7 +375,7 @@ body {
 }
 
 .profile_icon_left {
-    background: url("../images/assets_spritesheet.png") no-repeat -2100px -1552px;
+    background: url("../images/assets_spritesheet.png") no-repeat -6706px -1574px;
     width: 83px;
     height: 80px;
     float: left;
@@ -387,7 +386,7 @@ body {
 }
 
 .profile_icon_right {
-    background: url("../images/assets_spritesheet.png") no-repeat -2100px -1552px;
+    background: url("../images/assets_spritesheet.png") no-repeat -6706px -1574px;
     width: 83px;
     height: 80px;
     float: right;
@@ -438,13 +437,13 @@ body {
 
 .player1_healthbar_border,
 .player2_healthbar_border {
-    background: url("../images/assets_spritesheet.png") no-repeat -934px -2358px;
+    background: url("../images/assets_spritesheet.png") no-repeat -6439px -3299px;
 
 }
 
 .player1_healthbar,
 .player2_healthbar {
-    background: url("../images/assets_spritesheet.png") no-repeat -581px -2342px;
+    background: url("../images/assets_spritesheet.png") no-repeat -6439px -3251px;
 
 }
 
@@ -486,7 +485,7 @@ body {
 }
 
 .settings_button {
-    background: url("../images/assets_spritesheet.png") no-repeat -1363px -2329px;
+    background: url("../images/assets_spritesheet.png") no-repeat -6662px -1717px;
     width: 100px;
     height: 100px;
     float: right;
@@ -498,9 +497,9 @@ body {
 
 .wordle_bar {
     display: flex;
-    background: url("../images/assets_spritesheet.png") no-repeat -1130px -2058px;
+    background: url("../images/assets_spritesheet.png") no-repeat -6509px -1299px;
     width: 270px;
-    height: 96px;
+    height: 97px;
     margin: auto;
     margin-bottom: 5px;
     align-items: center;
@@ -509,7 +508,7 @@ body {
 }
 
 .letter_slots {
-    background: url("../images/assets_spritesheet.png") no-repeat -2188px -1608px;
+    background: url("../images/assets_spritesheet.png") no-repeat -6729px -2060px;
     width: 51px;
     height: 51px;
     display: flex;
@@ -519,23 +518,22 @@ body {
 }
 
 .player1_character {
-    background: url("../images/assets_spritesheet.png") no-repeat -1882px -1805px;
-    width: 432px;
-    height: 432px;
+    background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
+	width: 209px;
+	height: 288px;
     position: absolute;
-    bottom: 100px;
-    left: 100px;
-    transform: scaleX(-1);
+    bottom: 200px;
+    left: 160px;
 
 }
 
 .player2_character {
-    background: url("../images/assets_spritesheet.png") no-repeat -1445px -1805px;
-    width: 432px;
-    height: 432px;
+    background: url("../images/assets_spritesheet.png") no-repeat -1007px -286px;
+	width: 239px;
+	height: 288px;
     position: absolute;
-    bottom: 100px;
-    right: 100px;
+    bottom: 200px;
+    right: 160px;
     transform: scaleX(-1);
 
 }

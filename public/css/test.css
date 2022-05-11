@@ -1,0 +1,160 @@
+@font-face {
+    font-family: kongText;
+    src: url('kongtext.ttf');
+}
+
+html, body {
+    background-color: black;
+    font-family: kongText;
+    color: white;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.manageGotchusContainer {
+    background: url(../images/Misc/Dimmed_Home_BG.png) no-repeat center;
+    width: 1440px;
+    height: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.backButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -532px;
+    width: 192px;
+    height: 138px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backButton:hover {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -389px;
+    width: 192px;
+    height: 138px;
+}
+
+.backButton, .backButton:hover {
+    transform: scale(0.8);
+    margin-left: 2.75em;
+    margin-top: 1.5em;
+}
+
+.backButton > * {
+    margin-top: -0.3em;
+}
+
+.backButton:hover > * {
+    margin-top: 0.5em;
+}
+
+.topBar {
+    width: 1440px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.topBar > h1 {
+    font-size: 40px;
+    margin-left: 17%;
+    margin-top: 1.75em;
+}
+
+.levelBar, .XPBar {
+    background: url(../images/assets_spritesheet.png) no-repeat -6622px -153px;
+    width: 123px;
+    height: 34px;
+    transform: scale(1.4);
+    margin-top: 2em;
+    margin-left: 8em;
+    font-size: x-small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.levelBar {
+    margin-top: 19%;
+}
+
+.equippedGotchu {
+    background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
+	width: 209px;
+	height: 288px;
+    margin-top: -6em;
+    margin-left: 29%;
+}
+
+.centerContent {
+    margin-top: 18%;
+    display: flex;
+    flex-direction: row;
+}
+
+.abilityButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6622px -0px;
+    width: 148px;
+    height: 148px;
+    margin-top: 5em;
+}
+
+.storyButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1717px;
+    width: 148px;
+    height: 148px;
+    margin-top: -9em;
+}
+
+.abilityAndStoryContainer {
+    margin-left: 25%
+}
+
+.bottomBar {
+    width: 1440px;
+    height: 400px;
+    margin-top: 4%;
+    background-color: #CD6C03;
+    display: flex;
+    border-top: solid 25px #58240c;
+}
+
+.catchuIcon {
+    background: url(../images/cat_icon.png) no-repeat center;
+}
+
+.dogchuIcon {
+    background: url(../images/dog_icon.png) no-repeat center;
+}
+
+.turtlechuIcon {
+    background: url(../images/turtle_icon.png) no-repeat center;
+}
+
+.catchuIcon, .dogchuIcon, .turtlechuIcon {
+    transform: scale(1.2);
+    width: 83px;
+    height: 80px;
+    margin-left: 5em;
+    margin-top: 3em;
+}
+
+.selected {
+    background-color: white;
+    border: solid 2px white;
+}
+
+.catchuIcon.locked, .dogchuIcon.locked, .turtlechuIcon.locked {
+    filter: blur(2px) brightness(70%);
+}
+
+.lockedIcon {
+    background: url(../images/Misc/locked.png) no-repeat center;
+    width: 100px;
+    height: 100px;
+    transform: scale(0.8);
+    position: absolute;
+}
