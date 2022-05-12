@@ -84,6 +84,8 @@ window.addEventListener("click", function (event) {
       body.appendChild(mainScreen);
       gotchusPageContainer.remove();
       populateHomepage(username, playerCurrency);
+      goToGotchuDomeListener();
+
     })
 
     // Toggle story popup
@@ -196,6 +198,13 @@ const populateHomepage = (username, playerCurrency) => {
   currencyDiv.innerText = playerCurrency;
 }
 
+const goToGotchuDomeListener = () => {
+  const gotchuDomeButton = document.querySelector(".gotchuDomeButton");
+  gotchuDomeButton.addEventListener("click", function () {
+    window.location.href = "/";
+  })
+}
+
 const populateGotchuPage = (petLvl, petXP) => {
   const levelBarTextBox = document.querySelector(".levelBar p");
   const XPBarTextBox = document.querySelector(".XPBar p");
@@ -224,12 +233,4 @@ const populateAbilityPage = (petAbility1, petAbility2, petAbility3) => {
 }
 
 populateHomepage(username, playerCurrency);
-
-const goToDome = () => {
-  const gotchuDomeButton = document.querySelector(".gotchuDomeButton");
-  gotchuDomeButton.addEventListener("click", function () {
-    window.location.href = "/";
-  })
-}
-
-goToDome();
+goToGotchuDomeListener();
