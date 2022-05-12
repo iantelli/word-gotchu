@@ -188,6 +188,7 @@ window.addEventListener("click", function (event) {
   const petAbility3
 */
 
+// Change the link to not localhost
 const populateHomepage = (username, playerCurrency) => {
   const usernameDiv = document.querySelector(".userName");
   const currencyDiv = document.querySelector(".gotchuCoinAmount");
@@ -223,3 +224,12 @@ const populateAbilityPage = (petAbility1, petAbility2, petAbility3) => {
 }
 
 populateHomepage(username, playerCurrency);
+
+const goToDome = () => {
+  const gotchuDomeButton = document.querySelector(".gotchuDomeButton");
+  gotchuDomeButton.addEventListener("click", function () {
+    window.location.href = "/";
+  })
+}
+
+goToDome();
