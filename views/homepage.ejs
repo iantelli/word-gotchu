@@ -9,7 +9,16 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/homepage.css">
 </head>
-
+    <script>
+        // Get firebase database snapshot of the current user and pet
+        const username = "<%= data.username %>";
+        const playerCurrency = "<%= data.playerCurrency %>";
+        const petLvl = "<%= pet.lvl %>";
+        const petXP = "<%= pet.xp %>";
+        const petStory1 = "<%= pet.story1 %>";
+        const petStory2 = "<%= pet.story2 %>";
+        const petStory3 = "<%= pet.story3 %>";
+    </script>
 <body>
     <div class="mainScreenBg">
         <div class="topNav">
@@ -23,8 +32,6 @@
             </div>
             <div class="settings"></div>
         </div>
-        
-        <div class="popups hidden"></div>
 
         <div class="gotchuCharacter"></div>
 

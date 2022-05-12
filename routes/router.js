@@ -37,11 +37,18 @@ router.get("/homepage", (req, res) => {
 })
 
 router.get("/testpage", (req, res) => {
+  const data = {
+    playerCurrency: 1000,
+    username: "USER",
+  }
   const pet = {
     lvl: 1,
     xp: 10,
+    lvl1Story: "qwerty",
+    lvl2Story: "asdfgh",
+    lvl3Story: "zxcvbn",
   }
-  res.render("testpage", { pet })
+  res.render("testpage", { data, pet })
 })
 
 module.exports = router;
