@@ -96,6 +96,17 @@
         wordArray.push(document.querySelector("div.bar_" + userGuessCount).children[i].innerHTML)
       }
       let wordGuess = wordArray.join("").toLowerCase();
+      if (!words.includes(wordGuess)) {
+        for (let i = 0; i < 5; i++) {
+          document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
+        }
+        setTimeout(() => {
+          for (let i = 0; i < 5; i++) {
+            document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
+          }
+        }, 300);
+        return;
+      }
       guessWord(wordGuess).then((word) => {
         word.correctCharacters = Array.from(word.correctCharacters);
         word.incorrectCharacters = Array.from(word.incorrectCharacters);
@@ -163,6 +174,17 @@
         wordArray.push(document.querySelector("div.bar_" + userGuessCount).children[i].innerHTML)
       }
       let wordGuess = wordArray.join("").toLowerCase();
+      if (!words.includes(wordGuess)) {
+        for (let i = 0; i < 5; i++) {
+          document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
+        }
+        setTimeout(() => {
+          for (let i = 0; i < 5; i++) {
+            document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
+          }
+        }, 300);
+        return;
+      }
       guessWord(wordGuess).then((word) => {
         word.correctCharacters = Array.from(word.correctCharacters);
         word.incorrectCharacters = Array.from(word.incorrectCharacters);
