@@ -63,6 +63,65 @@
     })
   }
 
+  function submitWordle() {
+    let wordArray = [];
+      for (let i = 0; i < 5; i++) {
+        wordArray.push(document.querySelector("div.bar_" + userGuessCount).children[i].innerHTML)
+      }
+      let wordGuess = wordArray.join("").toLowerCase();
+      if (!words.includes(wordGuess)) {
+        for (let i = 0; i < 5; i++) {
+          document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
+        }
+        setTimeout(() => {
+          for (let i = 0; i < 5; i++) {
+            document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
+          }
+        }, 300);
+        return;
+      }
+      guessWord(wordGuess).then((word) => {
+        word.correctCharacters = Array.from(word.correctCharacters);
+        word.incorrectCharacters = Array.from(word.incorrectCharacters);
+
+        (wordGuess.split("")).forEach((letter, index) => {
+          if (word.correctCharacterPlacements[index] === letter) {
+            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacterPlacement");
+            document.querySelector(`#${letter}`).classList.add("green");
+          }
+          else if (word.correctCharacters.includes(letter)) {
+            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacter");
+            document.querySelector(`#${letter}`).classList.add("yellow");
+          } else if (word.incorrectCharacters.includes(letter)) {
+            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("incorrectCharacter");
+            document.querySelector(`#${letter}`).classList.add("black");
+          }
+        })
+
+        //TODO MOVE TO BACKEND BIG CHEATS
+        if (word.completed) {
+          playerRef.get().then((snapshot) => {
+            let player = snapshot.val()
+            playerRef.update({
+              score: player.score + 1
+            })
+          })
+          startNewWordle();
+        }
+        if (word.totalGuesses === 6 && !word.completed) {
+          playerRef.get().then((snapshot) => {
+            let player = snapshot.val()
+            playerRef.update({
+              score: player.score - 1
+            })
+          })
+          startNewWordle();
+        }
+      });
+      keyCount = 1;
+      userGuessCount++;
+  }
+
   // Change keys on press
 
   const allKeys = [..."abcdefghijklmnopqrstuvwxyz", "enter", "backspace"]
@@ -91,65 +150,10 @@
     }
     // if the key pressed is enter, submit the wordle
     if (event.key.toLowerCase() === "enter" && keyCount === 6) {
-      let wordArray = [];
-      for (let i = 0; i < 5; i++) {
-        wordArray.push(document.querySelector("div.bar_" + userGuessCount).children[i].innerHTML)
-      }
-      let wordGuess = wordArray.join("").toLowerCase();
-      if (!words.includes(wordGuess)) {
-        for (let i = 0; i < 5; i++) {
-          document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
-        }
-        setTimeout(() => {
-          for (let i = 0; i < 5; i++) {
-            document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
-          }
-        }, 300);
-        return;
-      }
-      guessWord(wordGuess).then((word) => {
-        word.correctCharacters = Array.from(word.correctCharacters);
-        word.incorrectCharacters = Array.from(word.incorrectCharacters);
-
-        (wordGuess.split("")).forEach((letter, index) => {
-          if (word.correctCharacterPlacements[index] === letter) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacterPlacement");
-            document.querySelector(`#${letter}`).classList.add("green");
-          }
-          else if (word.correctCharacters.includes(letter)) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacter");
-            document.querySelector(`#${letter}`).classList.add("yellow");
-          } else if (word.incorrectCharacters.includes(letter)) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("incorrectCharacter");
-            document.querySelector(`#${letter}`).classList.add("black");
-          }
-        })
-
-        //TODO MOVE TO BACKEND BIG CHEATS
-        if (word.completed) {
-          playerRef.get().then((snapshot) => {
-            let player = snapshot.val()
-            playerRef.update({
-              score: player.score + 1
-            })
-          })
-          startNewWordle();
-        }
-        if (word.totalGuesses === 6 && !word.completed) {
-          playerRef.get().then((snapshot) => {
-            let player = snapshot.val()
-            playerRef.update({
-              score: player.score - 1
-            })
-          })
-          startNewWordle();
-        }
-      });
-      keyCount = 1;
-      userGuessCount++;
+      submitWordle();
     }
     // if the key pressed is backspace, remove the last letter
-    if (event.key.toLowerCase() === "backspace") {
+    if (event.key.toLowerCase() === "backspace" && keyCount > 1) {
       let div = document.querySelector(`div.bar_${userGuessCount} > div.slot_${keyCount - 1}`);
       div.innerHTML = div.innerHTML.slice(0, -1);
       keyCount--;
@@ -163,68 +167,13 @@
       div.innerHTML += event.target.innerHTML;
       keyCount++;
     }
-    else if (event.target.classList.contains("del")) {
+    else if (event.target.classList.contains("del") && keyCount > 1) {
       let div = document.querySelector(`div.bar_${userGuessCount} > div.slot_${keyCount - 1}`);
       div.innerHTML = div.innerHTML.slice(0, -1);
       keyCount--;
     }
     else if (event.target.classList.contains("ent") && keyCount === 6) {
-      let wordArray = [];
-      for (let i = 0; i < 5; i++) {
-        wordArray.push(document.querySelector("div.bar_" + userGuessCount).children[i].innerHTML)
-      }
-      let wordGuess = wordArray.join("").toLowerCase();
-      if (!words.includes(wordGuess)) {
-        for (let i = 0; i < 5; i++) {
-          document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
-        }
-        setTimeout(() => {
-          for (let i = 0; i < 5; i++) {
-            document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
-          }
-        }, 300);
-        return;
-      }
-      guessWord(wordGuess).then((word) => {
-        word.correctCharacters = Array.from(word.correctCharacters);
-        word.incorrectCharacters = Array.from(word.incorrectCharacters);
-
-        (wordGuess.split("")).forEach((letter, index) => {
-          if (word.correctCharacterPlacements[index] === letter) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacterPlacement");
-            document.querySelector(`#${letter}`).classList.add("green");
-          }
-          else if (word.correctCharacters.includes(letter)) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacter");
-            document.querySelector(`#${letter}`).classList.add("yellow");
-          } else if (word.incorrectCharacters.includes(letter)) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("incorrectCharacter");
-            document.querySelector(`#${letter}`).classList.add("black");
-          }
-        })
-
-        //TODO MOVE TO BACKEND BIG CHEATS
-        if (word.completed) {
-          playerRef.get().then((snapshot) => {
-            let player = snapshot.val()
-            playerRef.update({
-              score: player.score + 1
-            })
-          })
-          startNewWordle();
-        }
-        if (word.totalGuesses === 6 && !word.completed) {
-          playerRef.get().then((snapshot) => {
-            let player = snapshot.val()
-            playerRef.update({
-              score: player.score - 1
-            })
-          })
-          startNewWordle();
-        }
-      });
-      keyCount = 1;
-      userGuessCount++;
+      submitWordle();
     }
   })
 
