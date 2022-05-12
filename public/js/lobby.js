@@ -1,5 +1,3 @@
-//TODO make lobbies have there on thing in a db with a few vals and get delete once a game is done
-// lobbies should have a val for is full? one for each player a start time a score maybe
 (function () {
   let playerId;
   let playerNum;
