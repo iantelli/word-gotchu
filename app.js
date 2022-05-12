@@ -19,6 +19,7 @@ app.use(express.static("public"));
 app.use("/", router);
 app.use("/api/v1", apiRouter)
 
+
 // Error Handling 
 app.use((req, res, next) => {
   const error = new Error(`Not Found - ${req.originalUrl}`);
