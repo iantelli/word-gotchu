@@ -36,6 +36,10 @@ router.get("/homepage", (req, res) => {
   res.render("homepage", { data, pet })
 })
 
+router.get("/selectionpage", (req, res) => {
+  res.render("selectionpage")
+})
+
 router.get("/testpage", (req, res) => {
   const pet = {
     lvl: 1,
