@@ -201,6 +201,11 @@ html, body {
     margin-top: -25px;
 }
 
+.story p {
+    margin-left: 0.5em;
+    margin-top: 0.4em;
+}
+
 .storyText .lockIcon {
     display: none;
 }
@@ -513,4 +518,9 @@ html, body {
 
 .abilityText p {
     margin-left: 4.5em;
+}
+
+.description p.ability1, .description p.ability2, .description p.ability3 {
+    margin-left: 0.5em;
+    padding-top: 0.5em;
 }
