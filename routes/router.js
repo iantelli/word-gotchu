@@ -29,23 +29,36 @@ router.get("/homepage", (req, res) => {
   const pet = {
     lvl: 1,
     xp: 10,
-    lvl1Story: "qwerty",
-    lvl2Story: "asdfgh",
-    lvl3Story: "zxcvbn",
+    lvl1Story: "QWErty",
+    lvl2Story: "ASDfgh",
+    lvl3Story: "ZXCvbn",
+    lvl1Ability: "QWErty",
+    lvl2Ability: "ASDfgh",
+    lvl3Ability: "ZXCvbn",
   }
   res.render("homepage", { data, pet })
 })
 
-router.get("/selectionpage", (req, res) => {
-  res.render("selectionpage")
+router.get("/gotchugacha", (req, res) => {
+  res.render("gotchugacha")
 })
 
 router.get("/testpage", (req, res) => {
+  const data = {
+    playerCurrency: 1000,
+    username: "USER",
+  }
   const pet = {
     lvl: 1,
     xp: 10,
+    lvl1Story: "QWErty",
+    lvl2Story: "ASDfgh",
+    lvl3Story: "ZXCvbn",
+    lvl1Ability: "QWErty",
+    lvl2Ability: "ASDfgh",
+    lvl3Ability: "ZXCvbn",
   }
-  res.render("testpage", { pet })
+  res.render("testpage", { data, pet })
 })
 
 module.exports = router;
