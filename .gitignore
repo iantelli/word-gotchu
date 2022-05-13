@@ -1,3 +1,6 @@
+node_modules
+hidden
+config.json
 .env
 .firebase
 node_modules
