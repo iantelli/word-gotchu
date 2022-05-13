@@ -601,3 +601,47 @@ input[type="text"] {
 } */
 
 /* every time width of screen decreases by 5px, .background{transform:scale(0.77-0.01)} */
+
+/* Plus/Minus one animations */
+.plusOne {
+    background: url(../images/Misc/plusOne.png) no-repeat;
+}
+
+.minusOne {
+    background: url(../images/Misc/minusOne.png) no-repeat;
+}
+
+.plusOne, .minusOne {
+    width: 191px;
+    height: 158px;
+    position: absolute;
+}
+
+.plusOne.playAnimation, .minusOne.playAnimation {
+    animation: upAndOut 3s;
+}
+
+@keyframes upAndOut {
+    0% {
+        top: 20px;
+        opacity: 1;
+    }
+    65% {
+        top: -20px;
+        opacity: 1;
+    }
+    100% {
+        top: -20px;
+        opacity: 0;
+    }
+}
+
+.player1_character > .plusOne, .player1_character > .minusOne {
+    transform: scale(0.4);
+    margin-left: 12em;
+}
+
+.player2_character > .plusOne, .player2_character > .minusOne {
+    transform: scale(-0.4, 0.4);
+    margin-left: 13em;
+}
