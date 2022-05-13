@@ -504,6 +504,21 @@ body {
     position: absolute;
 }
 
+.abilityCooldown {
+    font-size: 30px;
+    bottom: 15px;
+    left: 83px;
+    position: absolute;
+    color: black;
+}
+
+.ability {
+    bottom: 244px;
+    left: 137px;
+    position: absolute;
+    color: black;
+}
+
 .wordle_bar {
     display: flex;
     background: url("../images/assets_spritesheet.png") no-repeat -6509px -1299px;

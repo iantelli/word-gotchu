@@ -12,7 +12,71 @@
 
   document.addEventListener("click", event => {
     event.preventDefault();
-    
+
+    if (event.target.classList.contains("abilityButton")) {
+      let cd = document.querySelector(".abilityCooldown");
+      let butt = document.querySelector(".abilityButton");
+      let abi = document.querySelector(".ability");
+      let int = 0;
+      let i = 0;
+
+      const time = 30;
+      let timer = time;
+      let timerID;
+
+      if (playerNum === 1) {
+        let currentWordleRef = firebase.database().ref(`lobbies/${lobbyId}/players/${playerId}/currentWordle`);
+        currentWordleRef.get().then((snapshot) => {
+          let wordleSnapshot = snapshot.val()
+          let randLetter = wordleSnapshot.answer[Math.floor(Math.random() * 5) + 1];
+          abi.innerHTML = `(${randLetter.toUpperCase()}) is one of the <br>letters in your word!`;
+
+        })
+      }
+
+      if (playerNum === 2) {
+        let randID = setInterval(function () {
+          i++
+          int >= 6 ? int = 1 : int++
+          abi.innerHTML = `(${int}) Damage done to <br>your opponent!`;
+          if (i > Math.floor(Math.random() * 50) + 10) {
+            clearTimeout(randID);
+            allPlayersRef.get().then((snapshot) => {
+              let players = snapshot.val()
+              Object.values(players).forEach((player) => {
+                if (playerNum !== player.num) {
+                  let otherPlayerRef = firebase.database().ref(`lobbies/${lobbyId}/players/${player.id}`);
+
+                  //end game condition
+                  if (player.hp - 25 <= 0) {
+
+                  }
+
+                  otherPlayerRef.update({
+                    hp: player.hp - int
+                  })
+                }
+              })
+            })
+          }
+        }, 60);
+
+      }
+
+      butt.style = "display: none;"
+      cd.innerHTML = timer;
+      timerID = setInterval(() => {
+        timer--
+        if (timer > 0) {
+          cd.innerHTML = timer;
+        }
+        if (timer <= 0) {
+          clearInterval(timerID)
+          butt.style = ""
+          cd.innerHTML = "Ready!";
+        }
+      }, 1000)
+    }
   })
 
   function startNewWordle() {
@@ -207,7 +271,7 @@
         let allPlayers = snapshot2.val() || {};
         Object.values(allPlayers).forEach((player) => {
           document.querySelector(`.player${player.num}_score`).innerHTML = player.hp;
-          document.querySelector(`.player${player.num}_healthbar`).style = `background-position-x: ${-6439 + (((player.num === 1) ? player.hp - 150 : 150 - player.hp) * hpWidth)}px;`;
+          document.querySelector(`.player${player.num}_healthbar`).style = `background-position-x: ${-6439 + (((player.num === 1) ? player.hp - 100 : 100 - player.hp) * hpWidth)}px;`;
 
         })
       })
@@ -315,7 +379,7 @@
 
         playerRef.set({
           id: playerId,
-          hp: 150,
+          hp: 100,
           ready: false
         })
 
