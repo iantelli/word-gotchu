@@ -17,7 +17,7 @@
   typeSound.volume = 0.18;
   errorSound.volume = 0.18;
   correctSound.volume = 0.18;
-  delSound.volume = 0.18;
+  delSound.volume = 0.15;
   sendSound.volume = 0.18;
   battleMusic.volume = 0.1;
   battleMusic.loop = true;

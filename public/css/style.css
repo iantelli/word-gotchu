@@ -338,7 +338,10 @@ div.correctCharacterPlacement {
 
 html,
 body {
-    background-color: black;
+    background: url('../images/bodyBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     font-family: kongText;
     color: white;
     margin: 0;
