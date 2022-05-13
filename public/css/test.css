@@ -1,0 +1,30 @@
+.plusOne {
+    background: url(../images/Misc/plusOne.png) no-repeat;
+}
+
+.minusOne {
+    background: url(../images/Misc/minusOne.png) no-repeat;
+}
+
+.plusOne, .minusOne {
+    width: 191px;
+    height: 158px;
+    transform: scale(0.4);
+    position: relative;
+    top: 20px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+.plusOne:active, .minusOne:active {
+    opacity: 0;
+}
+
+.plusOne.fadeOut, .minusOne.fadeOut {
+    
+}
+
+body {
+    background-color: black;
+}
