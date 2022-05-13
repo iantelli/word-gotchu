@@ -199,7 +199,6 @@
   })
 
   function initGame() {
-    battleMusic.play();
     allPlayersRef.on("child_changed", (snapshot) => {
       allPlayersRef.get().then((snapshot2) => {
         let allPlayers = snapshot2.val() || {};
@@ -230,7 +229,7 @@
     let timer = time;
     let timerID;
     let started = false;
-
+    battleMusic.play();
     function secondsToMS(d) {
       d = Number(d);
       var m = Math.floor(d % 3600 / 60);
