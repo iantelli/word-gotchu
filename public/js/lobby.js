@@ -16,11 +16,11 @@
   let delSound = new Audio("/sounds/Remove_Letter.wav");
   let sendSound = new Audio("/sounds/Send_Wordle.wav");
   let battleMusic = new Audio("/sounds/battleMusic.wav");
-  typeSound.volume = 0.25;
-  errorSound.volume = 0.25;
-  correctSound.volume = 0.25;
-  delSound.volume = 0.25;
-  sendSound.volume = 0.25;
+  typeSound.volume = 0.18;
+  errorSound.volume = 0.18;
+  correctSound.volume = 0.18;
+  delSound.volume = 0.18;
+  sendSound.volume = 0.18;
   battleMusic.volume = 0.1;
   battleMusic.loop = true;
   function startNewWordle() {

@@ -5,9 +5,9 @@
     menuMusic.volume = 0.1;
     menuMusic.loop = true;
     uiSound.load();
-    uiSound.volume = 0.25;
+    uiSound.volume = 0.2;
     backSound.load();
-    backSound.volume = 0.25;
+    backSound.volume = 0.2;
     function createRoom() {
         let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         let roomCode = "";
