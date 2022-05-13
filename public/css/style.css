@@ -656,8 +656,9 @@ input[type="text"] {
     align-items: center;
     flex-direction: column;
     transform: scale(1);
-    margin-left: 25em;
-    margin-top: 5em;
+    margin-left: 37em;
+    margin-top: -50em;
+    position: fixed;
 }
 
 .settingsContainer > * {

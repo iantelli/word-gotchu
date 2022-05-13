@@ -337,14 +337,13 @@
 // Settings event listeners
 
 window.addEventListener("click", (event) => {
-  console.log(event.target)
   const targetClasslist = event.target.className.split(" ");
   if (targetClasslist.includes("settings_button")) {
     
     const existingSettingsContainer = document.querySelector(".settingsContainer");
-    if (existingSettingsContainer) existingSettingsContainer.remove();
+    if (existingSettingsContainer) return existingSettingsContainer.remove();
 
-    const mainScreen = document.querySelector("div#background");
+    const mainScreen = document.querySelector("body");
     const settingsContainer = document.createElement("div");
     settingsContainer.className = "settingsContainer";
     settingsContainer.innerHTML = `
@@ -401,4 +400,9 @@ window.addEventListener("click", (event) => {
     const settingsContainer = document.querySelector(".settingsContainer");
     settingsContainer.remove();
   }
+
+  document.querySelector(".closeSettingsButton h4").addEventListener("click", (event) => {
+    const settingsContainer = document.querySelector(".settingsContainer");
+    settingsContainer.remove();
+  })
 })
