@@ -332,3 +332,73 @@
     console.log(error.code, error.message)
   })
 })();
+
+
+// Settings event listeners
+
+window.addEventListener("click", (event) => {
+  console.log(event.target)
+  const targetClasslist = event.target.className.split(" ");
+  if (targetClasslist.includes("settings_button")) {
+    
+    const existingSettingsContainer = document.querySelector(".settingsContainer");
+    if (existingSettingsContainer) existingSettingsContainer.remove();
+
+    const mainScreen = document.querySelector("div#background");
+    const settingsContainer = document.createElement("div");
+    settingsContainer.className = "settingsContainer";
+    settingsContainer.innerHTML = `
+          <h1>SETTINGS</h1>
+          <div class="soundSettingsRow">
+            <p>SOUND EFFECTS</p>
+            <div class="onOffToggleButton"><h3>ON</h3></div>
+          </div>
+          <div class="musicSettingsRow">
+            <p>MUSIC</p>
+            <div class="onOffToggleButton"><h3>ON</h3></div>
+          </div>
+          <div class="closeSettingsContainer">
+            <div class="logoutButton">
+              <h4>LOG OUT</h4>
+            </div>
+            <div class="closeSettingsButton">
+              <h4>CLOSE</h4>
+            </div>
+          </div>
+        `;
+    mainScreen.appendChild(settingsContainer);
+
+    // On off toggles for sound
+    // Need to change later, temp solution
+    document.querySelector(".soundSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
+      if (event.target.innerHTML === "ON") {
+        event.target.innerHTML = "OFF";
+      } else {
+        event.target.innerHTML = "ON";
+      }
+    })
+
+    document.querySelector(".musicSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
+      if (event.target.innerHTML === "ON") {
+        event.target.innerHTML = "OFF";
+      } else {
+        event.target.innerHTML = "ON";
+      }
+    })
+  }
+
+  if (targetClasslist.includes("onOffToggleButton")) {
+    const onOffToggleButton = event.target;
+    const onOffToggleButtonText = onOffToggleButton.querySelector("h3");
+    if (onOffToggleButtonText.innerText === "ON") {
+      onOffToggleButtonText.innerText = "OFF";
+    } else {
+      onOffToggleButtonText.innerText = "ON";
+    }
+  }
+
+  if (targetClasslist.includes("closeSettingsButton")) {
+    const settingsContainer = document.querySelector(".settingsContainer");
+    settingsContainer.remove();
+  }
+})

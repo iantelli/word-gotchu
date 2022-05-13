@@ -484,17 +484,6 @@ body {
 
 }
 
-.settings_button {
-    background: url("../images/assets_spritesheet.png") no-repeat -6662px -1717px;
-    width: 100px;
-    height: 100px;
-    float: right;
-    position: absolute;
-    top: 1px;
-    right: -105px;
-
-}
-
 .wordle_bar {
     display: flex;
     background: url("../images/assets_spritesheet.png") no-repeat -6509px -1299px;
@@ -644,4 +633,94 @@ input[type="text"] {
 .player2_character > .plusOne, .player2_character > .minusOne {
     transform: scale(-0.4, 0.4);
     margin-left: 13em;
+}
+
+/* Settings Button */
+.settings_button {
+    background: url("../images/assets_spritesheet.png") no-repeat -6662px -1717px;
+    width: 100px;
+    height: 100px;
+    float: right;
+    position: absolute;
+    top: 1px;
+    right: -105px;
+}
+
+/* Settings popup */
+.settingsContainer {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
+    width: 650px;
+    height: 518px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: scale(1);
+    margin-left: 25em;
+    margin-top: 5em;
+}
+
+.settingsContainer > * {
+    transform: scale(calc(1/0.8));
+}
+
+.settingsContainer h1 {
+    margin-top: -0.5em;
+    margin-bottom: 2em;
+}
+
+.onOffToggleButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6622px -153px;
+    width: 123px;
+    height: 34px;
+    transform: scale(1.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.soundSettingsRow, .musicSettingsRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.musicSettingsRow {
+    margin-top: 2em;
+}
+
+.soundSettingsRow p, .musicSettingsRow p {
+    margin-bottom: 0.5em;
+}
+
+.logoutButton, .closeSettingsButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -321px;
+    width: 200px;
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scaleX(0.8);
+}
+
+.logoutButton:hover, .closeSettingsButton:hover {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -253px;
+    width: 200px;
+    height: 63px;
+}
+
+.logoutButton h4, .closeSettingsButton h4 {
+    margin-top: 0.5em;
+    transform: scaleX(calc(1/0.8));
+}
+
+.logoutButton:hover h4, .closeSettingsButton:hover h4 {
+    margin-top: 1.2em;
+}
+
+.closeSettingsContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4em;
 }
