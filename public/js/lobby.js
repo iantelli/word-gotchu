@@ -8,6 +8,19 @@
   let lobbyId = window.location.pathname.split("/")[2];
   let keyCount = 1;
   let userGuessCount = 1;
+  let typeSound = new Audio("/sounds/Enter_Letter.wav");
+  let errorSound = new Audio("/sounds/Error_sound.wav");
+  let correctSound = new Audio("/sounds/Successful_Wordle.wav");
+  let delSound = new Audio("/sounds/Remove_Letter.wav");
+  let sendSound = new Audio("/sounds/Send_Wordle.wav");
+  let battleMusic = new Audio("/sounds/battleMusic.wav");
+  typeSound.volume = 0.18;
+  errorSound.volume = 0.18;
+  correctSound.volume = 0.18;
+  delSound.volume = 0.18;
+  sendSound.volume = 0.18;
+  battleMusic.volume = 0.1;
+  battleMusic.loop = true;
   const hpWidth = 2.254;
 
   document.addEventListener("click", event => {
@@ -78,7 +91,6 @@
       }, 1000)
     }
   })
-
   function startNewWordle() {
     playerRef.update({
       currentWordle: createWordle()
@@ -144,6 +156,7 @@
       setTimeout(() => {
         for (let i = 0; i < 5; i++) {
           document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
+          errorSound.play();
         }
       }, 300);
       return;
@@ -183,6 +196,40 @@
                 hp: player.hp - 25
               })
             }
+        setTimeout(() => {
+          for (let i = 0; i < 5; i++) {
+            document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
+          }
+        }, 300);
+        return;
+      }
+      sendSound.play();
+      guessWord(wordGuess).then((word) => {
+        word.correctCharacters = Array.from(word.correctCharacters);
+        word.incorrectCharacters = Array.from(word.incorrectCharacters);
+
+        (wordGuess.split("")).forEach((letter, index) => {
+          if (word.correctCharacterPlacements[index] === letter) {
+            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacterPlacement");
+            document.querySelector(`#${letter}`).classList.add("green");
+          }
+          else if (word.correctCharacters.includes(letter)) {
+            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacter");
+            document.querySelector(`#${letter}`).classList.add("yellow");
+          } else if (word.incorrectCharacters.includes(letter)) {
+            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("incorrectCharacter");
+            document.querySelector(`#${letter}`).classList.add("black");
+          }
+        })
+
+        //TODO MOVE TO BACKEND BIG CHEATS
+        if (word.completed) {
+          correctSound.play();
+          playerRef.get().then((snapshot) => {
+            let player = snapshot.val()
+            playerRef.update({
+              score: player.score + 1
+            })
           })
         })
         startNewWordle();
@@ -225,6 +272,8 @@
 
   document.addEventListener("keyup", function (event) {
     const keyPressed = event.key.toLowerCase();
+    typeSound.load();
+    delSound.load();
     if (allKeys.includes(event.key.toLowerCase())) {
       const key = document.querySelector("#" + keyPressed);
       key.classList.remove("pressed");
@@ -233,6 +282,7 @@
     // if the key pressed is a letter, add it to a div 
     if (event.key.length === 1 && event.key.match(/[a-z]/i) && keyCount < 6) {
       let div = document.querySelector(`div.bar_${userGuessCount} > div.slot_${keyCount}`);
+      typeSound.play();
       div.innerHTML += event.key.toUpperCase();
       keyCount++;
     }
@@ -243,6 +293,7 @@
     // if the key pressed is backspace, remove the last letter
     if (event.key.toLowerCase() === "backspace" && keyCount > 1) {
       let div = document.querySelector(`div.bar_${userGuessCount} > div.slot_${keyCount - 1}`);
+      delSound.play();
       div.innerHTML = div.innerHTML.slice(0, -1);
       keyCount--;
     }
@@ -252,11 +303,13 @@
     event.preventDefault();
     if (event.target.classList.contains("letter")) {
       let div = document.querySelector(`div.bar_${userGuessCount} > div.slot_${keyCount}`);
+      typeSound.play();
       div.innerHTML += event.target.innerHTML;
       keyCount++;
     }
     else if (event.target.classList.contains("del") && keyCount > 1) {
       let div = document.querySelector(`div.bar_${userGuessCount} > div.slot_${keyCount - 1}`);
+      delSound.play();
       div.innerHTML = div.innerHTML.slice(0, -1);
       keyCount--;
     }
@@ -303,7 +356,7 @@
     let timer = time;
     let timerID;
     let started = false;
-
+    battleMusic.play();
     function secondsToMS(d) {
       d = Number(d);
       var m = Math.floor(d % 3600 / 60);
