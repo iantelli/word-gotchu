@@ -165,7 +165,7 @@
     guessWord(wordGuess).then((word) => {
       word.correctCharacters = Array.from(word.correctCharacters);
       word.incorrectCharacters = Array.from(word.incorrectCharacters);
-
+      sendSound.play();
       (wordGuess.split("")).forEach((letter, index) => {
         if (word.correctCharacterPlacements[index] === letter) {
           document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacterPlacement");
@@ -182,6 +182,7 @@
 
       //TODO MOVE TO BACKEND BIG CHEATS
       if (word.completed) {
+        correctSound.play();
         allPlayersRef.get().then((snapshot) => {
           let players = snapshot.val()
           Object.values(players).forEach((player) => {
@@ -197,7 +198,6 @@
                 hp: player.hp - 25
               })
             }
-            sendSound.play();
           })
         })
         startNewWordle();
