@@ -14,7 +14,7 @@ router.get("/lobby/:id", (req, res) => {
 
 router.get("/gameover", (req, res) => {
   const gameResult = {
-    winner: false,
+    winner: true,
     xpChange: 25,
     reward: 100,
   }
@@ -34,10 +34,6 @@ router.get("/homepage", (req, res) => {
     lvl3Story: "zxcvbn",
   }
   res.render("homepage", { data, pet })
-})
-
-router.get("/selectionpage", (req, res) => {
-  res.render("selectionpage")
 })
 
 module.exports = router;

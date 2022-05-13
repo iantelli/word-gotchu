@@ -495,6 +495,15 @@ body {
 
 }
 
+.abilityButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1299px;
+    width: 194px;
+    height: 194px;
+    bottom: 46px;
+    left: 68px;
+    position: absolute;
+}
+
 .wordle_bar {
     display: flex;
     background: url("../images/assets_spritesheet.png") no-repeat -6509px -1299px;

@@ -8,6 +8,12 @@
   let lobbyId = window.location.pathname.split("/")[2];
   let keyCount = 1;
   let userGuessCount = 1;
+  const hpWidth = 2.254;
+
+  document.addEventListener("click", event => {
+    event.preventDefault();
+    
+  })
 
   function startNewWordle() {
     playerRef.update({
@@ -63,64 +69,84 @@
 
   function submitWordle() {
     let wordArray = [];
+    for (let i = 0; i < 5; i++) {
+      wordArray.push(document.querySelector("div.bar_" + userGuessCount).children[i].innerHTML)
+    }
+    let wordGuess = wordArray.join("").toLowerCase();
+    if (!words.includes(wordGuess)) {
       for (let i = 0; i < 5; i++) {
-        wordArray.push(document.querySelector("div.bar_" + userGuessCount).children[i].innerHTML)
+        document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
       }
-      let wordGuess = wordArray.join("").toLowerCase();
-      if (!words.includes(wordGuess)) {
+      setTimeout(() => {
         for (let i = 0; i < 5; i++) {
           document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
         }
-        setTimeout(() => {
-          for (let i = 0; i < 5; i++) {
-            document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
-          }
-        }, 300);
-        return;
-      }
-      guessWord(wordGuess).then((word) => {
-        word.correctCharacters = Array.from(word.correctCharacters);
-        word.incorrectCharacters = Array.from(word.incorrectCharacters);
+      }, 300);
+      return;
+    }
+    guessWord(wordGuess).then((word) => {
+      word.correctCharacters = Array.from(word.correctCharacters);
+      word.incorrectCharacters = Array.from(word.incorrectCharacters);
 
-        (wordGuess.split("")).forEach((letter, index) => {
-          if (word.correctCharacterPlacements[index] === letter) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacterPlacement");
-            document.querySelector(`#${letter}`).classList.add("green");
-          }
-          else if (word.correctCharacters.includes(letter)) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacter");
-            document.querySelector(`#${letter}`).classList.add("yellow");
-          } else if (word.incorrectCharacters.includes(letter)) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("incorrectCharacter");
-            document.querySelector(`#${letter}`).classList.add("black");
-          }
+      (wordGuess.split("")).forEach((letter, index) => {
+        if (word.correctCharacterPlacements[index] === letter) {
+          document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacterPlacement");
+          document.querySelector(`#${letter}`).classList.add("green");
+        }
+        else if (word.correctCharacters.includes(letter)) {
+          document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacter");
+          document.querySelector(`#${letter}`).classList.add("yellow");
+        } else if (word.incorrectCharacters.includes(letter)) {
+          document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("incorrectCharacter");
+          document.querySelector(`#${letter}`).classList.add("black");
+        }
+      })
+
+      //TODO MOVE TO BACKEND BIG CHEATS
+      if (word.completed) {
+        allPlayersRef.get().then((snapshot) => {
+          let players = snapshot.val()
+          Object.values(players).forEach((player) => {
+            if (playerNum !== player.num) {
+              let otherPlayerRef = firebase.database().ref(`lobbies/${lobbyId}/players/${player.id}`);
+
+              //end game condition
+              if (player.hp - 25 <= 0) {
+
+              }
+
+              otherPlayerRef.update({
+                hp: player.hp - 25
+              })
+            }
+          })
         })
+        startNewWordle();
+      }
+      if (word.totalGuesses === 6 && !word.completed) {
+        allPlayersRef.get().then((snapshot) => {
+          let players = snapshot.val()
+          Object.values(players).forEach((player) => {
+            if (playerNum !== player.num) {
+              let otherPlayerRef = firebase.database().ref(`lobbies/${lobbyId}/players/${player.id}`);
 
-        //TODO MOVE TO BACKEND BIG CHEATS
-        if (word.completed) {
-          playerRef.get().then((snapshot) => {
-            let player = snapshot.val()
-            playerRef.update({
-              score: player.score + 1
-            })
+              //end game condition
+              if (player.hp - 25 <= 0) {
+
+              }
+
+              otherPlayerRef.update({
+                hp: player.hp - (word.correctCharacters.length + word.correctCharacterPlacements.reduce((total, curr) => (curr !== "_") ? total + 2 : total + 0, 0))
+              })
+            }
           })
-          startNewWordle();
-        }
-        if (word.totalGuesses === 6 && !word.completed) {
-          playerRef.get().then((snapshot) => {
-            let player = snapshot.val()
-            playerRef.update({
-              score: player.score - 1
-            })
-          })
-          startNewWordle();
-        }
-      });
-      keyCount = 1;
-      userGuessCount++;
+        })
+        startNewWordle();
+      }
+    });
+    keyCount = 1;
+    userGuessCount++;
   }
-
-  // Change keys on press
 
   const allKeys = [..."abcdefghijklmnopqrstuvwxyz", "enter", "backspace"]
 
@@ -180,7 +206,9 @@
       allPlayersRef.get().then((snapshot2) => {
         let allPlayers = snapshot2.val() || {};
         Object.values(allPlayers).forEach((player) => {
-          document.querySelector(`.player${player.num}_score`).innerHTML = player.score;
+          document.querySelector(`.player${player.num}_score`).innerHTML = player.hp;
+          document.querySelector(`.player${player.num}_healthbar`).style = `background-position-x: ${-6439 + (((player.num === 1) ? player.hp - 150 : 150 - player.hp) * hpWidth)}px;`;
+
         })
       })
       //On new player
@@ -200,9 +228,14 @@
   }
 
   function startGame() {
+    playerRef.update({
+      ready: false,
+      currentWordle: createWordle()
+    })
+
     const timerElement = document.getElementById("timer");
     const cd = 10;
-    const time = (1 * 60) + cd;
+    const time = (2 * 60) + cd;
     let timer = time;
     let timerID;
     let started = false;
@@ -237,15 +270,15 @@
 
         allPlayersRef.get().then((snapshot) => {
           let allPlayers = snapshot.val() || {};
-          let scores = {};
+          let hps = {};
           Object.values(allPlayers).forEach((player) => {
-            document.querySelector(`.player${player.num}_score`).innerHTML = player.score;
-            scores[player.num] = player.score;
+            document.querySelector(`.player${player.num}_score`).innerHTML = player.hp;
+            hps[player.num] = player.hp;
           })
-          let keysSorted = Object.keys(scores).sort(function (a, b) { return scores[b] - scores[a] })
+          let keysSorted = Object.keys(hps).sort(function (a, b) { return hps[b] - hps[a] })
           document.querySelector(".wordle_bars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
 
-          if (scores[keysSorted[0]] === scores[keysSorted[1]]) {
+          if (hps[keysSorted[0]] === hps[keysSorted[1]]) {
             document.querySelector(".wordle_bars").innerHTML = "Draw!"
           } else if (keysSorted[0] === playerNum.toString()) {
             document.querySelector(".wordle_bars").innerHTML = "You Win!"
@@ -267,32 +300,47 @@
       allPlayersRef = firebase.database().ref(`lobbies/${lobbyId}/players`);
       playerRef = firebase.database().ref(`lobbies/${lobbyId}/players/${playerId}`);
 
-      lobbyRef.update({
-        id: lobbyId
-      })
-
-      playerRef.set({
-        id: playerId,
-        score: 0,
-        currentWordle: createWordle()
-      })
-
       allPlayersRef.get().then((snapshot) => {
         let allPlayers = snapshot.val() || {};
-        playerNum = Object.entries(allPlayers).length
-        playerRef.update({
-          num: playerNum
+        if (Object.keys(allPlayers).length === 2) {
+          document.querySelector(".wordle_bars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
+          document.querySelector(".wordle_bars").innerHTML = "Lobby already has 2 players!"
+          throw "Already has 2 players"
+        }
+      }).then(() => {
+
+        lobbyRef.update({
+          id: lobbyId
         })
-        document.querySelector(`.player${playerNum}_username`).innerHTML = `Me`;
-        document.querySelector(`.player${playerNum}_username`).style = "color: red;"
-        if (playerNum !== 1) document.querySelector(`.player1_username`).innerHTML = `Them`;
 
+        playerRef.set({
+          id: playerId,
+          hp: 150,
+          ready: false
+        })
+
+        allPlayersRef.get().then((snapshot) => {
+          let allPlayers = snapshot.val() || {};
+          playerNum = Object.entries(allPlayers).length
+          playerRef.update({
+            num: playerNum
+          })
+          document.querySelector(`.player${playerNum}_username`).innerHTML = `Me`;
+          document.querySelector(`.player${playerNum}_username`).style = "color: red;"
+
+          if (playerNum === 1) {
+
+          }
+          if (playerNum === 2) {
+            document.querySelector(`.player1_username`).innerHTML = `Them`;
+          }
+        })
+
+        playerRef.onDisconnect().remove();
+        lobbyRef.onDisconnect().remove();
+
+        initGame();
       })
-
-      playerRef.onDisconnect().remove();
-      lobbyRef.onDisconnect().remove();
-
-      initGame();
     }
   })
 
