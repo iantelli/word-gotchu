@@ -67,19 +67,16 @@ div.hidden {
 }
 
 .letter {
-    font-size: large;
-
+    font-size: 30px;
 }
 
 .del p {
     font-size: xx-large;
     margin-top: -5px;
-
 }
 
 .ent {
-    font-size: small;
-
+    font-size: 14px;
 }
 
 
@@ -516,6 +513,7 @@ body {
     margin-right: -2px;
     align-items: center;
     justify-content: center;
+    font-size: 22px;
 }
 
 .player1_character {
