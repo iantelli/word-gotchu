@@ -21,7 +21,7 @@
   sendSound.volume = 0.18;
   battleMusic.volume = 0.1;
   battleMusic.loop = true;
-  const hpWidth = 2.254;
+  const hpWidth = 338/100;
 
   document.addEventListener("click", event => {
     event.preventDefault();
