@@ -336,6 +336,11 @@
 
 // Settings event listeners
 
+/** Sound variables
+ * @param {boolean} - let fxState
+ * @param {boolean} - let musicState
+ */
+
 window.addEventListener("click", (event) => {
   const targetClasslist = event.target.className.split(" ");
   if (targetClasslist.includes("settings_button")) {
@@ -350,11 +355,11 @@ window.addEventListener("click", (event) => {
           <h1>SETTINGS</h1>
           <div class="soundSettingsRow">
             <p>SOUND EFFECTS</p>
-            <div class="onOffToggleButton"><h3>ON</h3></div>
+            <div class="onOffToggleButton"><h3></h3></div>
           </div>
           <div class="musicSettingsRow">
             <p>MUSIC</p>
-            <div class="onOffToggleButton"><h3>ON</h3></div>
+            <div class="onOffToggleButton"><h3></h3></div>
           </div>
           <div class="closeSettingsContainer">
             <div class="logoutButton">
@@ -367,32 +372,65 @@ window.addEventListener("click", (event) => {
         `;
     mainScreen.appendChild(settingsContainer);
 
+    // Add button text
+    const fxToggle = document.querySelector(".soundSettingsRow .onOffToggleButton h3");
+    const musicToggle = document.querySelector(".musicSettingsRow .onOffToggleButton h3");
+
+    if (fxState) {
+      fxToggle.innerText = "ON";
+    } else {
+      fxToggle.innerText = "OFF";
+    }
+
+    if (musicState) {
+      musicToggle.innerText = "ON";
+    } else {
+      musicToggle.innerText = "OFF";
+    }
+
     // On off toggles for sound
     // Need to change later, temp solution
     document.querySelector(".soundSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
       if (event.target.innerHTML === "ON") {
         event.target.innerHTML = "OFF";
+        fxState = false;
       } else {
         event.target.innerHTML = "ON";
+        fxState = true;
       }
     })
 
     document.querySelector(".musicSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
       if (event.target.innerHTML === "ON") {
         event.target.innerHTML = "OFF";
+        musicState = false;
       } else {
         event.target.innerHTML = "ON";
+        musicState = true;
       }
     })
   }
 
   if (targetClasslist.includes("onOffToggleButton")) {
     const onOffToggleButton = event.target;
+    // console.log(onOffToggleButton)
+    // console.log(onOffToggleButton.parentElement)
     const onOffToggleButtonText = onOffToggleButton.querySelector("h3");
     if (onOffToggleButtonText.innerText === "ON") {
       onOffToggleButtonText.innerText = "OFF";
+      if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
+        fxState = false;
+      } else {
+        musicState = false;
+      }
+
     } else {
       onOffToggleButtonText.innerText = "ON";
+      if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
+        fxState = true;
+      } else {
+        musicState = true;
+      }
     }
   }
 
@@ -401,8 +439,4 @@ window.addEventListener("click", (event) => {
     settingsContainer.remove();
   }
 
-  document.querySelector(".closeSettingsButton h4").addEventListener("click", (event) => {
-    const settingsContainer = document.querySelector(".settingsContainer");
-    settingsContainer.remove();
-  })
 })
