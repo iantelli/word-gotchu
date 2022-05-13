@@ -11,18 +11,25 @@
     height: 158px;
     transform: scale(0.4);
     position: relative;
-    top: 20px;
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 2s ease;
 }
 
 .plusOne:active, .minusOne:active {
-    opacity: 0;
+    animation: upAndOut 3s;
 }
 
-.plusOne.fadeOut, .minusOne.fadeOut {
-    
+@keyframes upAndOut {
+    0% {
+        top: 20px;
+        opacity: 1;
+    }
+    65% {
+        top: -20px;
+        opacity: 1;
+    }
+    100% {
+        top: -20px;
+        opacity: 0;
+    }
 }
 
 body {
