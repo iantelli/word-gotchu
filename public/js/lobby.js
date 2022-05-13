@@ -375,6 +375,86 @@
     }, 1000);
   }
 
+  // settings event listener
+  window.addEventListener("click", (event) => {
+    console.log(event.target)
+    const targetClasslist = event.target.className.split(" ");
+    if (targetClasslist.includes("settings_button")) {
+      
+      const existingSettingsContainer = document.querySelector(".settingsContainer");
+      if (existingSettingsContainer) existingSettingsContainer.remove();
+  
+      const mainScreen = document.querySelector("div#background");
+      const settingsContainer = document.createElement("div");
+      settingsContainer.className = "settingsContainer";
+      settingsContainer.innerHTML = `
+            <h1>SETTINGS</h1>
+            <div class="soundSettingsRow">
+              <p>SOUND EFFECTS</p>
+              <div class="onOffToggleButton"><h3 class="nonInteractableText">ON</h3></div>
+            </div>
+            <div class="musicSettingsRow">
+              <p>MUSIC</p>
+              <div class="onOffToggleButton"><h3 class="nonInteractableText">ON</h3></div>
+            </div>
+            <div class="closeSettingsContainer">
+              <div class="logoutButton">
+                <h4 class="nonInteractableText">LOG OUT</h4>
+              </div>
+              <div class="closeSettingsButton">
+                <h4 class="nonInteractableText">CLOSE</h4>
+              </div>
+            </div>
+          `;
+      mainScreen.appendChild(settingsContainer);
+  
+      // On off toggles for sound
+      // Need to change later, temp solution
+      document.querySelector(".soundSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
+        if (event.target.innerHTML === "ON") {
+          event.target.innerHTML = "OFF";
+          typeSound.muted = true;
+          errorSound.muted = true;
+          correctSound.muted = true;
+          delSound.muted = true;
+          sendSound.muted = true;
+        } else {
+          event.target.innerHTML = "ON";
+          typeSound.muted = false;
+          errorSound.muted = false;
+          correctSound.muted = false;
+          delSound.muted = false;
+          sendSound.muted = false;
+        }
+      })
+  
+      document.querySelector(".musicSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
+        if (event.target.innerHTML === "ON") {
+          event.target.innerHTML = "OFF";
+          battleMusic.muted = true;
+        } else {
+          event.target.innerHTML = "ON";
+          battleMusic.muted = false;
+        }
+      })
+    }
+  
+    if (targetClasslist.includes("onOffToggleButton")) {
+      const onOffToggleButton = event.target;
+      const onOffToggleButtonText = onOffToggleButton.querySelector("h3");
+      if (onOffToggleButtonText.innerText === "ON") {
+        onOffToggleButtonText.innerText = "OFF";
+      } else {
+        onOffToggleButtonText.innerText = "ON";
+      }
+    }
+  
+    if (targetClasslist.includes("closeSettingsButton")) {
+      const settingsContainer = document.querySelector(".settingsContainer");
+      settingsContainer.remove();
+    }
+  })
+
   //Login/Logout
   firebase.auth().onAuthStateChanged((user) => {
     // console.log(user)
