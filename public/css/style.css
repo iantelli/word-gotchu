@@ -662,7 +662,7 @@ div.error {
     transform: scale(1);
     margin-left: 37em;
     margin-top: -50em;
-    position: fixed;
+    position: absolute;
 }
 
 .settingsContainer > * {
@@ -718,6 +718,7 @@ div.error {
 .logoutButton h4, .closeSettingsButton h4 {
     margin-top: 0.5em;
     transform: scaleX(calc(1/0.8));
+    pointer-events: none;
 }
 
 .logoutButton:hover h4, .closeSettingsButton:hover h4 {

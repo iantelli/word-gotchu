@@ -376,6 +376,11 @@
   }
   // Settings event listeners
 
+  /** Sound variables
+   * @param {boolean} - let fxState
+   * @param {boolean} - let musicState
+   */
+
   window.addEventListener("click", (event) => {
     const targetClasslist = event.target.className.split(" ");
     if (targetClasslist.includes("settings_button")) {
@@ -390,28 +395,45 @@
             <h1>SETTINGS</h1>
             <div class="soundSettingsRow">
               <p>SOUND EFFECTS</p>
-              <div class="onOffToggleButton"><h3>ON</h3></div>
+              <div class="onOffToggleButton"><h3></h3></div>
             </div>
             <div class="musicSettingsRow">
               <p>MUSIC</p>
-              <div class="onOffToggleButton"><h3>ON</h3></div>
+              <div class="onOffToggleButton"><h3></h3></div>
             </div>
             <div class="closeSettingsContainer">
               <div class="logoutButton">
-                <h4 class="nonInteractableText">LOG OUT</h4>
+                <h4>LOG OUT</h4>
               </div>
               <div class="closeSettingsButton">
-                <h4 class="nonInteractableText">CLOSE</h4>
+                <h4>CLOSE</h4>
               </div>
             </div>
           `;
       mainScreen.appendChild(settingsContainer);
+
+      // Add button text
+      const fxToggle = document.querySelector(".soundSettingsRow .onOffToggleButton h3");
+      const musicToggle = document.querySelector(".musicSettingsRow .onOffToggleButton h3");
+
+      if (fxState) {
+        fxToggle.innerText = "ON";
+      } else {
+        fxToggle.innerText = "OFF";
+      }
+
+      if (musicState) {
+        musicToggle.innerText = "ON";
+      } else {
+        musicToggle.innerText = "OFF";
+      }
 
       // On off toggles for sound
       // Need to change later, temp solution
       document.querySelector(".soundSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
         if (event.target.innerHTML === "ON") {
           event.target.innerHTML = "OFF";
+          fxState = false;
           typeSound.muted = true;
           errorSound.muted = true;
           correctSound.muted = true;
@@ -419,6 +441,7 @@
           sendSound.muted = true;
         } else {
           event.target.innerHTML = "ON";
+          fxState = true;
           typeSound.muted = false;
           errorSound.muted = false;
           correctSound.muted = false;
@@ -430,9 +453,11 @@
       document.querySelector(".musicSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
         if (event.target.innerHTML === "ON") {
           event.target.innerHTML = "OFF";
+          musicState = false;
           battleMusic.muted = true;
         } else {
           event.target.innerHTML = "ON";
+          musicState = true;
           battleMusic.muted = false;
         }
       })
@@ -440,11 +465,36 @@
 
     if (targetClasslist.includes("onOffToggleButton")) {
       const onOffToggleButton = event.target;
+      // console.log(onOffToggleButton)
+      // console.log(onOffToggleButton.parentElement)
       const onOffToggleButtonText = onOffToggleButton.querySelector("h3");
       if (onOffToggleButtonText.innerText === "ON") {
         onOffToggleButtonText.innerText = "OFF";
+        if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
+          fxState = false;
+          typeSound.muted = true;
+          errorSound.muted = true;
+          correctSound.muted = true;
+          delSound.muted = true;
+          sendSound.muted = true;
+        } else {
+          musicState = false;
+          battleMusic.muted = true;
+        }
+
       } else {
         onOffToggleButtonText.innerText = "ON";
+        if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
+          fxState = true;
+          typeSound.muted = false;
+          errorSound.muted = false;
+          correctSound.muted = false;
+          delSound.muted = false;
+          sendSound.muted = false;
+        } else {
+          musicState = true;
+          battleMusic.muted = false;
+        }
       }
     }
 
