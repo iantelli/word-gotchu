@@ -91,6 +91,7 @@
       }, 1000)
     }
   })
+
   function startNewWordle() {
     playerRef.update({
       currentWordle: createWordle()
@@ -150,13 +151,13 @@
     }
     let wordGuess = wordArray.join("").toLowerCase();
     if (!words.includes(wordGuess)) {
+      errorSound.play();
       for (let i = 0; i < 5; i++) {
         document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
       }
       setTimeout(() => {
         for (let i = 0; i < 5; i++) {
           document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
-          errorSound.play();
         }
       }, 300);
       return;
@@ -196,40 +197,7 @@
                 hp: player.hp - 25
               })
             }
-        setTimeout(() => {
-          for (let i = 0; i < 5; i++) {
-            document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
-          }
-        }, 300);
-        return;
-      }
-      sendSound.play();
-      guessWord(wordGuess).then((word) => {
-        word.correctCharacters = Array.from(word.correctCharacters);
-        word.incorrectCharacters = Array.from(word.incorrectCharacters);
-
-        (wordGuess.split("")).forEach((letter, index) => {
-          if (word.correctCharacterPlacements[index] === letter) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacterPlacement");
-            document.querySelector(`#${letter}`).classList.add("green");
-          }
-          else if (word.correctCharacters.includes(letter)) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacter");
-            document.querySelector(`#${letter}`).classList.add("yellow");
-          } else if (word.incorrectCharacters.includes(letter)) {
-            document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("incorrectCharacter");
-            document.querySelector(`#${letter}`).classList.add("black");
-          }
-        })
-
-        //TODO MOVE TO BACKEND BIG CHEATS
-        if (word.completed) {
-          correctSound.play();
-          playerRef.get().then((snapshot) => {
-            let player = snapshot.val()
-            playerRef.update({
-              score: player.score + 1
-            })
+            sendSound.play();
           })
         })
         startNewWordle();
