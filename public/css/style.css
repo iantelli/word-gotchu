@@ -542,25 +542,38 @@ body {
     font-size: 22px;
 }
 
+/* Animate catchu */
 .player1_character {
-    background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
-	width: 209px;
+    background: url("../images/assets_spritesheet.png") no-repeat -1017px -1682px;
+	width: 220px;
 	height: 288px;
+    animation: dogchuAnimation 1s  steps(2) infinite;
     position: absolute;
     bottom: 200px;
     left: 160px;
 
 }
 
+@keyframes dogchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1017px -1682px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1578px -1682px; }
+}
+
 .player2_character {
-    background: url("../images/assets_spritesheet.png") no-repeat -1007px -286px;
+    background: url("../images/assets_spritesheet.png") no-repeat -1007px -283px;
 	width: 239px;
-	height: 288px;
+	height: 298px;
     position: absolute;
-    bottom: 200px;
+    bottom: 192px;
     right: 160px;
     transform: scaleX(-1);
+    animation: catchuAnimation 1s  steps(2) infinite;
 
+}
+
+@keyframes catchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1007px -283px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1592px -259px; }
 }
 
 /* form styling */
