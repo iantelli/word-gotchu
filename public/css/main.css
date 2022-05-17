@@ -8,7 +8,10 @@ div {
 }
 
 html, body {
-  background-color: black; 
+  background: url('../images/bodyBackground.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   font-family: kongText;
   color: white;
   margin: 0; 
@@ -66,7 +69,7 @@ html, body {
 }
 
 .create_room_bar {
-  background: url(../images/assets_spritesheet.png) no-repeat -581px -2233px;
+  background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
   width: 388px;
   height: 104px;
   display: flex;
@@ -151,3 +154,4 @@ span.backButtonText {
   pointer-events: none;
   transform: translate(-0px, -10px);
 }
+

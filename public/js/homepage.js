@@ -1,4 +1,13 @@
 (function () {
+    let menuMusic = new Audio('/sounds/menuMusic.wav');
+    let uiSound = new Audio('/sounds/UI_Sound.wav');
+    let backSound = new Audio('/sounds/Remove_Letter.wav');
+    menuMusic.volume = 0.1;
+    menuMusic.loop = true;
+    uiSound.load();
+    uiSound.volume = 0.18;
+    backSound.load();
+    backSound.volume = 0.15;
     function createRoom() {
         let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         let roomCode = "";
@@ -7,16 +16,15 @@
         }
         return roomCode;
     }
-
     document.addEventListener("click", event => {
 
         event.preventDefault();
-
         if (event.target.classList.contains("createRoom")) {
             let roomCode = createRoom();
             let newRoomCode = document.createElement("span");
             let btn = document.createElement("div");
             let roomCodeText = document.createElement("p");
+            uiSound.play();
             document.querySelector("div.wordle_bar2").classList.toggle("hidden");
             document.querySelector("div.battle_menu").classList.toggle("hidden");
             document.querySelector("div.backButton").classList.toggle("hidden");
@@ -27,6 +35,7 @@
             btn.innerHTML = "Copy";
             btn.addEventListener("click", event => {
                 event.preventDefault();
+                uiSound.play();
                 navigator.clipboard.writeText(roomCode);
                 btn.innerHTML = "Copied!";
             });
@@ -39,6 +48,7 @@
         if (event.target.classList.contains("joinRoom")) {
             let roomCodeInput = document.createElement("input");
             let joinRoomButton = document.createElement("button");
+            uiSound.play();
             document.querySelector("div.wordle_bar2").classList.toggle("hidden");
             document.querySelector("div.join_battle_menu").classList.toggle("hidden");
             document.querySelector("div.backButton").classList.toggle("hidden");
@@ -54,11 +64,13 @@
             joinRoomButton.addEventListener("click", event => {
                 event.preventDefault();
                 let roomCode = roomCodeInput.value;
+                uiSound.play();
                 location.href = "/lobby/" + roomCode;
             });
         }
 
         if (event.target.classList.contains("backButton") && event.target.classList.contains("createRoomBackBtn")) {
+            backSound.play();
             document.querySelector("div.wordle_bar2").classList.toggle("hidden");
             document.querySelector("div.battle_menu").classList.toggle("hidden");
             document.querySelector("div.backButton").classList.toggle("hidden");
@@ -69,6 +81,7 @@
         }
 
         if (event.target.classList.contains("backButton") && event.target.classList.contains("joinRoomBackBtn")) {
+            backSound.play();
             document.querySelector("div.backButton").classList.remove("joinRoomBackBtn");
             document.querySelector("div.wordle_bar2").classList.toggle("hidden");
             document.querySelector("div.join_battle_menu").classList.toggle("hidden");
