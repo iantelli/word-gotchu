@@ -220,7 +220,6 @@ window.addEventListener("click", function (event) {
  * const petAbility3 @param {string}
 */
 
-// Change the link to not localhost
 const populateHomepage = (username, playerCurrency) => {
   const usernameDiv = document.querySelector(".userName");
   const currencyDiv = document.querySelector(".gotchuCoinAmount");

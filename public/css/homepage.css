@@ -103,7 +103,7 @@ html, body {
     background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
 	width: 209px;
 	height: 288px;
-    animation: gotchuAnimation 1s  steps(2) infinite;
+    animation: gotchuAnimation 1s steps(2) infinite;
 
 }
 

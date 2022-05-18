@@ -28,7 +28,7 @@ html, body {
 
 .titleText {
     margin-top: -3em;
-    margin-bottom: 5em;
+    margin-bottom: 4em;
 }
 
 .playerCards {
@@ -38,24 +38,38 @@ html, body {
     width: 75%;
     justify-content: space-between;
     margin-left: -11em;
+    margin-bottom: 1em;
 }
 
 .gameReadyContainer .vsText {
     font-size: 3em;
+    margin-left: -0.8em;
 }
 
-.userCard, .opponentCard {
+.playerCard, .opponentCard {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-.userCharacter, .opponentCharacter {
+.playerName, .opponentName {
+    margin-bottom: 3em;
+}
+
+.playerCharacter, .opponentCharacter {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.playerPetContainer, .opponentCharacter {
+    width: 260px;
+    height: 315px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .previousCharacter, .nextCharacter {
@@ -74,34 +88,69 @@ html, body {
     margin-left: 2em;
 }
 
+/* Catchu */
 .catchu {
     background: url(../images/assets_spritesheet.png) no-repeat -1007px -285px;
     width: 240px;
-    height: 289px;    
+    height: 297px;
+    animation: catchuAnimation 1s steps(2) infinite;
 }
 
+@keyframes catchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1007px -285px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1592px -260px; }
+}
+
+/* Dogchu */
 .dogchu {
-    background: url(../images/assets_spritesheet.png) no-repeat -1025px -1682px;
-	width: 209px;
-	height: 288px;  
+    background: url(../images/assets_spritesheet.png) no-repeat -1019px -1682px;
+	width: 215px;
+	height: 288px;
+    animation: dogchuAnimation 1s steps(2) infinite;
 }
 
+@keyframes dogchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1019px -1682px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1580px -1682px; }
+}
+
+/* Turtlechu */
 .turtlechu {
     background: url(../images/assets_spritesheet.png) no-repeat -988px -2815px;
 	width: 198px;
-	height: 295px; 
+	height: 295px;
+    animation: turtlechuAnimation 1s steps(2) infinite;
 }
 
+@keyframes turtlechuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -988px -2815px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1573px -2815px; }
+}
+
+/* Mousechu */
 .mousechu {
     background: url(../images/assets_spritesheet.png) no-repeat -994px -4132px;
 	width: 259px;
-	height: 314px;  
+	height: 314px;
+    animation: mousechuAnimation 1s steps(2) infinite;
 }
 
-.racoonchu {
+@keyframes mousechuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -994px -4132px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1579px -4132px; }
+}
+
+/* Racoonchu */
+.raccoonchu {
     background: url(../images/assets_spritesheet.png) no-repeat -958px -5492px;
 	width: 258px;
-	height: 277px; 
+	height: 287px;
+    animation: raccoonchuAnimation 1s steps(2) infinite;
+}
+
+@keyframes raccoonchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -958px -5492px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1640px -5492px; }
 }
 
 .readyButton {

@@ -40,10 +40,10 @@ router.get("/homepage", (req, res) => {
 })
 
 router.get("/testpage", (req, res) => {
-  const bothPlayersConnected = true;
-  const userName = "You";
+  const bothPlayersConnected = false;
+  const playerName = "You";
   const opponentName = "Opponent";
-  res.render("testpage", { bothPlayersConnected, userName, opponentName })
+  res.render("testpage", { bothPlayersConnected, playerName, opponentName })
 })
 
 module.exports = router;
