@@ -4,10 +4,6 @@
 
 }
 
-.gameResultTitle {
-    margin-top: -1em
-
-}
 
 .gameEndBackground {
     background: url(../images/assets_spritesheet.png) -4477px -3087px no-repeat;
@@ -16,10 +12,15 @@
     display: flex;
     justify-content: center;
     flex-flow: column
+    
+}
+
+.gameEndBackground .gameResultTitle {
+    margin-top: -1em
 
 }
 
-.catchuWin {
+.gameEndBackground .catchuWin {
     background: url(../images/assets_spritesheet.png) -1005px -2376px no-repeat;
     width: 212px;
     height: 290px;
@@ -28,7 +29,7 @@
 
 }
 
-.catchuLose {
+.gameEndBackground .catchuLose {
     background: url(../images/assets_spritesheet.png) -1018px -2048px no-repeat;
     width: 210px;
     height: 288px;
@@ -37,24 +38,24 @@
 
 }
 
-.greenXPBar, .redXPBar {
+.gameEndBackground .greenXPBar, .gameEndBackground .redXPBar {
     width: 348px;
     height: 43px;
     margin-top: 2em
 
 }
 
-.greenXPBar {
+.gameEndBackground .greenXPBar {
     background: url(../images/assets_spritesheet.png) -6439px -3299px no-repeat
 
 }
 
-.redXPBar {
+.gameEndBackground .redXPBar {
     background: url(../images/Misc/Red_Border.png) center no-repeat
 
 }
 
-.rewardContainer {
+.gameEndBackground .rewardContainer {
     background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat;
     width: 388px;
     height: 104px;
@@ -66,21 +67,21 @@
 
 }
 
-.currencyIcon {
+.gameEndBackground .rewardContainer .currencyIcon {
     background: url(../images/assets_spritesheet.png) -6654px -2060px no-repeat;
     width: 70px;
     height: 68px
 
 }
 
-.endGameButtonsContainer {
+.gameEndBackground .endGameButtonsContainer {
     padding-top: 1em;
     display: flex;
     flex-direction: row
 
 }
 
-.quitButton, .rematchButton {
+.gameEndBackground .endGameButtonsContainer .quitButton, .gameEndBackground .endGameButtonsContainer .rematchButton {
     background: url(../images/assets_spritesheet.png) -6509px -1487px no-repeat;
     width: 260px;
     height: 82px;
@@ -91,7 +92,7 @@
 
 }
 
-.quitButton:hover, .rematchButton:hover {
+.gameEndBackground .endGameButtonsContainer .quitButton:hover, .gameEndBackground .endGameButtonsContainer .rematchButton:hover {
     background: url(../images/assets_spritesheet.png) -6509px -1400px no-repeat;
     width: 260px;
     height: 82px;

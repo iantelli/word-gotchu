@@ -27,6 +27,8 @@
     const petAbility2 = "<%= pet.lvl2Ability %>";
     const petAbility3 = "<%= pet.lvl3Ability %>";
 </script>
+
+  <!-- Homepage -->
   <div class="mainScreenBg">
     <div class="topNav">
         <div class="userBar">
@@ -48,6 +50,8 @@
         <div class="gotchuDomeButton"></div>
     </div>
   </div>
+
+  <!-- Gacha page -->
   <div class="gachaBg hidden">
     <div class="topNavBar">
         <div class="homeButton">
@@ -65,40 +69,39 @@
     <div class="gachaRollButton"></div>
     <div class="viewGotchusButton"><h3>VIEW GOTCHUS</h3></div>
   </div>
+
+  <!-- Lobby page -->
   <div class="gochuDome hidden">
     <div class="battleArenaBg">
-        <div class="backButton battleMenuBackBtn">
-          <span class="backButtonText">BACK</span>
+      <div class="backButton battleMenuBackBtn">
+        <span class="backButtonText">BACK</span>
+      </div>
+    </div>
+    <div class="battleMenu hidden">
+      <p class="menuTitle create nonInteractableText">Create a Match</p>
+      <hr class="menuHeader">
+      <div class="createRoomBar">
+        <div class="createRoomDiv">
         </div>
+      </div>
+      <!-- <p>Share this code to your friend!</p> -->
+    </div>
+    <div class="joinBattleMenu hidden">
+      <p class="menuTitle nonInteractableText">Join a Match</p>
+      <hr class="menuHeader">
+      <p>Enter a code to join a match</p>
+      <div class="joinRoomDiv"></div>
+    </div>
+    <div class="wordleBar2">
+      <p class="menuTitle nonInteractableText">Start a Match</p>
+      <hr class="menuHeader">
       <div>
-        <div class="battleMenu hidden">
-          <p class="menuTitle create nonInteractableText">Create a Match</p>
-          <hr class="menuHeader">
-          <div class="createRoomBar">
-            <div class="createRoomDiv">
-            </div>
-          </div>
-          <!-- <p>Share this code to your friend!</p> -->
-        </div>
-        <div class="joinBattleMenu hidden">
-          <p class="menuTitle nonInteractableText">Join a Match</p>
-          <hr class="menuHeader">
-          <p>Enter a code to join a match</p>
-          <div class="joinRoomDiv">
-            
-          </div>
-        </div>
-        <div class="wordleBar2">
-          <p class="menuTitle nonInteractableText">Start a Match</p>
-          <hr class="menuHeader">
-          <div>
-            <p class="createRoom">Create</button>
-            <p class="joinRoom">Join</button>
-          </div>
-        </div>
+        <p class="createRoom">Create</button>
+        <p class="joinRoom">Join</button>
       </div>
     </div>
   </div>
+
   <script src="/js/home.js"></script>
   <script src="/js/homepage.js"></script>
 </body>

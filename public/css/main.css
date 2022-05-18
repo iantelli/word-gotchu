@@ -1,21 +1,20 @@
-.battleArenaBg, .wordleBar2 {
+.gochuDome .battleArenaBg, .gochuDome .wordleBar2 {
   position: fixed;
   margin: 0 auto;
   left: 50%
   
 }
 
-.copyBtn, .createRoom, .joinRoom, .wordleBar2 {
+.copyBtn, .createRoom, .joinRoom, .gochuDome .wordleBar2 {
   text-align: center
 
 }
 
-div {
+.gochuDome > div {
   display: inline-block
-
 }
 
-.wordleBar2 {
+.gochuDome .wordleBar2 {
   background: url(../images/assets_spritesheet.png) -5922px 0 no-repeat;
   width: 695px;
   height: 248px;
@@ -101,18 +100,18 @@ div {
 
 }
 
-.menuTitle {
+.joinBattleMenu .menuTitle {
   font-size: 36px;
   margin-bottom: -1px
 
 }
 
-.menuTitle.create {
+.joinBattleMenu .menuTitle.create {
   margin-top: 10%
 
 }
 
-.menuHeader {
+.joinBattleMenu .menuHeader {
   width: 85%;
   height: 1px;
   border-width: 0;
@@ -122,7 +121,7 @@ div {
 
 }
 
-span.backButtonText {
+.backButton.battleMenuBackBtn .backButtonText {
   pointer-events: none;
   transform: translate(0, -10px);
   font-size: 28px;
