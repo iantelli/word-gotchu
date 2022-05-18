@@ -192,8 +192,8 @@ window.addEventListener("click", function (event) {
 
 // Change the link to not localhost
 const populateHomepage = (username, playerCurrency) => {
-  const usernameDiv = document.querySelector(".userName");
-  const currencyDiv = document.querySelector(".gotchuCoinAmount");
+  const usernameDiv = document.querySelector(".mainScreenBg .userBar .userName");
+  const currencyDiv = document.querySelector(".mainScreenBg .gotchuCoinBar .gotchuCoinAmount");
   usernameDiv.innerText = username;
   currencyDiv.innerText = playerCurrency;
 }
