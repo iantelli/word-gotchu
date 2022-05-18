@@ -96,7 +96,7 @@
     playerRef.update({
       currentWordle: createWordle()
     })
-    document.querySelectorAll("div.letter_slots").forEach(slot => {
+    document.querySelectorAll("div.letterSlots").forEach(slot => {
       slot.innerHTML = "";
       slot.classList.remove("correctCharacter", "correctCharacterPlacement", "incorrectCharacter");
     })
@@ -147,17 +147,17 @@
   function submitWordle() {
     let wordArray = [];
     for (let i = 0; i < 5; i++) {
-      wordArray.push(document.querySelector("div.bar_" + userGuessCount).children[i].innerHTML)
+      wordArray.push(document.querySelector("div.bar" + userGuessCount).children[i].innerHTML)
     }
     let wordGuess = wordArray.join("").toLowerCase();
     if (!words.includes(wordGuess)) {
       errorSound.play();
       for (let i = 0; i < 5; i++) {
-        document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
+        document.querySelector(`div.bar${userGuessCount} > div.slot${i + 1}`).classList.toggle("error");
       }
       setTimeout(() => {
         for (let i = 0; i < 5; i++) {
-          document.querySelector(`div.bar_${userGuessCount} > div.slot_${i + 1}`).classList.toggle("error");
+          document.querySelector(`div.bar${userGuessCount} > div.slot${i + 1}`).classList.toggle("error");
         }
       }, 300);
       return;
@@ -168,14 +168,14 @@
       sendSound.play();
       (wordGuess.split("")).forEach((letter, index) => {
         if (word.correctCharacterPlacements[index] === letter) {
-          document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacterPlacement");
+          document.querySelector(`div.bar${userGuessCount - 1} > div.slot${index + 1}`).classList.add("correctCharacterPlacement");
           document.querySelector(`#${letter}`).classList.add("green");
         }
         else if (word.correctCharacters.includes(letter)) {
-          document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("correctCharacter");
+          document.querySelector(`div.bar${userGuessCount - 1} > div.slot${index + 1}`).classList.add("correctCharacter");
           document.querySelector(`#${letter}`).classList.add("yellow");
         } else if (word.incorrectCharacters.includes(letter)) {
-          document.querySelector(`div.bar_${userGuessCount - 1} > div.slot_${index + 1}`).classList.add("incorrectCharacter");
+          document.querySelector(`div.bar${userGuessCount - 1} > div.slot${index + 1}`).classList.add("incorrectCharacter");
           document.querySelector(`#${letter}`).classList.add("black");
         }
       })
@@ -249,7 +249,7 @@
     }
     // if the key pressed is a letter, add it to a div 
     if (event.key.length === 1 && event.key.match(/[a-z]/i) && keyCount < 6) {
-      let div = document.querySelector(`div.bar_${userGuessCount} > div.slot_${keyCount}`);
+      let div = document.querySelector(`div.bar${userGuessCount} > div.slot${keyCount}`);
       typeSound.play();
       div.innerHTML += event.key.toUpperCase();
       keyCount++;
@@ -260,7 +260,7 @@
     }
     // if the key pressed is backspace, remove the last letter
     if (event.key.toLowerCase() === "backspace" && keyCount > 1) {
-      let div = document.querySelector(`div.bar_${userGuessCount} > div.slot_${keyCount - 1}`);
+      let div = document.querySelector(`div.bar${userGuessCount} > div.slot${keyCount - 1}`);
       delSound.play();
       div.innerHTML = div.innerHTML.slice(0, -1);
       keyCount--;
@@ -270,13 +270,13 @@
   document.querySelector(".keyboard").addEventListener("click", event => {
     event.preventDefault();
     if (event.target.classList.contains("letter")) {
-      let div = document.querySelector(`div.bar_${userGuessCount} > div.slot_${keyCount}`);
+      let div = document.querySelector(`div.bar${userGuessCount} > div.slot${keyCount}`);
       typeSound.play();
       div.innerHTML += event.target.innerHTML;
       keyCount++;
     }
     else if (event.target.classList.contains("del") && keyCount > 1) {
-      let div = document.querySelector(`div.bar_${userGuessCount} > div.slot_${keyCount - 1}`);
+      let div = document.querySelector(`div.bar${userGuessCount} > div.slot${keyCount - 1}`);
       delSound.play();
       div.innerHTML = div.innerHTML.slice(0, -1);
       keyCount--;
@@ -291,15 +291,15 @@
       allPlayersRef.get().then((snapshot2) => {
         let allPlayers = snapshot2.val() || {};
         Object.values(allPlayers).forEach((player) => {
-          document.querySelector(`.player${player.num}_score`).innerHTML = player.hp;
-          document.querySelector(`.player${player.num}_healthbar`).style = `background-position-x: ${-6439 + (((player.num === 1) ? player.hp - 100 : 100 - player.hp) * hpWidth)}px;`;
+          document.querySelector(`.player${player.num}Score`).innerHTML = player.hp;
+          document.querySelector(`.player${player.num}Healthbar`).style = `background-position-x: ${-6439 + (((player.num === 1) ? player.hp - 100 : 100 - player.hp) * hpWidth)}px;`;
 
         })
       })
       //On new player
       const addedPlayer = snapshot.val();
       if (addedPlayer.num === 2 && !gamStarted) {
-        document.querySelector(`.player${addedPlayer.num}_username`).innerHTML = `Them`;
+        document.querySelector(`.player${addedPlayer.num}Username`).innerHTML = `Them`;
         gamStarted = true;
         startGame();
       }
@@ -307,8 +307,8 @@
 
     allPlayersRef.on("child_removed", (snapshot) => {
       const removedKey = snapshot.val().id;
-      document.querySelector(".wordle_bars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
-      document.querySelector(".wordle_bars").innerHTML = "Opponent Disconnected!"
+      document.querySelector(".wordleBars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
+      document.querySelector(".wordleBars").innerHTML = "Opponent Disconnected!"
     })
   }
 
@@ -340,7 +340,7 @@
         timer--;
         if (!started && timer <= time - cd) {
           started = true;
-          document.querySelector(".wordle_bars").style = "display: block;";
+          document.querySelector(".wordleBars").style = "display: block;";
           document.querySelector(".keyboard").style = "display: block;";
         }
 
@@ -350,25 +350,25 @@
         clearInterval(timerID)
         timerElement.innerHTML = "Done!"
         timerElement.style = "font-size: 21px; left: 516px;"
-        document.querySelector(".wordle_bars").style = "display: none;";
+        document.querySelector(".wordleBars").style = "display: none;";
         document.querySelector(".keyboard").style = "display: none;";
 
         allPlayersRef.get().then((snapshot) => {
           let allPlayers = snapshot.val() || {};
           let hps = {};
           Object.values(allPlayers).forEach((player) => {
-            document.querySelector(`.player${player.num}_score`).innerHTML = player.hp;
+            document.querySelector(`.player${player.num}Score`).innerHTML = player.hp;
             hps[player.num] = player.hp;
           })
           let keysSorted = Object.keys(hps).sort(function (a, b) { return hps[b] - hps[a] })
-          document.querySelector(".wordle_bars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
+          document.querySelector(".wordleBars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
 
           if (hps[keysSorted[0]] === hps[keysSorted[1]]) {
-            document.querySelector(".wordle_bars").innerHTML = "Draw!"
+            document.querySelector(".wordleBars").innerHTML = "Draw!"
           } else if (keysSorted[0] === playerNum.toString()) {
-            document.querySelector(".wordle_bars").innerHTML = "You Win!"
+            document.querySelector(".wordleBars").innerHTML = "You Win!"
           } else {
-            document.querySelector(".wordle_bars").innerHTML = "You Lose!"
+            document.querySelector(".wordleBars").innerHTML = "You Lose!"
           }
         })
       }
@@ -383,7 +383,7 @@
 
   window.addEventListener("click", (event) => {
     const targetClasslist = event.target.className.split(" ");
-    if (targetClasslist.includes("settings_button")) {
+    if (targetClasslist.includes("settingsButton")) {
       
       const existingSettingsContainer = document.querySelector(".settingsContainer");
       if (existingSettingsContainer) return existingSettingsContainer.remove();
@@ -517,8 +517,8 @@
       allPlayersRef.get().then((snapshot) => {
         let allPlayers = snapshot.val() || {};
         if (Object.keys(allPlayers).length === 2) {
-          document.querySelector(".wordle_bars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
-          document.querySelector(".wordle_bars").innerHTML = "Lobby already has 2 players!"
+          document.querySelector(".wordleBars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
+          document.querySelector(".wordleBars").innerHTML = "Lobby already has 2 players!"
           throw "Already has 2 players"
         }
       }).then(() => {
@@ -539,14 +539,14 @@
           playerRef.update({
             num: playerNum
           })
-          document.querySelector(`.player${playerNum}_username`).innerHTML = `Me`;
-          document.querySelector(`.player${playerNum}_username`).style = "color: red;"
+          document.querySelector(`.player${playerNum}Username`).innerHTML = `Me`;
+          document.querySelector(`.player${playerNum}Username`).style = "color: red;"
 
           if (playerNum === 1) {
 
           }
           if (playerNum === 2) {
-            document.querySelector(`.player1_username`).innerHTML = `Them`;
+            document.querySelector(`.player1Username`).innerHTML = `Them`;
           }
         })
 

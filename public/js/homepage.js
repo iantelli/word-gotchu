@@ -25,11 +25,11 @@
             let btn = document.createElement("div");
             let roomCodeText = document.createElement("p");
             uiSound.play();
-            document.querySelector("div.wordle_bar2").classList.toggle("hidden");
-            document.querySelector("div.battle_menu").classList.toggle("hidden");
+            document.querySelector("div.wordleBar2").classList.toggle("hidden");
+            document.querySelector("div.battleMenu").classList.toggle("hidden");
             document.querySelector("div.backButton").classList.toggle("hidden");
             document.querySelector("div.backButton").classList.add("createRoomBackBtn");
-            btn.classList.add("copy_btn");
+            btn.classList.add("copyBtn");
             roomCodeText.classList.add("roomCodeText");
             newRoomCode.innerHTML += "Room Code: " + roomCode;
             btn.innerHTML = "Copy";
@@ -41,16 +41,16 @@
             });
             roomCodeText.innerText = "Share this code to your friend!";
             document.querySelector("div.createRoomDiv").appendChild(newRoomCode);
-            document.querySelector("div.battle_menu").appendChild(btn);
-            document.querySelector("div.battle_menu").appendChild(roomCodeText);
+            document.querySelector("div.battleMenu").appendChild(btn);
+            document.querySelector("div.battleMenu").appendChild(roomCodeText);
         }
 
         if (event.target.classList.contains("joinRoom")) {
             let roomCodeInput = document.createElement("input");
             let joinRoomButton = document.createElement("button");
             uiSound.play();
-            document.querySelector("div.wordle_bar2").classList.toggle("hidden");
-            document.querySelector("div.join_battle_menu").classList.toggle("hidden");
+            document.querySelector("div.wordleBar2").classList.toggle("hidden");
+            document.querySelector("div.joinBattleMenu").classList.toggle("hidden");
             document.querySelector("div.backButton").classList.toggle("hidden");
             document.querySelector("div.backButton").classList.add("joinRoomBackBtn");
             roomCodeInput.classList.add("roomCodeInput");
@@ -71,20 +71,20 @@
 
         if (event.target.classList.contains("backButton") && event.target.classList.contains("createRoomBackBtn")) {
             backSound.play();
-            document.querySelector("div.wordle_bar2").classList.toggle("hidden");
-            document.querySelector("div.battle_menu").classList.toggle("hidden");
+            document.querySelector("div.wordleBar2").classList.toggle("hidden");
+            document.querySelector("div.battleMenu").classList.toggle("hidden");
             document.querySelector("div.backButton").classList.toggle("hidden");
             document.querySelector("div.backButton").classList.remove("createRoomBackBtn");
             document.querySelector("div.createRoomDiv").innerHTML = "";
-            document.querySelector("div.copy_btn").remove();
+            document.querySelector("div.copyBtn").remove();
             document.querySelector("p.roomCodeText").remove();
         }
 
         if (event.target.classList.contains("backButton") && event.target.classList.contains("joinRoomBackBtn")) {
             backSound.play();
             document.querySelector("div.backButton").classList.remove("joinRoomBackBtn");
-            document.querySelector("div.wordle_bar2").classList.toggle("hidden");
-            document.querySelector("div.join_battle_menu").classList.toggle("hidden");
+            document.querySelector("div.wordleBar2").classList.toggle("hidden");
+            document.querySelector("div.joinBattleMenu").classList.toggle("hidden");
             document.querySelector("div.backButton").classList.toggle("hidden");
             document.querySelector("div.joinRoomDiv").innerHTML = "";
         }
