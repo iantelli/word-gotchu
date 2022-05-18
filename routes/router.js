@@ -40,21 +40,10 @@ router.get("/homepage", (req, res) => {
 })
 
 router.get("/testpage", (req, res) => {
-  const data = {
-    playerCurrency: 1000,
-    username: "USER",
-  }
-  const pet = {
-    lvl: 1,
-    xp: 10,
-    lvl1Story: "QWErty",
-    lvl2Story: "ASDfgh",
-    lvl3Story: "ZXCvbn",
-    lvl1Ability: "QWErty",
-    lvl2Ability: "ASDfgh",
-    lvl3Ability: "ZXCvbn",
-  }
-  res.render("testpage", { data, pet })
+  const bothPlayersConnected = true;
+  const userName = "You";
+  const opponentName = "Opponent";
+  res.render("testpage", { bothPlayersConnected, userName, opponentName })
 })
 
 module.exports = router;

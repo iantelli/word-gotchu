@@ -1,33 +1,146 @@
-.plusOne {
-    background: url(../images/Misc/plusOne.png) no-repeat;
+@font-face {
+    font-family: kongText;
+    src: url('kongtext.ttf');
+}
+  
+html, body {
+    background-color: black; 
+    color: white;
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden
 }
 
-.minusOne {
-    background: url(../images/Misc/minusOne.png) no-repeat;
+* {
+    font-family: kongText
 }
 
-.plusOne, .minusOne {
-    width: 191px;
-    height: 158px;
-    transform: scale(0.4);
-    position: relative;
+.gameReadyContainer {
+    background: url(../images/assets_spritesheet.png) no-repeat -4477px -3087px;
+    width: 1440px;
+    height: 1024px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 }
 
-.plusOne.playAnimation, .minusOne.playAnimation {
-    animation: upAndOut 3s;
+.titleText {
+    margin-top: -3em;
+    margin-bottom: 5em;
 }
 
-@keyframes upAndOut {
-    0% {
-        top: 20px;
-        opacity: 1;
-    }
-    65% {
-        top: -20px;
-        opacity: 1;
-    }
-    100% {
-        top: -20px;
-        opacity: 0;
-    }
+.playerCards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 75%;
+    justify-content: space-between;
+    margin-left: -11em;
+}
+
+.gameReadyContainer .vsText {
+    font-size: 3em;
+}
+
+.userCard, .opponentCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userCharacter, .opponentCharacter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.previousCharacter, .nextCharacter {
+    background: transparent;
+    border: none;
+    font-size: xx-large;
+    color: white;
+    font-weight: bold;
+}
+
+.previousCharacter {
+    margin-right: 2em;
+}
+
+.nextCharacter {
+    margin-left: 2em;
+}
+
+.catchu {
+    background: url(../images/assets_spritesheet.png) no-repeat -1007px -285px;
+    width: 240px;
+    height: 289px;    
+}
+
+.dogchu {
+    background: url(../images/assets_spritesheet.png) no-repeat -1025px -1682px;
+	width: 209px;
+	height: 288px;  
+}
+
+.turtlechu {
+    background: url(../images/assets_spritesheet.png) no-repeat -988px -2815px;
+	width: 198px;
+	height: 295px; 
+}
+
+.mousechu {
+    background: url(../images/assets_spritesheet.png) no-repeat -994px -4132px;
+	width: 259px;
+	height: 314px;  
+}
+
+.racoonchu {
+    background: url(../images/assets_spritesheet.png) no-repeat -958px -5492px;
+	width: 258px;
+	height: 277px; 
+}
+
+.readyButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1487px;
+    width: 260px;
+    height: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+}
+
+.readyButton:hover {
+    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1400px;
+    width: 260px;
+    height: 82px;
+}
+
+.readyButton > * {
+    pointer-events: none;
+    margin-top: 0em;
+}
+
+.readyButton:hover > * {
+    pointer-events: none;
+    margin-top: 0.7em;
+}
+
+.notReadyButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1400px;
+    width: 260px;
+    height: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    filter: grayscale(1) brightness(60%);
+}
+
+.notReadyButton > * {
+    pointer-events: none;
 }
