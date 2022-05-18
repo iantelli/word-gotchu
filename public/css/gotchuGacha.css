@@ -1,0 +1,179 @@
+div {
+    display: inline-block
+    
+}
+
+.homeButton, .viewGotchusButton {
+    display: flex;
+    text-shadow: 2px 2px 0 #9B9B9B, 2px -2px 0 #9B9B9B, -2px 2px 0 #9B9B9B, -2px -2px 0 #9B9B9B, 2px 0 0 #9B9B9B, 0 2px 0 #9B9B9B, -2px 0 0 #9B9B9B, 0 -2px 0 #9B9B9B
+
+}
+
+.gachaBg {
+    background-color: #fff;
+    height: 1024px;
+    width: 1440px;
+    transform: translate(-50%, 0);
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    margin: 0 auto
+
+}
+
+.gachaTitle {
+    background: url(../images/assets_spritesheet.png) -4477px -5900px no-repeat;
+    width: 1000px;
+    height: 196px;
+    position: absolute;
+    top: 120px;
+    left: 210px
+
+}
+
+.homeButton {
+    background: url(../images/assets_spritesheet.png) -6577px -532px no-repeat;
+    width: 192px;
+    height: 138px;
+    justify-content: center;
+    align-items: center
+
+}
+
+.homeButton:hover {
+    background: url(../images/assets_spritesheet.png) -6577px -389px no-repeat;
+    width: 192px;
+    height: 138px
+
+}
+
+.homeButton, .homeButton:hover {
+    transform: scale(.8);
+    margin-left: 2.75em;
+    margin-top: 1.5em
+
+}
+
+.homeButton>* {
+    margin-top: -.3em
+
+}
+
+.homeButton:hover>* {
+    margin-top: .5em
+
+}
+
+.gotchuCoinBar {
+    background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat;
+    width: 388px;
+    height: 104px;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    transform: scale(.7)
+
+}
+
+.gotchuCoinIcon {
+    background: url(../images/assets_spritesheet.png) -6654px -2060px no-repeat;
+    width: 70px;
+    height: 68px;
+    position: absolute;
+    transform: scale(1.3);
+    top: 17px;
+    left: 20px
+
+}
+
+.gotchuCoinAmount {
+    font-size: 40px;
+    position: absolute;
+    top: 27px;
+    right: 30px
+
+}
+
+.gachaContainer {
+    background: url(../images/assets_spritesheet.png) -5922px -776px no-repeat;
+    width: 650px;
+    height: 518px;
+    position: absolute;
+    top: 320px;
+    left: 370px
+
+}
+
+.gachaAnimation {
+    background: url(../images/assets_spritesheet.png) -5922px -3251px no-repeat;
+    width: 512px;
+    height: 512px;
+    position: absolute;
+    bottom: -10px;
+    left: 75px;
+    animation: gachaAnimation 1s steps(2) infinite
+
+}
+
+@keyframes gachaAnimation {
+    from {
+        background: url(../images/assets_spritesheet.png) -5922px -3251px no-repeat
+
+    }
+
+    to {
+        background: url(../images/assets_spritesheet.png) -5041px -6589px no-repeat
+
+    }
+}
+
+.gachaRollButton {
+    background: url(../images/assets_spritesheet.png) -4477px -6226px no-repeat;
+    width: 300px;
+    height: 120px;
+    position: absolute;
+    bottom: 40px;
+    left: 375px
+
+}
+
+.gachaRollButton:hover {
+    background: url(../images/assets_spritesheet.png) -4477px -6101px no-repeat;
+    width: 300px;
+    height: 120px
+
+}
+
+.viewGotchusButton, .viewGotchusButton:hover {
+    width: 384px;
+    height: 120px;
+    position: absolute;
+    bottom: 39px;
+    left: 670px;
+    transform: scale(.77, 1)
+
+}
+
+.viewGotchusButton {
+    background: url(../images/assets_spritesheet.png) -6311px -3893px no-repeat;
+    justify-content: center;
+    align-items: center
+
+}
+
+.viewGotchusButton:hover {
+    background: url(../images/assets_spritesheet.png) -6315px -3768px no-repeat;
+    justify-content: center;
+    align-items: center
+
+}
+
+.viewGotchusButton>* {
+    margin-top: -.3em
+
+}
+
+.viewGotchusButton:hover>* {
+    margin-top: .9em
+
+}

@@ -1,45 +1,35 @@
-@font-face {
-    font-family: kongText;
-    src: url('kongtext.ttf');
-
-}
-
-html, body {
-    background-color: black;
-    font-family: kongText;
-    color: white;
-    margin: 0;
-    height: 100%;
-    overflow: hidden;
-
-}
-
 .hidden {
-    display: none !important;
+    display: none !important
+    
 }
 
 .mainScreenBg {
-    background: url(../images/assets_spritesheet.png) no-repeat -4477px -2058px;
+    background: url(../images/assets_spritesheet.png) -4477px -2058px no-repeat;
     width: 1440px;
     height: 1024px;
-    transform: translate(-50%, -0%);
+    transform: translate(-50%, 0);
     position: fixed;
     left: 50%;
-    bottom: 0px;
-    margin: 0 auto;
+    bottom: 0;
+    margin: 0 auto
 
 }
 
-.topNav > div{
-    position: absolute;
-    top: 80px;
+.bottomNav>div, .gotchuCoinAmount, .gotchuCoinIcon, .topNav>div, .userName, .userProfileBg {
+    position: absolute
+
+}
+
+.topNav>div {
+    top: 80px
+
 }
 
 .userBar {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
+    background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat;
     width: 388px;
     height: 104px;
-    left: 30px;
+    left: 30px
 
 }
 
@@ -47,250 +37,226 @@ html, body {
     background: url(../images/dog_icon.png);
     width: 83px;
     height: 80px;
-    position: absolute;
     top: 12px;
-    left: 15px;
+    left: 15px
 
 }
 
 .userName {
-    position: absolute;
     top: 35px;
     right: 30px;
-    font-size: 30px;
+    font-size: 30px
 
 }
 
 .gotchuCoinBar {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
+    background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat;
     width: 388px;
     height: 104px;
     right: 170px;
-    transform:scale(0.7);
+    transform: scale(.7)
 
 }
 
 .gotchuCoinIcon {
-    background: url(../images/assets_spritesheet.png) no-repeat -6654px -2060px;
+    background: url(../images/assets_spritesheet.png) -6654px -2060px no-repeat;
     width: 70px;
     height: 68px;
-    position: absolute;
     transform: scale(1.3);
-    top:17px;
-    left: 20px;
+    top: 17px;
+    left: 20px
 
 }
 
 .gotchuCoinAmount {
     font-size: 40px;
-    position: absolute;
     top: 27px;
-    right: 30px;
+    right: 30px
 
 }
 
 .settings {
-    background: url(../images/assets_spritesheet.png) no-repeat -6662px -1717px;
+    background: url(../images/assets_spritesheet.png) -6662px -1717px no-repeat;
     width: 100px;
     height: 100px;
-    right:80px;
+    right: 80px
+
 }
 
-/* Should do this when we have the asset */
-.settings:hover {}
-
 .gotchuCharacter {
-    background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
-	width: 209px;
-	height: 288px;
-    animation: gotchuAnimation 1s  steps(2) infinite;
+    background: url(../images/assets_spritesheet.png) -1025px -1682px no-repeat;
+    width: 209px;
+    height: 288px;
+    animation: gotchuAnimation 1s steps(2) infinite
 
 }
 
 .mainScreenBg .gotchuCharacter {
     position: absolute;
     bottom: 250px;
-    left: 600px;
+    left: 600px
+
+}
+
+.gotchuButton, .gotchuButton:hover {
+    width: 192px;
+    height: 138px;
+    left: 30px
+
 }
 
 @keyframes gotchuAnimation {
-    from { background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px; }
-    to { background: url("../images/assets_spritesheet.png") no-repeat -1586px -1682px; }
+    from {
+        background: url(../images/assets_spritesheet.png) -1025px -1682px no-repeat
+    }
+
+    to {
+        background: url(../images/assets_spritesheet.png) -1586px -1682px no-repeat
+    }
+
 }
 
-.bottomNav >div{
-    position: absolute;
-    bottom: 30px;
+.bottomNav>div {
+    bottom: 30px
 
 }
 
 .gotchuButton {
-    background: url(../images/assets_spritesheet.png) no-repeat -6577px -1104px;
-    width: 192px;
-    height: 138px;
-    left:30px;
+    background: url(../images/assets_spritesheet.png) -6577px -1104px no-repeat
+
 }
 
 .gotchuButton:hover {
-    background: url(../images/assets_spritesheet.png) no-repeat -6577px -961px;
-    width: 192px;
-    height: 138px;
-    left:30px;
+    background: url(../images/assets_spritesheet.png) -6577px -961px no-repeat
+
 }
 
-
-.gachaButton {
-    background: url(../images/assets_spritesheet.png) no-repeat -6577px -818px;
+.gachaButton, .gachaButton:hover {
     width: 192px;
     height: 138px;
-    left:250px;
+    left: 250px
+
+}
+
+.gachaButton {
+    background: url(../images/assets_spritesheet.png) -6577px -818px no-repeat
+
 }
 
 .gachaButton:hover {
-    background: url(../images/assets_spritesheet.png) no-repeat -6577px -675px;
-    width: 192px;
-    height: 138px;
-    left:250px;
+    background: url(../images/assets_spritesheet.png) -6577px -675px no-repeat
+
 }
 
 .gotchuDomeButton {
-    background: url(../images/assets_spritesheet.png) no-repeat -6439px -3520px;
+    background: url(../images/assets_spritesheet.png) -6439px -3520px no-repeat;
     width: 312px;
     height: 168px;
-    right:80px;
+    right: 80px
+
 }
 
 .gotchuDomeButton:hover {
-    background: url(../images/assets_spritesheet.png) no-repeat -6439px -3347px;
+    background: url(../images/assets_spritesheet.png) -6439px -3347px no-repeat;
     width: 312px;
     height: 168px;
-    right:80px;
+    right: 80px
+
 }
 
-/* Story popup css */
 .storyContainer {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
     width: 650px;
     height: 518px;
     display: flex;
-    /* align-content: center;
-    justify-content: center; */
     flex-direction: column;
     transform: scale(1.2);
     margin-top: 200px;
     margin-left: auto;
-    margin-right: auto;
-    /* display: none; */
-}
+    margin-right: auto
 
-.storyContainer > * {
-    transform: scale(calc(1/1.2));
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.storyContainer > * > *  {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.storyText {
-    width: 620px;
-    height: 110px;
-    background-color: #CD6C03;
-    margin-top: -25px;
 }
 
 .story p {
-    margin-left: 0.5em;
-    margin-top: 0.4em;
-}
+    margin-left: .5em;
+    margin-top: .4em
 
-.storyText .lockIcon {
-    display: none;
-}
-
-.topText {
-    padding-top: 30px;
 }
 
 .locked {
     width: 620px;
     height: 110px;
     background-color: #955612;
-    margin-top: -25px;
-}
+    margin-top: -25px
 
-.lockIcon {
-    background: url(../images/Misc/locked.png) no-repeat center;
-    width: 100px;
-    height: 100px;
-    margin-top: 5px;
 }
 
 .locked p {
-    display: none;
+    display: none
+
 }
 
-.popups {
-    position: relative;
-}
-
-/* Manage Gotchus */
 .manageGotchusContainer {
-    background: url(../images/Misc/Dimmed_Home_BG.png) no-repeat center;
+    background: url(../images/Misc/Dimmed_Home_BG.png) center no-repeat;
     width: 1440px;
     height: 1024px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: column
+
 }
 
 .backButton {
-    background: url(../images/assets_spritesheet.png) no-repeat -6577px -532px;
+    background: url(../images/assets_spritesheet.png) -6577px -532px no-repeat;
     width: 192px;
     height: 138px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center
+
 }
 
 .backButton:hover {
-    background: url(../images/assets_spritesheet.png) no-repeat -6577px -389px;
+    background: url(../images/assets_spritesheet.png) -6577px -389px no-repeat;
     width: 192px;
-    height: 138px;
+    height: 138px
+
 }
 
 .backButton, .backButton:hover {
-    transform: scale(0.8);
+    transform: scale(.8);
     margin-left: 2.75em;
-    margin-top: 1.5em;
+    margin-top: 1.5em
+
 }
 
-.backButton > * {
-    margin-top: -0.3em;
+.backButton>* {
+    margin-top: -.3em
+
 }
 
-.backButton:hover > * {
-    margin-top: 0.5em;
+.backButton:hover>* {
+    margin-top: .5em
+
 }
 
 .topBar {
     width: 1440px;
     height: 80px;
     display: flex;
-    flex-direction: row;
+    flex-direction: row
+
 }
 
-.topBar > h1 {
+.topBar>h1 {
     font-size: 40px;
     margin-left: 6em;
-    margin-top: 1.75em;
+    margin-top: 1.75em
+
 }
 
-.levelBar, .XPBar {
-    background: url(../images/assets_spritesheet.png) no-repeat -6622px -153px;
+.XPBar, .levelBar {
+    background: url(../images/assets_spritesheet.png) -6622px -153px no-repeat;
     width: 123px;
     height: 34px;
     transform: scale(1.4);
@@ -299,44 +265,47 @@ html, body {
     font-size: x-small;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center
+
 }
 
 .levelBar {
-    margin-top: 1em;
+    margin-top: 1em
+
 }
 
-/* .equippedGotchu { */
 .centerContent .gotchuCharacter {
-    /* background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
-	width: 209px;
-	height: 288px; */
     margin-top: -6em;
-    margin-left: 26em;
+    margin-left: 26em
+
 }
 
 .centerContent {
     margin-top: 18%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row
+
 }
 
 .abilityButton {
-    background: url(../images/assets_spritesheet.png) no-repeat -6622px -0px;
+    background: url(../images/assets_spritesheet.png) -6622px 0 no-repeat;
     width: 148px;
     height: 148px;
-    margin-top: 5em;
+    margin-top: 5em
+
 }
 
 .storyButton {
-    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1717px;
+    background: url(../images/assets_spritesheet.png) -6509px -1717px no-repeat;
     width: 148px;
     height: 148px;
-    margin-top: -9em;
+    margin-top: -9em
+
 }
 
 .abilityAndStoryContainer {
     margin-left: 25%
+
 }
 
 .bottomBar {
@@ -345,19 +314,23 @@ html, body {
     margin-top: 4%;
     background-color: #CD6C03;
     display: flex;
-    border-top: solid 25px #58240c;
+    border-top: solid 25px #58240c
+
 }
 
 .catchuIcon {
-    background: url(../images/cat_icon.png) no-repeat center;
+    background: url(../images/cat_icon.png) center no-repeat
+
 }
 
 .dogchuIcon {
-    background: url(../images/dog_icon.png) no-repeat center;
+    background: url(../images/dog_icon.png) center no-repeat
+
 }
 
 .turtlechuIcon {
-    background: url(../images/turtle_icon.png) no-repeat center;
+    background: url(../images/turtle_icon.png) center no-repeat
+
 }
 
 .catchuIcon, .dogchuIcon, .turtlechuIcon {
@@ -365,107 +338,103 @@ html, body {
     width: 83px;
     height: 80px;
     margin-left: 5em;
-    margin-top: 3em;
+    margin-top: 3em
+
 }
 
 .selected {
-    background-color: white;
-    border: solid 2px white;
+    background-color: #fff;
+    border: 2px solid #fff
+
 }
 
-/* .catchuIcon.locked, .dogchuIcon.locked, .turtlechuIcon.locked {
-    filter: blur(2px) brightness(70%);
-}
-
-.dogchuIcon.locked .lockedIcon {
-    filter: blur(0px);
-} */
-
-.lockedIcon {
-    background: url(../images/Misc/locked.png) no-repeat center;
+.blackLockedIcon, .lockedIcon {
+    background: url(../images/Misc/locked.png) center no-repeat;
     width: 100px;
     height: 100px;
-    transform: scale(0.8);
-    position: absolute;
+    position: absolute
+
+}
+
+.lockedIcon {
+    transform: scale(.8)
+
 }
 
 .blackLockedIcon {
-    background: url(../images/Misc/locked.png) no-repeat center;
-    width: 100px;
-    height: 100px;
-    transform: scale(0.6);
-    position: absolute;
+    transform: scale(.6);
     filter: invert(100%);
-    margin-top: -0.5em;
-    margin-left: -0.5em;
+    margin-top: -.5em;
+    margin-left: -.5em
+
 }
 
 .storyContainer {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
+    background: url(../images/assets_spritesheet.png) -5922px -776px no-repeat;
     width: 650px;
     height: 518px;
     display: flex;
-    /* align-content: center;
-    justify-content: center; */
     flex-direction: column;
     transform: scale(1.2);
     margin-left: 25em;
     margin-top: -50em;
-    position: fixed;
-    /* display: none; */
+    position: fixed
+
 }
 
-.storyContainer > * {
-    transform: scale(calc(1/1.2));
-    margin-left: auto;
-    margin-right: auto;
+.storyPopup .locked p, .storyText .lockIcon {
+    display: none
+
 }
 
-.storyContainer > * > *  {
+.storyContainer>*, .storyContainer>*>* {
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto
+
+}
+
+.storyPopup .locked, .storyText {
+    width: 620px;
+    height: 110px;
+    margin-top: -25px
+
+}
+
+.storyContainer>* {
+    transform: scale(calc(1/1.2))
+
 }
 
 .storyText {
-    width: 620px;
-    height: 110px;
-    background-color: #CD6C03;
-    margin-top: -25px;
-}
+    background-color: #CD6C03
 
-.storyText .lockIcon {
-    display: none;
 }
 
 .topText {
-    padding-top: 30px;
+    padding-top: 30px
+
 }
 
 .storyPopup .locked {
-    width: 620px;
-    height: 110px;
-    background-color: #955612;
-    margin-top: -25px;
+    background-color: #955612
+
 }
 
 .lockIcon {
-    background: url(../images/Misc/locked.png) no-repeat center;
+    background: url(../images/Misc/locked.png) center no-repeat;
     width: 100px;
     height: 100px;
-    margin-top: 5px;
-}
+    margin-top: 5px
 
-.storyPopup .locked p {
-    display: none;
 }
 
 .popups {
-    position: relative;
+    position: relative
+
 }
 
-/* Ability popup */
 .abilityContainer {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
+    background: url(../images/assets_spritesheet.png) -5922px -776px no-repeat;
     width: 650px;
     height: 518px;
     display: flex;
@@ -473,54 +442,64 @@ html, body {
     transform: scale(1.2);
     margin-left: 25em;
     margin-top: 14em;
-    position: fixed;
+    position: fixed
+
 }
 
-/* Do for all pets */
 .catchuAbility1 {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1299px;
+    background: url(../images/assets_spritesheet.png) -5922px -1299px no-repeat
+
 }
 
 .catchuAbility2 {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1493px;
+    background: url(../images/assets_spritesheet.png) -5922px -1493px no-repeat
+
 }
 
 .catchuAbility3 {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1687px;
+    background: url(../images/assets_spritesheet.png) -5922px -1687px no-repeat
+
 }
 
 .catchuAbility1, .catchuAbility2, .catchuAbility3 {
     width: 194px;
     height: 194px;
-    transform: scale(0.6);
-    margin-top: -1.5em;
+    transform: scale(.6);
+    margin-top: -1.5em
+
 }
 
-.topRow, .middleRow, .bottomRow {
+.bottomRow, .middleRow, .topRow {
     display: flex;
-    margin-left: 2em;
+    margin-left: 2em
+
 }
 
 .topRow {
-    margin-top: 3em;
+    margin-top: 3em
+
 }
 
-.middleRow, .bottomRow {
-    margin-top: -2em;
+.bottomRow, .middleRow {
+    margin-top: -2em
+
 }
 
 .abilityText .description {
     width: 360px;
     height: 90px;
     background-color: #401404;
-    margin-top: -1em;
+    margin-top: -1em
+
 }
 
 .abilityText p {
-    margin-left: 4.5em;
+    margin-left: 4.5em
+
 }
 
 .description p.ability1, .description p.ability2, .description p.ability3 {
-    margin-left: 0.5em;
-    padding-top: 0.5em;
+    margin-left: .5em;
+    padding-top: .5em
+
 }
