@@ -100,18 +100,18 @@
 
 }
 
-.joinBattleMenu .menuTitle {
+.menuTitle {
   font-size: 36px;
   margin-bottom: -1px
 
 }
 
-.joinBattleMenu .menuTitle.create {
+.menuTitle.create {
   margin-top: 10%
 
 }
 
-.joinBattleMenu .menuHeader {
+.menuHeader {
   width: 85%;
   height: 1px;
   border-width: 0;
@@ -121,7 +121,7 @@
 
 }
 
-.backButton.battleMenuBackBtn .backButtonText {
+.battleArenaBg .backButton .backButtonText {
   pointer-events: none;
   transform: translate(0, -10px);
   font-size: 28px;
