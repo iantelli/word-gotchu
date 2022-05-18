@@ -36,4 +36,8 @@ router.get("/homepage", (req, res) => {
   res.render("homepage", { data, pet })
 })
 
+router.get("/gotchugacha", (req, res) => {
+  res.render("gotchuGacha")
+})
+
 module.exports = router;
