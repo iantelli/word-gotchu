@@ -70,18 +70,6 @@ div {
 
 }
 
-.backButton {
-  background: url(../images/assets_spritesheet.png) -6509px -1487px no-repeat;
-  width: 260px;
-  height: 82px;
-  margin-top: 70px;
-  margin-left: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center
-
-}
-
 .roomCode {
   background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat
 
@@ -136,6 +124,6 @@ div {
 
 span.backButtonText {
   pointer-events: none;
-  transform: translate(0, -10px)
-
+  transform: translate(0, -10px);
+  font-size: 28px;
 }

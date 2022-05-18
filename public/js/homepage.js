@@ -27,8 +27,8 @@
             uiSound.play();
             document.querySelector("div.wordleBar2").classList.toggle("hidden");
             document.querySelector("div.battleMenu").classList.toggle("hidden");
-            document.querySelector("div.backButton").classList.toggle("hidden");
-            document.querySelector("div.backButton").classList.add("createRoomBackBtn");
+            document.querySelector("div.backButton").classList.toggle("createRoomBackBtn");
+            document.querySelector("div.backButton").classList.toggle("battleMenuBackBtn");
             btn.classList.add("copyBtn");
             roomCodeText.classList.add("roomCodeText");
             newRoomCode.innerHTML += "Room Code: " + roomCode;
@@ -43,6 +43,7 @@
             document.querySelector("div.createRoomDiv").appendChild(newRoomCode);
             document.querySelector("div.battleMenu").appendChild(btn);
             document.querySelector("div.battleMenu").appendChild(roomCodeText);
+            return;
         }
 
         if (event.target.classList.contains("joinRoom")) {
@@ -51,8 +52,8 @@
             uiSound.play();
             document.querySelector("div.wordleBar2").classList.toggle("hidden");
             document.querySelector("div.joinBattleMenu").classList.toggle("hidden");
-            document.querySelector("div.backButton").classList.toggle("hidden");
-            document.querySelector("div.backButton").classList.add("joinRoomBackBtn");
+            document.querySelector("div.backButton").classList.toggle("joinRoomBackBtn");
+            document.querySelector("div.backButton").classList.toggle("battleMenuBackBtn");
             roomCodeInput.classList.add("roomCodeInput");
             joinRoomButton.classList.add("joinRoomButton");
             roomCodeInput.type = "text";
@@ -67,26 +68,50 @@
                 uiSound.play();
                 location.href = "/lobby/" + roomCode;
             });
+            return;
         }
 
         if (event.target.classList.contains("backButton") && event.target.classList.contains("createRoomBackBtn")) {
             backSound.play();
             document.querySelector("div.wordleBar2").classList.toggle("hidden");
             document.querySelector("div.battleMenu").classList.toggle("hidden");
-            document.querySelector("div.backButton").classList.toggle("hidden");
-            document.querySelector("div.backButton").classList.remove("createRoomBackBtn");
+            document.querySelector("div.backButton").classList.toggle("createRoomBackBtn");
             document.querySelector("div.createRoomDiv").innerHTML = "";
             document.querySelector("div.copyBtn").remove();
             document.querySelector("p.roomCodeText").remove();
-        }
-
+            document.querySelector("div.backButton").classList.toggle("battleMenuBackBtn");
+            return;
+        } 
         if (event.target.classList.contains("backButton") && event.target.classList.contains("joinRoomBackBtn")) {
             backSound.play();
-            document.querySelector("div.backButton").classList.remove("joinRoomBackBtn");
+            document.querySelector("div.backButton").classList.toggle("joinRoomBackBtn");
             document.querySelector("div.wordleBar2").classList.toggle("hidden");
             document.querySelector("div.joinBattleMenu").classList.toggle("hidden");
-            document.querySelector("div.backButton").classList.toggle("hidden");
             document.querySelector("div.joinRoomDiv").innerHTML = "";
+            document.querySelector("div.backButton").classList.toggle("battleMenuBackBtn");
+            return;
+        }
+        if (event.target.classList.contains("backButton") && event.target.classList.contains("battleMenuBackBtn")) {
+            backSound.play();
+            document.querySelector(".gochuDome").classList.toggle("hidden");
+            document.querySelector(".mainScreenBg").classList.toggle("hidden");
+            return;
+        }
+
+
+        // Gacha page stuff
+
+        if (event.target.classList.contains("gachaButton")) {
+            uiSound.play();
+            document.querySelector(".mainScreenBg").classList.toggle("hidden");
+            document.querySelector(".gachaBg").classList.toggle("hidden");
+            return;
+        }
+        if (event.target.classList.contains("homeButton")) {
+            backSound.play();
+            document.querySelector(".gachaBg").classList.toggle("hidden");
+            document.querySelector(".mainScreenBg").classList.toggle("hidden");
+            return;
         }
     });
 })();
