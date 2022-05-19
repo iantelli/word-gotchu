@@ -1,141 +1,128 @@
-.battleArenaBg, .wordleBar2 {
-    position: fixed;
-    margin: 0 auto;
-    left: 50%
-    
+.gochuDome .battleArenaBg, .gochuDome .wordleBar2 {
+  position: fixed;
+  margin: 0 auto;
+  left: 50%
+  
 }
 
-.copyBtn, .createRoom, .joinRoom, .wordleBar2 {
-    text-align: center
-
-}
-
-div {
-    display: inline-block
+.copyBtn, .createRoom, .joinRoom, .gochuDome .wordleBar2 {
+  text-align: center
 
 }
 
-.wordleBar2 {
-    background: url(../images/assets_spritesheet.png) -5922px 0 no-repeat;
-    width: 695px;
-    height: 248px;
-    transform: translate(-50%, -50%);
-    bottom: 20px
+.gochuDome > div {
+  display: inline-block
+}
+
+.gochuDome .wordleBar2 {
+  background: url(../images/assets_spritesheet.png) -5922px 0 no-repeat;
+  width: 695px;
+  height: 248px;
+  transform: translate(-50%, -50%);
+  bottom: 20px
 
 }
 
 .battleArenaBg {
-    background: url(../images/assets_spritesheet.png) -4477px -1029px no-repeat;
-    width: 1440px;
-    height: 1024px;
-    transform: translate(-50%, 0);
-    bottom: 0
+  background: url(../images/assets_spritesheet.png) -4477px -1029px no-repeat;
+  width: 1440px;
+  height: 1024px;
+  transform: translate(-50%, 0);
+  bottom: 0
 
 }
 
 .battleMenu, .joinBattleMenu {
-    background: url(../images/assets_spritesheet.png) -5922px -776px no-repeat;
-    width: 650px;
-    height: 518px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    justify-content: center
+  background: url(../images/assets_spritesheet.png) -5922px -776px no-repeat;
+  width: 650px;
+  height: 518px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  justify-content: center
 
 }
 
 .createRoomBar {
-    background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat;
-    width: 388px;
-    height: 104px;
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
-    margin-bottom: 5%;
-    margin-left: 20%
+  background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat;
+  width: 388px;
+  height: 104px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  margin-left: 20%
 
 }
 
 .copyBtn {
-    background: url(../images/assets_spritesheet.png) -6622px -150px no-repeat;
-    width: 123px;
-    height: 34px;
-    justify-content: center;
-    align-items: center;
-    padding-top: 8px;
-    margin-bottom: 1%
-
-}
-
-.backButton {
-    background: url(../images/assets_spritesheet.png) -6509px -1487px no-repeat;
-    width: 260px;
-    height: 82px;
-    margin-top: 70px;
-    margin-left: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center
+  background: url(../images/assets_spritesheet.png) -6622px -150px no-repeat;
+  width: 123px;
+  height: 34px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+  margin-bottom: 1%
 
 }
 
 .roomCode {
-    background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat
+  background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat
 
 }
 
 .createRoom {
-    font-size: 32px;
-    margin-top: 1px
+  font-size: 32px;
+  margin-top: 1px
 
 }
 
 .createRoomBar div.createRoomDiv {
-    margin-top: 7%
+  margin-top: 7%
 
 }
 
 .createRoomDiv span {
-    font-size: 24px
+  font-size: 24px
 
 }
 
 .joinRoom {
-    font-size: 32px
+  font-size: 32px
 
 }
 
 .createRoom:hover, .joinRoom:hover {
-    text-decoration: underline
+  text-decoration: underline
 
 }
 
 .menuTitle {
-    font-size: 36px;
-    margin-bottom: -1px
+  font-size: 36px;
+  margin-bottom: -1px
 
 }
 
 .menuTitle.create {
-    margin-top: 10%
+  margin-top: 10%
 
 }
 
 .menuHeader {
-    width: 85%;
-    height: 1px;
-    border-width: 0;
-    color: #FCE1A2;
-    background-color: #FCE1A2;
-    opacity: .31
+  width: 85%;
+  height: 1px;
+  border-width: 0;
+  color: #FCE1A2;
+  background-color: #FCE1A2;
+  opacity: .31
 
 }
 
-span.backButtonText {
-    pointer-events: none;
-    transform: translate(0, -10px)
-
+.battleArenaBg .backButton .backButtonText {
+  pointer-events: none;
+  transform: translate(0, -10px);
+  font-size: 28px;
 }
