@@ -1,8 +1,10 @@
 
-// Change to window event listener and update variables
+// Still need to change some of the listeners
 
 window.addEventListener("click", function (event) {
   const targetClasslist = event.target.className.split(" ");
+
+  // Open gotchu selection page
   if (targetClasslist.includes("gotchuButton")) {
 
     // Need to fill xp, level, and story boxes with js
@@ -172,25 +174,52 @@ window.addEventListener("click", function (event) {
     })
 
   }
+  
+  // Open settings popup
+  if (targetClasslist.includes("settingsButton")) {
+    const mainScreen = document.querySelector(".mainScreenBg");
+    const settingsContainer = document.createElement("div");
+    settingsContainer.className = "settingsContainer";
+    settingsContainer.innerHTML = `
+          <h1>SETTINGS</h1>
+          <div class="soundSettingsRow">
+            <p>SOUND EFFECTS</p>
+            <div class="onOffToggleButton"><h3>ON</h3></div>
+          </div>
+          <div class="musicSettingsRow">
+            <p>MUSIC</p>
+            <div class="onOffToggleButton"><h3>ON</h3></div>
+          </div>
+          <div class="closeSettingsContainer">
+            <div class="logoutButton">
+              <h4>LOG OUT</h4>
+            </div>
+            <div class="closeSettingsButton">
+              <h4>CLOSE</h4>
+            </div>
+          </div>
+        `;
+    mainScreen.appendChild(settingsContainer);
+  }
 
 })
 
 // Populate text boxes
 // Should get firebase db snapshot for data
-/*
-  const username
-  const playerCurrency
-  const petLvl
-  const petXP
-  const petStory1
-  const petStory2
-  const petStory3
-  const petAbility1
-  const petAbility2
-  const petAbility3
+/**
+ * Required Variables
+ * const username @param {string}
+ * const playerCurrency @param {int}
+ * const petLvl @param {int}
+ * const petXP @param {int}
+ * const petStory1 @param {string}
+ * const petStory2 @param {string}
+ * const petStory3 @param {string}
+ * const petAbility1 @param {string}
+ * const petAbility2 @param {string}
+ * const petAbility3 @param {string}
 */
 
-// Change the link to not localhost
 const populateHomepage = (username, playerCurrency) => {
   const usernameDiv = document.querySelector(".mainScreenBg .userBar .userName");
   const currencyDiv = document.querySelector(".mainScreenBg .gotchuCoinBar .gotchuCoinAmount");
