@@ -1,35 +1,29 @@
 .hidden {
-    display: none !important
-    
+    display: none !important;
 }
 
 .mainScreenBg {
-    background: url(../images/assets_spritesheet.png) -4477px -2058px no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -4477px -2058px;
     width: 1440px;
     height: 1024px;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -0%);
     position: fixed;
     left: 50%;
-    bottom: 0;
-    margin: 0 auto
+    bottom: 0px;
+    margin: 0 auto;
 
 }
 
-.bottomNav>div, .gotchuCoinAmount, .gotchuCoinIcon, .topNav>div, .userName, .userProfileBg {
-    position: absolute
-
-}
-
-.topNav>div {
-    top: 80px
-
+.topNav > div{
+    position: absolute;
+    top: 80px;
 }
 
 .userBar {
-    background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
     width: 388px;
     height: 104px;
-    left: 30px
+    left: 30px;
 
 }
 
@@ -37,226 +31,250 @@
     background: url(../images/dog_icon.png);
     width: 83px;
     height: 80px;
+    position: absolute;
     top: 12px;
-    left: 15px
+    left: 15px;
 
 }
 
 .userName {
+    position: absolute;
     top: 35px;
     right: 30px;
-    font-size: 30px
+    font-size: 30px;
 
 }
 
 .gotchuCoinBar {
-    background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
     width: 388px;
     height: 104px;
     right: 170px;
-    transform: scale(.7)
+    transform:scale(0.7);
 
 }
 
 .gotchuCoinIcon {
-    background: url(../images/assets_spritesheet.png) -6654px -2060px no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -6654px -2060px;
     width: 70px;
     height: 68px;
+    position: absolute;
     transform: scale(1.3);
-    top: 17px;
-    left: 20px
+    top:17px;
+    left: 20px;
 
 }
 
 .gotchuCoinAmount {
     font-size: 40px;
+    position: absolute;
     top: 27px;
-    right: 30px
+    right: 30px;
 
 }
 
-.settings {
-    background: url(../images/assets_spritesheet.png) -6662px -1717px no-repeat;
+.settingsButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6662px -1717px;
     width: 100px;
     height: 100px;
-    right: 80px
-
+    right:80px;
 }
 
+/* Should do this when we have the asset */
+.settingsButton:hover {}
+
 .gotchuCharacter {
-    background: url(../images/assets_spritesheet.png) -1025px -1682px no-repeat;
-    width: 209px;
-    height: 288px;
-    animation: gotchuAnimation 1s steps(2) infinite
+    background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
+	width: 209px;
+	height: 288px;
+    animation: gotchuAnimation 1s steps(2) infinite;
 
 }
 
 .mainScreenBg .gotchuCharacter {
     position: absolute;
     bottom: 250px;
-    left: 600px
-
-}
-
-.gotchuButton, .gotchuButton:hover {
-    width: 192px;
-    height: 138px;
-    left: 30px
-
+    left: 600px;
 }
 
 @keyframes gotchuAnimation {
-    from {
-        background: url(../images/assets_spritesheet.png) -1025px -1682px no-repeat
-    }
-
-    to {
-        background: url(../images/assets_spritesheet.png) -1586px -1682px no-repeat
-    }
-
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1586px -1682px; }
 }
 
-.bottomNav>div {
-    bottom: 30px
+.bottomNav >div{
+    position: absolute;
+    bottom: 30px;
 
 }
 
 .gotchuButton {
-    background: url(../images/assets_spritesheet.png) -6577px -1104px no-repeat
-
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -1104px;
+    width: 192px;
+    height: 138px;
+    left:30px;
 }
 
 .gotchuButton:hover {
-    background: url(../images/assets_spritesheet.png) -6577px -961px no-repeat
-
-}
-
-.gachaButton, .gachaButton:hover {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -961px;
     width: 192px;
     height: 138px;
-    left: 250px
-
+    left:30px;
 }
 
-.gachaButton {
-    background: url(../images/assets_spritesheet.png) -6577px -818px no-repeat
 
+.gachaButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -818px;
+    width: 192px;
+    height: 138px;
+    left:250px;
 }
 
 .gachaButton:hover {
-    background: url(../images/assets_spritesheet.png) -6577px -675px no-repeat
-
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -675px;
+    width: 192px;
+    height: 138px;
+    left:250px;
 }
 
 .gotchuDomeButton {
-    background: url(../images/assets_spritesheet.png) -6439px -3520px no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -6439px -3520px;
     width: 312px;
     height: 168px;
-    right: 80px
-
+    right:80px;
 }
 
 .gotchuDomeButton:hover {
-    background: url(../images/assets_spritesheet.png) -6439px -3347px no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -6439px -3347px;
     width: 312px;
     height: 168px;
-    right: 80px
-
+    right:80px;
 }
 
+/* Story popup css */
 .storyContainer {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
     width: 650px;
     height: 518px;
     display: flex;
+    /* align-content: center;
+    justify-content: center; */
     flex-direction: column;
     transform: scale(1.2);
     margin-top: 200px;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    /* display: none; */
+}
 
+.storyContainer > * {
+    transform: scale(calc(1/1.2));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.storyContainer > * > *  {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.storyText {
+    width: 620px;
+    height: 110px;
+    background-color: #CD6C03;
+    margin-top: -25px;
 }
 
 .story p {
-    margin-left: .5em;
-    margin-top: .4em
+    margin-left: 0.5em;
+    margin-top: 0.4em;
+}
 
+.storyText .lockIcon {
+    display: none;
+}
+
+.topText {
+    padding-top: 30px;
 }
 
 .locked {
     width: 620px;
     height: 110px;
     background-color: #955612;
-    margin-top: -25px
+    margin-top: -25px;
+}
 
+.lockIcon {
+    background: url(../images/Misc/locked.png) no-repeat center;
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
 }
 
 .locked p {
-    display: none
-
+    display: none;
 }
 
+.popups {
+    position: relative;
+}
+
+/* Manage Gotchus */
 .manageGotchusContainer {
-    background: url(../images/Misc/Dimmed_Home_BG.png) center no-repeat;
+    background: url(../images/Misc/Dimmed_Home_BG.png) no-repeat center;
     width: 1440px;
     height: 1024px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    flex-direction: column
-
+    flex-direction: column;
 }
 
 .backButton {
-    background: url(../images/assets_spritesheet.png) -6577px -532px no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -532px;
     width: 192px;
     height: 138px;
     display: flex;
     justify-content: center;
-    align-items: center
-
+    align-items: center;
 }
 
 .backButton:hover {
-    background: url(../images/assets_spritesheet.png) -6577px -389px no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -389px;
     width: 192px;
-    height: 138px
-
+    height: 138px;
 }
 
 .backButton, .backButton:hover {
-    transform: scale(.8);
+    transform: scale(0.8);
     margin-left: 2.75em;
-    margin-top: 1.5em
-
+    margin-top: 1.5em;
 }
 
-.backButton>* {
-    margin-top: -.3em
-
+.backButton > * {
+    margin-top: -0.3em;
 }
 
-.backButton:hover>* {
-    margin-top: .5em
-
+.backButton:hover > * {
+    margin-top: 0.5em;
 }
 
 .topBar {
     width: 1440px;
     height: 80px;
     display: flex;
-    flex-direction: row
-
+    flex-direction: row;
 }
 
-.topBar>h1 {
+.topBar > h1 {
     font-size: 40px;
     margin-left: 6em;
-    margin-top: 1.75em
-
+    margin-top: 1.75em;
 }
 
-.XPBar, .levelBar {
-    background: url(../images/assets_spritesheet.png) -6622px -153px no-repeat;
+.levelBar, .XPBar {
+    background: url(../images/assets_spritesheet.png) no-repeat -6622px -153px;
     width: 123px;
     height: 34px;
     transform: scale(1.4);
@@ -265,47 +283,44 @@
     font-size: x-small;
     display: flex;
     justify-content: center;
-    align-items: center
-
+    align-items: center;
 }
 
 .levelBar {
-    margin-top: 1em
-
+    margin-top: 1em;
 }
 
+/* .equippedGotchu { */
 .centerContent .gotchuCharacter {
+    /* background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
+	width: 209px;
+	height: 288px; */
     margin-top: -6em;
-    margin-left: 26em
-
+    margin-left: 26em;
 }
 
 .centerContent {
     margin-top: 18%;
     display: flex;
-    flex-direction: row
-
+    flex-direction: row;
 }
 
 .abilityButtonHome {
-    background: url(../images/assets_spritesheet.png) -6622px 0 no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -6622px -0px;
     width: 148px;
     height: 148px;
-    margin-top: 5em
-
+    margin-top: 5em;
 }
 
 .storyButton {
-    background: url(../images/assets_spritesheet.png) -6509px -1717px no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1717px;
     width: 148px;
     height: 148px;
-    margin-top: -9em
-
+    margin-top: -9em;
 }
 
 .abilityAndStoryContainer {
-    margin-left: 25%
-
+    margin-left: 21%
 }
 
 .bottomBar {
@@ -314,23 +329,19 @@
     margin-top: 4%;
     background-color: #CD6C03;
     display: flex;
-    border-top: solid 25px #58240c
-
+    border-top: solid 25px #58240c;
 }
 
 .catchuIcon {
-    background: url(../images/cat_icon.png) center no-repeat
-
+    background: url(../images/cat_icon.png) no-repeat center;
 }
 
 .dogchuIcon {
-    background: url(../images/dog_icon.png) center no-repeat
-
+    background: url(../images/dog_icon.png) no-repeat center;
 }
 
 .turtlechuIcon {
-    background: url(../images/turtle_icon.png) center no-repeat
-
+    background: url(../images/turtle_icon.png) no-repeat center;
 }
 
 .catchuIcon, .dogchuIcon, .turtlechuIcon {
@@ -338,103 +349,106 @@
     width: 83px;
     height: 80px;
     margin-left: 5em;
-    margin-top: 3em
-
+    margin-top: 3em;
 }
 
 .selected {
-    background-color: #fff;
-    border: 2px solid #fff
-
+    background-color: white;
+    border: solid 2px white;
 }
 
-.blackLockedIcon, .lockedIcon {
-    background: url(../images/Misc/locked.png) center no-repeat;
-    width: 100px;
-    height: 100px;
-    position: absolute
-
+/* .catchuIcon.locked, .dogchuIcon.locked, .turtlechuIcon.locked {
+    filter: blur(2px) brightness(70%);
 }
+.dogchuIcon.locked .lockedIcon {
+    filter: blur(0px);
+} */
 
 .lockedIcon {
-    transform: scale(.8)
-
+    background: url(../images/Misc/locked.png) no-repeat center;
+    width: 100px;
+    height: 100px;
+    transform: scale(0.8);
+    position: absolute;
 }
 
 .blackLockedIcon {
-    transform: scale(.6);
+    background: url(../images/Misc/locked.png) no-repeat center;
+    width: 100px;
+    height: 100px;
+    transform: scale(0.6);
+    position: absolute;
     filter: invert(100%);
-    margin-top: -.5em;
-    margin-left: -.5em
-
+    margin-top: -0.5em;
+    margin-left: -0.5em;
 }
 
 .storyContainer {
-    background: url(../images/assets_spritesheet.png) -5922px -776px no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
     width: 650px;
     height: 518px;
     display: flex;
+    /* align-content: center;
+    justify-content: center; */
     flex-direction: column;
     transform: scale(1.2);
     margin-left: 25em;
     margin-top: -50em;
-    position: fixed
-
+    position: fixed;
+    /* display: none; */
 }
 
-.storyPopup .locked p, .storyText .lockIcon {
-    display: none
-
-}
-
-.storyContainer>*, .storyContainer>*>* {
+.storyContainer > * {
+    transform: scale(calc(1/1.2));
     margin-left: auto;
-    margin-right: auto
-
+    margin-right: auto;
 }
 
-.storyPopup .locked, .storyText {
-    width: 620px;
-    height: 110px;
-    margin-top: -25px
-
-}
-
-.storyContainer>* {
-    transform: scale(calc(1/1.2))
-
+.storyContainer > * > *  {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .storyText {
-    background-color: #CD6C03
+    width: 620px;
+    height: 110px;
+    background-color: #CD6C03;
+    margin-top: -25px;
+}
 
+.storyText .lockIcon {
+    display: none;
 }
 
 .topText {
-    padding-top: 30px
-
+    padding-top: 30px;
 }
 
 .storyPopup .locked {
-    background-color: #955612
-
+    width: 620px;
+    height: 110px;
+    background-color: #955612;
+    margin-top: -25px;
 }
 
 .lockIcon {
-    background: url(../images/Misc/locked.png) center no-repeat;
+    background: url(../images/Misc/locked.png) no-repeat center;
     width: 100px;
     height: 100px;
-    margin-top: 5px
+    margin-top: 5px;
+}
 
+.storyPopup .locked p {
+    display: none;
 }
 
 .popups {
-    position: relative
-
+    position: relative;
 }
 
+/* Ability popup */
 .abilityContainer {
-    background: url(../images/assets_spritesheet.png) -5922px -776px no-repeat;
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
     width: 650px;
     height: 518px;
     display: flex;
@@ -442,64 +456,133 @@
     transform: scale(1.2);
     margin-left: 25em;
     margin-top: 14em;
-    position: fixed
-
+    position: fixed;
 }
 
+/* Do for all pets */
 .catchuAbility1 {
-    background: url(../images/assets_spritesheet.png) -5922px -1299px no-repeat
-
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1299px;
 }
 
 .catchuAbility2 {
-    background: url(../images/assets_spritesheet.png) -5922px -1493px no-repeat
-
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1493px;
 }
 
 .catchuAbility3 {
-    background: url(../images/assets_spritesheet.png) -5922px -1687px no-repeat
-
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1687px;
 }
 
 .catchuAbility1, .catchuAbility2, .catchuAbility3 {
     width: 194px;
     height: 194px;
-    transform: scale(.6);
-    margin-top: -1.5em
-
+    transform: scale(0.6);
+    margin-top: -1.5em;
 }
 
-.bottomRow, .middleRow, .topRow {
+.topRow, .middleRow, .bottomRow {
     display: flex;
-    margin-left: 2em
-
+    margin-left: 2em;
 }
 
 .topRow {
-    margin-top: 3em
-
+    margin-top: 3em;
 }
 
-.bottomRow, .middleRow {
-    margin-top: -2em
-
+.middleRow, .bottomRow {
+    margin-top: -2em;
 }
 
 .abilityText .description {
     width: 360px;
     height: 90px;
     background-color: #401404;
-    margin-top: -1em
-
+    margin-top: -1em;
 }
 
 .abilityText p {
-    margin-left: 4.5em
-
+    margin-left: 4.5em;
 }
 
 .description p.ability1, .description p.ability2, .description p.ability3 {
-    margin-left: .5em;
-    padding-top: .5em
+    margin-left: 0.5em;
+    padding-top: 0.5em;
+}
 
+/* Settings popup */
+.settingsContainer {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
+    width: 650px;
+    height: 518px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: scale(1);
+    margin-left: 25em;
+    margin-top: 15em;
+}
+
+.settingsContainer > * {
+    transform: scale(calc(1/0.8));
+}
+
+.settingsContainer h1 {
+    margin-top: -0.5em;
+    margin-bottom: 2em;
+}
+
+.onOffToggleButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6622px -153px;
+    width: 123px;
+    height: 34px;
+    transform: scale(1.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.soundSettingsRow, .musicSettingsRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.musicSettingsRow {
+    margin-top: 2em;
+}
+
+.soundSettingsRow p, .musicSettingsRow p {
+    margin-bottom: 0.5em;
+}
+
+.logoutButton, .closeSettingsButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -321px;
+    width: 200px;
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scaleX(0.8);
+}
+
+.logoutButton:hover, .closeSettingsButton:hover {
+    background: url(../images/assets_spritesheet.png) no-repeat -6577px -253px;
+    width: 200px;
+    height: 63px;
+}
+
+.logoutButton h4, .closeSettingsButton h4 {
+    margin-top: 0.5em;
+    transform: scaleX(calc(1/0.8));
+}
+
+.logoutButton:hover h4, .closeSettingsButton:hover h4 {
+    margin-top: 1.2em;
+}
+
+.closeSettingsContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4em;
 }
