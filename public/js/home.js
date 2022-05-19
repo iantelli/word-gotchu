@@ -32,7 +32,7 @@ window.addEventListener("click", function (event) {
                 <div class="gotchuCharacter"></div>
                 <div class="abilityAndStoryContainer">
                     <div class="storyButton"></div>
-                    <div class="abilityButton"></div>
+                    <div class="abilityButtonHome"></div>
                 </div>
             </div>
 
@@ -123,7 +123,7 @@ window.addEventListener("click", function (event) {
     })
 
     // Toggle ability popup
-    const abilityButton = document.querySelector(".abilityButton");
+    const abilityButton = document.querySelector(".abilityButtonHome");
     abilityButton.addEventListener("click", function () {
     
       // Maybe don't need to add locked properties for abilities? Can add later if needed
