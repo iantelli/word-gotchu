@@ -1,18 +1,15 @@
 .keyTwo, .one {
     resize: none;
     width: 100%
-    
 }
 
 .answerContainer, .keyRow {
     font-family: kongText;
     display: flex
-
 }
 
 div.hidden {
     display: none
-
 }
 
 .keyRow {
@@ -26,64 +23,53 @@ div.hidden {
     box-sizing: border-box;
     gap: 8px;
     resize: none
-
 }
 
 .keyRow.rowOne {
     max-width: 650px;
     min-width: 650px
-
 }
 
 .keyRow.rowTwo {
     max-width: 610px;
     min-width: 610px
-
 }
 
 .keyRow.rowThree {
     max-width: 650px;
     min-width: 650px;
     justify-content: center
-
 }
 
 .one {
     font-size: 2vw
-
 }
 
 .keyTwo .del {
     padding-top: 5px;
     transform: scale(1.75, 1.5);
     transform: scaleX(-1.5)
-
 }
 
 .keyTwo .del:hover {
     padding-top: 4px
-
 }
 
 .keyTwo {
     font-size: 1.5vw
-
 }
 
 .letter {
     font-size: 30px
-
 }
 
 .del p {
     font-size: xx-large;
     margin-top: -5px
-
 }
 
 .ent {
     font-size: 14px
-
 }
 
 .keyboard {
@@ -99,29 +85,24 @@ div.hidden {
     height: 250px;
     bottom: 0;
     transform: scale(.8)
-
 }
 
 .background, .one {
     position: relative
-
 }
 
 .keyRow {
     margin: 0 auto 7px;
     line-height: 50px;
     width: 47vw
-
 }
 
 .keyRow:nth-of-type(1) {
     margin-top: 32px
-
 }
 
 .keyRow:nth-of-type(3) {
     margin-bottom: 5vh
-
 }
 
 .del, .ent, .key, .keyTwo, .letter {
@@ -133,17 +114,14 @@ div.hidden {
     cursor: pointer;
     text-shadow: 0 0 1px #000, 0 0 1px #000, 0 0 1px #000, 0 0 1px #000;
     margin: 0 .1vw 0 0
-
 }
 
 .key:hover>.letter, .keyTwo:hover>.ent {
     margin-top: 5px
-
 }
 
 .keyTwo:hover>.del {
     margin-top: 0
-
 }
 
 .keyTwo {
@@ -151,14 +129,12 @@ div.hidden {
     background-size: 100% 100%;
     flex: .75;
     text-align: center
-
 }
 
 .keyTwo:hover {
     background: url(../images/Keyboard/Enter_Blank_Pressed.svg) center no-repeat;
     background-size: 100% 100%;
     text-align: center
-
 }
 
 .one {
@@ -166,133 +142,112 @@ div.hidden {
     background-size: 100% 100%;
     flex: .5;
     cursor: pointer
-
 }
 
 .one:hover {
     background: url(../images/Keyboard/Letter_Gray_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%
-
 }
 
 .keyTwo:active, .one:active {
     transform: scale(.9)
-
 }
 
 .keyTwo:nth-of-type(1) {
     margin-right: .417vw
-
 }
 
 div.key[class*=green] {
     background: url(../images/Keyboard/Letter_Green_Blank.svg) no-repeat;
     background-size: 100% 100%;
     flex: .5
-
 }
 
 div.key[class*=green]:hover {
     background: url(../images/Keyboard/Letter_Green_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
     flex: .5
-
 }
 
 div[class*=yellow] {
     background: url(../images/Keyboard/Letter_Yellow_Blank.svg) no-repeat;
     background-size: 100% 100%;
     flex: .5
-
 }
 
 div[class*=yellow]:hover {
     background: url(../images/Keyboard/Letter_Yellow_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
     flex: .5
-
 }
 
 div[class*=black] {
     background: url(../images/Keyboard/Letter_Black_Blank.svg) no-repeat;
     background-size: 100% 100%;
     flex: .5
-
 }
 
 div[class*=black]:hover {
     background: url(../images/Keyboard/Letter_Black_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
     flex: .5
-
 }
 
 .key.one.pressed {
     background: url(../images/Keyboard/Letter_Gray_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
     flex: .5
-
 }
 
 .keyTwo.pressed {
     background: url(../images/Keyboard/Enter_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%
-
 }
 
 .key.one.pressed.yellow {
     background: url(../images/Keyboard/Letter_Yellow_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
     flex: .5
-
 }
 
 .key.one.pressed.black {
     background: url(../images/Keyboard/Letter_Black_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
     flex: .5
-
 }
 
 .key.one.pressed.green {
     background: url(../images/Keyboard/Letter_Green_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
     flex: .5
-
 }
 
 .letter.pressed {
     margin-top: 5px;
     margin-bottom: -5px
-
 }
 
 #backspace.pressed p {
     margin-top: -1px
-
 }
 
 #enter.pressed p {
     margin-top: 3px
-
 }
 
 div.correctCharacter {
     background: url(../images/Keyboard/Letter_Yellow_Blank.svg) no-repeat;
     background-size: 100% 100%
-
 }
 
 div.incorrectCharacter {
     background: url(../images/Keyboard/Letter_Black_Blank.svg) no-repeat;
     background-size: 100% 100%
-
 }
 
 div.correctCharacterPlacement {
     background: url(../images/Keyboard/Letter_Green_Blank.svg) no-repeat !important;
     background-size: 100% 100% !important
-
 }
 
 .answerContainer {
@@ -300,21 +255,21 @@ div.correctCharacterPlacement {
     justify-content: center;
     width: 100%;
     height: 100%
-
 }
 
 .container, .settingsContainer {
     justify-content: center;
     display: flex
-
 }
 
 .background {
     background: url(../images/assets_spritesheet.png) -4477px 0 no-repeat;
     width: 1440px;
     height: 1024px;
-    transform-origin: top left;
-    margin: auto
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
 }
 
@@ -324,14 +279,12 @@ div.correctCharacterPlacement {
     height: 170px;
     margin: 20px auto auto;
     position: relative
-
 }
 
 .profileIconLeft, .profileIconRight {
     background: url(../images/assets_spritesheet.png) -6706px -1574px no-repeat;
     position: relative;
     top: 12px
-
 }
 
 .profileIconLeft {
@@ -339,7 +292,6 @@ div.correctCharacterPlacement {
     height: 80px;
     float: left;
     left: 30px
-
 }
 
 .profileIconRight {
@@ -347,62 +299,51 @@ div.correctCharacterPlacement {
     height: 80px;
     float: right;
     right: 30px
-
 }
 
 .dogchuIcon {
     background: url(../images/dog_icon.png);
     width: 83px;
     height: 80px
-
 }
 
 .player1Username, .player2Username {
     color: gold
-
 }
 
 .ability, .abilityCooldown, .clock {
     color: #000;
     position: absolute
-
 }
 
 .player1Score, .player1Username, .player2Score, .player2Username {
     font-size: 24px;
     position: absolute;
     top: 50px
-
 }
 
 .player1Score {
     left: 360px
-
 }
 
 .player2Score {
     right: 360px
-
 }
 
 .player1Username {
     left: 86px
-
 }
 
 .player2Username {
     right: 86px
-
 }
 
 .player1HealthbarBorder, .player2HealthbarBorder {
     background: url(../images/assets_spritesheet.png) -6439px -3299px no-repeat
-
 }
 
 .player1Healthbar, .player2Healthbar {
     background: url(../images/assets_spritesheet.png) -6439px -3251px no-repeat
-
 }
 
 .player1Healthbar, .player1HealthbarBorder {
@@ -411,14 +352,12 @@ div.correctCharacterPlacement {
     position: absolute;
     top: 5px;
     left: 86px
-
 }
 
 .catchuIcon {
     background: url(../images/cat_icon.png);
     width: 83px;
     height: 80px
-
 }
 
 .player2Healthbar, .player2HealthbarBorder {
@@ -427,14 +366,12 @@ div.correctCharacterPlacement {
     height: 43px;
     top: 5px;
     right: 86px
-
 }
 
 .clock {
     font-size: 26px;
     top: 67px;
     left: 513px
-
 }
 
 .abilityButton {
@@ -444,20 +381,17 @@ div.correctCharacterPlacement {
     bottom: 46px;
     left: 68px;
     position: absolute
-
 }
 
 .abilityCooldown {
     font-size: 30px;
     bottom: 15px;
     left: 83px
-
 }
 
 .ability {
     bottom: 244px;
     left: 30px
-
 }
 
 .wordleBar {
@@ -468,7 +402,6 @@ div.correctCharacterPlacement {
     margin: auto auto 5px;
     align-items: center;
     justify-content: center
-
 }
 
 .letterSlots {
@@ -480,7 +413,6 @@ div.correctCharacterPlacement {
     align-items: center;
     justify-content: center;
     font-size: 22px
-
 }
 
 .player1Character {
@@ -491,7 +423,6 @@ div.correctCharacterPlacement {
     position: absolute;
     bottom: 200px;
     left: 160px
-
 }
 
 @keyframes dogchuAnimation {
@@ -514,7 +445,6 @@ div.correctCharacterPlacement {
     right: 160px;
     transform: scaleX(-1);
     animation: catchuAnimation 1s steps(2) infinite
-
 }
 
 @keyframes catchuAnimation {
@@ -532,7 +462,6 @@ form {
     position: absolute;
     left: 42.5%;
     top: 22%
-
 }
 
 input[type=text] {
@@ -543,7 +472,6 @@ input[type=text] {
     box-shadow: none;
     border: none;
     color: #fff
-
 }
 
 div.error {
@@ -551,7 +479,6 @@ div.error {
     position: relative;
     animation: shake .1s linear;
     animation-iteration-count: 3
-
 }
 
 @keyframes shake {
@@ -581,7 +508,6 @@ div.error {
     position: absolute;
     top: 1px;
     right: -105px
-
 }
 
 .settingsContainer {
@@ -594,18 +520,15 @@ div.error {
     margin-left: 37em;
     margin-top: -50em;
     position: absolute
-
 }
 
 .settingsContainer>* {
     transform: scale(calc(1/.8))
-
 }
 
 .settingsContainer h1 {
     margin-top: -.5em;
     margin-bottom: 2em
-
 }
 
 .onOffToggleButton {
@@ -616,7 +539,6 @@ div.error {
     display: flex;
     justify-content: center;
     align-items: center
-
 }
 
 .musicSettingsRow, .soundSettingsRow {
@@ -624,17 +546,14 @@ div.error {
     flex-direction: row;
     justify-content: space-between;
     width: 400px
-
 }
 
 .musicSettingsRow {
     margin-top: 2em
-
 }
 
 .musicSettingsRow p, .soundSettingsRow p {
     margin-bottom: .5em
-
 }
 
 .closeSettingsButton, .logoutButton {
@@ -645,33 +564,28 @@ div.error {
     justify-content: center;
     align-items: center;
     transform: scaleX(.8)
-
 }
 
 .closeSettingsButton:hover, .logoutButton:hover {
     background: url(../images/assets_spritesheet.png) -6577px -253px no-repeat;
     width: 200px;
     height: 63px
-
 }
 
 .closeSettingsButton h4, .logoutButton h4 {
     margin-top: .5em;
     transform: scaleX(calc(1/.8));
     pointer-events: none
-
 }
 
 .closeSettingsButton:hover h4, .logoutButton:hover h4 {
     margin-top: 1.2em
-
 }
 
 .closeSettingsContainer {
     display: flex;
     flex-direction: row;
     margin-top: 4em
-
 }
 
 .nonInteractableText {

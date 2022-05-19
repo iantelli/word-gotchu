@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/css/homepage.css">
   <link rel="stylesheet" href="/css/gotchuGacha.css">
 </head>
+
 <body>
   <script>
     // Get firebase database snapshot of the current user and pet
@@ -26,48 +27,51 @@
     const petAbility1 = "<%= pet.lvl1Ability %>";
     const petAbility2 = "<%= pet.lvl2Ability %>";
     const petAbility3 = "<%= pet.lvl3Ability %>";
-</script>
+
+  </script>
 
   <!-- Homepage -->
   <div class="mainScreenBg">
     <div class="topNav">
-        <div class="userBar">
-            <div class="userProfileBg"></div>
-            <div class="userName"></div>
-        </div>
-        <div class="gotchuCoinBar">
-            <div class="gotchuCoinIcon"></div>
-            <div class="gotchuCoinAmount"></div>
-        </div>
-        <div class="settings"></div>
+      <div class="userBar">
+        <div class="userProfileBg"></div>
+        <div class="userName"></div>
+      </div>
+      <div class="gotchuCoinBar">
+        <div class="gotchuCoinIcon"></div>
+        <div class="gotchuCoinAmount"></div>
+      </div>
+      <div class="settings"></div>
     </div>
 
     <div class="gotchuCharacter"></div>
 
     <div class="bottomNav">
-        <div class="gotchuButton"></div>
-        <div class="gachaButton"></div>
-        <div class="gotchuDomeButton"></div>
+      <div class="gotchuButton"></div>
+      <div class="gachaButton"></div>
+      <div class="gotchuDomeButton"></div>
     </div>
   </div>
 
   <!-- Gacha page -->
   <div class="gachaBg hidden">
     <div class="topNavBar">
-        <div class="homeButton">
-            <h1 class="nonInteractableText">HOME</h1>
-        </div>
-        <div class="gotchuCoinBar">
-            <div class="gotchuCoinIcon"></div>
-            <div class="gotchuCoinAmount">1000</div>
-        </div>
+      <div class="homeButton">
+        <h1 class="nonInteractableText">HOME</h1>
+      </div>
+      <div class="gotchuCoinBar">
+        <div class="gotchuCoinIcon"></div>
+        <div class="gotchuCoinAmount">1000</div>
+      </div>
     </div>
     <div class="gachaTitle"></div>
     <div class="gachaContainer">
-        <div class="gachaAnimation"></div>
+      <div class="gachaAnimation"></div>
     </div>
     <div class="gachaRollButton"></div>
-    <div class="viewGotchusButton"><h3>VIEW GOTCHUS</h3></div>
+    <div class="viewGotchusButton">
+      <h3>VIEW GOTCHUS</h3>
+    </div>
   </div>
 
   <!-- Lobby page -->
@@ -104,6 +108,8 @@
 
   <script src="/js/home.js"></script>
   <script src="/js/homepage.js"></script>
+  <script src="/js/rescale.js"></script>
+
 </body>
 
 </html>

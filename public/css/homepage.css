@@ -6,11 +6,6 @@
     background: url(../images/assets_spritesheet.png) no-repeat -4477px -2058px;
     width: 1440px;
     height: 1024px;
-    transform: translate(-50%, -0%);
-    position: fixed;
-    left: 50%;
-    bottom: 0px;
-    margin: 0 auto;
 
 }
 

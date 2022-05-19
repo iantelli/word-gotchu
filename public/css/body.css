@@ -5,6 +5,7 @@
     src: url('kongtext.ttf');
 }
 
+
 html, body {
     background: url('../images/bodyBackground.png');
     background-size: cover;
@@ -12,7 +13,18 @@ html, body {
     background-position: center center;
     font-family: kongText;
     color: white;
-    margin: 0; 
-    height: 100%; 
+    margin: 0;
+    height: 100%;
     overflow: hidden
+}
+
+.gachaBg, .mainScreenBg, .manageGotchusContainer, .battleArenaBg {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.portraitBg {
+    display: none;
 }
