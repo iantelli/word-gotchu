@@ -8,10 +8,9 @@ window.addEventListener("click", function (event) {
     // Need to fill xp, level, and story boxes with js
 
     const mainScreen = document.querySelector(".mainScreenBg");
-    mainScreen.remove();
+    mainScreen.classList.add("hidden");
 
-    const gotchusPageContainer = document.createElement("div");
-    gotchusPageContainer.className = "manageGotchusContainer";
+    const gotchusPageContainer = document.querySelector(".manageGotchusContainer");
     gotchusPageContainer.innerHTML = `    
             <div class="topBar">
                 <div class="backButton">
@@ -45,10 +44,6 @@ window.addEventListener("click", function (event) {
     const body = document.querySelector("body");
     body.appendChild(gotchusPageContainer);
 
-    // Rescale Page
-    const backgroundElement = document.querySelector(".manageGotchusContainer")
-    reScaleWhatever(backgroundElement)
-
     populateGotchuPage(petLvl, petXP);
 
     // Add lock icon to locked characters
@@ -62,9 +57,8 @@ window.addEventListener("click", function (event) {
     // Back button listener to return to original homepage
     const backButton = document.querySelector(".topBar .backButton");
     backButton.addEventListener("click", function () {
-
-      const mainScreen = document.createElement("div");
-      mainScreen.className = "mainScreenBg";
+      const mainScreen = document.querySelector(".mainScreenBg");
+      // mainScreen.className = "mainScreenBg";
       mainScreen.innerHTML = `    
               <div class="topNav">
                   <div class="userBar">
@@ -87,11 +81,9 @@ window.addEventListener("click", function (event) {
               </div>`;
 
       body.appendChild(mainScreen);
-      //Rescale Page
-      const backgroundElement = document.querySelector(".mainScreenBg")
-      reScaleWhatever(backgroundElement)
+      mainScreen.classList.remove("hidden")
 
-      gotchusPageContainer.remove();
+      // gotchusPageContainer.remove();
       populateHomepage(username, playerCurrency);
       goToGotchuDomeListener();
 
@@ -134,14 +126,14 @@ window.addEventListener("click", function (event) {
     // Toggle ability popup
     const abilityButton = document.querySelector(".abilityButtonHome");
     abilityButton.addEventListener("click", function () {
-    
+
       // Maybe don't need to add locked properties for abilities? Can add later if needed
-    
+
       const existingStoryPopup = document.querySelector(".storyPopup");
       const existingAbilityPopup = document.querySelector(".abilityContainer");
       if (existingStoryPopup) existingStoryPopup.remove();
       if (existingAbilityPopup) return existingAbilityPopup.remove();
-    
+
       const abilityPopup = document.createElement("div");
       abilityPopup.className = "abilityContainer";
       abilityPopup.innerHTML = `
