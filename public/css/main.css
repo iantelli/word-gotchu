@@ -18,8 +18,8 @@
   background: url(../images/assets_spritesheet.png) -5922px 0 no-repeat;
   width: 695px;
   height: 248px;
-  transform: translate(-50%, -50%);
-  bottom: 20px
+  top:50%;
+  bottom: 50%
 
 }
 

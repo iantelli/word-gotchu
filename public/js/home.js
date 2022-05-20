@@ -44,6 +44,11 @@ window.addEventListener("click", function (event) {
 
     const body = document.querySelector("body");
     body.appendChild(gotchusPageContainer);
+
+    // Rescale Page
+    const backgroundElement = document.querySelector(".manageGotchusContainer")
+    reScaleWhatever(backgroundElement)
+
     populateGotchuPage(petLvl, petXP);
 
     // Add lock icon to locked characters
@@ -82,6 +87,10 @@ window.addEventListener("click", function (event) {
               </div>`;
 
       body.appendChild(mainScreen);
+      //Rescale Page
+      const backgroundElement = document.querySelector(".mainScreenBg")
+      reScaleWhatever(backgroundElement)
+
       gotchusPageContainer.remove();
       populateHomepage(username, playerCurrency);
       goToGotchuDomeListener();

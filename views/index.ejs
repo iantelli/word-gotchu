@@ -105,10 +105,26 @@
       </div>
     </div>
   </div>
+  <script>
+    let backgroundList = [".mainScreenBg", ".battleArenaBg", ".gachaBg", ".wordleBar2", ".battleMenu", ".joinBattleMenu"]
+    
+    for (i in backgroundList) {
+      let backgroundElement = document.querySelector(backgroundList[i])
+      console.log(backgroundElement)
+    
+    function reScaleWhatever() {
+      const scaleWidth = window.innerWidth / 1440
+      const scaleHeight = window.innerHeight / 1024
+      backgroundElement.style.transform = `translateX(-50%) translateY(-50%) scale(${scaleWidth, scaleHeight})`
+    }
 
+    window.addEventListener("resize", event => {
+      reScaleWhatever()
+    })
+    reScaleWhatever()}
+  </script>
   <script src="/js/home.js"></script>
   <script src="/js/homepage.js"></script>
-  <script src="/js/rescale.js"></script>
 
 </body>
 
