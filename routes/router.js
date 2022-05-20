@@ -20,17 +20,39 @@ router.get("/lobby", (req, res) => {
 })
 
 router.get("/lobby/:id", (req, res) => {
-  res.render("lobby")
+  const bothPlayersConnected = false;
+  const userName = "You";
+  const opponentName = "Opponent";
+  res.render("ready", { bothPlayersConnected, userName, opponentName })
 })
 
-router.get("/gameover", (req, res) => {
+router.get("/lobby/:id/:gotchu/win", (req, res) => {
+  const gotchu = req.params.gotchu;
   const gameResult = {
     winner: true,
     xpChange: 25,
     reward: 100,
   }
-  res.render("gameEnd", { gameResult })
+  res.render("gameEnd", { gameResult, gotchu })
 })
+
+router.get("/lobby/:id/:gotchu/lose", (req, res) => {
+  const gotchu = req.params.gotchu;
+  const gameResult = {
+    winner: false,
+    xpChange: 25,
+    reward: 5,
+  }
+  res.render("gameEnd", { gameResult, gotchu })
+})
+
+//temp cause no users
+router.get("/lobby/:id/:gotchu", (req, res) => {
+  const gotchu = req.params.gotchu;
+  res.render("lobby", { gotchu })
+})
+
+
 
 router.get("/homepage", (req, res) => {
   const data = {
@@ -54,13 +76,6 @@ router.get("/test", (req, res) => {
 
 router.get("/gacha", (req, res) => {
   res.render("gotchuGacha")
-})
-
-router.get("/ready", (req, res) => {
-  const bothPlayersConnected = false;
-  const playerName = "You";
-  const opponentName = "Opponent";
-  res.render("ready", { bothPlayersConnected, playerName, opponentName })
 })
 
 module.exports = router;

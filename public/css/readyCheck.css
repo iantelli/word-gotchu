@@ -64,7 +64,7 @@ html, body {
     align-items: center;
 }
 
-.playerPetContainer, .opponentCharacter {
+.playerPetContainer, .opponentPetContainer {
     width: 260px;
     height: 315px;
     display: flex;

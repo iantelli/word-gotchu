@@ -4,7 +4,7 @@
   let playerRef;
   let lobbyRef;
   let allPlayersRef;
-  let gamStarted = false;
+  let gameStarted = false;
   let lobbyId = window.location.pathname.split("/")[2];
   let keyCount = 1;
   let userGuessCount = 1;
@@ -21,7 +21,9 @@
   sendSound.volume = 0.18;
   battleMusic.volume = 0.1;
   battleMusic.loop = true;
-  const hpWidth = 338/100;
+  const hpWidth = 338 / 100;
+  const playerUnlockedChars = ["catchu", "dogchu", "turtlechu", "mousechu", "raccoonchu"];
+
 
   document.addEventListener("click", event => {
     event.preventDefault();
@@ -36,44 +38,62 @@
       const time = 30;
       let timer = time;
       let timerID;
+      switch (gotchu) {
+        case "catchu":
+          let randID = setInterval(function () {
+            i++
+            int >= 6 ? int = 1 : int++
+            abi.innerHTML = `(${int}) Damage done to <br>your opponent!`;
+            if (i > Math.floor(Math.random() * 50) + 10) {
+              clearTimeout(randID);
+              allPlayersRef.get().then((snapshot) => {
+                let players = snapshot.val()
+                Object.values(players).forEach((player) => {
+                  if (playerNum !== player.num) {
+                    let otherPlayerRef = firebase.database().ref(`lobbies/${lobbyId}/players/${player.id}`);
 
-      if (playerNum === 1) {
-        let currentWordleRef = firebase.database().ref(`lobbies/${lobbyId}/players/${playerId}/currentWordle`);
-        currentWordleRef.get().then((snapshot) => {
-          let wordleSnapshot = snapshot.val()
-          let randLetter = wordleSnapshot.answer[Math.floor(Math.random() * 5) + 1];
-          abi.innerHTML = `(${randLetter.toUpperCase()}) is one of the <br>letters in your word!`;
+                    //end game condition
+                    if (player.hp - 25 <= 0) {
 
-        })
-      }
+                    }
 
-      if (playerNum === 2) {
-        let randID = setInterval(function () {
-          i++
-          int >= 6 ? int = 1 : int++
-          abi.innerHTML = `(${int}) Damage done to <br>your opponent!`;
-          if (i > Math.floor(Math.random() * 50) + 10) {
-            clearTimeout(randID);
-            allPlayersRef.get().then((snapshot) => {
-              let players = snapshot.val()
-              Object.values(players).forEach((player) => {
-                if (playerNum !== player.num) {
-                  let otherPlayerRef = firebase.database().ref(`lobbies/${lobbyId}/players/${player.id}`);
-
-                  //end game condition
-                  if (player.hp - 25 <= 0) {
-
+                    otherPlayerRef.update({
+                      hp: player.hp - int
+                    })
                   }
-
-                  otherPlayerRef.update({
-                    hp: player.hp - int
-                  })
-                }
+                })
               })
-            })
-          }
-        }, 60);
+            }
+          }, 60);
 
+          break;
+        case "dogchu":
+          let currentWordleRef = firebase.database().ref(`lobbies/${lobbyId}/players/${playerId}/currentWordle`);
+          currentWordleRef.get().then((snapshot) => {
+            let wordleSnapshot = snapshot.val()
+            let randLetter = wordleSnapshot.answer[Math.floor(Math.random() * 5) + 1];
+            abi.innerHTML = `(${randLetter.toUpperCase()}) is one of the <br>letters in your word!`;
+
+          })
+          break;
+        case "turtlechu":
+          playerRef.get().then((snapshot) => {
+            let player = snapshot.val()
+            playerRef.update({
+              hp: player.hp + 5
+            })
+          })
+          abi.innerHTML = `(${5}) HP gained!`;
+          break;
+        case "mousechu":
+
+          break;
+        case "raccoonchu":
+
+          break;
+
+        default:
+          break;
       }
 
       butt.style = "display: none;"
@@ -298,9 +318,10 @@
       })
       //On new player
       const addedPlayer = snapshot.val();
-      if (addedPlayer.num === 2 && !gamStarted) {
+      if (addedPlayer.num === 2 && !gameStarted) {
         document.querySelector(`.player${addedPlayer.num}Username`).innerHTML = `Them`;
-        gamStarted = true;
+        document.querySelector(`.player${addedPlayer.num}Character`).innerHTML = `<div class=${addedPlayer.gotchu}></div>`;
+        gameStarted = true;
         startGame();
       }
     })
@@ -361,14 +382,14 @@
             hps[player.num] = player.hp;
           })
           let keysSorted = Object.keys(hps).sort(function (a, b) { return hps[b] - hps[a] })
-          document.querySelector(".wordleBars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
+          // document.querySelector(".wordleBars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
 
           if (hps[keysSorted[0]] === hps[keysSorted[1]]) {
             document.querySelector(".wordleBars").innerHTML = "Draw!"
           } else if (keysSorted[0] === playerNum.toString()) {
-            document.querySelector(".wordleBars").innerHTML = "You Win!"
+            window.location.href = `/lobby/${lobbyId}/${gotchu}/win`
           } else {
-            document.querySelector(".wordleBars").innerHTML = "You Lose!"
+            window.location.href = `/lobby/${lobbyId}/${gotchu}/lose`
           }
         })
       }
@@ -384,7 +405,7 @@
   window.addEventListener("click", (event) => {
     const targetClasslist = event.target.className.split(" ");
     if (targetClasslist.includes("settingsButton")) {
-      
+
       const existingSettingsContainer = document.querySelector(".settingsContainer");
       if (existingSettingsContainer) return existingSettingsContainer.remove();
 
@@ -519,7 +540,12 @@
         if (Object.keys(allPlayers).length === 2) {
           document.querySelector(".wordleBars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
           document.querySelector(".wordleBars").innerHTML = "Lobby already has 2 players!"
-          throw "Already has 2 players"
+          throw "Lobby already has 2 players!"
+        }
+        if (playerUnlockedChars.indexOf(gotchu) === -1) {
+          document.querySelector(".wordleBars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
+          document.querySelector(".wordleBars").innerHTML = "Invalid Gotchu!"
+          throw "Invalid Gotchu!"
         }
       }).then(() => {
 
@@ -529,25 +555,34 @@
 
         playerRef.set({
           id: playerId,
+          gotchu,
           hp: 100,
           ready: false
         })
 
         allPlayersRef.get().then((snapshot) => {
           let allPlayers = snapshot.val() || {};
+
           playerNum = Object.entries(allPlayers).length
           playerRef.update({
             num: playerNum
           })
           document.querySelector(`.player${playerNum}Username`).innerHTML = `Me`;
           document.querySelector(`.player${playerNum}Username`).style = "color: red;"
+          document.querySelector(`.player${playerNum}Character`).innerHTML = `<div class=${gotchu}></div>`;
 
-          if (playerNum === 1) {
 
-          }
-          if (playerNum === 2) {
-            document.querySelector(`.player1Username`).innerHTML = `Them`;
-          }
+          Object.values(allPlayers).forEach((player) => {
+            if (playerId !== player.id) {
+              if (playerNum === 1) {
+                document.querySelector(`.player2Character`).innerHTML = `<div class=${player.gotchu}></div>`;
+              }
+              if (playerNum === 2) {
+                document.querySelector(`.player1Username`).innerHTML = `Them`;
+                document.querySelector(`.player1Character`).innerHTML = `<div class=${player.gotchu}></div>`;
+              }
+            }
+          })
         })
 
         playerRef.onDisconnect().remove();
@@ -575,7 +610,7 @@
 window.addEventListener("click", (event) => {
   const targetClasslist = event.target.className.split(" ");
   if (targetClasslist.includes("settings_button")) {
-    
+
     const existingSettingsContainer = document.querySelector(".settingsContainer");
     if (existingSettingsContainer) return existingSettingsContainer.remove();
 
