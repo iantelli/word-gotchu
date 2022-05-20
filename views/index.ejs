@@ -9,43 +9,108 @@
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/body.css">
+  <link rel="stylesheet" href="/css/homepage.css">
+  <link rel="stylesheet" href="/css/gotchuGacha.css">
+  <link rel="stylesheet" href="/css/gotchus.css">
+  <link rel="stylesheet" href="/css/manageGotchus.css">
 </head>
 <body>
-  <div>
-    <div class="battle_arena_bg">
-        <div class="backButton hidden">
-          <span class="backButtonText">BACK</span>
+  <script>
+    // Get firebase database snapshot of the current user and pet
+    const username = "<%= data.username %>";
+    const playerCurrency = "<%= data.playerCurrency %>";
+    const petLvl = "<%= pet.lvl %>";
+    const petXP = "<%= pet.xp %>";
+    const petStory1 = "<%= pet.lvl1Story %>";
+    const petStory2 = "<%= pet.lvl2Story %>";
+    const petStory3 = "<%= pet.lvl3Story %>";
+    const petAbility1 = "<%= pet.lvl1Ability %>";
+    const petAbility2 = "<%= pet.lvl2Ability %>";
+    const petAbility3 = "<%= pet.lvl3Ability %>";
+    let fxState = true;
+    let musicState = true;
+</script>
+
+  <!-- Homepage -->
+  <div class="mainScreenBg">
+    <div class="topNav">
+        <div class="userBar">
+            <div class="userProfileBg"></div>
+            <div class="userName"></div>
         </div>
-      <div>
-        <div class="battle_menu hidden">
-          <p class="menu_title create nonInteractableText">Create a Match</p>
-          <hr class="menu_header">
-          <div class="create_room_bar">
-            <div class="createRoomDiv">
+        <div class="gotchuCoinBar">
+            <div class="gotchuCoinIcon"></div>
+            <div class="gotchuCoinAmount"></div>
+        </div>
+        <div class="homeSettingsButton"></div>
+    </div>
+
+    <div class="gotchuCharacter"></div>
+
+    <div class="bottomNav">
+        <div class="gotchuButton"></div>
+        <div class="gachaButton"></div>
+        <div class="gotchuDomeButton"></div>
+    </div>
+  </div>
+
+  <!-- Gacha page -->
+    <div class="gachaBg hidden">
+        <div class="topNavBar">
+            <div class="homeButton">
+                <h1>HOME</h1>
             </div>
-          </div>
-          <!-- <p>Share this code to your friend!</p> -->
+            <div class="gotchuCoinBar">
+                <div class="gotchuCoinIcon"></div>
+                <p class="gotchuCoinAmount">1000</p>
+            </div>
         </div>
-        <div class="join_battle_menu hidden">
-          <p class="menu_title nonInteractableText">Join a Match</p>
-          <hr class="menu_header">
-          <p>Enter a code to join a match</p>
-          <div class="joinRoomDiv">
-            
-          </div>
+        <div class="gachaTitle"></div>
+        <div class="gachaContainer">
+            <div class="gachaAnimation"></div>
         </div>
-        <div class="wordle_bar2">
-          <p class="menu_title nonInteractableText">Start a Match</p>
-          <hr class="menu_header">
-          <div>
-            <p class="createRoom">Create</button>
-            <p class="joinRoom">Join</button>
-          </div>
+        <div class="gachaRollButton"></div>
+        <div class="viewGotchusButton">
+            <h3>VIEW GOTCHUS</h3>
         </div>
+    </div>
+
+  <!-- Lobby page -->
+  <div class="gochuDome hidden">
+    <div class="battleArenaBg">
+      <div class="backButton battleMenuBackBtn">
+        <span class="backButtonText">BACK</span>
+      </div>
+    </div>
+    <div class="battleMenu hidden">
+      <p class="menuTitle create nonInteractableText">Create a Match</p>
+      <hr class="menuHeader">
+      <div class="createRoomBar">
+        <div class="createRoomDiv">
+        </div>
+      </div>
+      <!-- <p>Share this code to your friend!</p> -->
+    </div>
+    <div class="joinBattleMenu hidden">
+      <p class="menuTitle nonInteractableText">Join a Match</p>
+      <hr class="menuHeader">
+      <p>Enter a code to join a match</p>
+      <div class="joinRoomDiv"></div>
+    </div>
+    <div class="wordleBar2">
+      <p class="menuTitle nonInteractableText">Start a Match</p>
+      <hr class="menuHeader">
+      <div>
+        <p class="createRoom">Create</button>
+        <p class="joinRoom">Join</button>
       </div>
     </div>
   </div>
+
+  <script src="/js/home.js"></script>
   <script src="/js/homepage.js"></script>
+  <script src="/js/gotchuGacha.js"></script>
 </body>
 
 </html>

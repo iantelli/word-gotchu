@@ -1,117 +1,147 @@
-
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
-@font-face {
-    font-family: kongText;
-    src: url('kongtext.ttf');
-}
-
 * {
     margin-left: auto;
     margin-right: auto;
-    font-family: kongText;
+
 }
 
-html, body {
-    background-color: black;
-    color: white;
-    margin: 0;
-    height: 100%;
-    overflow: hidden;
-}
-
-/* Top Text */
-.gameResultTitle {
-    margin-top: -1em;
-}
 
 .gameEndBackground {
-    background: url(../images/assets_spritesheet.png) no-repeat -4477px -3087px;
+    background: url(../images/assets_spritesheet.png) -4477px -3087px no-repeat;
     width: 1440px;
     height: 1024px;
     display: flex;
     justify-content: center;
-    flex-flow: column;
+    flex-flow: column
+    
 }
 
-/* Player Avatar */
-.catchuWin {
-    background: url(../images/assets_spritesheet.png) no-repeat -1005px -2376px;
-	width: 212px;
-	height: 290px;
+.gameEndBackground .gameResultTitle {
+    margin-top: -1em
+
+}
+
+.gameEndBackground .catchuWin {
+    background: url(../images/assets_spritesheet.png) no-repeat -1007px -908px;
+	width: 239px;
+	height: 287px;
     margin-top: 2em;
-    margin-left: 41.5%;
+    margin-left: 41.5%
+
 }
 
-.catchuLose {
-    background: url(../images/assets_spritesheet.png) no-repeat -1018px -2048px;
-	width: 210px;
-	height: 288px;
+.gameEndBackground .catchuLose {
+    background: url(../images/assets_spritesheet.png) no-repeat -1007px -597px;
+	width: 239px;
+	height: 287px;
     margin-top: 2em;
-    margin-left:41.5%;
+    margin-left: 41.5%
+
 }
 
-/* XP Gain/Loss */
-.greenXPBar {
-    background: url(../images/assets_spritesheet.png) no-repeat -6439px -3299px;
+.gameEndBackground .dogchuWin {
+    background: url(../images/assets_spritesheet.png) no-repeat -1007px -2377px;
+	width: 208px;
+	height: 287px;
+    margin-top: 2em;
+    margin-left: 41.5%
+
+}
+
+.gameEndBackground .dogchuLose {
+    background: url(../images/assets_spritesheet.png) no-repeat -1019px -2048px;
+	width: 209px;
+	height: 287px;
+    margin-top: 2em;
+    margin-left: 41.5%
+
+}
+
+.gameEndBackground .turtlechuWin {
+    background: url(../images/assets_spritesheet.png) no-repeat -989px -3560px;
+	width: 196px;
+	height: 293px;
+    margin-top: 2em;
+    margin-left: 41.5%
+
+}
+
+.gameEndBackground .turtlechuLose {
+    background: url(../images/assets_spritesheet.png) no-repeat -989px -3188px;
+	width: 196px;
+	height: 293px;
+    margin-top: 2em;
+    margin-left: 41.5%
+
+}
+
+.gameEndBackground .greenXPBar, .gameEndBackground .redXPBar {
     width: 348px;
     height: 43px;
-    margin-top: 2em;
+    margin-top: 2em
+
 }
 
-.redXPBar {
-    background: url(../images/Misc/Red_Border.png) no-repeat center;
-    width: 348px;
-    height: 43px;
-    margin-top: 2em;
+.gameEndBackground .greenXPBar {
+    background: url(../images/assets_spritesheet.png) -6439px -3299px no-repeat
+
 }
 
-/* Reward Bar */
-.rewardContainer {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
+.gameEndBackground .redXPBar {
+    background: url(../images/Misc/Red_Border.png) center no-repeat
+
+}
+
+.gameEndBackground .rewardContainer {
+    background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat;
     width: 388px;
     height: 104px;
-    transform: scale(0.7);
+    transform: scale(.7);
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: -1em;
+    margin-top: -1em
+
 }
 
-.currencyIcon {
-    background: url(../images/assets_spritesheet.png) no-repeat -6654px -2060px;
+.gameEndBackground .rewardContainer .currencyIcon {
+    background: url(../images/assets_spritesheet.png) -6654px -2060px no-repeat;
     width: 70px;
-    height: 68px;
+    height: 68px
+
 }
 
-/* Quit/Rematch Buttons */
-.endGameButtonsContainer {
+.gameEndBackground .endGameButtonsContainer {
     padding-top: 1em;
     display: flex;
-    flex-direction: row;
+    flex-direction: row
+
 }
 
-.rematchButton, .quitButton {
-    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1487px;
+.gameEndBackground .endGameButtonsContainer .quitButton, .gameEndBackground .endGameButtonsContainer .rematchButton {
+    background: url(../images/assets_spritesheet.png) -6509px -1487px no-repeat;
     width: 260px;
     height: 82px;
     margin: 2em;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center
+
 }
 
-.rematchButton:hover, .quitButton:hover {
-    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1400px;
+.gameEndBackground .endGameButtonsContainer .quitButton:hover, .gameEndBackground .endGameButtonsContainer .rematchButton:hover {
+    background: url(../images/assets_spritesheet.png) -6509px -1400px no-repeat;
     width: 260px;
     height: 82px;
-    margin: 2em;
+    margin: 2em
+
 }
 
 .endGameButtonText {
-    margin-top: 0em;
+    margin-top: 0
+
 }
 
-.rematchButton:hover .endGameButtonText, .quitButton:hover .endGameButtonText {
-    margin-top: 1em;
+.quitButton:hover .endGameButtonText, .rematchButton:hover .endGameButtonText {
+    margin-top: 1em
+
 }

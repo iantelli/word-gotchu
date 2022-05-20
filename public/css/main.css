@@ -1,49 +1,39 @@
-div {
-  display: inline-block;
+.gochuDome .battleArenaBg, .gochuDome .wordleBar2 {
+  position: fixed;
+  margin: 0 auto;
+  left: 50%
+  
 }
 
-@font-face {
-  font-family: kongText;
-  src: url('kongtext.ttf');
+.copyBtn, .createRoom, .joinRoom, .gochuDome .wordleBar2 {
+  text-align: center
+
 }
 
-html, body {
-  background: url('../images/bodyBackground.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  font-family: kongText;
-  color: white;
-  margin: 0; 
-  height: 100%; 
-  overflow: hidden
+.gochuDome > div {
+  display: inline-block
 }
 
-.wordle_bar2 {
-  background: url(../images/assets_spritesheet.png) no-repeat -5922px 0px;
+.gochuDome .wordleBar2 {
+  background: url(../images/assets_spritesheet.png) -5922px 0 no-repeat;
   width: 695px;
   height: 248px;
   transform: translate(-50%, -50%);
-  position: fixed;
-  left: 50%;
-  bottom: 20px;
-  margin: 0 auto;
-  text-align: center;
+  bottom: 20px
+
 }
 
-.battle_arena_bg {
-  background: url(../images/assets_spritesheet.png) no-repeat -4477px -1029px;
+.battleArenaBg {
+  background: url(../images/assets_spritesheet.png) -4477px -1029px no-repeat;
   width: 1440px;
   height: 1024px;
-  transform: translate(-50%, -0%);
-  position: fixed;
-  left: 50%;
-  bottom: 0px;
-  margin: 0 auto;
+  transform: translate(-50%, 0);
+  bottom: 0
+
 }
 
-.battle_menu {
-  background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
+.battleMenu, .joinBattleMenu {
+  background: url(../images/assets_spritesheet.png) -5922px -776px no-repeat;
   width: 650px;
   height: 518px;
   position: absolute;
@@ -52,106 +42,87 @@ html, body {
   margin-right: -50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  justify-content: center;
+  justify-content: center
+
 }
 
-.join_battle_menu {
-  background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
-  width: 650px;
-  height: 518px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  justify-content: center;
-}
-
-.create_room_bar {
-  background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
+.createRoomBar {
+  background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat;
   width: 388px;
   height: 104px;
   display: flex;
   justify-content: center;
   margin-top: 10%;
   margin-bottom: 5%;
-  margin-left: 20%;
+  margin-left: 20%
+
 }
 
-.copy_btn {
-  background: url(../images/assets_spritesheet.png) no-repeat -6622px -150px;
+.copyBtn {
+  background: url(../images/assets_spritesheet.png) -6622px -150px no-repeat;
   width: 123px;
   height: 34px;
   justify-content: center;
   align-items: center;
-  text-align: center;
   padding-top: 8px;
-  margin-bottom: 1%;
+  margin-bottom: 1%
+
 }
 
-.backButton {
-  background: url(../images/assets_spritesheet.png) no-repeat -6509px -1487px;
-  width: 260px;
-  height: 82px;
-  margin-top:70px;
-  margin-left: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+.roomCode {
+  background: url(../images/assets_spritesheet.png) -5922px -3768px no-repeat
 
-.room_code {
-  background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
 }
 
 .createRoom {
   font-size: 32px;
-  text-align: center;
-  margin-top: 1px;
+  margin-top: 1px
+
 }
 
-.create_room_bar div.createRoomDiv {
-  margin-top: 7%;
+.createRoomBar div.createRoomDiv {
+  margin-top: 7%
+
 }
 
 .createRoomDiv span {
-  font-size: 24px;
+  font-size: 24px
+
 }
 
 .joinRoom {
-  font-size: 32px;
-  text-align: center;
+  font-size: 32px
+
 }
 
-.createRoom:hover {
-  text-decoration: underline;
+.createRoom:hover, .joinRoom:hover {
+  text-decoration: underline
+
 }
 
-.joinRoom:hover {
-  text-decoration: underline;
-}
-
-.menu_title {
+.menuTitle {
   font-size: 36px;
-  margin-bottom:-1px;
+  margin-bottom: -1px
+
 }
 
-.menu_title.create {
-  margin-top: 10%;
+.menuTitle.create {
+  margin-top: 10%
+
 }
 
-.menu_header {
-  width:85%;
-  height:1px;
-  border-width:0;
-  color:#FCE1A2;
-  background-color:#FCE1A2;
-  opacity:0.31;
+.menuHeader {
+  width: 85%;
+  height: 1px;
+  border-width: 0;
+  color: #FCE1A2;
+  background-color: #FCE1A2;
+  opacity: .31
+
 }
 
-span.backButtonText {
+.battleArenaBg .backButton .backButtonText {
   pointer-events: none;
-  transform: translate(-0px, -10px);
+  transform: translate(0, -10px);
+  font-size: 28px;
 }
-

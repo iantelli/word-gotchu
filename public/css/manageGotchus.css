@@ -1,0 +1,10 @@
+.manageGotchusContainer .centerContent .gotchuCharacter {
+    width: 300px;
+    height: 300px;
+}
+
+.manageGotchusContainer .bottomBar * .selectedText {
+    font-size: 0.8em;
+    margin-top: 7em;
+    margin-left: -0.75em;
+}

@@ -1,83 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+.keyTwo, .one {
+    resize: none;
+    width: 100%
+    
+}
 
-@font-face {
+.answerContainer, .keyRow {
     font-family: kongText;
-    src: url('kongtext.ttf');
+    display: flex
+
 }
 
 div.hidden {
-    display: none;
+    display: none
+
 }
 
-.key-row {
+.keyRow {
     font-family: kongText;
     background-color: #565656;
     color: transparent;
-    text-shadow: 1px 1px 1px white;
+    text-shadow: 1px 1px 1px #fff;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
     box-sizing: border-box;
     gap: 8px;
-    resize: none;
+    resize: none
 
 }
 
-.key-row.row-one {
+.keyRow.rowOne {
     max-width: 650px;
-    min-width: 650px;
+    min-width: 650px
 
 }
 
-.key-row.row-two {
+.keyRow.rowTwo {
     max-width: 610px;
-    min-width: 610px;
+    min-width: 610px
 
 }
 
-.key-row.row-three {
+.keyRow.rowThree {
     max-width: 650px;
     min-width: 650px;
-    justify-content: center;
+    justify-content: center
 
 }
 
 .one {
-    font-size: 2vw;
-    resize: none;
-    width: 100%;
+    font-size: 2vw
 
 }
 
-.key-two .del {
+.keyTwo .del {
     padding-top: 5px;
     transform: scale(1.75, 1.5);
-    transform: scaleX(-1.5);
+    transform: scaleX(-1.5)
+
 }
 
-.key-two .del:hover {
-    padding-top: 4px;
+.keyTwo .del:hover {
+    padding-top: 4px
+
 }
 
-.key-two {
-    font-size: 1.5vw;
-    resize: none;
-    width: 100%;
+.keyTwo {
+    font-size: 1.5vw
+
 }
 
 .letter {
-    font-size: 30px;
+    font-size: 30px
+
 }
 
 .del p {
     font-size: xx-large;
-    margin-top: -5px;
+    margin-top: -5px
+
 }
 
 .ent {
-    font-size: 14px;
-}
+    font-size: 14px
 
+}
 
 .keyboard {
     position: absolute;
@@ -85,665 +92,627 @@ div.hidden {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background: url("../images/Keyboard/Keyboard_Back.png") no-repeat center;
+    background: url(../images/Keyboard/Keyboard_Back.png) center no-repeat;
     background-size: 100% auto;
-    /* width: 50vw; */
     max-width: 750px;
     width: 750px;
     height: 250px;
-    /* padding-top: -50px; */
     bottom: 0;
-    transform: scale(0.8);
+    transform: scale(.8)
 
 }
 
-.key-row {
-    display: flex;
+.background, .one {
+    position: relative
+
+}
+
+.keyRow {
     margin: 0 auto 7px;
     line-height: 50px;
-    width: 47vw;
+    width: 47vw
 
 }
 
-.key-row:nth-of-type(1) {
-    margin-top: 32px;
+.keyRow:nth-of-type(1) {
+    margin-top: 32px
 
 }
 
-.key-row:nth-of-type(3) {
-    margin-bottom: 5vh;
+.keyRow:nth-of-type(3) {
+    margin-bottom: 5vh
 
 }
 
-.key,
-.letter,
-.del,
-.ent,
-.key-two {
+.del, .ent, .key, .keyTwo, .letter {
     text-align: center;
     color: #eee;
     align-items: center;
     align-content: center;
     height: 57px;
     cursor: pointer;
-    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+    text-shadow: 0 0 1px #000, 0 0 1px #000, 0 0 1px #000, 0 0 1px #000;
+    margin: 0 .1vw 0 0
+
 }
 
-.key,
-.letter,
-.ent,
-.key-two {
-    margin: 0 0.1vw 0 0;
+.key:hover>.letter, .keyTwo:hover>.ent {
+    margin-top: 5px
+
 }
 
-.del {
-    margin: 0 0.1vw 0 0;
+.keyTwo:hover>.del {
+    margin-top: 0
+
 }
 
-/* .key-row div {
-    gap: 0.5em;
-} */
-
-.key:hover>.letter,
-.key-two:hover>.ent {
-    margin-top: 5px;
-}
-
-.key-two:hover>.del {
-    margin-top: 0px;
-}
-
-.key-two {
-    background: url("../images/Keyboard/Enter_Blank.svg") no-repeat center;
+.keyTwo {
+    background: url(../images/Keyboard/Enter_Blank.svg) center no-repeat;
     background-size: 100% 100%;
-    flex: 0.75;
-    text-align: center;
+    flex: .75;
+    text-align: center
+
 }
 
-.key-two:hover {
-    background: url("../images/Keyboard/Enter_Blank_Pressed.svg") no-repeat center;
+.keyTwo:hover {
+    background: url(../images/Keyboard/Enter_Blank_Pressed.svg) center no-repeat;
     background-size: 100% 100%;
-    /* flex: 1; */
-    text-align: center;
-}
+    text-align: center
 
-/* Default grey keys */
-
-.one {
-    background: url("../images/Keyboard/Letter_Gray_Blank.svg") no-repeat center;
-    background-size: 100% 100%;
-    flex: 0.5;
 }
 
 .one {
-    cursor: pointer;
-    position: relative;
+    background: url(../images/Keyboard/Letter_Gray_Blank.svg) center no-repeat;
+    background-size: 100% 100%;
+    flex: .5;
+    cursor: pointer
+
 }
 
 .one:hover {
-    background: url("../images/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
+    background: url(../images/Keyboard/Letter_Gray_Blank_Pressed.svg) no-repeat;
+    background-size: 100% 100%
+
+}
+
+.keyTwo:active, .one:active {
+    transform: scale(.9)
+
+}
+
+.keyTwo:nth-of-type(1) {
+    margin-right: .417vw
+
+}
+
+div.key[class*=green] {
+    background: url(../images/Keyboard/Letter_Green_Blank.svg) no-repeat;
     background-size: 100% 100%;
-}
-
-.key-two:active,
-.one:active {
-    transform: scale(.9);
+    flex: .5
 
 }
 
-.key-two:nth-of-type(1) {
-    margin-right: 0.417vw;
-
-}
-
-/* .key-row:nth-of-type(2) {
-    width: 90%;
-} */
-
-/* Correct letters, correct position */
-
-div.key[class*='green'] {
-    background: url("../images/Keyboard/Letter_Green_Blank.svg") no-repeat;
+div.key[class*=green]:hover {
+    background: url(../images/Keyboard/Letter_Green_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
-    flex: 0.5;
+    flex: .5
 
 }
 
-
-div.key[class*='green']:hover {
-    background: url("../images/Keyboard/Letter_Green_Blank_Pressed.svg") no-repeat;
+div[class*=yellow] {
+    background: url(../images/Keyboard/Letter_Yellow_Blank.svg) no-repeat;
     background-size: 100% 100%;
-    flex: 0.5;
+    flex: .5
 
 }
 
-/* Correct letters, wrong position */
-div[class*='yellow'] {
-    background: url("../images/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
+div[class*=yellow]:hover {
+    background: url(../images/Keyboard/Letter_Yellow_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
-    flex: 0.5;
+    flex: .5
 
 }
 
-
-div[class*='yellow']:hover {
-    background: url("../images/Keyboard/Letter_Yellow_Blank_Pressed.svg") no-repeat;
+div[class*=black] {
+    background: url(../images/Keyboard/Letter_Black_Blank.svg) no-repeat;
     background-size: 100% 100%;
-    flex: 0.5;
+    flex: .5
 
 }
 
-
-/* Wrong letters */
-div[class*='black'] {
-    background: url("../images/Keyboard/Letter_Black_Blank.svg") no-repeat;
+div[class*=black]:hover {
+    background: url(../images/Keyboard/Letter_Black_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
-    flex: 0.5;
+    flex: .5
 
 }
-
-
-div[class*='black']:hover {
-    background: url("../images/Keyboard/Letter_Black_Blank_Pressed.svg") no-repeat;
-    background-size: 100% 100%;
-    flex: 0.5;
-
-}
-
-
-/* Key presses */
 
 .key.one.pressed {
-    background: url("../images/Keyboard/Letter_Gray_Blank_Pressed.svg") no-repeat;
+    background: url(../images/Keyboard/Letter_Gray_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
-    flex: 0.5;
+    flex: .5
 
 }
 
-.key-two.pressed {
-    background: url("../images/Keyboard/Enter_Blank_Pressed.svg") no-repeat;
-    background-size: 100% 100%;
+.keyTwo.pressed {
+    background: url(../images/Keyboard/Enter_Blank_Pressed.svg) no-repeat;
+    background-size: 100% 100%
 
 }
 
 .key.one.pressed.yellow {
-    background: url("../images/Keyboard/Letter_Yellow_Blank_Pressed.svg") no-repeat;
+    background: url(../images/Keyboard/Letter_Yellow_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
-    flex: 0.5;
+    flex: .5
 
 }
 
 .key.one.pressed.black {
-    background: url("../images/Keyboard/Letter_Black_Blank_Pressed.svg") no-repeat;
+    background: url(../images/Keyboard/Letter_Black_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
-    flex: 0.5;
+    flex: .5
 
 }
 
 .key.one.pressed.green {
-    background: url("../images/Keyboard/Letter_Green_Blank_Pressed.svg") no-repeat;
+    background: url(../images/Keyboard/Letter_Green_Blank_Pressed.svg) no-repeat;
     background-size: 100% 100%;
-    flex: 0.5;
+    flex: .5
 
 }
 
 .letter.pressed {
     margin-top: 5px;
-    margin-bottom: -5px;
+    margin-bottom: -5px
 
 }
 
 #backspace.pressed p {
-    margin-top: -1px;
+    margin-top: -1px
 
 }
 
 #enter.pressed p {
-    margin-top: 3px;
+    margin-top: 3px
 
 }
 
-
 div.correctCharacter {
-    background: url("../images/Keyboard/Letter_Yellow_Blank.svg") no-repeat;
-    background-size: 100% 100%;
+    background: url(../images/Keyboard/Letter_Yellow_Blank.svg) no-repeat;
+    background-size: 100% 100%
+
 }
 
 div.incorrectCharacter {
-    background: url("../images/Keyboard/Letter_Black_Blank.svg") no-repeat;
-    background-size: 100% 100%;
+    background: url(../images/Keyboard/Letter_Black_Blank.svg) no-repeat;
+    background-size: 100% 100%
+
 }
 
 div.correctCharacterPlacement {
-    background: url("../images/Keyboard/Letter_Green_Blank.svg") no-repeat !important;
-    background-size: 100% 100% !important;
+    background: url(../images/Keyboard/Letter_Green_Blank.svg) no-repeat !important;
+    background-size: 100% 100% !important
+
 }
 
 .answerContainer {
-    font-family: kongText;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 100%
 
 }
 
-
-.container {
-    display: flex;
+.container, .settingsContainer {
     justify-content: center;
+    display: flex
 
 }
 
-html,
-body {
-    background: url('../images/bodyBackground.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    font-family: kongText;
-    color: white;
-    margin: 0;
-    height: 100%;
-    overflow: hidden;
-
-}
-
-
-
-/* game page */
 .background {
-    background: url("../images/assets_spritesheet.png") no-repeat -4477px -0px;
-    position:relative;
+    background: url(../images/assets_spritesheet.png) -4477px 0 no-repeat;
     width: 1440px;
     height: 1024px;
-    /* transform: scale(0.77); */
     transform-origin: top left;
-    margin: auto;
+    margin: auto
 
 }
 
-.top_gui_bar {
-    background: url("../images/assets_spritesheet.png") no-repeat -4477px -4115px;
+.topGuiBar {
+    background: url(../images/assets_spritesheet.png) -4477px -4115px no-repeat;
     width: 1125px;
     height: 170px;
-    margin: auto;
-    margin-top: 20px;
-    position: relative;
+    margin: 20px auto auto;
+    position: relative
 
 }
 
-.profile_icon_left {
-    background: url("../images/assets_spritesheet.png") no-repeat -6706px -1574px;
+.profileIconLeft, .profileIconRight {
+    background: url(../images/assets_spritesheet.png) -6706px -1574px no-repeat;
+    position: relative;
+    top: 12px
+
+}
+
+.profileIconLeft {
     width: 83px;
     height: 80px;
     float: left;
-    position: relative;
-    top: 12px;
-    left: 30px;
+    left: 30px
 
 }
 
-.profile_icon_right {
-    background: url("../images/assets_spritesheet.png") no-repeat -6706px -1574px;
+.profileIconRight {
     width: 83px;
     height: 80px;
     float: right;
-    position: relative;
-    top: 12px;
-    right: 30px;
+    right: 30px
 
 }
 
-.dogchu_icon {
-    background: url("../images/dog_icon.png");
+.dogchuIcon {
+    background: url(../images/dog_icon.png);
     width: 83px;
-    height: 80px;
+    height: 80px
 
 }
 
-.player1_username, .player2_username {
-    color: gold;
+.turtlechuIcon {
+    background: url(../images/turtle_icon.png) no-repeat center;
+    width: 83px;
+    height: 80px
+    
+}
+
+.player1Username, .player2Username {
+    color: gold
 
 }
 
-.player1_username, .player2_username, .player1_score, .player2_score {
+.ability, .abilityCooldown, .clock {
+    color: #000;
+    position: absolute
+
+}
+
+.player1Score, .player1Username, .player2Score, .player2Username {
     font-size: 24px;
     position: absolute;
-    top: 50px;
+    top: 50px
 
 }
 
-.player1_score {
-    left: 360px;
+.player1Score {
+    left: 360px
 
 }
 
-.player2_score {
-    right: 360px;
+.player2Score {
+    right: 360px
 
 }
 
-.player1_username {
-    left: 86px;
+.player1Username {
+    left: 86px
 
 }
 
-.player2_username {
-    right: 86px;
+.player2Username {
+    right: 86px
 
 }
 
-.player1_healthbar_border,
-.player2_healthbar_border {
-    background: url("../images/assets_spritesheet.png") no-repeat -6439px -3299px;
+.player1HealthbarBorder, .player2HealthbarBorder {
+    background: url(../images/assets_spritesheet.png) -6439px -3299px no-repeat
 
 }
 
-.player1_healthbar,
-.player2_healthbar {
-    background: url("../images/assets_spritesheet.png") no-repeat -6439px -3251px;
+.player1Healthbar, .player2Healthbar {
+    background: url(../images/assets_spritesheet.png) -6439px -3251px no-repeat
 
 }
 
-.player1_healthbar_border,
-.player1_healthbar {
+.player1Healthbar, .player1HealthbarBorder {
     width: 348px;
     height: 43px;
     position: absolute;
     top: 5px;
-    left: 86px;
+    left: 86px
 
 }
 
-.catchu_icon {
-    background: url("../images/cat_icon.png");
+.catchuIcon {
+    background: url(../images/cat_icon.png);
     width: 83px;
-    height: 80px;
+    height: 80px
 
 }
 
-.player2_healthbar,
-.player2_healthbar_border {
+.player2Healthbar, .player2HealthbarBorder {
     position: absolute;
     width: 348px;
     height: 43px;
     top: 5px;
-    right: 86px;
+    right: 86px
 
 }
 
 .clock {
-    color: black;
     font-size: 26px;
-    position: absolute;
     top: 67px;
-    left: 513px;
-
-
-}
-
-.settings_button {
-    background: url("../images/assets_spritesheet.png") no-repeat -6662px -1717px;
-    width: 100px;
-    height: 100px;
-    float: right;
-    position: absolute;
-    top: 1px;
-    right: -105px;
+    left: 513px
 
 }
 
 .abilityButton {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1299px;
+    background: url(../images/assets_spritesheet.png) -5922px -1299px no-repeat;
     width: 194px;
     height: 194px;
     bottom: 46px;
     left: 68px;
-    position: absolute;
+    position: absolute
+
 }
 
 .abilityCooldown {
     font-size: 30px;
     bottom: 15px;
-    left: 83px;
-    position: absolute;
-    color: black;
+    left: 83px
+
 }
 
 .ability {
     bottom: 244px;
-    left: 30px;
-    position: absolute;
-    color: black;
+    left: 30px
+
 }
 
-.wordle_bar {
+.wordleBar {
     display: flex;
-    background: url("../images/assets_spritesheet.png") no-repeat -6509px -1299px;
+    background: url(../images/assets_spritesheet.png) -6509px -1299px no-repeat;
     width: 270px;
     height: 97px;
-    margin: auto;
-    margin-bottom: 5px;
+    margin: auto auto 5px;
     align-items: center;
-    justify-content: center;
+    justify-content: center
 
 }
 
-.letter_slots {
-    background: url("../images/assets_spritesheet.png") no-repeat -6729px -2060px;
+.letterSlots {
+    background: url(../images/assets_spritesheet.png) -6729px -2060px no-repeat;
     width: 51px;
     height: 51px;
     display: flex;
     margin-right: -2px;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 22px
+
 }
 
-/* Animate catchu */
-.player1_character {
-    background: url("../images/assets_spritesheet.png") no-repeat -1017px -1682px;
-	width: 220px;
-	height: 288px;
-    animation: dogchuAnimation 1s  steps(2) infinite;
+.player1Character {
     position: absolute;
     bottom: 200px;
-    left: 160px;
-
+    left: 160px
 }
 
-@keyframes dogchuAnimation {
-    from { background: url("../images/assets_spritesheet.png") no-repeat -1017px -1682px; }
-    to { background: url("../images/assets_spritesheet.png") no-repeat -1578px -1682px; }
-}
-
-.player2_character {
-    background: url("../images/assets_spritesheet.png") no-repeat -1007px -283px;
-	width: 239px;
-	height: 298px;
+.player2Character {
     position: absolute;
     bottom: 192px;
     right: 160px;
-    transform: scaleX(-1);
-    animation: catchuAnimation 1s  steps(2) infinite;
+}
 
+/* Catchu */
+.catchu {
+    background: url(../images/assets_spritesheet.png) no-repeat -1007px -285px;
+    width: 240px;
+    height: 297px;
+    animation: catchuAnimation 1s steps(2) infinite;
 }
 
 @keyframes catchuAnimation {
-    from { background: url("../images/assets_spritesheet.png") no-repeat -1007px -283px; }
-    to { background: url("../images/assets_spritesheet.png") no-repeat -1592px -259px; }
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1007px -285px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1592px -260px; }
 }
 
-/* form styling */
+/* Dogchu */
+.dogchu {
+    background: url(../images/assets_spritesheet.png) no-repeat -1019px -1682px;
+	width: 215px;
+	height: 288px;
+    animation: dogchuAnimation 1s steps(2) infinite;
+}
+
+@keyframes dogchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1019px -1682px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1580px -1682px; }
+}
+
+/* Turtlechu */
+.turtlechu {
+    background: url(../images/assets_spritesheet.png) no-repeat -988px -2815px;
+	width: 198px;
+	height: 295px;
+    animation: turtlechuAnimation 1s steps(2) infinite;
+}
+
+@keyframes turtlechuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -988px -2815px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1573px -2815px; }
+}
+
+/* Mousechu */
+.mousechu {
+    background: url(../images/assets_spritesheet.png) no-repeat -994px -4132px;
+	width: 259px;
+	height: 314px;
+    animation: mousechuAnimation 1s steps(2) infinite;
+}
+
+@keyframes mousechuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -994px -4132px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1579px -4132px; }
+}
+
+/* Racoonchu */
+.raccoonchu {
+    background: url(../images/assets_spritesheet.png) no-repeat -958px -5492px;
+	width: 258px;
+	height: 287px;
+    animation: raccoonchuAnimation 1s steps(2) infinite;
+}
+
+@keyframes raccoonchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -958px -5492px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1640px -5492px; }
+}
+
 form {
     position: absolute;
     left: 42.5%;
     top: 22%
+
 }
 
-input[type="text"] {
+input[type=text] {
     font-size: 15px;
     font-family: kongText;
-    /* letter-spacing: 35px;  */
     width: 220px;
-    background: none;
+    background: 0 0;
     box-shadow: none;
     border: none;
-    color: white
-}
-
-/* On screens that are 1100px wide or less, scale down */
-/* @media screen and (max-width: 1300px) {
-    .background {
-        transform: scale(0.72);
-        transform-origin: top left;
-
-    }
+    color: #fff
 
 }
-
-@media screen and (max-width: 1200px) {
-    .background {
-        transform: scale(0.67);
-        transform-origin: top left;
-    }
-
-} */
-
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
- /* @media screen and (max-width: 1000px) {
-    .background {
-        transform: scale(0.62);
-        transform-origin: top left;
-    }
-    .keyboard {
-        transform: scale(1);
-        transform-origin: bottom center;
-    }
-
-} */
-
-/* every time width of screen decreases by 5px, .background{transform:scale(0.77-0.01)} */
 
 div.error {
     color: red;
     position: relative;
     animation: shake .1s linear;
-    animation-iteration-count: 3;
+    animation-iteration-count: 3
+
 }
 
 @keyframes shake {
     10%, 90% {
-      transform: translate3d(-1px, 0, 0);
+        transform: translate3d(-1px, 0, 0)
     }
-    
+
     20%, 80% {
-      transform: translate3d(2px, 0, 0);
+        transform: translate3d(2px, 0, 0)
     }
-  
+
     30%, 50%, 70% {
-      transform: translate3d(-4px, 0, 0);
+        transform: translate3d(-4px, 0, 0)
     }
-  
+
     40%, 60% {
-      transform: translate3d(4px, 0, 0);
+        transform: translate3d(4px, 0, 0)
     }
+
 }
 
-/* Settings Button */
-.settings_button {
-    background: url("../images/assets_spritesheet.png") no-repeat -6662px -1717px;
+.homeSettingsButton {
+    background: url(../images/assets_spritesheet.png) -6662px -1717px no-repeat;
     width: 100px;
     height: 100px;
     float: right;
     position: absolute;
     top: 1px;
-    right: -105px;
+    right: 80px;
+
 }
 
-/* Settings popup */
 .settingsContainer {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
+    background: url(../images/assets_spritesheet.png) -5922px -776px no-repeat;
     width: 650px;
     height: 518px;
-    display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     transform: scale(1);
     margin-left: 37em;
     margin-top: -50em;
-    position: absolute;
+    position: absolute
+
 }
 
-.settingsContainer > * {
-    transform: scale(calc(1/0.8));
+.settingsContainer>* {
+    transform: scale(calc(1/.8))
+
 }
 
 .settingsContainer h1 {
-    margin-top: -0.5em;
-    margin-bottom: 2em;
+    margin-top: -.5em;
+    margin-bottom: 2em
+
 }
 
 .onOffToggleButton {
-    background: url(../images/assets_spritesheet.png) no-repeat -6622px -153px;
+    background: url(../images/assets_spritesheet.png) -6622px -153px no-repeat;
     width: 123px;
     height: 34px;
     transform: scale(1.2);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center
+
 }
 
-.soundSettingsRow, .musicSettingsRow {
+.musicSettingsRow, .soundSettingsRow {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 400px;
+    width: 400px
+
 }
 
 .musicSettingsRow {
-    margin-top: 2em;
+    margin-top: 2em
+
 }
 
-.soundSettingsRow p, .musicSettingsRow p {
-    margin-bottom: 0.5em;
+.musicSettingsRow p, .soundSettingsRow p {
+    margin-bottom: .5em
+
 }
 
-.logoutButton, .closeSettingsButton {
-    background: url(../images/assets_spritesheet.png) no-repeat -6577px -321px;
+.closeSettingsButton, .logoutButton {
+    background: url(../images/assets_spritesheet.png) -6577px -321px no-repeat;
     width: 200px;
     height: 63px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: scaleX(0.8);
+    transform: scaleX(.8)
+
 }
 
-.logoutButton:hover, .closeSettingsButton:hover {
-    background: url(../images/assets_spritesheet.png) no-repeat -6577px -253px;
+.closeSettingsButton:hover, .logoutButton:hover {
+    background: url(../images/assets_spritesheet.png) -6577px -253px no-repeat;
     width: 200px;
-    height: 63px;
+    height: 63px
+
 }
 
-.logoutButton h4, .closeSettingsButton h4 {
-    margin-top: 0.5em;
-    transform: scaleX(calc(1/0.8));
-    pointer-events: none;
+.closeSettingsButton > *, .logoutButton > * {
+    margin-top: .5em;
+    transform: scaleX(calc(1/.8));
+    pointer-events: none
+
 }
 
-.logoutButton:hover h4, .closeSettingsButton:hover h4 {
+.closeSettingsButton:hover > *, .logoutButton:hover > * {
     margin-top: 1.2em;
+    pointer-events: none;
 }
 
 .closeSettingsContainer {
     display: flex;
     flex-direction: row;
-    margin-top: 4em;
+    margin-top: 4em
+
 }
 
 .nonInteractableText {
-    pointer-events: none;
+    pointer-events: none
 }

@@ -7,83 +7,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lobby</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/body.css">
+
 </head>
 
 <body>
   <script>
     let fxState = true;
     let musicState = true;
+    const gotchu = "<%= gotchu %>"
   </script>
   <div id="background" class="background">
     <div id="container" class="container">
       <div>
-        <div class="top_gui_bar">
-          <div class="profile_icon_left">
-            <div class="dogchu_icon"></div>
-            <div class="player1_username">...</div>
-            <div class="player1_healthbar_border"></div>
-            <div class="player1_healthbar"></div>
-            <div class="player1_score">100</div>
+        <div class="topGuiBar">
+          <div class="profileIconLeft">
+            <div class="player1Icon"></div>
+            <div class="player1Username">...</div>
+            <div class="player1HealthbarBorder"></div>
+            <div class="player1Healthbar"></div>
+            <div class="player1Score">100</div>
           </div>
           <div id="timer" class="clock">2:10</div>
-          <div class="profile_icon_right">
-            <div class="catchu_icon"></div>
-            <div class="player2_username">...</div>
-            <div class="player2_healthbar_border"></div>
-            <div class="player2_healthbar"></div>
-            <div class="player2_score">100</div>
+          <div class="profileIconRight">
+            <div class="player2Icon"></div>
+            <div class="player2Username">...</div>
+            <div class="player2HealthbarBorder"></div>
+            <div class="player2Healthbar"></div>
+            <div class="player2Score">100</div>
           </div>
-          <div class="settings_button"></div>
+          <div class="settingsButton"></div>
         </div>
 
-        <div class="gochu_characters">
-          <div class="player1_character"></div>
-          <div class="player2_character"></div>
+        <div class="gochuCharacters">
+          <div class="player1Character"></div>
+          <div class="player2Character"></div>
         </div>
 
-        <div class="wordle_bars" style="display: none;">
+        <div class="wordleBars" style="display: none;">
           =
-          <div class="wordle_bar bar_1">
-            <div class="letter_slots slot_1"></div>
-            <div class="letter_slots slot_2"></div>
-            <div class="letter_slots slot_3"></div>
-            <div class="letter_slots slot_4"></div>
-            <div class="letter_slots slot_5"></div>
+          <div class="wordleBar bar1">
+            <div class="letterSlots slot1"></div>
+            <div class="letterSlots slot2"></div>
+            <div class="letterSlots slot3"></div>
+            <div class="letterSlots slot4"></div>
+            <div class="letterSlots slot5"></div>
           </div>
-          <div class="wordle_bar bar_2">
-            <div class="letter_slots slot_1"></div>
-            <div class="letter_slots slot_2"></div>
-            <div class="letter_slots slot_3"></div>
-            <div class="letter_slots slot_4"></div>
-            <div class="letter_slots slot_5"></div>
+          <div class="wordleBar bar2">
+            <div class="letterSlots slot1"></div>
+            <div class="letterSlots slot2"></div>
+            <div class="letterSlots slot3"></div>
+            <div class="letterSlots slot4"></div>
+            <div class="letterSlots slot5"></div>
           </div>
-          <div class="wordle_bar bar_3">
-            <div class="letter_slots slot_1"></div>
-            <div class="letter_slots slot_2"></div>
-            <div class="letter_slots slot_3"></div>
-            <div class="letter_slots slot_4"></div>
-            <div class="letter_slots slot_5"></div>
+          <div class="wordleBar bar3">
+            <div class="letterSlots slot1"></div>
+            <div class="letterSlots slot2"></div>
+            <div class="letterSlots slot3"></div>
+            <div class="letterSlots slot4"></div>
+            <div class="letterSlots slot5"></div>
           </div>
-          <div class="wordle_bar bar_4">
-            <div class="letter_slots slot_1"></div>
-            <div class="letter_slots slot_2"></div>
-            <div class="letter_slots slot_3"></div>
-            <div class="letter_slots slot_4"></div>
-            <div class="letter_slots slot_5"></div>
+          <div class="wordleBar bar4">
+            <div class="letterSlots slot1"></div>
+            <div class="letterSlots slot2"></div>
+            <div class="letterSlots slot3"></div>
+            <div class="letterSlots slot4"></div>
+            <div class="letterSlots slot5"></div>
           </div>
-          <div class="wordle_bar bar_5">
-            <div class="letter_slots slot_1"></div>
-            <div class="letter_slots slot_2"></div>
-            <div class="letter_slots slot_3"></div>
-            <div class="letter_slots slot_4"></div>
-            <div class="letter_slots slot_5"></div>
+          <div class="wordleBar bar5">
+            <div class="letterSlots slot1"></div>
+            <div class="letterSlots slot2"></div>
+            <div class="letterSlots slot3"></div>
+            <div class="letterSlots slot4"></div>
+            <div class="letterSlots slot5"></div>
           </div>
-          <div class="wordle_bar bar_6">
-            <div class="letter_slots slot_1"></div>
-            <div class="letter_slots slot_2"></div>
-            <div class="letter_slots slot_3"></div>
-            <div class="letter_slots slot_4"></div>
-            <div class="letter_slots slot_5"></div>
+          <div class="wordleBar bar6">
+            <div class="letterSlots slot1"></div>
+            <div class="letterSlots slot2"></div>
+            <div class="letterSlots slot3"></div>
+            <div class="letterSlots slot4"></div>
+            <div class="letterSlots slot5"></div>
           </div>
 
           <div class="buttons">
@@ -95,7 +98,7 @@
 
       </div>
       <div class="keyboard" style="display: none;">
-        <section class="key-row row-one">
+        <section class="keyRow rowOne">
           <div class="key one" id="q">
             <p class="letter">Q</p>
           </div>
@@ -127,7 +130,7 @@
             <p class="letter">P</p>
           </div>
         </section>
-        <section class="key-row row-two">
+        <section class="keyRow rowTwo">
           <div class="key one" id="a">
             <p class="letter">A</p>
           </div>
@@ -156,8 +159,8 @@
             <p class="letter">L</p>
           </div>
         </section>
-        <section class="key-row row-three">
-          <div class="key-two ent" id="enter">
+        <section class="keyRow rowThree">
+          <div class="keyTwo ent" id="enter">
             <p class="ent">ENTER</p>
           </div>
           <div class="key one" id="z">
@@ -181,18 +184,15 @@
           <div class="key one" id="m">
             <p class="letter">M</p>
           </div>
-          <div class="key-two del" id="backspace">
+          <div class="keyTwo del" id="backspace">
             <p class="del">&#x279E</p>
           </div>
         </section>
       </div>
-
-
     </div>
   </div>
   </div>
 </body>
-
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>

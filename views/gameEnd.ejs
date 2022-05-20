@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Over</title>
-    <link rel="stylesheet" href="css/gameEnd.css">
+    <link rel="stylesheet" href="/css/gameEnd.css">
+    <link rel="stylesheet" href="/css/body.css">
+
 </head>
 <body>
     <div class="gameEndBackground">
@@ -13,14 +15,14 @@
             <h1 class="gameResultTitle">VICTORY</h1>
             <p class="gameResultText">Your pet won!</p>
             <!-- Should probably send sprite coordinates or class name from express for different pets -->
-            <div class="catchuWin"></div>
+            <div class="<%= gotchu %>Win"></div>
             <div class="greenXPBar"></div>
             <!-- Use absolute values for xp probably -->
             <p style="color: #3EFF1F;">+<%= gameResult.xpChange %> Happiness</p>
         <% } else { %>
             <h1 class="gameResultTitle">DEFEAT</h1>
             <p class="gameResultText">Your pet lost the battle.</p>
-            <div class="catchuLose"></div>
+            <div class="<%= gotchu %>Lose"></div>
             <div class="redXPBar"></div>
             <p style="color: red;">-<%= gameResult.xpChange %> Happiness</p>
         <% } %>
@@ -39,5 +41,6 @@
             </div>
         </div>
     </div>
+    <script src="/js/gameEnd.js"></script>
 </body>
 </html>
