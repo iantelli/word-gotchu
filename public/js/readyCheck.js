@@ -45,6 +45,7 @@ window.onclick = function (event) {
             ready: true
         })
         document.querySelector("#readyButton").className = "notReadyButton";
+        document.querySelector("#readyButton").innerHTML = "Readied!";
     }
 }
 

@@ -612,14 +612,14 @@ div.error {
 
 }
 
-.homeSettingsButton {
+.settingsButton {
     background: url(../images/assets_spritesheet.png) -6662px -1717px no-repeat;
     width: 100px;
     height: 100px;
     float: right;
     position: absolute;
     top: 1px;
-    right: 80px;
+    right: -125px;
 
 }
 
