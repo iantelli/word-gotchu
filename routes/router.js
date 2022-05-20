@@ -47,4 +47,13 @@ router.get("/homepage", (req, res) => {
   res.render("homepage", { data, pet })
 })
 
+router.get("/test", (req, res) => {
+  const roundNumber = 1;
+  res.render("test", { roundNumber })
+})
+
+router.get("/gacha", (req, res) => {
+  res.render("gotchuGacha")
+})
+
 module.exports = router;
