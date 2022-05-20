@@ -383,6 +383,10 @@
     margin-left: -0.5em;
 }
 
+.manageGotchusContainer .bottomBar .locked {
+    pointer-events: none;
+}
+
 .storyContainer {
     background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
     width: 650px;

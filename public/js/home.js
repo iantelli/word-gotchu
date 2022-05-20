@@ -72,7 +72,7 @@ window.addEventListener("click", function (event) {
                       <div class="gotchuCoinIcon"></div>
                       <div class="gotchuCoinAmount"></div>
                   </div>
-                  <div class="settings"></div>
+                  <div class="homeSettingsButton"></div>
               </div>
               
               <div class="gotchuCharacter"></div>
@@ -174,33 +174,6 @@ window.addEventListener("click", function (event) {
     })
 
   }
-
-  // Open settings popup
-  // if (targetClasslist.includes("homeSettingsButton")) {
-  //   const mainScreen = document.querySelector(".mainScreenBg");
-  //   const settingsContainer = document.createElement("div");
-  //   settingsContainer.className = "settingsContainer";
-  //   settingsContainer.innerHTML = `
-  //         <h1>SETTINGS</h1>
-  //         <div class="soundSettingsRow">
-  //           <p>SOUND EFFECTS</p>
-  //           <div class="onOffToggleButton"><h3>ON</h3></div>
-  //         </div>
-  //         <div class="musicSettingsRow">
-  //           <p>MUSIC</p>
-  //           <div class="onOffToggleButton"><h3>ON</h3></div>
-  //         </div>
-  //         <div class="closeSettingsContainer">
-  //           <div class="logoutButton">
-  //             <h4>LOG OUT</h4>
-  //           </div>
-  //           <div class="closeSettingsButton">
-  //             <h4>CLOSE</h4>
-  //           </div>
-  //         </div>
-  //       `;
-  //   mainScreen.appendChild(settingsContainer);
-  // }
 
 })
 
@@ -397,6 +370,17 @@ window.addEventListener("click", (event) => {
   if (targetClasslist.includes("closeSettingsButton")) {
     const settingsContainer = document.querySelector(".settingsContainer");
     settingsContainer.remove();
+  }
+  
+  // Swap gotchus on manage gotchu page
+  
+  const allGotchuIcons = ["catchuIcon", "dogchuIcon", "turtlechuIcon"];
+
+  if (allGotchuIcons.includes(targetClasslist[0])) {
+    const selectedGotchu = document.querySelector(".manageGotchusContainer .bottomBar ." + targetClasslist[0]);
+    const previousSelectedGotchu = document.querySelectorAll(".manageGotchusContainer .bottomBar .selected");
+    previousSelectedGotchu.forEach(gotchu => gotchu.classList.remove("selected"));
+    selectedGotchu.classList.add("selected");
   }
 
 })
