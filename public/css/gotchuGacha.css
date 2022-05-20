@@ -15,6 +15,14 @@ div {
 
 }
 
+.gachaBg .topNavBar {
+    margin-top: 3em;
+}
+
+.gachaBg .topNavBar > * {
+    margin-top: 3.8em;
+}
+
 .gachaBg .topNavBar .homeButton, .gachaBg .viewGotchusButton {
     display: flex;
     text-shadow: 2px 2px 0 #9B9B9B, 2px -2px 0 #9B9B9B, -2px 2px 0 #9B9B9B, -2px -2px 0 #9B9B9B, 2px 0 0 #9B9B9B, 0 2px 0 #9B9B9B, -2px 0 0 #9B9B9B, 0 -2px 0 #9B9B9B
@@ -26,8 +34,9 @@ div {
     width: 1000px;
     height: 196px;
     position: absolute;
-    top: 120px;
-    left: 210px
+    top: 140px;
+    left: 210px;
+    transform: scale(0.8);
 
 }
 
@@ -36,7 +45,7 @@ div {
     width: 192px;
     height: 138px;
     justify-content: center;
-    align-items: center
+    align-items: center;
 
 }
 
@@ -70,7 +79,7 @@ div {
     height: 104px;
     position: absolute;
     top: 20px;
-    right: 50px;
+    right: 10px;
     transform: scale(.7)
 
 }
@@ -89,8 +98,8 @@ div {
 .gachaBg .topNavBar .gotchuCoinBar .gotchuCoinAmount {
     font-size: 40px;
     position: absolute;
-    top: 27px;
-    right: 30px
+    right: 30px;
+    top: -10px;
 
 }
 
@@ -176,4 +185,47 @@ div {
 .gachaBg .viewGotchusButton:hover > * {
     margin-top: .9em
 
+}
+
+.gachaBg .topNavBar .homeButton h1 ,
+.gachaBg .topNavBar .gotchuCoinBar .gotchuCoinAmount,
+.gachaBg .viewGotchusButton h3 {
+    pointer-events: none;
+
+}
+
+.gachaBg .gachaResultContainer {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -253px;
+    width: 650px;
+    height: 518px;
+    position: absolute;
+    transform: scale(1.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 370px;
+    top: 250px;
+}
+
+.gachaBg .gachaResultContainer > * {
+    transform: scale(calc(1 / 1.5));
+    pointer-events: none;
+}
+
+.disable {
+    pointer-events: none;
+}
+
+.gachaBg .gachaResultContainer .topText {
+    margin-top: -0.5em;
+    margin-bottom: -0.5em;
+}
+
+.gachaBg .gachaResultContainer .middleText {
+    margin-top: -0.5em;
+}
+
+.gachaBg .gachaResultContainer .gotchuContainer {
+    margin-left: -2em;
 }
