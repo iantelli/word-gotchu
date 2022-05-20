@@ -56,4 +56,11 @@ router.get("/gacha", (req, res) => {
   res.render("gotchuGacha")
 })
 
+router.get("/ready", (req, res) => {
+  const bothPlayersConnected = false;
+  const playerName = "You";
+  const opponentName = "Opponent";
+  res.render("ready", { bothPlayersConnected, playerName, opponentName })
+})
+
 module.exports = router;
