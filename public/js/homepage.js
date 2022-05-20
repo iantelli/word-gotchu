@@ -8,6 +8,7 @@
     uiSound.volume = 0.18;
     backSound.load();
     backSound.volume = 0.15;
+
     function createRoom() {
         let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         let roomCode = "";

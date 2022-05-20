@@ -73,7 +73,7 @@
 
 }
 
-.settingsButton {
+.homeSettingsButton {
     background: url(../images/assets_spritesheet.png) no-repeat -6662px -1717px;
     width: 100px;
     height: 100px;
@@ -81,7 +81,7 @@
 }
 
 /* Should do this when we have the asset */
-.settingsButton:hover {}
+.homeSettingsButton:hover {}
 
 .mainScreenBg .gotchuCharacter {
     background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
