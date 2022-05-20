@@ -64,12 +64,21 @@ html, body {
     align-items: center;
 }
 
-.playerPetContainer, .opponentPetContainer {
+.playerPetContainer {
     width: 260px;
     height: 315px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.opponentPetContainer {
+    width: 260px;
+    height: 315px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scaleX(-1);
 }
 
 .previousCharacter, .nextCharacter {

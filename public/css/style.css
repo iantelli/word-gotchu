@@ -500,6 +500,7 @@ div.correctCharacterPlacement {
     position: absolute;
     bottom: 192px;
     right: 160px;
+    transform: scaleX(-1);
 }
 
 /* Catchu */
