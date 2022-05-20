@@ -357,6 +357,13 @@ div.correctCharacterPlacement {
 
 }
 
+.turtlechuIcon {
+    background: url(../images/turtle_icon.png) no-repeat center;
+    width: 83px;
+    height: 80px
+    
+}
+
 .player1Username, .player2Username {
     color: gold
 

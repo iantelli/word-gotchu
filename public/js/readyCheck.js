@@ -4,7 +4,7 @@ let playerId;
 let playerRef;
 let allPlayersRef;
 let lobbyId = window.location.pathname.split("/")[2];
-const playerUnlockedChars = ["catchu", "dogchu", "turtlechu", "mousechu", "raccoonchu"];
+const playerUnlockedChars = ["catchu", "dogchu", "turtlechu"];
 
 window.onclick = function (event) {
 

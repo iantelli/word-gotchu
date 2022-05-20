@@ -22,7 +22,7 @@
   battleMusic.volume = 0.1;
   battleMusic.loop = true;
   const hpWidth = 338 / 100;
-  const playerUnlockedChars = ["catchu", "dogchu", "turtlechu", "mousechu", "raccoonchu"];
+  const playerUnlockedChars = ["catchu", "dogchu", "turtlechu"];
 
 
   document.addEventListener("click", event => {
@@ -311,6 +311,8 @@
       allPlayersRef.get().then((snapshot2) => {
         let allPlayers = snapshot2.val() || {};
         Object.values(allPlayers).forEach((player) => {
+          console.log(document.querySelector(`.player${player.num}Score`))
+          console.log(document.querySelector(`.player${player.num}Healthbar`))
           document.querySelector(`.player${player.num}Score`).innerHTML = player.hp;
           document.querySelector(`.player${player.num}Healthbar`).style = `background-position-x: ${-6439 + (((player.num === 1) ? player.hp - 100 : 100 - player.hp) * hpWidth)}px;`;
 
@@ -321,6 +323,7 @@
       if (addedPlayer.num === 2 && !gameStarted) {
         document.querySelector(`.player${addedPlayer.num}Username`).innerHTML = `Them`;
         document.querySelector(`.player${addedPlayer.num}Character`).innerHTML = `<div class=${addedPlayer.gotchu}></div>`;
+        document.querySelector(`.player${addedPlayer.num}Icon`).innerHTML = `<div class=${addedPlayer.gotchu}Icon></div>`
         gameStarted = true;
         startGame();
       }
@@ -525,6 +528,113 @@
     }
   })
 
+  // Settings event listeners
+
+  /** Sound variables
+   * @param {boolean} - let fxState
+   * @param {boolean} - let musicState
+   */
+
+  window.addEventListener("click", (event) => {
+    const targetClasslist = event.target.className.split(" ");
+    if (targetClasslist.includes("settings_button")) {
+
+      const existingSettingsContainer = document.querySelector(".settingsContainer");
+      if (existingSettingsContainer) return existingSettingsContainer.remove();
+
+      const mainScreen = document.querySelector("body");
+      const settingsContainer = document.createElement("div");
+      settingsContainer.className = "settingsContainer";
+      settingsContainer.innerHTML = `
+            <h1>SETTINGS</h1>
+            <div class="soundSettingsRow">
+              <p>SOUND EFFECTS</p>
+              <div class="onOffToggleButton"><h3></h3></div>
+            </div>
+            <div class="musicSettingsRow">
+              <p>MUSIC</p>
+              <div class="onOffToggleButton"><h3></h3></div>
+            </div>
+            <div class="closeSettingsContainer">
+              <div class="logoutButton">
+                <h4>LOG OUT</h4>
+              </div>
+              <div class="closeSettingsButton">
+                <h4>CLOSE</h4>
+              </div>
+            </div>
+          `;
+      mainScreen.appendChild(settingsContainer);
+
+      // Add button text
+      const fxToggle = document.querySelector(".soundSettingsRow .onOffToggleButton h3");
+      const musicToggle = document.querySelector(".musicSettingsRow .onOffToggleButton h3");
+
+      if (fxState) {
+        fxToggle.innerText = "ON";
+      } else {
+        fxToggle.innerText = "OFF";
+      }
+
+      if (musicState) {
+        musicToggle.innerText = "ON";
+      } else {
+        musicToggle.innerText = "OFF";
+      }
+
+      // On off toggles for sound
+      // Need to change later, temp solution
+      document.querySelector(".soundSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
+        if (event.target.innerHTML === "ON") {
+          event.target.innerHTML = "OFF";
+          fxState = false;
+        } else {
+          event.target.innerHTML = "ON";
+          fxState = true;
+        }
+      })
+
+      document.querySelector(".musicSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
+        if (event.target.innerHTML === "ON") {
+          event.target.innerHTML = "OFF";
+          musicState = false;
+        } else {
+          event.target.innerHTML = "ON";
+          musicState = true;
+        }
+      })
+    }
+
+    if (targetClasslist.includes("onOffToggleButton")) {
+      const onOffToggleButton = event.target;
+      // console.log(onOffToggleButton)
+      // console.log(onOffToggleButton.parentElement)
+      const onOffToggleButtonText = onOffToggleButton.querySelector("h3");
+      if (onOffToggleButtonText.innerText === "ON") {
+        onOffToggleButtonText.innerText = "OFF";
+        if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
+          fxState = false;
+        } else {
+          musicState = false;
+        }
+
+      } else {
+        onOffToggleButtonText.innerText = "ON";
+        if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
+          fxState = true;
+        } else {
+          musicState = true;
+        }
+      }
+    }
+
+    if (targetClasslist.includes("closeSettingsButton")) {
+      const settingsContainer = document.querySelector(".settingsContainer");
+      settingsContainer.remove();
+    }
+
+  })
+
   //Login/Logout
   firebase.auth().onAuthStateChanged((user) => {
     // console.log(user)
@@ -570,16 +680,19 @@
           document.querySelector(`.player${playerNum}Username`).innerHTML = `Me`;
           document.querySelector(`.player${playerNum}Username`).style = "color: red;"
           document.querySelector(`.player${playerNum}Character`).innerHTML = `<div class=${gotchu}></div>`;
+          document.querySelector(`.player${playerNum}Icon`).innerHTML = `<div class=${gotchu}Icon></div>`;
 
 
           Object.values(allPlayers).forEach((player) => {
             if (playerId !== player.id) {
               if (playerNum === 1) {
                 document.querySelector(`.player2Character`).innerHTML = `<div class=${player.gotchu}></div>`;
+                document.querySelector(`.player2Icon`).innerHTML = `<div class=${player.gotchu}Icon></div>`;
               }
               if (playerNum === 2) {
                 document.querySelector(`.player1Username`).innerHTML = `Them`;
                 document.querySelector(`.player1Character`).innerHTML = `<div class=${player.gotchu}></div>`;
+                document.querySelector(`.player1Icon`).innerHTML = `<div class=${player.gotchu}Icon></div>`;
               }
             }
           })
@@ -597,112 +710,8 @@
   firebase.auth().signInAnonymously().catch((error) => {
     console.log(error.code, error.message)
   })
+
+
 })();
 
 
-// Settings event listeners
-
-/** Sound variables
- * @param {boolean} - let fxState
- * @param {boolean} - let musicState
- */
-
-window.addEventListener("click", (event) => {
-  const targetClasslist = event.target.className.split(" ");
-  if (targetClasslist.includes("settings_button")) {
-
-    const existingSettingsContainer = document.querySelector(".settingsContainer");
-    if (existingSettingsContainer) return existingSettingsContainer.remove();
-
-    const mainScreen = document.querySelector("body");
-    const settingsContainer = document.createElement("div");
-    settingsContainer.className = "settingsContainer";
-    settingsContainer.innerHTML = `
-          <h1>SETTINGS</h1>
-          <div class="soundSettingsRow">
-            <p>SOUND EFFECTS</p>
-            <div class="onOffToggleButton"><h3></h3></div>
-          </div>
-          <div class="musicSettingsRow">
-            <p>MUSIC</p>
-            <div class="onOffToggleButton"><h3></h3></div>
-          </div>
-          <div class="closeSettingsContainer">
-            <div class="logoutButton">
-              <h4>LOG OUT</h4>
-            </div>
-            <div class="closeSettingsButton">
-              <h4>CLOSE</h4>
-            </div>
-          </div>
-        `;
-    mainScreen.appendChild(settingsContainer);
-
-    // Add button text
-    const fxToggle = document.querySelector(".soundSettingsRow .onOffToggleButton h3");
-    const musicToggle = document.querySelector(".musicSettingsRow .onOffToggleButton h3");
-
-    if (fxState) {
-      fxToggle.innerText = "ON";
-    } else {
-      fxToggle.innerText = "OFF";
-    }
-
-    if (musicState) {
-      musicToggle.innerText = "ON";
-    } else {
-      musicToggle.innerText = "OFF";
-    }
-
-    // On off toggles for sound
-    // Need to change later, temp solution
-    document.querySelector(".soundSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
-      if (event.target.innerHTML === "ON") {
-        event.target.innerHTML = "OFF";
-        fxState = false;
-      } else {
-        event.target.innerHTML = "ON";
-        fxState = true;
-      }
-    })
-
-    document.querySelector(".musicSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
-      if (event.target.innerHTML === "ON") {
-        event.target.innerHTML = "OFF";
-        musicState = false;
-      } else {
-        event.target.innerHTML = "ON";
-        musicState = true;
-      }
-    })
-  }
-
-  if (targetClasslist.includes("onOffToggleButton")) {
-    const onOffToggleButton = event.target;
-    // console.log(onOffToggleButton)
-    // console.log(onOffToggleButton.parentElement)
-    const onOffToggleButtonText = onOffToggleButton.querySelector("h3");
-    if (onOffToggleButtonText.innerText === "ON") {
-      onOffToggleButtonText.innerText = "OFF";
-      if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
-        fxState = false;
-      } else {
-        musicState = false;
-      }
-
-    } else {
-      onOffToggleButtonText.innerText = "ON";
-      if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
-        fxState = true;
-      } else {
-        musicState = true;
-      }
-    }
-  }
-
-  if (targetClasslist.includes("closeSettingsButton")) {
-    const settingsContainer = document.querySelector(".settingsContainer");
-    settingsContainer.remove();
-  }
-
-})

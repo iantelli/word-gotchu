@@ -21,18 +21,54 @@
 }
 
 .gameEndBackground .catchuWin {
-    background: url(../images/assets_spritesheet.png) -1005px -2376px no-repeat;
-    width: 212px;
-    height: 290px;
+    background: url(../images/assets_spritesheet.png) no-repeat -1007px -908px;
+	width: 239px;
+	height: 287px;
     margin-top: 2em;
     margin-left: 41.5%
 
 }
 
 .gameEndBackground .catchuLose {
-    background: url(../images/assets_spritesheet.png) -1018px -2048px no-repeat;
-    width: 210px;
-    height: 288px;
+    background: url(../images/assets_spritesheet.png) no-repeat -1007px -597px;
+	width: 239px;
+	height: 287px;
+    margin-top: 2em;
+    margin-left: 41.5%
+
+}
+
+.gameEndBackground .dogchuWin {
+    background: url(../images/assets_spritesheet.png) no-repeat -1007px -2377px;
+	width: 208px;
+	height: 287px;
+    margin-top: 2em;
+    margin-left: 41.5%
+
+}
+
+.gameEndBackground .dogchuLose {
+    background: url(../images/assets_spritesheet.png) no-repeat -1019px -2048px;
+	width: 209px;
+	height: 287px;
+    margin-top: 2em;
+    margin-left: 41.5%
+
+}
+
+.gameEndBackground .turtlechuWin {
+    background: url(../images/assets_spritesheet.png) no-repeat -989px -3560px;
+	width: 196px;
+	height: 293px;
+    margin-top: 2em;
+    margin-left: 41.5%
+
+}
+
+.gameEndBackground .turtlechuLose {
+    background: url(../images/assets_spritesheet.png) no-repeat -989px -3188px;
+	width: 196px;
+	height: 293px;
     margin-top: 2em;
     margin-left: 41.5%
 
