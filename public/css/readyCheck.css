@@ -1,0 +1,195 @@
+@font-face {
+    font-family: kongText;
+    src: url('kongtext.ttf');
+}
+  
+html, body {
+    background-color: black; 
+    color: white;
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden
+}
+
+* {
+    font-family: kongText
+}
+
+.gameReadyContainer {
+    background: url(../images/assets_spritesheet.png) no-repeat -4477px -3087px;
+    width: 1440px;
+    height: 1024px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleText {
+    margin-top: -3em;
+    margin-bottom: 4em;
+}
+
+.playerCards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 75%;
+    justify-content: space-between;
+    margin-left: -11em;
+    margin-bottom: 1em;
+}
+
+.gameReadyContainer .vsText {
+    font-size: 3em;
+    margin-left: -0.8em;
+}
+
+.playerCard, .opponentCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playerName, .opponentName {
+    margin-bottom: 3em;
+}
+
+.playerCharacter, .opponentCharacter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerPetContainer, .opponentCharacter {
+    width: 260px;
+    height: 315px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.previousCharacter, .nextCharacter {
+    background: transparent;
+    border: none;
+    font-size: xx-large;
+    color: white;
+    font-weight: bold;
+}
+
+.previousCharacter {
+    margin-right: 2em;
+}
+
+.nextCharacter {
+    margin-left: 2em;
+}
+
+/* Catchu */
+.catchu {
+    background: url(../images/assets_spritesheet.png) no-repeat -1007px -285px;
+    width: 240px;
+    height: 297px;
+    animation: catchuAnimation 1s steps(2) infinite;
+}
+
+@keyframes catchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1007px -285px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1592px -260px; }
+}
+
+/* Dogchu */
+.dogchu {
+    background: url(../images/assets_spritesheet.png) no-repeat -1019px -1682px;
+	width: 215px;
+	height: 288px;
+    animation: dogchuAnimation 1s steps(2) infinite;
+}
+
+@keyframes dogchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1019px -1682px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1580px -1682px; }
+}
+
+/* Turtlechu */
+.turtlechu {
+    background: url(../images/assets_spritesheet.png) no-repeat -988px -2815px;
+	width: 198px;
+	height: 295px;
+    animation: turtlechuAnimation 1s steps(2) infinite;
+}
+
+@keyframes turtlechuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -988px -2815px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1573px -2815px; }
+}
+
+/* Mousechu */
+.mousechu {
+    background: url(../images/assets_spritesheet.png) no-repeat -994px -4132px;
+	width: 259px;
+	height: 314px;
+    animation: mousechuAnimation 1s steps(2) infinite;
+}
+
+@keyframes mousechuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -994px -4132px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1579px -4132px; }
+}
+
+/* Racoonchu */
+.raccoonchu {
+    background: url(../images/assets_spritesheet.png) no-repeat -958px -5492px;
+	width: 258px;
+	height: 287px;
+    animation: raccoonchuAnimation 1s steps(2) infinite;
+}
+
+@keyframes raccoonchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -958px -5492px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1640px -5492px; }
+}
+
+.readyButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1487px;
+    width: 260px;
+    height: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+}
+
+.readyButton:hover {
+    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1400px;
+    width: 260px;
+    height: 82px;
+}
+
+.readyButton > * {
+    pointer-events: none;
+    margin-top: 0em;
+}
+
+.readyButton:hover > * {
+    pointer-events: none;
+    margin-top: 0.7em;
+}
+
+.notReadyButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6509px -1400px;
+    width: 260px;
+    height: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    filter: grayscale(1) brightness(60%);
+}
+
+.notReadyButton > * {
+    pointer-events: none;
+}
