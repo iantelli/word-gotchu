@@ -573,14 +573,14 @@ div.error {
 
 }
 
-.settingsButton {
+.homeSettingsButton {
     background: url(../images/assets_spritesheet.png) -6662px -1717px no-repeat;
     width: 100px;
     height: 100px;
     float: right;
     position: absolute;
     top: 1px;
-    right: -105px
+    right: 80px;
 
 }
 
@@ -655,16 +655,16 @@ div.error {
 
 }
 
-.closeSettingsButton h4, .logoutButton h4 {
+.closeSettingsButton > *, .logoutButton > * {
     margin-top: .5em;
     transform: scaleX(calc(1/.8));
     pointer-events: none
 
 }
 
-.closeSettingsButton:hover h4, .logoutButton:hover h4 {
-    margin-top: 1.2em
-
+.closeSettingsButton:hover > *, .logoutButton:hover > * {
+    margin-top: 1.2em;
+    pointer-events: none;
 }
 
 .closeSettingsContainer {
