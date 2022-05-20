@@ -214,6 +214,15 @@ const populateGotchuPage = (petLvl, petXP) => {
   const XPBarTextBox = document.querySelector(".XPBar p");
   levelBarTextBox.innerText = `LVL ${petLvl}`;
   XPBarTextBox.innerText = `XP ${petXP}/100`;
+  
+  // Assign default pet maybe or get pet from db
+  const selectedGotchuIcon = document.querySelector(".manageGotchusContainer .bottomBar .selected");
+  selectedGotchuIcon.innerHTML = `<p class="selectedText">SELECTED</p>`;
+
+  const selectedGotchu = (selectedGotchuIcon.className.split(" ")[0]).split("Icon")[0];
+  const gotchuContainer = document.querySelector(".manageGotchusContainer .centerContent .gotchuCharacter");
+  gotchuContainer.classList.add(selectedGotchu);
+
 }
 
 const populateStoryPage = (petStory1, petStory2, petStory3) => {
@@ -373,14 +382,24 @@ window.addEventListener("click", (event) => {
   }
   
   // Swap gotchus on manage gotchu page
+
+  // Save the current gotchu somewhere and reference it so it will dynamically assign the default one
   
   const allGotchuIcons = ["catchuIcon", "dogchuIcon", "turtlechuIcon"];
 
   if (allGotchuIcons.includes(targetClasslist[0])) {
     const selectedGotchu = document.querySelector(".manageGotchusContainer .bottomBar ." + targetClasslist[0]);
     const previousSelectedGotchu = document.querySelectorAll(".manageGotchusContainer .bottomBar .selected");
-    previousSelectedGotchu.forEach(gotchu => gotchu.classList.remove("selected"));
+    const gotchu = targetClasslist[0].split("Icon")[0];
+    const gotchuContainer = document.querySelector(".manageGotchusContainer .centerContent .gotchuCharacter");
+    previousSelectedGotchu.forEach(gotchu => {
+      gotchu.classList.remove("selected");
+      gotchu.innerHTML = "";
+    });
     selectedGotchu.classList.add("selected");
+    gotchuContainer.className = "gotchuCharacter " + gotchu;
+
+    selectedGotchu.innerHTML = `<p class="selectedText">SELECTED</p>`;
   }
 
 })
