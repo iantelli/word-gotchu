@@ -10,9 +10,12 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    font-family: kongText;
     color: white;
     margin: 0; 
     height: 100%; 
     overflow: hidden
+}
+
+* {
+    font-family: kongText;
 }
