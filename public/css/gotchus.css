@@ -12,6 +12,7 @@ body {
 }
 
 
+
 /* Catchu */
 .catchu {
     background: url(../images/assets_spritesheet.png) no-repeat -1007px -285px;
@@ -26,6 +27,8 @@ body {
 }
 
 .catchuEvo2 {}
+
+.catchuEvo3 {}
 
 
 
@@ -44,6 +47,8 @@ body {
 
 .dogchuEvo2 {}
 
+.dogchuEvo3 {}
+
 
 
 /* Turtlechu */
@@ -60,6 +65,8 @@ body {
 }
 
 .turtlechuEvo2 {}
+
+.turtlechuEvo3 {}
 
 
 
@@ -133,6 +140,10 @@ body {
     height: 194px;
 }
 
+.catchuEvo2Ability100 {}
+
+.catchuEvo3Ability100 {}
+
 
 
 /* Dogchu Ability Icons */
@@ -154,6 +165,10 @@ body {
     height: 194px;
 }
 
+.dogchuEvo2Ability100 {}
+
+.dogchuEvo3Ability100 {}
+
 
 
 /* Turtlechu Ability Icons */
@@ -174,3 +189,7 @@ body {
     width: 194px;
     height: 194px;
 }
+
+.turtlechuEvo2Ability100 {}
+
+.turtlechuEvo3Ability100 {}
