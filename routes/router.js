@@ -78,4 +78,8 @@ router.get("/gacha", (req, res) => {
   res.render("gotchuGacha")
 })
 
+router.get("/assets", (req, res) => {
+  res.render("assetTest")
+})
+
 module.exports = router;

@@ -1,3 +1,17 @@
+
+/* For testing purposes only */
+div {
+    border: 1px white solid;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+
 /* Catchu */
 .catchu {
     background: url(../images/assets_spritesheet.png) no-repeat -1007px -285px;
@@ -10,6 +24,10 @@
     from { background: url("../images/assets_spritesheet.png") no-repeat -1007px -285px; }
     to { background: url("../images/assets_spritesheet.png") no-repeat -1592px -260px; }
 }
+
+.catchuEvo2 {}
+
+
 
 /* Dogchu */
 .dogchu {
@@ -24,6 +42,10 @@
     to { background: url("../images/assets_spritesheet.png") no-repeat -1580px -1682px; }
 }
 
+.dogchuEvo2 {}
+
+
+
 /* Turtlechu */
 .turtlechu {
     background: url(../images/assets_spritesheet.png) no-repeat -988px -2815px;
@@ -37,6 +59,10 @@
     to { background: url("../images/assets_spritesheet.png") no-repeat -1573px -2815px; }
 }
 
+.turtlechuEvo2 {}
+
+
+
 /* Mousechu */
 .mousechu {
     background: url(../images/assets_spritesheet.png) no-repeat -994px -4132px;
@@ -49,6 +75,8 @@
     from { background: url("../images/assets_spritesheet.png") no-repeat -994px -4132px; }
     to { background: url("../images/assets_spritesheet.png") no-repeat -1579px -4132px; }
 }
+
+
 
 /* Racoonchu */
 .raccoonchu {
@@ -86,4 +114,63 @@
 
 
 
-/* Ability Icons */
+/* Catchu Ability Icons */
+.catchuAbility100 {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1299px;
+    width: 194px;
+    height: 194px;
+}
+
+.catchuAbility50 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6310px -1299px;
+    width: 194px;
+    height: 194px;
+}
+
+.catchuAbility0 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6116px -1299px;
+    width: 194px;
+    height: 194px;
+}
+
+
+
+/* Dogchu Ability Icons */
+.dogchuAbility100 {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1886px;
+    width: 194px;
+    height: 194px;
+}
+
+.dogchuAbility50 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6310px -1886px;
+    width: 194px;
+    height: 194px;
+}
+
+.dogchuAbility0 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6116px -1886px;
+    width: 194px;
+    height: 194px;
+}
+
+
+
+/* Turtlechu Ability Icons */
+.turtlechuAbility100 {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -2474px;
+    width: 194px;
+    height: 194px;
+}
+
+.turtlechuAbility50 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6310px -2474px;
+    width: 194px;
+    height: 194px;
+}
+
+.turtlechuAbility0 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6116px -2474px;
+    width: 194px;
+    height: 194px;
+}
