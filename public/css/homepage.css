@@ -152,19 +152,16 @@
 }
 
 /* Story popup css */
-.storyContainer {
+/* .storyContainer {
     background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
     width: 650px;
     height: 518px;
     display: flex;
-    /* align-content: center;
-    justify-content: center; */
     flex-direction: column;
     transform: scale(1.2);
     margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
-    /* display: none; */
 }
 
 .storyContainer > * {
@@ -218,10 +215,10 @@
 
 .popups {
     position: relative;
-}
+} */
 
 /* Manage Gotchus */
-.manageGotchusContainer {
+/* .manageGotchusContainer {
     background: url(../images/Misc/Dimmed_Home_BG.png) no-repeat center;
     width: 1440px;
     height: 1024px;
@@ -288,18 +285,14 @@
 
 .levelBar {
     margin-top: 1em;
-}
+} */
 
-/* .equippedGotchu { */
-.centerContent .gotchuCharacter {
-    /* background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
-	width: 209px;
-	height: 288px; */
+/* .centerContent .gotchuCharacter {
     margin-top: -6em;
     margin-left: 26em;
-}
+} */
 
-.centerContent {
+/* .centerContent {
     margin-top: 18%;
     display: flex;
     flex-direction: row;
@@ -364,7 +357,7 @@
     filter: blur(0px);
 } */
 
-.lockedIcon {
+/* .lockedIcon {
     background: url(../images/Misc/locked.png) no-repeat center;
     width: 100px;
     height: 100px;
@@ -392,14 +385,11 @@
     width: 650px;
     height: 518px;
     display: flex;
-    /* align-content: center;
-    justify-content: center; */
     flex-direction: column;
     transform: scale(1.2);
     margin-left: 25em;
     margin-top: -50em;
     position: fixed;
-    /* display: none; */
 }
 
 .storyContainer > * {
@@ -448,10 +438,10 @@
 
 .popups {
     position: relative;
-}
+} */ 
 
 /* Ability popup */
-.abilityContainer {
+/* .abilityContainer {
     background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
     width: 650px;
     height: 518px;
@@ -461,10 +451,10 @@
     margin-left: 25em;
     margin-top: 14em;
     position: fixed;
-}
+} */
 
 /* Do for all pets */
-.catchuAbility1 {
+/* .catchuAbility1 {
     background: url(../images/assets_spritesheet.png) no-repeat -5922px -1299px;
 }
 
@@ -510,10 +500,14 @@
 .description p.ability1, .description p.ability2, .description p.ability3 {
     margin-left: 0.5em;
     padding-top: 0.5em;
-}
+} */
+
+
+
+
 
 /* Settings popup */
-.settingsContainer {
+/* .settingsContainer {
     background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
     width: 650px;
     height: 518px;
@@ -589,4 +583,4 @@
     display: flex;
     flex-direction: row;
     margin-top: 4em;
-}
+} */

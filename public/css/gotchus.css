@@ -62,3 +62,28 @@
     from { background: url("../images/assets_spritesheet.png") no-repeat -958px -5492px; }
     to { background: url("../images/assets_spritesheet.png") no-repeat -1640px -5492px; }
 }
+
+
+
+/* Icons */
+.catchuIcon {
+    background: url(../images/cat_icon.png) no-repeat;
+    width: 83px;
+    height: 80px;
+}
+
+.dogchuIcon {
+    background: url(../images/dog_icon.png) no-repeat;
+    width: 83px;
+    height: 80px;
+}
+
+.turtlechuIcon {
+    background: url(../images/turtle_icon.png) no-repeat;
+    width: 83px;
+    height: 80px;
+}
+
+
+
+/* Ability Icons */
