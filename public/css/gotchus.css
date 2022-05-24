@@ -167,6 +167,10 @@ body {
     to { background: url("../images/assets_spritesheet.png") no-repeat -2555px -1657px; }
 }
 
+.dogchuEvo2Happy {}
+
+.dogchuEvo2Sad {}
+
 
 
 /* Dogchu Evo 3 */
@@ -181,6 +185,9 @@ body {
     to { background: url("../images/assets_spritesheet.png") no-repeat -3702px -1589px; }
 }
 
+.dogchuEvo3Happy {}
+
+.dogchuEvo3Sad {}
 
 
 
@@ -214,6 +221,10 @@ body {
     to { background: url("../images/assets_spritesheet.png") no-repeat -2555px -2815px; }
 }
 
+.turtlechuEvo2Happy {}
+
+.turtlechuEvo2Sad {}
+
 
 
 /* Turtlechu Evo 3 */
@@ -227,6 +238,10 @@ body {
     from { background: url("../images/assets_spritesheet.png") no-repeat -2903px -2790px; }
     to { background: url("../images/assets_spritesheet.png") no-repeat -3720px -2790px; }
 }
+
+.turtlechuEvo3Happy {}
+
+.turtlechuEvo3Sad {}
 
 
 
