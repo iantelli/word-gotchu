@@ -121,9 +121,12 @@ body {
 
 
 /* Dogchu Evo 1 */
-.dogchu {
+.dogchu, .dogchuHappy, .dogchuSad {
 	width: 215px;
 	height: 288px;
+}
+
+.dogchu {
     animation: dogchuAnimation 1s steps(2) infinite;
 }
 
@@ -132,9 +135,23 @@ body {
     to { background: url("../images/assets_spritesheet.png") no-repeat -1580px -1682px; }
 }
 
-.dogchuHappy {}
+.dogchuHappy {
+    animation: dogchuHappyAnimation 1s steps(2) infinite;
+}
 
-.dogchuSad {}
+@keyframes dogchuHappyAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1001px -2377px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1586px -2377px; }
+}
+
+.dogchuSad {
+    animation: dogchuSadAnimation 1s steps(2) infinite;
+}
+
+@keyframes dogchuSadAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1013px -2048px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1574px -2048px; }
+}
 
 
 
