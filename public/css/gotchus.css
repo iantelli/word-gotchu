@@ -13,11 +13,13 @@ body {
 
 
 
-/* Catchu */
-.catchu {
-    background: url(../images/assets_spritesheet.png) no-repeat -1007px -285px;
+/* Catchu Evo 1 */
+.catchu, .catchuHappy, .catchuSad {
     width: 240px;
     height: 297px;
+}
+
+.catchu {
     animation: catchuAnimation 1s steps(2) infinite;
 }
 
@@ -26,15 +28,100 @@ body {
     to { background: url("../images/assets_spritesheet.png") no-repeat -1592px -260px; }
 }
 
-.catchuEvo2 {}
+.catchuHappy {
+    animation: catchuHappyAnimation 1s steps(2) infinite;
+}
 
-.catchuEvo3 {}
+@keyframes catchuHappyAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1007px -908px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1580px -908px; }
+}
+
+.catchuSad {
+    animation: catchuSadAnimation 1s steps(2) infinite;
+}
+
+@keyframes catchuSadAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1007px -597px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1592px -597px; }
+}
 
 
 
-/* Dogchu */
+/* Catchu Evo 2 */
+.catchuEvo2, .catchuEvo2Happy, .catchuEvo2Sad {
+    width: 319px;
+    height: 290px;
+}
+
+.catchuEvo2 {
+    animation: catchuEvo2Animation 1s steps(2) infinite;
+}
+
+@keyframes catchuEvo2Animation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1903px -279px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -2635px -279px; }
+}
+
+.catchuEvo2Happy {
+    animation: catchuEvo2HappyAnimation 1s steps(2) infinite;
+}
+
+@keyframes catchuEvo2HappyAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1878px -955px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -2646px -943px; }
+}
+
+.catchuEvo2Sad {
+    animation: catchuEvo2SadAnimation 1s steps(2) infinite;
+}
+
+@keyframes catchuEvo2SadAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -2256px -620px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1500px -644px }
+}
+
+
+
+/* Catchu Evo 3 */
+.catchuEvo3, .catchuEvo3Happy, .catchuEvo3Sad {
+    width: 355px;
+    height: 332px;
+}
+
+.catchuEvo3 {
+    animation: catchuEvo3Animation 1s steps(2) infinite;
+}
+
+@keyframes catchuEvo3Animation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -2921px -248px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -3909px -248px; }
+}
+
+.catchuEvo3Happy {
+    animation: catchuEvo3HappyAnimation 1s steps(2) infinite;
+}
+
+@keyframes catchuEvo3HappyAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -2921px -968px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -3933px -992px; }
+}
+
+.catchuEvo3Sad {
+    animation: catchuEvo3SadAnimation 1s steps(2) infinite;
+}
+
+@keyframes catchuEvo3SadAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -2927px -620px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -3903px -607px }
+}
+
+
+
+
+
+/* Dogchu Evo 1 */
 .dogchu {
-    background: url(../images/assets_spritesheet.png) no-repeat -1019px -1682px;
 	width: 215px;
 	height: 288px;
     animation: dogchuAnimation 1s steps(2) infinite;
@@ -45,15 +132,43 @@ body {
     to { background: url("../images/assets_spritesheet.png") no-repeat -1580px -1682px; }
 }
 
-.dogchuEvo2 {}
+.dogchuHappy {}
 
-.dogchuEvo3 {}
+.dogchuSad {}
+
+
+
+/* Dogchu Evo 2 */
+.dogchuEvo2 {
+    width: 282px;
+    height: 313px;
+    animation: dogchuEvo2Animation 1s steps(2) infinite;
+}
+
+@keyframes dogchuEvo2Animation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1885px -1657px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -2555px -1657px; }
+}
+
+
+
+/* Dogchu Evo 3 */
+.dogchuEvo3 {
+    width: 367px;
+    height: 314px;
+    animation: dogchuEvo3Animation 1s steps(2) infinite;
+}
+
+@keyframes dogchuEvo3Animation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -2909px -1601px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -3702px -1589px; }
+}
+
 
 
 
 /* Turtlechu */
 .turtlechu {
-    background: url(../images/assets_spritesheet.png) no-repeat -988px -2815px;
 	width: 198px;
 	height: 295px;
     animation: turtlechuAnimation 1s steps(2) infinite;
@@ -64,15 +179,43 @@ body {
     to { background: url("../images/assets_spritesheet.png") no-repeat -1573px -2815px; }
 }
 
-.turtlechuEvo2 {}
+.turtlechuHappy {}
 
-.turtlechuEvo3 {}
+.turtlechuSad {}
+
+
+
+/* Turtlechu Evo 2 */
+.turtlechuEvo2 {
+    width: 257px;
+    height: 295px;
+    animation: turtlechuEvo2Animation 1s steps(2) infinite;
+}
+
+@keyframes turtlechuEvo2Animation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1885px -2815px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -2555px -2815px; }
+}
+
+
+
+/* Turtlechu Evo 3 */
+.turtlechuEvo3 {
+    width: 355px;
+    height: 333px;
+    animation: turtlechuEvo3Animation 1s steps(2) infinite;
+}
+
+@keyframes turtlechuEvo3Animation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -2903px -2790px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -3720px -2790px; }
+}
+
 
 
 
 /* Mousechu */
 .mousechu {
-    background: url(../images/assets_spritesheet.png) no-repeat -994px -4132px;
 	width: 259px;
 	height: 314px;
     animation: mousechuAnimation 1s steps(2) infinite;
@@ -87,7 +230,6 @@ body {
 
 /* Racoonchu */
 .raccoonchu {
-    background: url(../images/assets_spritesheet.png) no-repeat -958px -5492px;
 	width: 258px;
 	height: 287px;
     animation: raccoonchuAnimation 1s steps(2) infinite;
@@ -140,9 +282,41 @@ body {
     height: 194px;
 }
 
-.catchuEvo2Ability100 {}
+.catchuEvo2Ability100 {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1493px;
+    width: 194px;
+    height: 194px;
+}
 
-.catchuEvo3Ability100 {}
+.catchuEvo2Ability50 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6310px -1493px;
+    width: 194px;
+    height: 194px;
+}
+
+.catchuEvo2Ability0 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6116px -1493px;
+    width: 194px;
+    height: 194px;
+}
+
+.catchuEvo3Ability100 {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -1687px;
+    width: 194px;
+    height: 194px;
+}
+
+.catchuEvo3Ability50 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6310px -1687px;
+    width: 194px;
+    height: 194px;
+}
+
+.catchuEvo3Ability0 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6116px -1687px;
+    width: 194px;
+    height: 194px;
+}
 
 
 
@@ -165,9 +339,41 @@ body {
     height: 194px;
 }
 
-.dogchuEvo2Ability100 {}
+.dogchuEvo2Ability100 {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -2080px;
+    width: 194px;
+    height: 194px;
+}
 
-.dogchuEvo3Ability100 {}
+.dogchuEvo2Ability50 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6310px -2080px;
+    width: 194px;
+    height: 194px;
+}
+
+.dogchuEvo2Ability0 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6116px -2080px;
+    width: 194px;
+    height: 194px;
+}
+
+.dogchuEvo3Ability100 {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -2274px;
+    width: 194px;
+    height: 194px;
+}
+
+.dogchuEvo3Ability50 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6310px -2274px;
+    width: 194px;
+    height: 194px;
+}
+
+.dogchuEvo3Ability0 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6116px -2274px;
+    width: 194px;
+    height: 194px;
+}
 
 
 
@@ -190,6 +396,38 @@ body {
     height: 194px;
 }
 
-.turtlechuEvo2Ability100 {}
+.turtlechuEvo2Ability100 {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -2668px;
+    width: 194px;
+    height: 194px;
+}
 
-.turtlechuEvo3Ability100 {}
+.turtlechuEvo2Ability50 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6310px -2668px;
+    width: 194px;
+    height: 194px;
+}
+
+.turtlechuEvo2Ability0 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6116px -2668px;
+    width: 194px;
+    height: 194px;
+}
+
+.turtlechuEvo3Ability100 {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -2862px;
+    width: 194px;
+    height: 194px;
+}
+
+.turtlechuEvo3Ability50 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6310px -2862px;
+    width: 194px;
+    height: 194px;
+}
+
+.turtlechuEvo3Ability0 {
+    background: url(../images/assets_spritesheet.png) no-repeat -6116px -2862px;
+    width: 194px;
+    height: 194px;
+}
