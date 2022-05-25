@@ -487,7 +487,7 @@ body {
 
 @keyframes raccoonchuEvo2Animation {
     from { background: url("../images/assets_spritesheet.png") no-repeat -1830px -5420px; }
-    to { background: url("../images/assets_spritesheet.png") no-repeat -2538px -5409px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -2537px -5407px; }
 }
 
 .raccoonchuEvo2Happy {
@@ -505,7 +505,44 @@ body {
 
 @keyframes raccoonchuEvo2AnimationSad {
     from { background: url("../images/assets_spritesheet.png") no-repeat -1835px -5821px; }
-    to { background: url("../images/assets_spritesheet.png") no-repeat -2517px -5811px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -2518px -5808px; }
+}
+
+
+
+
+/* Racoonchu Evo 3*/
+.raccoonchuEvo3, .raccoonchuEvo3Happy, .raccoonchuEvo3Sad {
+	width: 294px;
+	height: 324px;
+}
+
+.raccoonchuEvo3 {
+    animation: raccoonchuEvo3Animation 1s steps(2) infinite;
+}
+
+@keyframes raccoonchuEvo3Animation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -2970px -5450px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -3750px -5438px; }
+}
+
+.raccoonchuEvo3Happy {
+    animation: raccoonchuEvo3AnimationHappy 1s steps(2) infinite;
+}
+
+@keyframes raccoonchuEvo3AnimationHappy {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -2940px -6193px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -3781px -6182px; }
+}
+
+.raccoonchuEvo3Sad {
+    animation: raccoonchuEvo3AnimationSad 1s steps(2) infinite;
+}
+
+@keyframes raccoonchuEvo3AnimationSad {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -2952px -5846px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -3769px -5820px; }
+
 }
 
 
