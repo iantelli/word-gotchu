@@ -196,9 +196,17 @@
             if (playerNum !== player.num) {
               let otherPlayerRef = firebase.database().ref(`lobbies/${lobbyId}/players/${player.id}`);
               document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}Sad></div>`;
-              document.querySelector(`.player${player.num}Character`).classList.toggle("attacked");
+              if (player.num === 1) {
+                document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP1");
+              } else {
+                document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
+              }
               setTimeout (() => {
-                document.querySelector(`.player${player.num}Character`).classList.toggle("attacked");
+                if (player.num === 1) {
+                  document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP1");
+                } else {
+                  document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
+                }
                 document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}></div>`;
               } , 600)
               //end game condition
@@ -221,10 +229,18 @@
             if (playerNum !== player.num) {
               let otherPlayerRef = firebase.database().ref(`lobbies/${lobbyId}/players/${player.id}`);
               document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}Sad></div>`;
-              document.querySelector(`.player${player.num}Character`).classList.toggle("attacked");
+              if (player.num === 1) {
+                document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP1");
+              } else {
+                document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
+              }
 
               setTimeout (() => {
-                document.querySelector(`.player${player.num}Character`).classList.toggle("attacked");
+                if (player.num === 1) {
+                  document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP1");
+                } else {
+                  document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
+                }
                 document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}></div>`;
               } , 600)
               //end game condition
