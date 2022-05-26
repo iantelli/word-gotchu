@@ -220,7 +220,9 @@
             }
           })
         })
-        startNewWordle();
+        setTimeout (() => {
+          startNewWordle();
+        } , 1000)
       }
       if (word.totalGuesses === 6 && !word.completed) {
         allPlayersRef.get().then((snapshot) => {
