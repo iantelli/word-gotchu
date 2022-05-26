@@ -195,7 +195,12 @@
           Object.values(players).forEach((player) => {
             if (playerNum !== player.num) {
               let otherPlayerRef = firebase.database().ref(`lobbies/${lobbyId}/players/${player.id}`);
-
+              document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}Sad></div>`;
+              document.querySelector(`.player${player.num}Character`).classList.toggle("attacked");
+              setTimeout (() => {
+                document.querySelector(`.player${player.num}Character`).classList.toggle("attacked");
+                document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}></div>`;
+              } , 600)
               //end game condition
               if (player.hp - 25 <= 0) {
 
@@ -215,7 +220,13 @@
           Object.values(players).forEach((player) => {
             if (playerNum !== player.num) {
               let otherPlayerRef = firebase.database().ref(`lobbies/${lobbyId}/players/${player.id}`);
+              document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}Sad></div>`;
+              document.querySelector(`.player${player.num}Character`).classList.toggle("attacked");
 
+              setTimeout (() => {
+                document.querySelector(`.player${player.num}Character`).classList.toggle("attacked");
+                document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}></div>`;
+              } , 600)
               //end game condition
               if (player.hp - 25 <= 0) {
 

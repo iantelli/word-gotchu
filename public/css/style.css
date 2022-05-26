@@ -417,15 +417,15 @@ div.correctCharacterPlacement {
     height: 43px;
     position: absolute;
     top: 5px;
-    left: 86px
-
+    left: 86px;
+    transition: all .5s linear;
 }
 
 .catchuIcon {
     background: url(../images/cat_icon.png);
     width: 83px;
     height: 80px
-
+    
 }
 
 .player2Healthbar, .player2HealthbarBorder {
@@ -433,8 +433,8 @@ div.correctCharacterPlacement {
     width: 348px;
     height: 43px;
     top: 5px;
-    right: 86px
-
+    right: 86px;
+    transition: all .5s linear;
 }
 
 .clock {
@@ -527,6 +527,13 @@ div.error {
     animation: shake .1s linear;
     animation-iteration-count: 3
 
+}
+
+div.attacked {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 @keyframes shake {
