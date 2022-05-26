@@ -93,7 +93,7 @@
         // Gacha page stuff
 
         if (event.target.classList.contains("gachaButton")) {
-            sfx.removeLetter.uiSound.play();
+            sfx.uiSound.play();
             document.querySelector(".mainScreenBg").classList.toggle("hidden");
             document.querySelector(".gachaBg").classList.toggle("hidden");
             return;
