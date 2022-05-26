@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordgotchu</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/body.css">
+    <link rel="stylesheet" href="/css/startScreen.css">
+
+
+</head>
+
+<body>
+    <!-- Startup Screen-->
+    <div class="startScreenBg">
+        <div class="backButton"><h1>Back</h1></div>            
+        <div class="wordGotchuTitle"></div>
+
+        <div class="loginSignupOption hidden">
+            <div class="loginButton"><h1>LOGIN</h1></div>
+            <div class="signupButton"><h1>SIGN UP</h1></div>
+        </div>
+
+        <!-- Signup Screen-->
+        <div class="signupScreen hidden">
+            <form action="">
+                <div class="formContainer">
+                    <h1>SIGN UP</h1>
+
+                    <label for="username">username</label>
+                    <input type="text" placeholder="" name="username" required>
+
+                    <label for="email">email</label>
+                    <input type="text" placeholder="" name="email" required>
+
+                    <label for="password">password</label>
+                    <input type="password" placeholder="" name="password" required>
+
+                    <label for="verifyPassword">verify password</label>
+                    <input type="password" placeholder="" name="verifyPassword" required>
+                </div>
+                <button type="submit" class="signupSubmit"><h2>SIGN UP</h2></button>
+            </form>
+
+        </div>
+
+        <!-- Login Screen-->
+        <div class="loginScreen hidden">
+            <form action="">
+                <div class="formContainer">
+                    <h1>LOG IN</h1>
+
+                    <label for="username">username</label>
+                    <input type="text" placeholder="" name="username" required>
+
+                    <label for="password">password</label>
+                    <input type="password" placeholder="" name="password" required>
+                </div>
+                <button type="submit" class="loginSubmit"><h2>LOG IN</h2></button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

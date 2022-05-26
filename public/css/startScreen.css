@@ -1,0 +1,197 @@
+.startScreenBg {
+    background: url("../images/assets_spritesheet.png") no-repeat -4477px -2058px;
+    width: 1440px;
+    height: 1024px;
+    transform: translate(-50%, -0%);
+    position: fixed;
+    left: 50%;
+    bottom: 0px;
+    margin: 0 auto;
+
+}
+
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.backButton {
+    background: url(../images/assets_spritesheet.png) -6577px -532px no-repeat;
+    width: 192px;
+    height: 138px;
+    justify-content: center;
+    align-items: center;
+}
+
+.backButton,
+.signupButton,
+.loginButton,
+.signupSubmit {
+    display: flex;
+    text-shadow: 2px 2px 0 #9B9B9B, 2px -2px 0 #9B9B9B, -2px 2px 0 #9B9B9B, -2px -2px 0 #9B9B9B, 2px 0 0 #9B9B9B, 0 2px 0 #9B9B9B, -2px 0 0 #9B9B9B, 0 -2px 0 #9B9B9B;
+}
+
+.backButton:hover {
+    background: url(../images/assets_spritesheet.png) -6577px -389px no-repeat;
+    width: 192px;
+    height: 138px;
+}
+
+.backButton,
+.backButton:hover {
+    transform: scale(.8);
+    margin-left: 2.75em;
+    margin-top: 1.5em
+}
+
+.backButton>* {
+    margin-top: -.3em
+}
+
+.backButton:hover>* {
+    margin-top: .5em
+}
+
+.wordGotchuTitle {
+    background: url("../images/wordgotchu_title.png") no-repeat;
+    width: 1003px;
+    height: 264px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Startup Screen */
+.loginSignupOption {
+    display: flex;
+    justify-content: center;
+}
+
+.loginButton,
+.signupButton,
+.loginButton:hover,
+.signupButton:hover {
+    width: 384px;
+    height: 120px;
+    position: absolute;
+    justify-content: center;
+    align-items: center
+}
+
+.loginButton,
+.signupButton {
+    background: url(../images/assets_spritesheet.png) -6311px -3893px no-repeat;
+}
+
+.loginButton {
+    top: 55%;
+}
+
+.signupButton {
+    top: 70%;
+}
+
+.loginButton:hover,
+.signupButton:hover {
+    background: url("../images/assets_spritesheet.png") no-repeat -6315px -3768px;
+
+}
+
+.loginButton>*,
+.signupButton>* {
+    margin-top: -.1em
+}
+
+.loginButton:hover>*,
+.signupButton:hover>* {
+    margin-top: .8em
+}
+
+.loginButton h1,
+.signupButton h1 {
+    pointer-events: none;
+}
+
+
+/* Signup Screen */
+form {
+    background: url("../images/assets_spritesheet.png") no-repeat -5922px -776px;
+    width: 650px;
+    height: 518px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 10%;
+}
+
+.formContainer {
+    width: 70%;
+
+}
+
+.signupScreen .formContainer input[type=text],
+input[type=password],
+.loginScreen .formContainer input[type=text],
+input[type=password] {
+    background: #F79245;
+    display: inline-block;
+    border: none;
+    width: 100%;
+    height: 45px;
+}
+
+.signupScreen .formContainer input[type=text],
+input[type=password] {
+    margin: 5px 0 22px 0;
+}
+
+.signupSubmit,
+.loginSubmit {
+    background: url("../images/assets_spritesheet.png") no-repeat -6509px -1487px;
+    width: 260px;
+    height: 85px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: -105px;
+    border: none;
+}
+
+.signupSubmit:hover,
+.loginSubmit:hover {
+    background: url("../images/assets_spritesheet.png") no-repeat -6509px -1400px;
+    width: 260px;
+    height: 85px;
+}
+
+.signupSubmit h2,
+.loginSubmit h2 {
+    margin-top: 1em;
+    color: white;
+}
+
+.signupSubmit:hover h2 .loginSubmit:hover h2 {
+    margin-top: 1.5em;
+}
+
+
+/* Login Screen */
+
+.loginScreen h1 {
+    margin-bottom: 18%;
+}
+
+.loginScreen input {
+    margin-bottom: 12%;
+}

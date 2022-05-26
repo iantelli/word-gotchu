@@ -83,4 +83,8 @@ router.get("/assets", (req, res) => {
   res.render("assetTest")
 })
 
+router.get("/start", (req, res) => {
+  res.render("startScreen")
+})
+
 module.exports = router;
