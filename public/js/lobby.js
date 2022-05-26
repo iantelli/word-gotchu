@@ -8,20 +8,9 @@
   let lobbyId = window.location.pathname.split("/")[2];
   let keyCount = 1;
   let userGuessCount = 1;
-  let typeSound = new Audio("/sounds/Enter_Letter.wav");
-  let errorSound = new Audio("/sounds/Error_sound.wav");
-  let correctSound = new Audio("/sounds/Successful_Wordle.wav");
-  let delSound = new Audio("/sounds/Remove_Letter.wav");
-  let sendSound = new Audio("/sounds/Send_Wordle.wav");
-  let battleMusic = new Audio("/sounds/battleMusic.wav");
-  typeSound.volume = 0.18;
-  errorSound.volume = 0.18;
-  correctSound.volume = 0.18;
-  delSound.volume = 0.15;
-  sendSound.volume = 0.18;
-  battleMusic.volume = 0.1;
-  battleMusic.loop = true;
-  const hpWidth = 338/100;
+  const hpWidth = 338 / 100;
+  const playerUnlockedChars = ["catchu", "dogchu", "turtlechu"];
+  
 
   document.addEventListener("click", event => {
     event.preventDefault();
@@ -151,7 +140,7 @@
     }
     let wordGuess = wordArray.join("").toLowerCase();
     if (!words.includes(wordGuess)) {
-      errorSound.play();
+      sfx.errorSound.play();
       for (let i = 0; i < 5; i++) {
         document.querySelector(`div.bar${userGuessCount} > div.slot${i + 1}`).classList.toggle("error");
       }
@@ -165,7 +154,6 @@
     guessWord(wordGuess).then((word) => {
       word.correctCharacters = Array.from(word.correctCharacters);
       word.incorrectCharacters = Array.from(word.incorrectCharacters);
-      sendSound.play();
       (wordGuess.split("")).forEach((letter, index) => {
         if (word.correctCharacterPlacements[index] === letter) {
           document.querySelector(`div.bar${userGuessCount - 1} > div.slot${index + 1}`).classList.add("correctCharacterPlacement");
@@ -182,7 +170,7 @@
 
       //TODO MOVE TO BACKEND BIG CHEATS
       if (word.completed) {
-        correctSound.play();
+        sfx.successfulWordle.play();
         allPlayersRef.get().then((snapshot) => {
           let players = snapshot.val()
           Object.values(players).forEach((player) => {
@@ -203,6 +191,7 @@
         startNewWordle();
       }
       if (word.totalGuesses === 6 && !word.completed) {
+        sfx.roundResultsNotif.play();
         allPlayersRef.get().then((snapshot) => {
           let players = snapshot.val()
           Object.values(players).forEach((player) => {
@@ -240,8 +229,6 @@
 
   document.addEventListener("keyup", function (event) {
     const keyPressed = event.key.toLowerCase();
-    typeSound.load();
-    delSound.load();
     if (allKeys.includes(event.key.toLowerCase())) {
       const key = document.querySelector("#" + keyPressed);
       key.classList.remove("pressed");
@@ -249,19 +236,20 @@
     }
     // if the key pressed is a letter, add it to a div 
     if (event.key.length === 1 && event.key.match(/[a-z]/i) && keyCount < 6) {
+      sfx.enterLetter.play();
       let div = document.querySelector(`div.bar${userGuessCount} > div.slot${keyCount}`);
-      typeSound.play();
       div.innerHTML += event.key.toUpperCase();
       keyCount++;
     }
     // if the key pressed is enter, submit the wordle
     if (event.key.toLowerCase() === "enter" && keyCount === 6) {
+      sfx.sendWordle.play();
       submitWordle();
     }
     // if the key pressed is backspace, remove the last letter
     if (event.key.toLowerCase() === "backspace" && keyCount > 1) {
+      sfx.removeLetter.play();
       let div = document.querySelector(`div.bar${userGuessCount} > div.slot${keyCount - 1}`);
-      delSound.play();
       div.innerHTML = div.innerHTML.slice(0, -1);
       keyCount--;
     }
@@ -270,18 +258,19 @@
   document.querySelector(".keyboard").addEventListener("click", event => {
     event.preventDefault();
     if (event.target.classList.contains("letter")) {
+      sfx.enterLetter.play();
       let div = document.querySelector(`div.bar${userGuessCount} > div.slot${keyCount}`);
-      typeSound.play();
       div.innerHTML += event.target.innerHTML;
       keyCount++;
     }
     else if (event.target.classList.contains("del") && keyCount > 1) {
+      sfx.removeLetter.play();
       let div = document.querySelector(`div.bar${userGuessCount} > div.slot${keyCount - 1}`);
-      delSound.play();
       div.innerHTML = div.innerHTML.slice(0, -1);
       keyCount--;
     }
     else if (event.target.classList.contains("ent") && keyCount === 6) {
+      sfx.sendWordle.play();
       submitWordle();
     }
   })
@@ -324,7 +313,6 @@
     let timer = time;
     let timerID;
     let started = false;
-    battleMusic.play();
     function secondsToMS(d) {
       d = Number(d);
       var m = Math.floor(d % 3600 / 60);
@@ -434,19 +422,11 @@
         if (event.target.innerHTML === "ON") {
           event.target.innerHTML = "OFF";
           fxState = false;
-          typeSound.muted = true;
-          errorSound.muted = true;
-          correctSound.muted = true;
-          delSound.muted = true;
-          sendSound.muted = true;
+          sfx.mute();
         } else {
           event.target.innerHTML = "ON";
           fxState = true;
-          typeSound.muted = false;
-          errorSound.muted = false;
-          correctSound.muted = false;
-          delSound.muted = false;
-          sendSound.muted = false;
+          sfx.unmute();
         }
       })
 
@@ -454,11 +434,11 @@
         if (event.target.innerHTML === "ON") {
           event.target.innerHTML = "OFF";
           musicState = false;
-          battleMusic.muted = true;
+          music.mute();
         } else {
           event.target.innerHTML = "ON";
           musicState = true;
-          battleMusic.muted = false;
+          music.unmute();
         }
       })
     }
@@ -472,28 +452,20 @@
         onOffToggleButtonText.innerText = "OFF";
         if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
           fxState = false;
-          typeSound.muted = true;
-          errorSound.muted = true;
-          correctSound.muted = true;
-          delSound.muted = true;
-          sendSound.muted = true;
+          sfx.mute();
         } else {
           musicState = false;
-          battleMusic.muted = true;
+          music.mute();
         }
 
       } else {
         onOffToggleButtonText.innerText = "ON";
         if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
           fxState = true;
-          typeSound.muted = false;
-          errorSound.muted = false;
-          correctSound.muted = false;
-          delSound.muted = false;
-          sendSound.muted = false;
+          sfx.unmute();
         } else {
           musicState = true;
-          battleMusic.muted = false;
+          music.unmute();
         }
       }
     }

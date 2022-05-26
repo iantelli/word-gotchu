@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ready Check</title>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/readyCheck.css">
+  <link rel="stylesheet" href="/css/body.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+</head>
+
+<body>
+
+  <div class="gameReadyContainer">
+    <h1 class="titleText">
+      <% if (bothPlayersConnected) { %>
+      Ready?
+      <% } else { %>
+      Waiting for second player...
+      <% } %>
+    </h1>
+    <div class="playerCards">
+      <div class="playerCard">
+        <h2 class="playerName"><%= userName %> </h2>
+        <div class="playerCharacter">
+          <button class="previousCharacter">&#60;</button>
+          <div class="playerPetContainer">
+            <div class="catchu"></div>
+          </div>
+          <button class="nextCharacter">&#62;</button>
+        </div>
+      </div>
+      <h1 class="vsText">VS</h1>
+      <div class="opponentCard">
+        <h2 class="opponentName"><%= opponentName %> </h2>
+        <div class="opponentCharacter">
+          <div class="opponentPetContainer">
+            <div id="opponentPet"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="readyButton" class="notReadyButton">
+      <h2>Ready</h2>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCpzcKwCrIbF6nbzefNONYlTyvtPeFqa2E",
+      authDomain: "wordgotchu.firebaseapp.com",
+      databaseURL: "https://wordgotchu-default-rtdb.firebaseio.com",
+      projectId: "wordgotchu",
+      storageBucket: "wordgotchu.appspot.com",
+      messagingSenderId: "864605245451",
+      appId: "1:864605245451:web:844c3beee20a79a33f370e",
+      measurementId: "G-9LW3YP7LVV"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>F
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <script src="/js/sound.js"></script>
+  <script src="/js/readyCheck.js"></script>
+</body>
+
+</html>
