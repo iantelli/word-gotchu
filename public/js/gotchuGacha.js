@@ -1,16 +1,11 @@
 
 window.onclick = function (event) {
 
-  // Init gacha sounds
-  let gachaSound = new Audio("/sounds/Gacha_Sound.wav");    
-  gachaSound.load();
-  gachaSound.volume = 0.15;
-
   const targetClassList = event.target.className.split(" ");
 
   // Change this to the manage page instead of homepage or make an all gotchus page?
   if (targetClassList.includes("viewGotchusButton")) {
-    backSound.play();
+    sfx.removeLetter.play();
     // document.querySelector(".mainScreenBg").classList.toggle("hidden");
     // document.querySelector(".gotchuBg").classList.toggle("hidden");
     return;
@@ -25,7 +20,7 @@ window.onclick = function (event) {
     currencyBar.innerText = currencyAmount - 1000;
 
     // Play sound
-    gachaSound.play();
+    sfx.gachaSound.play();
 
     // Get random number with crypto
     const byteArray = new Uint8Array(1);
