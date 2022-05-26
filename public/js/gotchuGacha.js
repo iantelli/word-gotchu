@@ -83,17 +83,20 @@ window.onclick = function (event) {
     // Dim Background
 
     // Clean up page
-    const gachaResultContainer = document.querySelector(".gachaResultContainer");
-    const allGachaResultContainers = document.querySelectorAll(".gachaResultContainer");
-    gachaResultContainer.addEventListener("click", () => {
+    // const gachaResultContainer = document.querySelector(".gachaResultContainer");
+    const closeGachaResultButton = document.querySelector(".gachaBg .gachaResultContainer .closeGachaResult");
+    closeGachaResultButton.addEventListener("click", () => {
+      const allGachaResultContainers = document.querySelectorAll(".gachaResultContainer");
       allGachaResultContainers.forEach(container => container.remove()); 
 
       // Re-enable buttons
       rollButton.classList.remove("disable");
       viewGotchusButton.classList.remove("disable");
       homeButton.classList.remove("disable");
+      gachaBg.style.filter = "";
 
     });
+
 
 
   }

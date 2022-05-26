@@ -11,7 +11,7 @@ div {
     position: fixed;
     left: 50%;
     bottom: 0;
-    margin: 0 auto
+    margin: 0 auto;
 
 }
 
@@ -210,6 +210,9 @@ div {
 
 .gachaBg .gachaResultContainer > * {
     transform: scale(calc(1 / 1.5));
+}
+
+.gachaBg .gachaResultContainer > h1 {
     pointer-events: none;
 }
 
@@ -234,14 +237,19 @@ div {
     background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
     width: 388px;
     height: 104px;
-    transform: scale(0.6);
+    transform: scale(0.8, 0.5);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: -1.25em;
 }
 
 .gachaBg .gachaResultContainer .closeGachaResult .bottomText {
-    transform: scale(calc(1 / 0.7));
+    transform: scale(calc(1 / 0.95), calc(1 / 0.55));
     pointer-events: none;
+}
+
+.dim {
+    filter: brightness(50%);
 }
