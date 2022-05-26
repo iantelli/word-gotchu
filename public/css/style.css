@@ -278,21 +278,21 @@ div[class*=black]:hover {
 }
 
 div.correctCharacter {
-    background: url(../images/Keyboard/Letter_Yellow_Blank.svg) no-repeat;
-    background-size: 100% 100%
-
+    background: url(../images/assets_spritesheet.png) -6654px -2189px no-repeat;
+    width: 51px;
+    height: 51px;
 }
 
 div.incorrectCharacter {
-    background: url(../images/Keyboard/Letter_Black_Blank.svg) no-repeat;
-    background-size: 100% 100%
-
+    background: url(../images/assets_spritesheet.png) -6706px -1659px no-repeat;
+    width: 51px;
+    height: 51px;
 }
 
 div.correctCharacterPlacement {
-    background: url(../images/Keyboard/Letter_Green_Blank.svg) no-repeat !important;
-    background-size: 100% 100% !important
-
+    background: url(../images/assets_spritesheet.png) -6509px -2306px no-repeat !important;
+    width: 51px;
+    height: 51px;
 }
 
 .answerContainer {
