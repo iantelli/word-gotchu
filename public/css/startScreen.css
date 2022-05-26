@@ -27,7 +27,8 @@
 .backButton,
 .signupButton,
 .loginButton,
-.signupSubmit {
+.signupSubmit,
+.loginSubmit {
     display: flex;
     text-shadow: 2px 2px 0 #9B9B9B, 2px -2px 0 #9B9B9B, -2px 2px 0 #9B9B9B, -2px -2px 0 #9B9B9B, 2px 0 0 #9B9B9B, 0 2px 0 #9B9B9B, -2px 0 0 #9B9B9B, 0 -2px 0 #9B9B9B;
 }
@@ -100,14 +101,14 @@
 
 }
 
-.loginButton>*,
-.signupButton>* {
-    margin-top: -.1em
+.loginButton h1,
+.signupButton h1 {
+    margin-top: -1em
 }
 
-.loginButton:hover>*,
-.signupButton:hover>* {
-    margin-top: .8em
+.loginButton:hover h1,
+.signupButton:hover h1 {
+    margin-top: -.3em
 }
 
 .loginButton h1,
@@ -181,7 +182,8 @@ input[type=password] {
     color: white;
 }
 
-.signupSubmit:hover h2 .loginSubmit:hover h2 {
+.signupSubmit:hover h2,
+.loginSubmit:hover h2 {
     margin-top: 1.5em;
 }
 
