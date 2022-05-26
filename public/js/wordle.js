@@ -29,3 +29,13 @@ window.addEventListener("resize", event => {
 })
 
 reScaleWhatever()
+
+// Get default gotchu from homepage or db or something
+function fillPlayerGotchus() {
+    const playerGotchu = "catchuEvo2";
+    const opponentGotchu = "dogchuEvo3";
+    const playerGotchuContainer = document.querySelector(".gochuCharacters .playerCharacter");
+    const opponentGotchuContainer = document.querySelector(".gochuCharacters .opponentCharacter");
+    playerGotchuContainer.innerHTML = `<div class="${playerGotchu}"></div>`;
+    opponentGotchuContainer.innerHTML = `<div class="${opponentGotchu}"></div>`;
+}

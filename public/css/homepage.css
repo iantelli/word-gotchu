@@ -84,22 +84,15 @@
 .settingsButton:hover {}
 
 .mainScreenBg .gotchuCharacter {
-    background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px;
-	width: 209px;
-	height: 288px;
-    animation: gotchuAnimation 1s steps(2) infinite;
-
-}
-
-.mainScreenBg .gotchuCharacter {
+	width: 380px;
+	height: 330px;
     position: absolute;
-    bottom: 250px;
-    left: 600px;
-}
+    bottom: 270px;
+    left: 530px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-@keyframes gotchuAnimation {
-    from { background: url("../images/assets_spritesheet.png") no-repeat -1025px -1682px; }
-    to { background: url("../images/assets_spritesheet.png") no-repeat -1586px -1682px; }
 }
 
 .bottomNav >div{

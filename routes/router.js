@@ -6,6 +6,7 @@ router.get("/", (req, res) => {
     username: "USER",
   }
   const pet = {
+    gotchu: "catchu",
     lvl: 1,
     xp: 10,
     lvl1Story: "qwerty",

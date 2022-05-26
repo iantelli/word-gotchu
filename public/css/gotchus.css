@@ -1,6 +1,6 @@
 
-/* For testing purposes only */
-div {
+/* For testing purposes only, comment out if live */
+/* div {
     border: 1px white solid;
 }
 
@@ -9,7 +9,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     background-color: black;
-}
+} */
 
 
 

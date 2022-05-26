@@ -122,6 +122,17 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 })
 
+// Populate pets
+
+// Get pets from user profile in db or something
+const playerGotchu = "catchuEvo2";
+const playerPetContainer = document.querySelector(".playerCharacter .playerPetContainer");
+playerPetContainer.innerHTML = `<div class="${playerGotchu}"></div>`;
+
+// const opponentGotchu = "dogchuEvo3";
+// const opponentPetContainer = document.querySelector(".opponentCharacter .opponentPetContainer");
+// opponentPetContainer.innerHTML = `<div class="${opponentGotchu}"></div>`;
+
 //Error
 firebase.auth().signInAnonymously().catch((error) => {
     console.log(error.code, error.message)

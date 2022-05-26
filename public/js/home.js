@@ -10,8 +10,9 @@ window.addEventListener("click", function (event) {
     // Need to fill xp, level, and story boxes with js
 
     const mainScreen = document.querySelector(".mainScreenBg");
-    mainScreen.remove();
+    mainScreen.classList.add("hidden");
 
+    const gotchuPageFragment = document.createDocumentFragment();
     const gotchusPageContainer = document.createElement("div");
     gotchusPageContainer.className = "manageGotchusContainer";
     gotchusPageContainer.innerHTML = `    
@@ -39,13 +40,14 @@ window.addEventListener("click", function (event) {
             </div>
 
             <div class="bottomBar">
-                <div class="catchuIcon selected"></div>
-                <div class="dogchuIcon locked"></div>
+                <div class="catchuIcon"></div>
+                <div class="dogchuIcon"></div>
                 <div class="turtlechuIcon"></div>
             </div>`;
 
     const body = document.querySelector("body");
-    body.appendChild(gotchusPageContainer);
+    gotchuPageFragment.appendChild(gotchusPageContainer);
+    body.appendChild(gotchuPageFragment);
     populateGotchuPage(petLvl, petXP);
 
     // Add lock icon to locked characters
@@ -60,31 +62,34 @@ window.addEventListener("click", function (event) {
     const backButton = document.querySelector(".topBar .backButton");
     backButton.addEventListener("click", function () {
 
-      const mainScreen = document.createElement("div");
-      mainScreen.className = "mainScreenBg";
-      mainScreen.innerHTML = `    
-              <div class="topNav">
-                  <div class="userBar">
-                      <div class="userProfileBg"></div>
-                      <div class="userName"></div>
-                  </div>
-                  <div class="gotchuCoinBar">
-                      <div class="gotchuCoinIcon"></div>
-                      <div class="gotchuCoinAmount"></div>
-                  </div>
-                  <div class="homeSettingsButton"></div>
-              </div>
+      // const mainScreen = document.createElement("div");
+      // mainScreen.className = "mainScreenBg";
+      // mainScreen.innerHTML = `    
+      //         <div class="topNav">
+      //             <div class="userBar">
+      //                 <div class="userProfileBg"></div>
+      //                 <div class="userName"></div>
+      //             </div>
+      //             <div class="gotchuCoinBar">
+      //                 <div class="gotchuCoinIcon"></div>
+      //                 <div class="gotchuCoinAmount"></div>
+      //             </div>
+      //             <div class="homeSettingsButton"></div>
+      //         </div>
               
-              <div class="gotchuCharacter"></div>
+      //         <div class="gotchuCharacter"></div>
             
-              <div class="bottomNav">
-                  <div class="gotchuButton"></div>
-                  <div class="gachaButton"></div>
-                  <div class="gotchuDomeButton"></div>
-              </div>`;
+      //         <div class="bottomNav">
+      //             <div class="gotchuButton"></div>
+      //             <div class="gachaButton"></div>
+      //             <div class="gotchuDomeButton"></div>
+      //         </div>`;
 
-      body.appendChild(mainScreen);
       gotchusPageContainer.remove();
+
+      const mainScreen = document.querySelector(".mainScreenBg");
+      mainScreen.classList.remove("hidden");
+
       populateHomepage(username, playerCurrency);
       goToGotchuDomeListener();
 
@@ -99,6 +104,7 @@ window.addEventListener("click", function (event) {
       if (existingStoryPopup) return existingStoryPopup.remove();
       if (existingAbilityPopup) existingAbilityPopup.remove();
 
+      const storyFragment = document.createDocumentFragment();
       const storyPopup = document.createElement("div");
       storyPopup.className = "storyPopup";
       storyPopup.innerHTML = `
@@ -118,7 +124,8 @@ window.addEventListener("click", function (event) {
                     <p class="lvl3"></p>
                 </div>
                 `;
-      gotchusPageContainer.appendChild(storyPopup);
+      storyFragment.appendChild(storyPopup);
+      gotchusPageContainer.appendChild(storyFragment);
       gotchusPageContainer.classList.remove("hidden");
       populateStoryPage(petStory1, petStory2, petStory3);
       return;
@@ -135,6 +142,7 @@ window.addEventListener("click", function (event) {
       if (existingStoryPopup) existingStoryPopup.remove();
       if (existingAbilityPopup) return existingAbilityPopup.remove();
 
+      const abilityFragment = document.createDocumentFragment();
       const abilityPopup = document.createElement("div");
       abilityPopup.className = "abilityContainer";
       abilityPopup.innerHTML = `
@@ -167,12 +175,35 @@ window.addEventListener("click", function (event) {
               </div>
           </div>
           `;
-      gotchusPageContainer.appendChild(abilityPopup);
+      abilityFragment.appendChild(abilityPopup);
+      gotchusPageContainer.appendChild(abilityFragment);
       gotchusPageContainer.classList.remove("hidden");
       populateAbilityPage(petAbility1, petAbility2, petAbility3);
       return;
     })
 
+  }
+
+  // Swap gotchus on manage gotchu page
+
+  // Save the current gotchu somewhere and reference it so it will dynamically assign the default one
+  
+  const allGotchuIcons = ["catchuIcon", "dogchuIcon", "turtlechuIcon"];
+
+  if (allGotchuIcons.includes(targetClasslist[0])) {
+    const selectedGotchu = document.querySelector(".manageGotchusContainer .bottomBar ." + targetClasslist[0]);
+    const previousSelectedGotchu = document.querySelectorAll(".manageGotchusContainer .bottomBar .selected");
+    const gotchu = targetClasslist[0].split("Icon")[0];
+    const gotchuContainer = document.querySelector(".manageGotchusContainer .centerContent .gotchuCharacter");
+    previousSelectedGotchu.forEach(gotchu => {
+      gotchu.classList.remove("selected");
+      gotchu.innerHTML = "";
+    });
+    selectedGotchu.classList.add("selected");
+    gotchuContainer.className = "gotchuCharacter " + gotchu;
+    playerGotchu = gotchu;
+
+    selectedGotchu.innerHTML = `<p class="selectedText">SELECTED</p>`;
   }
 
 })
@@ -199,6 +230,9 @@ const populateHomepage = (username, playerCurrency) => {
   const currencyDiv = document.querySelector(".mainScreenBg .gotchuCoinBar .gotchuCoinAmount");
   usernameDiv.innerText = username;
   currencyDiv.innerText = playerCurrency;
+
+  const gotchuDiv = document.querySelector(".mainScreenBg .gotchuCharacter");
+  gotchuDiv.innerHTML = `<div class="${playerGotchu}"></div>`;
 }
 
 const goToGotchuDomeListener = () => {
@@ -216,10 +250,12 @@ const populateGotchuPage = (petLvl, petXP) => {
   XPBarTextBox.innerText = `XP ${petXP}/100`;
   
   // Assign default pet maybe or get pet from db
-  const selectedGotchuIcon = document.querySelector(".manageGotchusContainer .bottomBar .selected");
+  const selectedGotchu = playerGotchu;
+  const selectedGotchuIcon = document.querySelector(`.manageGotchusContainer .bottomBar .${playerGotchu}Icon`);
+  selectedGotchuIcon.classList.add("selected");
   selectedGotchuIcon.innerHTML = `<p class="selectedText">SELECTED</p>`;
 
-  const selectedGotchu = (selectedGotchuIcon.className.split(" ")[0]).split("Icon")[0];
+  // const selectedGotchu = (selectedGotchuIcon.className.split(" ")[0]).split("Icon")[0];
   const gotchuContainer = document.querySelector(".manageGotchusContainer .centerContent .gotchuCharacter");
   gotchuContainer.classList.add(selectedGotchu);
 
@@ -236,7 +272,6 @@ const populateStoryPage = (petStory1, petStory2, petStory3) => {
 
 // Should change to support different pets as a variable
 const populateAbilityPage = (petAbility1, petAbility2, petAbility3) => {
-  const pet = "catchu";
   const ability1 = document.querySelector(`.description p.ability1`);
   const ability2 = document.querySelector(`.description p.ability2`);
   const ability3 = document.querySelector(`.description p.ability3`);
@@ -260,146 +295,125 @@ goToGotchuDomeListener();
  */
 
 window.addEventListener("click", (event) => {
-  const targetClasslist = event.target.className.split(" ");
-  if (targetClasslist.includes("homeSettingsButton")) {
+  // const targetClasslist = event.target.className.split(" ");
+  // if (targetClasslist.includes("homeSettingsButton")) {
 
-    const existingSettingsContainer = document.querySelector(".settingsContainer");
-    if (existingSettingsContainer) return existingSettingsContainer.remove();
+  //   const existingSettingsContainer = document.querySelector(".settingsContainer");
+  //   if (existingSettingsContainer) return existingSettingsContainer.remove();
 
-    const mainScreen = document.querySelector(".mainScreenBg");
-    const settingsContainer = document.createElement("div");
-    settingsContainer.className = "settingsContainer";
-    settingsContainer.innerHTML = `
-            <h1>SETTINGS</h1>
-            <div class="soundSettingsRow">
-              <p>SOUND EFFECTS</p>
-              <div class="onOffToggleButton"><h3></h3></div>
-            </div>
-            <div class="musicSettingsRow">
-              <p>MUSIC</p>
-              <div class="onOffToggleButton"><h3></h3></div>
-            </div>
-            <div class="closeSettingsContainer">
-              <div class="logoutButton">
-                <h4>LOG OUT</h4>
-              </div>
-              <div class="closeSettingsButton">
-                <h4>CLOSE</h4>
-              </div>
-            </div>
-          `;
-    mainScreen.appendChild(settingsContainer);
+  //   const mainScreen = document.querySelector(".mainScreenBg");
+  //   const settingsContainer = document.createElement("div");
+  //   settingsContainer.className = "settingsContainer";
+  //   settingsContainer.innerHTML = `
+  //           <h1>SETTINGS</h1>
+  //           <div class="soundSettingsRow">
+  //             <p>SOUND EFFECTS</p>
+  //             <div class="onOffToggleButton"><h3></h3></div>
+  //           </div>
+  //           <div class="musicSettingsRow">
+  //             <p>MUSIC</p>
+  //             <div class="onOffToggleButton"><h3></h3></div>
+  //           </div>
+  //           <div class="closeSettingsContainer">
+  //             <div class="logoutButton">
+  //               <h4>LOG OUT</h4>
+  //             </div>
+  //             <div class="closeSettingsButton">
+  //               <h4>CLOSE</h4>
+  //             </div>
+  //           </div>
+  //         `;
+  //   mainScreen.appendChild(settingsContainer);
 
-    // Add button text
-    const fxToggle = document.querySelector(".soundSettingsRow .onOffToggleButton h3");
-    const musicToggle = document.querySelector(".musicSettingsRow .onOffToggleButton h3");
+  //   // Add button text
+  //   const fxToggle = document.querySelector(".soundSettingsRow .onOffToggleButton h3");
+  //   const musicToggle = document.querySelector(".musicSettingsRow .onOffToggleButton h3");
 
-    if (fxState) {
-      fxToggle.innerText = "ON";
-    } else {
-      fxToggle.innerText = "OFF";
-    }
+  //   if (fxState) {
+  //     fxToggle.innerText = "ON";
+  //   } else {
+  //     fxToggle.innerText = "OFF";
+  //   }
 
-    if (musicState) {
-      musicToggle.innerText = "ON";
-    } else {
-      musicToggle.innerText = "OFF";
-    }
+  //   if (musicState) {
+  //     musicToggle.innerText = "ON";
+  //   } else {
+  //     musicToggle.innerText = "OFF";
+  //   }
 
-    // On off toggles for sound
-    // Need to change later, temp solution
-    document.querySelector(".soundSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
-      if (event.target.innerHTML === "ON") {
-        event.target.innerHTML = "OFF";
-        fxState = false;
-        typeSound.muted = true;
-        errorSound.muted = true;
-        correctSound.muted = true;
-        delSound.muted = true;
-        sendSound.muted = true;
-      } else {
-        event.target.innerHTML = "ON";
-        fxState = true;
-        typeSound.muted = false;
-        errorSound.muted = false;
-        correctSound.muted = false;
-        delSound.muted = false;
-        sendSound.muted = false;
-      }
-    })
+  //   // On off toggles for sound
+  //   // Need to change later, temp solution
+  //   document.querySelector(".soundSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
+  //     if (event.target.innerHTML === "ON") {
+  //       event.target.innerHTML = "OFF";
+  //       fxState = false;
+  //       typeSound.muted = true;
+  //       errorSound.muted = true;
+  //       correctSound.muted = true;
+  //       delSound.muted = true;
+  //       sendSound.muted = true;
+  //     } else {
+  //       event.target.innerHTML = "ON";
+  //       fxState = true;
+  //       typeSound.muted = false;
+  //       errorSound.muted = false;
+  //       correctSound.muted = false;
+  //       delSound.muted = false;
+  //       sendSound.muted = false;
+  //     }
+  //   })
 
-    document.querySelector(".musicSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
-      if (event.target.innerHTML === "ON") {
-        event.target.innerHTML = "OFF";
-        musicState = false;
-        battleMusic.muted = true;
-      } else {
-        event.target.innerHTML = "ON";
-        musicState = true;
-        battleMusic.muted = false;
-      }
-    })
-  }
+  //   document.querySelector(".musicSettingsRow .onOffToggleButton h3").addEventListener("click", (event) => {
+  //     if (event.target.innerHTML === "ON") {
+  //       event.target.innerHTML = "OFF";
+  //       musicState = false;
+  //       battleMusic.muted = true;
+  //     } else {
+  //       event.target.innerHTML = "ON";
+  //       musicState = true;
+  //       battleMusic.muted = false;
+  //     }
+  //   })
+  // }
 
-  if (targetClasslist.includes("onOffToggleButton")) {
-    const onOffToggleButton = event.target;
-    // console.log(onOffToggleButton)
-    // console.log(onOffToggleButton.parentElement)
-    const onOffToggleButtonText = onOffToggleButton.querySelector("h3");
-    if (onOffToggleButtonText.innerText === "ON") {
-      onOffToggleButtonText.innerText = "OFF";
-      if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
-        fxState = false;
-        typeSound.muted = true;
-        errorSound.muted = true;
-        correctSound.muted = true;
-        delSound.muted = true;
-        sendSound.muted = true;
-      } else {
-        musicState = false;
-        battleMusic.muted = true;
-      }
+  // if (targetClasslist.includes("onOffToggleButton")) {
+  //   const onOffToggleButton = event.target;
+  //   // console.log(onOffToggleButton)
+  //   // console.log(onOffToggleButton.parentElement)
+  //   const onOffToggleButtonText = onOffToggleButton.querySelector("h3");
+  //   if (onOffToggleButtonText.innerText === "ON") {
+  //     onOffToggleButtonText.innerText = "OFF";
+  //     if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
+  //       fxState = false;
+  //       typeSound.muted = true;
+  //       errorSound.muted = true;
+  //       correctSound.muted = true;
+  //       delSound.muted = true;
+  //       sendSound.muted = true;
+  //     } else {
+  //       musicState = false;
+  //       battleMusic.muted = true;
+  //     }
 
-    } else {
-      onOffToggleButtonText.innerText = "ON";
-      if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
-        fxState = true;
-        typeSound.muted = false;
-        errorSound.muted = false;
-        correctSound.muted = false;
-        delSound.muted = false;
-        sendSound.muted = false;
-      } else {
-        musicState = true;
-        battleMusic.muted = false;
-      }
-    }
-  }
+  //   } else {
+  //     onOffToggleButtonText.innerText = "ON";
+  //     if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
+  //       fxState = true;
+  //       typeSound.muted = false;
+  //       errorSound.muted = false;
+  //       correctSound.muted = false;
+  //       delSound.muted = false;
+  //       sendSound.muted = false;
+  //     } else {
+  //       musicState = true;
+  //       battleMusic.muted = false;
+  //     }
+  //   }
+  // }
 
-  if (targetClasslist.includes("closeSettingsButton")) {
-    const settingsContainer = document.querySelector(".settingsContainer");
-    settingsContainer.remove();
-  }
-  
-  // Swap gotchus on manage gotchu page
-
-  // Save the current gotchu somewhere and reference it so it will dynamically assign the default one
-  
-  const allGotchuIcons = ["catchuIcon", "dogchuIcon", "turtlechuIcon"];
-
-  if (allGotchuIcons.includes(targetClasslist[0])) {
-    const selectedGotchu = document.querySelector(".manageGotchusContainer .bottomBar ." + targetClasslist[0]);
-    const previousSelectedGotchu = document.querySelectorAll(".manageGotchusContainer .bottomBar .selected");
-    const gotchu = targetClasslist[0].split("Icon")[0];
-    const gotchuContainer = document.querySelector(".manageGotchusContainer .centerContent .gotchuCharacter");
-    previousSelectedGotchu.forEach(gotchu => {
-      gotchu.classList.remove("selected");
-      gotchu.innerHTML = "";
-    });
-    selectedGotchu.classList.add("selected");
-    gotchuContainer.className = "gotchuCharacter " + gotchu;
-
-    selectedGotchu.innerHTML = `<p class="selectedText">SELECTED</p>`;
-  }
+  // if (targetClasslist.includes("closeSettingsButton")) {
+  //   const settingsContainer = document.querySelector(".settingsContainer");
+  //   settingsContainer.remove();
+  // }
 
 })

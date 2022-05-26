@@ -14,11 +14,13 @@
   <link rel="stylesheet" href="/css/gotchuGacha.css">
   <link rel="stylesheet" href="/css/gotchus.css">
   <link rel="stylesheet" href="/css/manageGotchus.css">
+  <link rel="stylesheet" href="/css/settings.css">
 </head>
 <body>
   <script>
     // Get firebase database snapshot of the current user and pet
     const username = "<%= data.username %>";
+    let playerGotchu = "<%= pet.gotchu %>";
     const playerCurrency = "<%= data.playerCurrency %>";
     const petLvl = "<%= pet.lvl %>";
     const petXP = "<%= pet.xp %>";
@@ -43,7 +45,7 @@
             <div class="gotchuCoinIcon"></div>
             <div class="gotchuCoinAmount"></div>
         </div>
-        <div class="homeSettingsButton"></div>
+        <div class="settingsButton"></div>
     </div>
 
     <div class="gotchuCharacter"></div>
@@ -111,6 +113,7 @@
   <script src="/js/home.js"></script>
   <script src="/js/homepage.js"></script>
   <script src="/js/gotchuGacha.js"></script>
+  <script src="/js/settings.js"></script>
 </body>
 
 </html>

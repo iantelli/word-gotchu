@@ -229,3 +229,19 @@ div {
 .gachaBg .gachaResultContainer .gotchuContainer {
     margin-left: -2em;
 }
+
+.gachaBg .gachaResultContainer .closeGachaResult {
+    background: url(../images/assets_spritesheet.png) no-repeat -5922px -3768px;
+    width: 388px;
+    height: 104px;
+    transform: scale(0.6);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gachaBg .gachaResultContainer .closeGachaResult .bottomText {
+    transform: scale(calc(1 / 0.7));
+    pointer-events: none;
+}

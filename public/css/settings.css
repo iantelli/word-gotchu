@@ -1,3 +1,10 @@
+.settingsButton {
+    background: url(../images/assets_spritesheet.png) no-repeat -6662px -1717px;
+    width: 100px;
+    height: 100px;
+    right:80px;
+}
+
 .settingsContainer {
     background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
     width: 650px;
@@ -28,6 +35,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.onOffToggleButton > * {
+    pointer-events: none;
 }
 
 .soundSettingsRow, .musicSettingsRow {

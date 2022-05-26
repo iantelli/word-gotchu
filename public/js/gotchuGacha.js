@@ -65,7 +65,9 @@ window.onclick = function (event) {
         <div class="${gachaResult}"></div>
       </div>
       <h1 class="middleText">Obtained ${gachaResult[0].toUpperCase()}${gachaResult.slice(1)}!</h1>
-      <h3 class="bottomText">CLICK ANYWHERE TO CONTINUE</h3>
+      <div class="closeGachaResult">
+        <h3 class="bottomText">CLICK TO CONTINUE</h3>
+      </div>
       `;
     gachaFragment.appendChild(rollResultPopup);
     document.querySelector(".gachaBg").appendChild(gachaFragment);
@@ -77,6 +79,8 @@ window.onclick = function (event) {
     rollButton.classList.add("disable");
     viewGotchusButton.classList.add("disable");
     homeButton.classList.add("disable");
+
+    // Dim Background
 
     // Clean up page
     const gachaResultContainer = document.querySelector(".gachaResultContainer");
