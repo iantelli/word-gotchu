@@ -65,6 +65,7 @@ window.onclick = function (event) {
     // Clean up page
     const closeGachaResultButton = document.querySelector(".gachaBg .gachaResultContainer .closeGachaResult");
     closeGachaResultButton.addEventListener("click", () => {
+      sfx.removeLetter.play();
       const allGachaResultContainers = document.querySelectorAll(".gachaResultContainer");
       allGachaResultContainers.forEach(container => container.remove());
 

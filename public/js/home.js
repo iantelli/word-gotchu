@@ -73,7 +73,6 @@ window.addEventListener("click", function (event) {
     // Toggle story popup
     const storyButton = document.querySelector(".storyButton");
     storyButton.addEventListener("click", function () {
-
       const existingStoryPopup = document.querySelector(".storyPopup");
       const existingAbilityPopup = document.querySelector(".abilityContainer");
       if (existingStoryPopup) return existingStoryPopup.remove();
