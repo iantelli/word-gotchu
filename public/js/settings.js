@@ -69,11 +69,11 @@ if (settingsButton) {
       if (fxToggleInnerText.innerText === "ON") {
         fxToggleInnerText.innerText = "OFF";
         fxState = false;
-        sfx.mute();
+        sfx.mute(true);
       } else {
         fxToggleInnerText.innerText = "ON";
         fxState = true;
-        sfx.unmute();
+        sfx.mute(false);
       }
     })
 
@@ -82,11 +82,11 @@ if (settingsButton) {
       if (musicToggleInnerText.innerText === "ON") {
         musicToggleInnerText.innerText = "OFF";
         musicState = false;
-        music.mute()
+        music.mute(true)
       } else {
         musicToggleInnerText.innerText = "ON";
         musicState = true;
-        music.unmute();
+        music.mute(false);
       }
     })
 
