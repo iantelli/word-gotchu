@@ -10,12 +10,17 @@ window.onclick = function(event) {
     signupButton.classList.add("hidden");
     loginButton.classList.add("hidden");
 
+
+    // Have to press the back button multiple times? Probably load issue
     const backButton = document.createElement("div");
     backButton.className = "backButton";
     backButton.innerHTML = `<h1>BACK</h1>`;
 
     backButton.addEventListener("click", function() {
-      window.location.href = "/start";
+      const card = document.querySelector(".gotchuCard");
+      if (card) return card.remove();
+
+      return window.location.href = "/start";
     })
     
     const mainScreen = document.querySelector(".startScreenBg");
@@ -75,6 +80,15 @@ window.onclick = function(event) {
     const mainScreen = document.querySelector(".startScreenBg");
     mainScreen.appendChild(signupFormFragment);
   }
+
+
+  // Confirm selection
+  if (targetClassList.includes("selectButton")) {
+    const selectedEgg = event.target.parentElement;
+    const selectedGotchu = selectedEgg.className.split(" ")[1].split("Card")[0] + "chu";
+    window.location.href = `/`;
+  }
+
 }
 
 function pickGotchu() {
@@ -113,10 +127,75 @@ function pickGotchu() {
   pickGotchuFragment.appendChild(pickGotchuScreen);
   const mainScreen = document.querySelector(".startScreenBg");
   mainScreen.appendChild(pickGotchuFragment);
+
+  // Add view gotchu select event listeners
+  let selectedEgg;
+
+  const viewRedEggButton = document.querySelector(".viewRedEggButton");
+  viewRedEggButton.addEventListener("click", function() {
+    selectedEgg = {
+      cardName: "catCard",
+      extraClass: "",
+      title: "CATCHU",
+      class: "catchu",
+      description: "This catchu is cool. Take a nap.",
+      atk: "**",
+      speed: "***",
+      defense: "*"
+    }
+    mainScreen.appendChild(populateEggCard(selectedEgg));
+  });
+
+  const viewBlueEggButton = document.querySelector(".viewBlueEggButton");
+  viewBlueEggButton.addEventListener("click", function() {
+    selectedEgg = {
+      cardName: "dogCard",
+      extraClass: "",
+      title: "DOGCHU",
+      class: "dogchu",
+      description: "This dogchu is cool. Play fetch.",
+      atk: "**",
+      speed: "**",
+      defense: "**"
+    }
+    mainScreen.appendChild(populateEggCard(selectedEgg));
+
+  });
+
+  const viewGreenEggButton = document.querySelector(".viewGreenEggButton");
+  viewGreenEggButton.addEventListener("click", function() {
+    selectedEgg = {
+      cardName: "turtleCard",
+      extraClass: " turtleTitle",
+      title: "TURTLECHU",
+      class: "turtlechu",
+      description: "This turtlechu is cool. Save the turtles.",
+      attack: "**",
+      speed: "*",
+      defense: "***"
+    }
+    mainScreen.appendChild(populateEggCard(selectedEgg));
+
+  });
+
+  
 }
 
-
-// Change the link
-function goToHomepage() {
-  window.location.href = "/";
+function populateEggCard(selectedEgg) {
+  const cardFragment = document.createDocumentFragment();
+  const card = document.createElement("div");
+  card.className = `gotchuCard ${selectedEgg.cardName}`;
+  card.innerHTML = `
+    <div class="title${selectedEgg.extraClass}"><h3>${selectedEgg.title}</h3></div>
+    <div class="${selectedEgg.class}"></div> 
+    <div class="description"><h3>${selectedEgg.description}</h3></div>
+    <div class="level"><h3>LVL 01</h3></div>
+    <div class="xp"><h3>XP 0 / 50</h3></div>
+    <div class="attack"><h3>ATTACK</h3><h4>${selectedEgg.attack}</h4></div>
+    <div class="speed"><h3>SPEED</h3><h4>${selectedEgg.speed}</h4></div>
+    <div class="defense"><h3>DEFENSE</h3><h4>${selectedEgg.defense}</h4></div>
+    <div class="selectButton select${selectedEgg.class}"><h2>SELECT</h2></div>
+  `;
+  cardFragment.appendChild(card);
+  return cardFragment;
 }
