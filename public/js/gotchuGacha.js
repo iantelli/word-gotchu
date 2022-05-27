@@ -3,7 +3,7 @@ window.onclick = function (event) {
 
   const targetClassList = event.target.className.split(" ");
 
-  if (targetClassList.includes("gachaRollButton")) {
+  if (targetClassList.includes("gachaRollButton") && playerCurrency >= 1000) {
 
     // Subtract currency
     // Sync with db or something

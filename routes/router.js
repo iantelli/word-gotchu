@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 router.get("/user", (req, res) => {
   const data = {
-    playerCurrency: 1000,
+    playerCurrency: 5000,
     username: "USER",
   }
   const pet = {
