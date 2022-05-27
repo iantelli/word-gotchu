@@ -10,21 +10,18 @@ window.onclick = function(event) {
     signupButton.classList.add("hidden");
     loginButton.classList.add("hidden");
 
-
-    // Have to press the back button multiple times? Probably load issue
     const backButton = document.createElement("div");
     backButton.className = "backButton";
     backButton.innerHTML = `<h1>BACK</h1>`;
-
-    backButton.addEventListener("click", function() {
-      const card = document.querySelector(".gotchuCard");
-      if (card) return card.remove();
-
-      return window.location.href = "/start";
-    })
     
     const mainScreen = document.querySelector(".startScreenBg");
     mainScreen.appendChild(backButton);
+  }
+  
+  if (targetClassList.includes("backButton")) {
+    const card = document.querySelector(".gotchuCard");
+    if (card) card.remove();
+    if (!card) window.location.href = "/start";
   }
 
   if (targetClassList.includes("loginButton")) {
