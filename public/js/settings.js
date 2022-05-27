@@ -5,7 +5,6 @@ if (settingsButton) {
 
   settingsButton.addEventListener("click", (event) => {
 
-
     const existingProfileSettingsContainer = document.querySelector(".profileSettingsContainer");
     if (existingProfileSettingsContainer) return existingProfileSettingsContainer.remove();
 
@@ -166,3 +165,13 @@ if (profileSettings) {
     })
   })
 }
+document.addEventListener("click", event => {
+  const targetClassList = event.target.className;
+  if (targetClassList.includes("yesButton")) {
+
+  }
+  if (targetClassList.includes("noButton")) {
+    const settingsContainer = document.querySelector(".settingsContainer");
+    settingsContainer.remove();
+  }
+})

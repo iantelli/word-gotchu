@@ -325,8 +325,6 @@
       allPlayersRef.get().then((snapshot2) => {
         let allPlayers = snapshot2.val() || {};
         Object.values(allPlayers).forEach((player) => {
-          console.log(document.querySelector(`.player${player.num}Score`))
-          console.log(document.querySelector(`.player${player.num}Healthbar`))
           document.querySelector(`.player${player.num}Score`).innerHTML = player.hp;
           document.querySelector(`.player${player.num}Healthbar`).style = `background-position-x: ${-6439 + (((player.num === 1) ? player.hp - 100 : 100 - player.hp) * hpWidth)}px;`;
 
@@ -496,8 +494,6 @@
 
     if (targetClasslist.includes("onOffToggleButton")) {
       const onOffToggleButton = event.target;
-      // console.log(onOffToggleButton)
-      // console.log(onOffToggleButton.parentElement)
       const onOffToggleButtonText = onOffToggleButton.querySelector("h3");
       if (onOffToggleButtonText.innerText === "ON") {
         onOffToggleButtonText.innerText = "OFF";
@@ -550,7 +546,7 @@
           throw "Invalid Gotchu!"
         }
       }).then(() => {
-
+        initGame();
         lobbyRef.update({
           id: lobbyId
         })
@@ -589,11 +585,8 @@
             }
           })
         })
-
         playerRef.onDisconnect().remove();
         lobbyRef.onDisconnect().remove();
-
-        initGame();
       })
     } else {
       window.location.href = `/`
@@ -604,8 +597,6 @@
   firebase.auth().signInAnonymously().catch((error) => {
     console.log(error.code, error.message)
   })
-
-
 })();
 
 

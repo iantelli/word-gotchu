@@ -30,7 +30,7 @@
                 navigator.clipboard.writeText(roomCode);
                 btn.innerHTML = "Copied!";
                 setTimeout(() => {
-                    window.open(location.href + "lobby/" + roomCode, "_blank");
+                    window.location.href = `/lobby/${roomCode}`
                 }, 300);
             });
             roomCodeText.innerText = "Share this code to your friend!";

@@ -45,7 +45,10 @@ window.onclick = function (event) {
             ready: true
         })
         document.querySelector("#readyButton").className = "notReadyButton";
-        document.querySelector("#readyButton").innerHTML = "Readied!";
+        document.querySelector("#readyButton > h2").innerHTML = "Readied!";
+    }
+    if (targetClassList.includes("homeButton")) {
+        window.location.href = "/user"
     }
 }
 
@@ -87,15 +90,17 @@ firebase.auth().onAuthStateChanged((user) => {
         playerId = user.uid;
         allPlayersRef = firebase.database().ref(`lobbies/${lobbyId}/ready/players`);
         playerRef = firebase.database().ref(`lobbies/${lobbyId}/ready/players/${playerId}`);
-        init()
         allPlayersRef.get().then((snapshot) => {
             let allPlayers = snapshot.val() || {};
             if (Object.keys(allPlayers).length === 2) {
-                document.querySelector(".wordleBars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
-                document.querySelector(".wordleBars").innerHTML = "Lobby already has 2 players!"
+                document.querySelector(".playerCards").style = "display: none;"
+                document.querySelector("#readyButton").className = "homeButton";
+                document.querySelector("#readyButton > h2").innerHTML = "Return Home";
+                document.querySelector(".titleText").innerHTML = "Lobby already has 2 players!"
                 throw "Already has 2 players"
             }
         }).then(() => {
+            init()
             playerRef.set({
                 id: playerId,
                 gotchu: playerUnlockedChars[selectedChar],

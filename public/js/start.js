@@ -30,15 +30,15 @@ window.onclick = function (event) {
     const loginScreen = document.createElement("div");
     loginScreen.classList.add("loginScreen");
     loginScreen.innerHTML = `
-      <form action="" onsubmit="window.location.href='/'">
+      <form onsubmit="event.preventDefault();">
         <div class="formContainer">
           <h1>LOG IN</h1>
-          <label for="username">username</label>
-          <input type="text" placeholder="" name="username" required>
+          <label for="email">email</label>
+          <input type="text" placeholder="" name="email" id="email" required>
           <label for="password">password</label>
-          <input type="password" placeholder="" name="password" required>
+          <input type="password" placeholder="" name="password" id="password" required>
         </div>
-        <button type="submit" class="loginSubmit">
+        <button onclick="login()" class="loginSubmit">
           <h2>LOG IN</h2>
         </button>
       </form>
@@ -172,10 +172,7 @@ function pickGotchu() {
       defense: "***"
     }
     mainScreen.appendChild(populateEggCard(selectedEgg));
-
   });
-
-
 }
 
 function populateEggCard(selectedEgg) {
@@ -195,4 +192,22 @@ function populateEggCard(selectedEgg) {
   `;
   cardFragment.appendChild(card);
   return cardFragment;
+}
+
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+      console.log(user)
+      // ...
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      window.alert(errorMessage, errorCode)
+    });
 }

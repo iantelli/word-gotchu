@@ -35,7 +35,7 @@ window.onclick = function (event) {
     }
 
     // console.log(cryptoNumber, gachaResult);
-    
+
     // Add rolled gotchu to owned gotchus
 
     const gachaFragment = new DocumentFragment();
@@ -66,7 +66,7 @@ window.onclick = function (event) {
     const closeGachaResultButton = document.querySelector(".gachaBg .gachaResultContainer .closeGachaResult");
     closeGachaResultButton.addEventListener("click", () => {
       const allGachaResultContainers = document.querySelectorAll(".gachaResultContainer");
-      allGachaResultContainers.forEach(container => container.remove()); 
+      allGachaResultContainers.forEach(container => container.remove());
 
       // Re-enable buttons
       rollButton.classList.remove("disable");

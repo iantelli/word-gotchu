@@ -97,7 +97,7 @@ html, body {
     margin-left: 2em;
 }
 
-.readyButton {
+.readyButton, .homeButton {
     background: url(../images/assets_spritesheet.png) no-repeat -6509px -1487px;
     width: 260px;
     height: 82px;
@@ -107,18 +107,20 @@ html, body {
     margin-top: 5em;
 }
 
-.readyButton:hover {
+.readyButton:hover, .homeButton:hover {
     background: url(../images/assets_spritesheet.png) no-repeat -6509px -1400px;
     width: 260px;
     height: 82px;
 }
 
-.readyButton > * {
+.readyButton > *, .homeButton > * {
+    text-align: center;
     pointer-events: none;
     margin-top: 0em;
 }
 
-.readyButton:hover > * {
+.readyButton:hover > *, .homeButton:hover > *  {
+    text-align: center;
     pointer-events: none;
     margin-top: 0.7em;
 }
