@@ -92,7 +92,7 @@
 .logoutButton:hover h4,
 .closeSettingsButton:hover h4,
 .yesButton:hover h4,
-.noButton:hover h4, .closeProfileButton h4 {
+.noButton:hover h4, .closeProfileButton:hover h4 {
     margin-top: 1.2em;
 }
 
