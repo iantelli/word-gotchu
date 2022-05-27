@@ -345,6 +345,8 @@
       const removedKey = snapshot.val().id;
       document.querySelector(".wordleBars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
       document.querySelector(".wordleBars").innerHTML = "Opponent Disconnected!"
+      document.querySelector(".keyboard").style = "display: none;"
+      setTimeout(() => {window.location.href = "/user"}, 5000);
     })
   }
 

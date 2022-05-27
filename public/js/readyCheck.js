@@ -94,8 +94,7 @@ firebase.auth().onAuthStateChanged((user) => {
             let allPlayers = snapshot.val() || {};
             if (Object.keys(allPlayers).length === 2) {
                 document.querySelector(".playerCards").style = "display: none;"
-                document.querySelector("#readyButton").className = "homeButton";
-                document.querySelector("#readyButton > h2").innerHTML = "Return Home";
+                document.querySelector("#readyButton").style = "display: none;"
                 document.querySelector(".titleText").innerHTML = "Lobby already has 2 players!"
                 throw "Already has 2 players"
             }

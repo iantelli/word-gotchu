@@ -168,7 +168,12 @@ if (profileSettings) {
 document.addEventListener("click", event => {
   const targetClassList = event.target.className;
   if (targetClassList.includes("yesButton")) {
-
+    firebase.auth().signOut()
+      .then(function () {
+        window.location.href = "/"
+      }).catch(function(error) {
+        window.alert(error.message)
+      })
   }
   if (targetClassList.includes("noButton")) {
     const settingsContainer = document.querySelector(".settingsContainer");
