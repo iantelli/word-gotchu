@@ -45,7 +45,10 @@ window.onclick = function (event) {
             ready: true
         })
         document.querySelector("#readyButton").className = "notReadyButton";
-        document.querySelector("#readyButton").innerHTML = "Readied!";
+        document.querySelector("#readyButton > h2").innerHTML = "Readied!";
+    }
+    if (targetClassList.includes("homeButton")) {
+        window.location.href = "/user"
     }
 }
 
@@ -83,19 +86,22 @@ function init() {
 firebase.auth().onAuthStateChanged((user) => {
     // console.log(user)
     if (user) {
+        console.log("user")
+        console.log(user.displayName)
         //LOGGED IN
         playerId = user.uid;
         allPlayersRef = firebase.database().ref(`lobbies/${lobbyId}/ready/players`);
         playerRef = firebase.database().ref(`lobbies/${lobbyId}/ready/players/${playerId}`);
-        init()
         allPlayersRef.get().then((snapshot) => {
             let allPlayers = snapshot.val() || {};
             if (Object.keys(allPlayers).length === 2) {
-                document.querySelector(".wordleBars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
-                document.querySelector(".wordleBars").innerHTML = "Lobby already has 2 players!"
+                document.querySelector(".playerCards").style = "display: none;"
+                document.querySelector("#readyButton").style = "display: none;"
+                document.querySelector(".titleText").innerHTML = "Lobby already has 2 players!"
                 throw "Already has 2 players"
             }
         }).then(() => {
+            init()
             playerRef.set({
                 id: playerId,
                 gotchu: playerUnlockedChars[selectedChar],
@@ -119,21 +125,19 @@ firebase.auth().onAuthStateChanged((user) => {
             })
         })
         playerRef.onDisconnect().remove();
+    } else {
+        console.log("no user")
+        window.location.href = "/"
     }
 })
 
 // Populate pets
 
 // Get pets from user profile in db or something
-const playerGotchu = "catchuEvo2";
+const playerGotchu = "catchu";
 const playerPetContainer = document.querySelector(".playerCharacter .playerPetContainer");
 playerPetContainer.innerHTML = `<div class="${playerGotchu}"></div>`;
 
 // const opponentGotchu = "dogchuEvo3";
 // const opponentPetContainer = document.querySelector(".opponentCharacter .opponentPetContainer");
 // opponentPetContainer.innerHTML = `<div class="${opponentGotchu}"></div>`;
-
-//Error
-firebase.auth().signInAnonymously().catch((error) => {
-    console.log(error.code, error.message)
-})

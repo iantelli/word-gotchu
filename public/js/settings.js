@@ -5,7 +5,6 @@ if (settingsButton) {
 
   settingsButton.addEventListener("click", (event) => {
 
-
     const existingProfileSettingsContainer = document.querySelector(".profileSettingsContainer");
     if (existingProfileSettingsContainer) return existingProfileSettingsContainer.remove();
 
@@ -149,7 +148,7 @@ if (profileSettings) {
                 <h4>CLOSE</h4>
             </div>
           `;
-          profileSettingsFragment.appendChild(profileSettingsContainer);
+    profileSettingsFragment.appendChild(profileSettingsContainer);
     mainScreen.appendChild(profileSettingsFragment);
     const closeProfileButton = document.querySelector(".closeProfileButton");
     closeProfileButton.addEventListener("click", (event) => {
@@ -158,3 +157,18 @@ if (profileSettings) {
     })
   })
 }
+document.addEventListener("click", event => {
+  const targetClassList = event.target.className;
+  if (targetClassList.includes("yesButton")) {
+    firebase.auth().signOut()
+      .then(function () {
+        window.location.href = "/"
+      }).catch(function(error) {
+        window.alert(error.message)
+      })
+  }
+  if (targetClassList.includes("noButton")) {
+    const settingsContainer = document.querySelector(".settingsContainer");
+    settingsContainer.remove();
+  }
+})

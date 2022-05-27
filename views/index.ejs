@@ -17,64 +17,48 @@
   <link rel="stylesheet" href="/css/settings.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 </head>
-<body>
-  <script>
-    // Get firebase database snapshot of the current user and pet
-    const username = "<%= data.username %>";
-    let playerGotchu = "<%= pet.gotchu %>";
-    let playerCurrency = "<%= data.playerCurrency %>";
-    const petLvl = "<%= pet.lvl %>";
-    const petXP = "<%= pet.xp %>";
-    const petStory1 = "<%= pet.lvl1Story %>";
-    const petStory2 = "<%= pet.lvl2Story %>";
-    const petStory3 = "<%= pet.lvl3Story %>";
-    const petAbility1 = "<%= pet.lvl1Ability %>";
-    const petAbility2 = "<%= pet.lvl2Ability %>";
-    const petAbility3 = "<%= pet.lvl3Ability %>";
-    let fxState = true;
-    let musicState = true;
-</script>
 
+<body>
   <!-- Homepage -->
   <div class="mainScreenBg">
     <div class="topNav">
-        <div class="userBar">
-            <div class="userProfileBg"></div>
-            <div class="userName"></div>
-        </div>
-        <div class="gotchuCoinBar">
-            <div class="gotchuCoinIcon"></div>
-            <div class="gotchuCoinAmount"></div>
-        </div>
-        <div class="settingsButton"></div>
+      <div class="userBar">
+        <div class="userProfileBg"></div>
+        <div class="userName"></div>
+      </div>
+      <div class="gotchuCoinBar">
+        <div class="gotchuCoinIcon"></div>
+        <div class="gotchuCoinAmount"></div>
+      </div>
+      <div class="settingsButton"></div>
     </div>
 
     <div class="gotchuCharacter"></div>
 
     <div class="bottomNav">
-        <div class="gotchuButton"></div>
-        <div class="gachaButton"></div>
-        <div class="gotchuDomeButton"></div>
+      <div class="gotchuButton"></div>
+      <div class="gachaButton"></div>
+      <div class="gotchuDomeButton"></div>
     </div>
   </div>
 
   <!-- Gacha page -->
-    <div class="gachaBg hidden">
-        <div class="topNavBar">
-            <div class="homeButton">
-                <h1>HOME</h1>
-            </div>
-            <div class="gotchuCoinBar">
-                <div class="gotchuCoinIcon"></div>
-                <p class="gotchuCoinAmount"></p>
-            </div>
-        </div>
-        <div class="gachaTitle"></div>
-        <div class="gachaContainer">
-            <div class="gachaAnimation"></div>
-        </div>
-        <div class="gachaRollButton"></div>
+  <div class="gachaBg hidden">
+    <div class="topNavBar">
+      <div class="homeButton">
+        <h1>HOME</h1>
+      </div>
+      <div class="gotchuCoinBar">
+        <div class="gotchuCoinIcon"></div>
+        <p class="gotchuCoinAmount"></p>
+      </div>
     </div>
+    <div class="gachaTitle"></div>
+    <div class="gachaContainer">
+      <div class="gachaAnimation"></div>
+    </div>
+    <div class="gachaRollButton"></div>
+  </div>
 
   <!-- Lobby page -->
   <div class="gochuDome hidden">
@@ -107,6 +91,44 @@
       </div>
     </div>
   </div>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCpzcKwCrIbF6nbzefNONYlTyvtPeFqa2E",
+      authDomain: "wordgotchu.firebaseapp.com",
+      databaseURL: "https://wordgotchu-default-rtdb.firebaseio.com",
+      projectId: "wordgotchu",
+      storageBucket: "wordgotchu.appspot.com",
+      messagingSenderId: "864605245451",
+      appId: "1:864605245451:web:844c3beee20a79a33f370e",
+      measurementId: "G-9LW3YP7LVV"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script>
+    // Get firebase database snapshot of the current user and pet
+    const user = firebase.auth().currentUser || null;
+    let username  ;
+    if (user) {
+      username = user.displayName 
+    } else {
+      username = "Guest"
+    }
+    let playerGotchu = "<%= pet.gotchu %>";
+    let playerCurrency = "<%= data.playerCurrency %>";
+    const petLvl = "<%= pet.lvl %>";
+    const petXP = "<%= pet.xp %>";
+    const petStory1 = "<%= pet.lvl1Story %>";
+    const petStory2 = "<%= pet.lvl2Story %>";
+    const petStory3 = "<%= pet.lvl3Story %>";
+    const petAbility1 = "<%= pet.lvl1Ability %>";
+    const petAbility2 = "<%= pet.lvl2Ability %>";
+    const petAbility3 = "<%= pet.lvl3Ability %>";
+    let fxState = true;
+    let musicState = true;
+  </script>
   <script src="/js/sound.js"></script>
   <script src="/js/home.js"></script>
   <script src="/js/homepage.js"></script>

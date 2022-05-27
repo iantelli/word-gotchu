@@ -2,52 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Gotchu!</title>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/homepage.css">
-    <link rel="stylesheet" href="/css/body.css">
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Gotchu!</title>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/homepage.css">
+  <link rel="stylesheet" href="/css/body.css">
 </head>
-    <script>
-        // Get firebase database snapshot of the current user and pet
-        const username = "<%= data.username %>";
-        const playerCurrency = "<%= data.playerCurrency %>";
-        const petLvl = "<%= pet.lvl %>";
-        const petXP = "<%= pet.xp %>";
-        const petStory1 = "<%= pet.lvl1Story %>";
-        const petStory2 = "<%= pet.lvl2Story %>";
-        const petStory3 = "<%= pet.lvl3Story %>";
-        const petAbility1 = "<%= pet.lvl1Ability %>";
-        const petAbility2 = "<%= pet.lvl2Ability %>";
-        const petAbility3 = "<%= pet.lvl3Ability %>";
-    </script>
 <body>
-    <div class="mainScreenBg">
-        <div class="topNav">
-            <div class="userBar">
-                <div class="userProfileBg"></div>
-                <div class="userName"></div>
-            </div>
-            <div class="gotchuCoinBar">
-                <div class="gotchuCoinIcon"></div>
-                <div class="gotchuCoinAmount"></div>
-            </div>
-            <div class="settingsButton"></div>
-        </div>
-
-        <div class="gotchuCharacter"></div>
-
-        <div class="bottomNav">
-            <div class="gotchuButton"></div>
-            <div class="gachaButton"></div>
-            <div class="gotchuDomeButton"></div>
-        </div>
+  <div class="mainScreenBg">
+    <div class="topNav">
+      <div class="userBar">
+        <div class="userProfileBg"></div>
+        <div class="userName"></div>
+      </div>
+      <div class="gotchuCoinBar">
+        <div class="gotchuCoinIcon"></div>
+        <div class="gotchuCoinAmount"></div>
+      </div>
+      <div class="settingsButton"></div>
     </div>
 
-    <script src="/js/home.js"></script>
+    <div class="gotchuCharacter"></div>
+
+    <div class="bottomNav">
+      <div class="gotchuButton"></div>
+      <div class="gachaButton"></div>
+      <div class="gotchuDomeButton"></div>
+    </div>
+  </div>
+  
+  <script>
+    // Get firebase database snapshot of the current user and pet
+    const username = "<%= data.username %>";
+    const playerCurrency = "<%= data.playerCurrency %>";
+    const petLvl = "<%= pet.lvl %>";
+    const petXP = "<%= pet.xp %>";
+    const petStory1 = "<%= pet.lvl1Story %>";
+    const petStory2 = "<%= pet.lvl2Story %>";
+    const petStory3 = "<%= pet.lvl3Story %>";
+    const petAbility1 = "<%= pet.lvl1Ability %>";
+    const petAbility2 = "<%= pet.lvl2Ability %>";
+    const petAbility3 = "<%= pet.lvl3Ability %>";
+  </script>
+  <script src="/js/home.js"></script>
 </body>
 
 </html>

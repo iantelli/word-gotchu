@@ -201,14 +201,14 @@
               } else {
                 document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
               }
-              setTimeout (() => {
+              setTimeout(() => {
                 if (player.num === 1) {
                   document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP1");
                 } else {
                   document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
                 }
                 document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}></div>`;
-              } , 600)
+              }, 600)
               //end game condition
               if (player.hp - 25 <= 0) {
 
@@ -220,9 +220,9 @@
             }
           })
         })
-        setTimeout (() => {
+        setTimeout(() => {
           startNewWordle();
-        } , 1000)
+        }, 1000)
       }
       if (word.totalGuesses === 6 && !word.completed) {
         allPlayersRef.get().then((snapshot) => {
@@ -237,14 +237,14 @@
                 document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
               }
 
-              setTimeout (() => {
+              setTimeout(() => {
                 if (player.num === 1) {
                   document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP1");
                 } else {
                   document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
                 }
                 document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}></div>`;
-              } , 600)
+              }, 600)
               //end game condition
               if (player.hp - 25 <= 0) {
 
@@ -325,8 +325,6 @@
       allPlayersRef.get().then((snapshot2) => {
         let allPlayers = snapshot2.val() || {};
         Object.values(allPlayers).forEach((player) => {
-          console.log(document.querySelector(`.player${player.num}Score`))
-          console.log(document.querySelector(`.player${player.num}Healthbar`))
           document.querySelector(`.player${player.num}Score`).innerHTML = player.hp;
           document.querySelector(`.player${player.num}Healthbar`).style = `background-position-x: ${-6439 + (((player.num === 1) ? player.hp - 100 : 100 - player.hp) * hpWidth)}px;`;
 
@@ -335,7 +333,7 @@
       //On new player
       const addedPlayer = snapshot.val();
       if (addedPlayer.num === 2 && !gameStarted) {
-        document.querySelector(`.player${addedPlayer.num}Username`).innerHTML = `Them`;
+        document.querySelector(`.player${addedPlayer.num}Username`).innerHTML = addedPlayer.name || "Guest";
         document.querySelector(`.player${addedPlayer.num}Character`).innerHTML = `<div class=${addedPlayer.gotchu}></div>`;
         document.querySelector(`.player${addedPlayer.num}Icon`).innerHTML = `<div class=${addedPlayer.gotchu}Icon></div>`
         gameStarted = true;
@@ -347,6 +345,8 @@
       const removedKey = snapshot.val().id;
       document.querySelector(".wordleBars").style = "justify-content: center; align-items: center; height: 100%; color: black; display: flex; font-size: 40px;"
       document.querySelector(".wordleBars").innerHTML = "Opponent Disconnected!"
+      document.querySelector(".keyboard").style = "display: none;"
+      setTimeout(() => {window.location.href = "/user"}, 5000);
     })
   }
 
@@ -496,8 +496,6 @@
 
     if (targetClasslist.includes("onOffToggleButton")) {
       const onOffToggleButton = event.target;
-      // console.log(onOffToggleButton)
-      // console.log(onOffToggleButton.parentElement)
       const onOffToggleButtonText = onOffToggleButton.querySelector("h3");
       if (onOffToggleButtonText.innerText === "ON") {
         onOffToggleButtonText.innerText = "OFF";
@@ -550,12 +548,13 @@
           throw "Invalid Gotchu!"
         }
       }).then(() => {
-
+        initGame();
         lobbyRef.update({
           id: lobbyId
         })
 
         playerRef.set({
+          name: user.displayName,
           id: playerId,
           gotchu,
           hp: 100,
@@ -569,7 +568,7 @@
           playerRef.update({
             num: playerNum
           })
-          document.querySelector(`.player${playerNum}Username`).innerHTML = `Me`;
+          document.querySelector(`.player${playerNum}Username`).innerHTML = user.displayName;
           document.querySelector(`.player${playerNum}Username`).style = "color: red;"
           document.querySelector(`.player${playerNum}Character`).innerHTML = `<div class=${gotchu}></div>`;
           document.querySelector(`.player${playerNum}Icon`).innerHTML = `<div class=${gotchu}Icon></div>`;
@@ -582,28 +581,20 @@
                 document.querySelector(`.player2Icon`).innerHTML = `<div class=${player.gotchu}Icon></div>`;
               }
               if (playerNum === 2) {
-                document.querySelector(`.player1Username`).innerHTML = `Them`;
+                document.querySelector(`.player1Username`).innerHTML = player.name || "Guest";
                 document.querySelector(`.player1Character`).innerHTML = `<div class=${player.gotchu}></div>`;
                 document.querySelector(`.player1Icon`).innerHTML = `<div class=${player.gotchu}Icon></div>`;
               }
             }
           })
         })
-
         playerRef.onDisconnect().remove();
         lobbyRef.onDisconnect().remove();
-
-        initGame();
       })
+    } else {
+      window.location.href = `/`
     }
   })
-
-  //Error
-  firebase.auth().signInAnonymously().catch((error) => {
-    console.log(error.code, error.message)
-  })
-
-
 })();
 
 

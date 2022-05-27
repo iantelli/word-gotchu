@@ -1,5 +1,18 @@
-window.onclick = function(event) {
+let userinfo = {};
+window.onclick = function (event) {
   const targetClassList = event.target.className.split(" ");
+
+  if (targetClassList.includes("guest")) {
+    event.preventDefault();
+    console.log("annon")
+    firebase.auth().signInAnonymously()
+    .then(()=> {
+      window.location.href = "/user"
+    })
+    .catch((error) => {
+      console.log(error.code, error.message)
+    })
+  }
 
   if (targetClassList.includes("loginButton") || targetClassList.includes("signupButton")) {
 
@@ -13,15 +26,15 @@ window.onclick = function(event) {
     const backButton = document.createElement("div");
     backButton.className = "backButton";
     backButton.innerHTML = `<h1>BACK</h1>`;
-    
+
     const mainScreen = document.querySelector(".startScreenBg");
     mainScreen.appendChild(backButton);
   }
-  
+
   if (targetClassList.includes("backButton")) {
     const card = document.querySelector(".gotchuCard");
     if (card) card.remove();
-    if (!card) window.location.href = "/start";
+    if (!card) window.location.href = "/";
   }
 
   if (targetClassList.includes("loginButton")) {
@@ -30,15 +43,15 @@ window.onclick = function(event) {
     const loginScreen = document.createElement("div");
     loginScreen.classList.add("loginScreen");
     loginScreen.innerHTML = `
-      <form action="" onsubmit="window.location.href='/'">
+      <form onsubmit="event.preventDefault();">
         <div class="formContainer">
           <h1>LOG IN</h1>
-          <label for="username">username</label>
-          <input type="text" placeholder="" name="username" required>
+          <label for="email">email</label>
+          <input type="text" placeholder="" name="email" id="email" required>
           <label for="password">password</label>
-          <input type="password" placeholder="" name="password" required>
+          <input type="password" placeholder="" name="password" id="password" required>
         </div>
-        <button type="submit" class="loginSubmit">
+        <button onclick="login()" class="loginSubmit">
           <h2>LOG IN</h2>
         </button>
       </form>
@@ -59,13 +72,13 @@ window.onclick = function(event) {
         <div class="formContainer">
           <h1>SIGN UP</h1>
           <label for="username">USERNAME</label>
-          <input type="text" placeholder="" name="username" required>
+          <input type="text" placeholder="" name="username" id="username" required>
           <label for="email">EMAIL</label>
-          <input type="text" placeholder="" name="email" required>
+          <input type="text" placeholder="" name="email" id="email" required>
           <label for="password">PASSWORD</label>
-          <input type="password" placeholder="" name="password" required>
+          <input type="password" placeholder="" name="password" id="password" required>
           <label for="verifyPassword">VERIFY PASSWORD</label>
-          <input type="password" placeholder="" name="verifyPassword" required>
+          <input type="password" placeholder="" name="verifyPassword" id="verifyPassword" required>
         </div>
         <button type="submit" class="signupSubmit">
           <h2>SIGN UP</h2>
@@ -81,15 +94,33 @@ window.onclick = function(event) {
 
   // Confirm selection
   if (targetClassList.includes("selectButton")) {
+    event.preventDefault()
     const selectedEgg = event.target.parentElement;
     const selectedGotchu = selectedEgg.className.split(" ")[1].split("Card")[0] + "chu";
-    window.location.href = `/`;
+    const username = userinfo.username;
+    const email = userinfo.email;
+    const password = userinfo.password;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in 
+        var user = userCredential.user;
+        user.updateProfile({
+          displayName: username
+        })
+      })
+      .catch((error) => {
+        window.alert(error.message)
+      });
+    // window.location.href = `/`;
   }
 
 }
 
 function pickGotchu() {
-
+  event.preventDefault()
+  userinfo.username = document.getElementById("username").value;
+  userinfo.email = document.getElementById("email").value;
+  userinfo.password = document.getElementById("password").value;
   // Remove signup form
   const signupForm = document.querySelector(".signupScreen");
   signupForm.remove();
@@ -129,7 +160,7 @@ function pickGotchu() {
   let selectedEgg;
 
   const viewRedEggButton = document.querySelector(".viewRedEggButton");
-  viewRedEggButton.addEventListener("click", function() {
+  viewRedEggButton.addEventListener("click", function () {
     selectedEgg = {
       cardName: "catCard",
       extraClass: "",
@@ -144,7 +175,7 @@ function pickGotchu() {
   });
 
   const viewBlueEggButton = document.querySelector(".viewBlueEggButton");
-  viewBlueEggButton.addEventListener("click", function() {
+  viewBlueEggButton.addEventListener("click", function () {
     selectedEgg = {
       cardName: "dogCard",
       extraClass: "",
@@ -160,7 +191,7 @@ function pickGotchu() {
   });
 
   const viewGreenEggButton = document.querySelector(".viewGreenEggButton");
-  viewGreenEggButton.addEventListener("click", function() {
+  viewGreenEggButton.addEventListener("click", function () {
     selectedEgg = {
       cardName: "turtleCard",
       extraClass: " turtleTitle",
@@ -172,10 +203,7 @@ function pickGotchu() {
       defense: "***"
     }
     mainScreen.appendChild(populateEggCard(selectedEgg));
-
   });
-
-  
 }
 
 function populateEggCard(selectedEgg) {
@@ -195,4 +223,23 @@ function populateEggCard(selectedEgg) {
   `;
   cardFragment.appendChild(card);
   return cardFragment;
+}
+
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in
+      window.location.href = "/user"
+      var user = userCredential.user;
+      console.log(user.displayName)
+      // ...
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      window.alert(errorMessage, errorCode)
+    });
 }

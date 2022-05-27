@@ -65,16 +65,16 @@ html, body {
 }
 
 .playerPetContainer {
-    /* width: 260px;
-    height: 315px; */
+    width: 260px;
+    height: 315px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .opponentPetContainer {
-    /* width: 260px;
-    height: 315px; */
+    width: 260px;
+    height: 315px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,28 +97,30 @@ html, body {
     margin-left: 2em;
 }
 
-.readyButton {
+.readyButton, .homeButton {
     background: url(../images/assets_spritesheet.png) no-repeat -6509px -1487px;
     width: 260px;
     height: 82px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5em;
+    margin-top: 2em;
 }
 
-.readyButton:hover {
+.readyButton:hover, .homeButton:hover {
     background: url(../images/assets_spritesheet.png) no-repeat -6509px -1400px;
     width: 260px;
     height: 82px;
 }
 
-.readyButton > * {
+.readyButton > *, .homeButton > * {
+    text-align: center;
     pointer-events: none;
     margin-top: 0em;
 }
 
-.readyButton:hover > * {
+.readyButton:hover > *, .homeButton:hover > *  {
+    text-align: center;
     pointer-events: none;
     margin-top: 0.7em;
 }

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.get("/", (req, res) => {
+router.get("/user", (req, res) => {
   const data = {
     playerCurrency: 1000,
     username: "USER",
@@ -83,7 +83,7 @@ router.get("/assets", (req, res) => {
   res.render("assetTest")
 })
 
-router.get("/start", (req, res) => {
+router.get("/", (req, res) => {
   res.render("startScreen")
 })
 
