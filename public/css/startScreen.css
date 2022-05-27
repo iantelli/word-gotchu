@@ -3,9 +3,9 @@
     width: 1440px;
     height: 1024px;
     transform: translate(-50%, -0%);
-    position: fixed;
+    position: absolute;
     left: 50%;
-    bottom: 0px;
+    top:5%;
     margin: 0 auto;
 
 }
@@ -28,7 +28,11 @@
 .signupButton,
 .loginButton,
 .signupSubmit,
-.loginSubmit {
+.loginSubmit,
+.selectButton,
+.viewRedEggButton,
+.viewBlueEggButton,
+.viewGreenEggButton {
     display: flex;
     text-shadow: 2px 2px 0 #9B9B9B, 2px -2px 0 #9B9B9B, -2px 2px 0 #9B9B9B, -2px -2px 0 #9B9B9B, 2px 0 0 #9B9B9B, 0 2px 0 #9B9B9B, -2px 0 0 #9B9B9B, 0 -2px 0 #9B9B9B;
 }
@@ -286,7 +290,7 @@ h1 {
 }
 
 .description {
-    bottom:160px;
+    bottom:170px;
     left:90px;
     width: 400px;
 

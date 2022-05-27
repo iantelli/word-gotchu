@@ -10,7 +10,7 @@ div {
     transform: translate(-50%, 0);
     position: fixed;
     left: 50%;
-    bottom: 0;
+    top:5%;
     margin: 0 auto;
 
 }
