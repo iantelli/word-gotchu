@@ -15,6 +15,11 @@
     visibility: hidden;
 }
 
+.startScreenBg .backButton {
+    position: fixed;
+    top: 0;
+}
+
 .backButton {
     background: url(../images/assets_spritesheet.png) -6577px -532px no-repeat;
     width: 192px;
@@ -50,11 +55,13 @@
 }
 
 .backButton>* {
-    margin-top: -.3em
+    margin-top: -.3em;
+    pointer-events: none;
 }
 
 .backButton:hover>* {
-    margin-top: .5em
+    margin-top: .5em;
+    pointer-events: none;
 }
 
 .wordGotchuTitle {
@@ -62,7 +69,7 @@
     width: 1003px;
     height: 264px;
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -106,17 +113,24 @@
 
 .loginButton h1,
 .signupButton h1 {
-    margin-top: -1em
+    margin-top: -0.3em
 }
 
 .loginButton:hover h1,
 .signupButton:hover h1 {
-    margin-top: -.3em
+    margin-top: 0.5em
 }
 
 .loginButton h1,
 .signupButton h1 {
     pointer-events: none;
+}
+
+.guestSignIn {
+    padding-top: 59%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -128,15 +142,15 @@ form {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 15%;
+    margin-top: 20%;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
 h1 {
     text-align: center;
-    margin-top: 0;
-    padding-top: 10%;
+    padding-top: 0.5em;
+    padding-bottom: 0.25em;
 }
 
 .formContainer {
@@ -203,7 +217,8 @@ input[type=password] {
 /* Login Screen */
 
 .loginScreen h1 {
-    margin-bottom: 18%;
+    padding-top: 10%;
+    margin-bottom: 10%;
 }
 
 .loginScreen input {
@@ -218,9 +233,13 @@ input[type=password] {
     position: relative;
     display: flex;
     justify-content: center;
-    top: 15%;
+    top: -30%;
     left: 50%;
-    transform: translate(-50%, 0%) scale(1.6);
+    transform: translate(-50%, 0%) scale(1.4);
+}
+
+.chooseStarterGotchu h1 {
+    padding-top: 2em;
 }
 
 h1 {
@@ -234,6 +253,12 @@ h1 {
     margin: 20px 16px;
     transform: scale(.8);
 
+}
+
+.redEgg > div > h2,
+.blueEgg > div > h2,
+.greenEgg > div > h2 {
+    pointer-events: none;
 }
 
 .redEgg {
