@@ -27,6 +27,7 @@
       let timerID;
       switch (gotchu) {
         case "catchu":
+          sfx.roundResultsNotif.play();
           let randID = setInterval(function () {
             i++
             int >= 6 ? int = 1 : int++
@@ -55,6 +56,7 @@
 
           break;
         case "dogchu":
+          sfx.roundResultsNotif.play();
           let currentWordleRef = firebase.database().ref(`lobbies/${lobbyId}/players/${playerId}/currentWordle`);
           currentWordleRef.get().then((snapshot) => {
             let wordleSnapshot = snapshot.val()
@@ -64,6 +66,7 @@
           })
           break;
         case "turtlechu":
+          sfx.roundResultsNotif.play();
           playerRef.get().then((snapshot) => {
             let player = snapshot.val()
             playerRef.update({
@@ -290,6 +293,7 @@
     }
     // if the key pressed is enter, submit the wordle
     if (event.key.toLowerCase() === "enter" && keyCount === 6) {
+      sfx.sendWordle.play();
       submitWordle();
     }
     // if the key pressed is backspace, remove the last letter
@@ -316,6 +320,7 @@
       keyCount--;
     }
     else if (event.target.classList.contains("ent") && keyCount === 6) {
+      sfx.sendWordle.play();
       submitWordle();
     }
   })
@@ -405,8 +410,10 @@
           if (hps[keysSorted[0]] === hps[keysSorted[1]]) {
             document.querySelector(".wordleBars").innerHTML = "Draw!"
           } else if (keysSorted[0] === playerNum.toString()) {
+            sfx.victorySound.play();
             window.location.href = `/lobby/${lobbyId}/${gotchu}/win`
           } else {
+            sfx.loseSound.play();
             window.location.href = `/lobby/${lobbyId}/${gotchu}/lose`
           }
         })
@@ -423,7 +430,7 @@
   window.addEventListener("click", (event) => {
     const targetClasslist = event.target.className.split(" ");
     if (targetClasslist.includes("settingsButton")) {
-
+      sfx.uiSound.play();
       const existingSettingsContainer = document.querySelector(".settingsContainer");
       if (existingSettingsContainer) return existingSettingsContainer.remove();
 
@@ -520,6 +527,7 @@
     }
 
     if (targetClasslist.includes("closeSettingsButton")) {
+      sfx.removeLetter.play();
       const settingsContainer = document.querySelector(".settingsContainer");
       settingsContainer.remove();
     }
