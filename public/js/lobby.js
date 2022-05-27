@@ -602,8 +602,6 @@
             }
           })
         })
-        playerRef.onDisconnect().remove();
-        lobbyRef.onDisconnect().remove();
       })
     } else {
       window.location.href = `/`
