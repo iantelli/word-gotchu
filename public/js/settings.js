@@ -152,7 +152,7 @@ if (profileSettings) {
               <div class= "losses"><h3>Total Losses</h3><h3 class="loseCount">2</h3></div>
               <div class= "winPercentage"><h3>Win Rate</h3><h3 class="winPercentageCount">70%</h3></div>
             </div>
-              <div class="closeSettingsButton">
+              <div class="closeProfileButton">
                 <h4>CLOSE</h4>
             </div>
           `;
