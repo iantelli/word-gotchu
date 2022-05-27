@@ -28,8 +28,7 @@
   width: 1440px;
   height: 1024px;
   transform: translate(-50%, 0);
-  bottom: 0
-
+  top:0;
 }
 
 .battleMenu, .joinBattleMenu {

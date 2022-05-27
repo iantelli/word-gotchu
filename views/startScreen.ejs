@@ -9,19 +9,16 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/body.css">
     <link rel="stylesheet" href="/css/startScreen.css">
-
+    <link rel="stylesheet" href="/css/gotchus.css">
 
 </head>
 
 <body>
     <!-- Startup Screen-->
     <div class="startScreenBg">
-        <div class="backButton">
-            <h1>Back</h1>
-        </div>
-        <div class="wordGotchuTitle hidden"></div>
+        <div class="wordGotchuTitle"></div>
 
-        <div class="loginSignupOption hidden">
+        <div class="loginSignupOption">
             <div class="loginButton">
                 <h1>LOGIN</h1>
             </div>
@@ -30,72 +27,9 @@
             </div>
         </div>
 
-        <!-- Signup Screen-->
-        <div class="signupScreen">
-            <form action="">
-                <div class="formContainer">
-                    <h1>SIGN UP</h1>
-
-                    <label for="username">username</label>
-                    <input type="text" placeholder="" name="username" required>
-
-                    <label for="email">email</label>
-                    <input type="text" placeholder="" name="email" required>
-
-                    <label for="password">password</label>
-                    <input type="password" placeholder="" name="password" required>
-
-                    <label for="verifyPassword">verify password</label>
-                    <input type="password" placeholder="" name="verifyPassword" required>
-                </div>
-                <button type="submit" class="signupSubmit">
-                    <h2>SIGN UP</h2>
-                </button>
-            </form>
-
-        </div>
-
-        <!-- Login Screen-->
-        <div class="loginScreen">
-            <form action="">
-                <div class="formContainer">
-                    <h1>LOG IN</h1>
-
-                    <label for="username">username</label>
-                    <input type="text" placeholder="" name="username" required>
-
-                    <label for="password">password</label>
-                    <input type="password" placeholder="" name="password" required>
-                </div>
-                <button type="submit" class="loginSubmit">
-                    <h2>LOG IN</h2>
-                </button>
-
-            </form>
-        </div>
-
-        <!-- Choose Starter Gotchu-->
-        <div class="chooseStarterGotchu">
-            <!-- Pick your Gotchu -->
-            <div class="pickGotchuEggs">
-                <h1>Pick your Gotchu!</h1>
-                <div class="redEgg">
-                    <div class="viewRedEggButton">
-                        <h2>VIEW</h2>
-                    </div>
-                </div>
-                <div class="blueEgg">
-                    <div class="viewBlueEggButton">
-                        <h2>VIEW</h2>
-                    </div>
-                </div>
-                <div class="greenEgg">
-                    <div class="viewGreenEggButton">
-                        <h2>VIEW</h2>
-                    </div>
-                </div>
-            </div>
-
+        <!-- Change the link -->
+        <div class="guestSignIn">
+            <a href="/"><h2>CONTINUE AS GUEST</h2></a>
         </div>
 
         <!-- Gotchu Card -->
@@ -144,23 +78,8 @@
         </div>
 
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyCpzcKwCrIbF6nbzefNONYlTyvtPeFqa2E",
-        authDomain: "wordgotchu.firebaseapp.com",
-        databaseURL: "https://wordgotchu-default-rtdb.firebaseio.com",
-        projectId: "wordgotchu",
-        storageBucket: "wordgotchu.appspot.com",
-        messagingSenderId: "864605245451",
-        appId: "1:864605245451:web:844c3beee20a79a33f370e",
-        measurementId: "G-9LW3YP7LVV"
-      };
-      firebase.initializeApp(firebaseConfig);
-    </script>F
-    <script src="/js/startScreen.js"></script>
+    
+    <script src="/js/start.js"></script>
 </body>
 
 </html>

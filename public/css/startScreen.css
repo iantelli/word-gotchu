@@ -5,7 +5,6 @@
     transform: translate(-50%, -0%);
     position: absolute;
     left: 50%;
-    top:5%;
     margin: 0 auto;
 
 }
@@ -14,6 +13,11 @@
 .hidden {
     display: none;
     visibility: hidden;
+}
+
+.startScreenBg .backButton {
+    position: fixed;
+    top: 0;
 }
 
 .backButton {
@@ -51,11 +55,13 @@
 }
 
 .backButton>* {
-    margin-top: -.3em
+    margin-top: -.3em;
+    pointer-events: none;
 }
 
 .backButton:hover>* {
-    margin-top: .5em
+    margin-top: .5em;
+    pointer-events: none;
 }
 
 .wordGotchuTitle {
@@ -63,7 +69,7 @@
     width: 1003px;
     height: 264px;
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -107,17 +113,24 @@
 
 .loginButton h1,
 .signupButton h1 {
-    margin-top: -1em
+    margin-top: -0.3em
 }
 
 .loginButton:hover h1,
 .signupButton:hover h1 {
-    margin-top: -.3em
+    margin-top: 0.5em
 }
 
 .loginButton h1,
 .signupButton h1 {
     pointer-events: none;
+}
+
+.guestSignIn {
+    padding-top: 59%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -129,15 +142,15 @@ form {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 15%;
+    margin-top: 20%;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
 h1 {
     text-align: center;
-    margin-top: 0;
-    padding-top: 10%;
+    padding-top: 0.5em;
+    padding-bottom: 0.25em;
 }
 
 .formContainer {
@@ -204,7 +217,8 @@ input[type=password] {
 /* Login Screen */
 
 .loginScreen h1 {
-    margin-bottom: 18%;
+    padding-top: 10%;
+    margin-bottom: 10%;
 }
 
 .loginScreen input {
@@ -219,9 +233,13 @@ input[type=password] {
     position: relative;
     display: flex;
     justify-content: center;
-    top: 15%;
+    top: 20%;
     left: 50%;
-    transform: translate(-50%, 0%) scale(1.6);
+    transform: translate(-50%, 0%) scale(1.4);
+}
+
+.chooseStarterGotchu h1 {
+    padding-top: 2em;
 }
 
 h1 {
@@ -235,6 +253,12 @@ h1 {
     margin: 20px 16px;
     transform: scale(.8);
 
+}
+
+.redEgg > div > h2,
+.blueEgg > div > h2,
+.greenEgg > div > h2 {
+    pointer-events: none;
 }
 
 .redEgg {
@@ -275,7 +299,7 @@ h1 {
     position: absolute;
     display: flex;
     justify-content: center;
-    top: 15%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, 0%);
 }
@@ -330,6 +354,10 @@ h1 {
     left:380px;
 }
 
+.selectButton > h2 {
+    pointer-events: none;
+}
+
 .catchuCharacter, .dogchuCharacter, .turtlechuCharacter {
     top:180px;
     transform: scale(.8);
@@ -341,42 +369,19 @@ h1 {
     background: url("../images/assets_spritesheet.png") no-repeat -4477px -4290px;
 }
 
-.catchuCharacter {
-    width: 240px;
-    height: 297px;
+.catchu {
     left:140px;
-
+    margin-top: 11em;
 }
-
-.catchuCharacter {
-    animation: catchuAnimation 1s steps(2) infinite;
-}
-
-@keyframes catchuAnimation {
-    from { background: url("../images/assets_spritesheet.png") no-repeat -1007px -285px; }
-    to { background: url("../images/assets_spritesheet.png") no-repeat -1592px -260px; }
-}
-
 
 /* Dog Card */
 .dogCard {
     background: url("../images/assets_spritesheet.png") no-repeat -4477px -5095px;
 }
 
-.dogchuCharacter {
-	width: 215px;
-	height: 288px;
+.dogchu {
     left:160px;
-
-}
-
-.dogchuCharacter {
-    animation: dogchuAnimation 1s steps(2) infinite;
-}
-
-@keyframes dogchuAnimation {
-    from { background: url("../images/assets_spritesheet.png") no-repeat -1019px -1682px; }
-    to { background: url("../images/assets_spritesheet.png") no-repeat -1580px -1682px; }
+    margin-top: 12em;
 }
 
 
@@ -385,20 +390,9 @@ h1 {
     background: url("../images/assets_spritesheet.png") no-repeat -5607px -4115px;
 }
 
-.turtlechuCharacter {
-	width: 198px;
-	height: 295px;
+.turtlechu {
     left:170px;
-
-}
-
-.turtlechuCharacter {
-    animation: turtlechuAnimation 1s steps(2) infinite;
-}
-
-@keyframes turtlechuAnimation {
-    from { background: url("../images/assets_spritesheet.png") no-repeat -988px -2815px; }
-    to { background: url("../images/assets_spritesheet.png") no-repeat -1573px -2815px; }
+    margin-top: 11em;
 }
 
 .gotchuCard .turtleTitle {
