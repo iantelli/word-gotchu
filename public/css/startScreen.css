@@ -158,7 +158,10 @@ input[type=password] {
 }
 
 .signupSubmit,
-.loginSubmit {
+.loginSubmit,
+.viewRedEggButton,
+.viewBlueEggButton,
+.viewGreenEggButton, .selectButton {
     background: url("../images/assets_spritesheet.png") no-repeat -6509px -1487px;
     width: 260px;
     height: 85px;
@@ -170,14 +173,20 @@ input[type=password] {
 }
 
 .signupSubmit:hover,
-.loginSubmit:hover {
+.loginSubmit:hover,
+.viewRedEggButton:hover,
+.viewBlueEggButton:hover,
+.viewGreenEggButton:hover, .selectButton:hover {
     background: url("../images/assets_spritesheet.png") no-repeat -6509px -1400px;
     width: 260px;
     height: 85px;
 }
 
 .signupSubmit h2,
-.loginSubmit h2 {
+.loginSubmit h2,
+.viewRedEggButton h2,
+.viewBlueEggButton h2,
+.viewGreenEggButton h2, .selectButton {
     margin-top: 1em;
     color: white;
 }
@@ -196,4 +205,198 @@ input[type=password] {
 
 .loginScreen input {
     margin-bottom: 12%;
+}
+
+/* Choose Starter Gotchu */
+.chooseStarterGotchu {
+    background: url("../images/assets_spritesheet.png") no-repeat -5922px -776px;
+    width: 650px;
+    height: 518px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0%) scale(1.6);
+}
+
+h1 {
+    margin-top: 40px;
+}
+
+.redEgg,
+.blueEgg,
+.greenEgg {
+    display: inline-block;
+    margin: 20px 16px;
+    transform: scale(.8);
+
+}
+
+.redEgg {
+    background: url("../images/assets_spritesheet.png") no-repeat -6509px -2060px;
+    width: 140px;
+    height: 185px;
+}
+
+.blueEgg {
+    background: url("../images/assets_spritesheet.png") no-repeat -6509px -1870px;
+    width: 140px;
+    height: 185px;
+}
+
+.greenEgg {
+    background: url("../images/assets_spritesheet.png") no-repeat -6654px -1870px;
+    width: 140px;
+    height: 185px;
+}
+
+.viewRedEggButton,
+.viewBlueEggButton,
+.viewGreenEggButton, .selectButton {
+    left: -60px;
+    transform: scale(.6);
+}
+
+.viewRedEggButton:hover h2,
+.viewBlueEggButton:hover h2,
+.viewGreenEggButton:hover h2, .selectButton:hover h2 {
+    margin-top: 1.3em;
+}
+
+/* Gotchu Card */
+.gotchuCard {
+    width: 1000px;
+    height: 800px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.gotchuCard>* {
+    position: absolute;
+}
+
+.gotchuCard .title {
+    top: 93px;
+    left:217px;
+}
+
+.description {
+    bottom:160px;
+    left:90px;
+    width: 400px;
+
+}
+
+.level {
+    top:120px;
+    right:300px;
+
+}
+
+.xp {
+    top: 190px;
+    right: 210px;
+}
+
+.attack {
+    top:290px;
+    right:300px;
+
+}
+
+.speed {
+    top:390px;
+    right:320px;
+
+}
+
+.defense {
+    top:490px;
+    right:280px;
+
+}
+
+.selectButton {
+    bottom:30px;
+    left:380px;
+}
+
+.catchuCharacter, .dogchuCharacter, .turtlechuCharacter {
+    top:180px;
+    transform: scale(.8);
+}
+
+
+/* Cat Card */
+.catCard {
+    background: url("../images/assets_spritesheet.png") no-repeat -4477px -4290px;
+}
+
+.catchuCharacter {
+    width: 240px;
+    height: 297px;
+    left:140px;
+
+}
+
+.catchuCharacter {
+    animation: catchuAnimation 1s steps(2) infinite;
+}
+
+@keyframes catchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1007px -285px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1592px -260px; }
+}
+
+
+/* Dog Card */
+.dogCard {
+    background: url("../images/assets_spritesheet.png") no-repeat -4477px -5095px;
+}
+
+.dogchuCharacter {
+	width: 215px;
+	height: 288px;
+    left:160px;
+
+}
+
+.dogchuCharacter {
+    animation: dogchuAnimation 1s steps(2) infinite;
+}
+
+@keyframes dogchuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -1019px -1682px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1580px -1682px; }
+}
+
+
+/* Turtle Card */
+.turtleCard {
+    background: url("../images/assets_spritesheet.png") no-repeat -5607px -4115px;
+}
+
+.turtlechuCharacter {
+	width: 198px;
+	height: 295px;
+    left:170px;
+
+}
+
+.turtlechuCharacter {
+    animation: turtlechuAnimation 1s steps(2) infinite;
+}
+
+@keyframes turtlechuAnimation {
+    from { background: url("../images/assets_spritesheet.png") no-repeat -988px -2815px; }
+    to { background: url("../images/assets_spritesheet.png") no-repeat -1573px -2815px; }
+}
+
+.gotchuCard .turtleTitle {
+    left:192px;
 }

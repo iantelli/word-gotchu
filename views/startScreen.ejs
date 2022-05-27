@@ -16,12 +16,18 @@
 <body>
     <!-- Startup Screen-->
     <div class="startScreenBg">
-        <div class="backButton"><h1>Back</h1></div>            
-        <div class="wordGotchuTitle"></div>
+        <div class="backButton">
+            <h1>Back</h1>
+        </div>
+        <div class="wordGotchuTitle hidden"></div>
 
-        <div class="loginSignupOption">
-            <div class="loginButton"><h1>LOGIN</h1></div>
-            <div class="signupButton"><h1>SIGN UP</h1></div>
+        <div class="loginSignupOption hidden">
+            <div class="loginButton">
+                <h1>LOGIN</h1>
+            </div>
+            <div class="signupButton">
+                <h1>SIGN UP</h1>
+            </div>
         </div>
 
         <!-- Signup Screen-->
@@ -42,7 +48,9 @@
                     <label for="verifyPassword">verify password</label>
                     <input type="password" placeholder="" name="verifyPassword" required>
                 </div>
-                <button type="submit" class="signupSubmit"><h2>SIGN UP</h2></button>
+                <button type="submit" class="signupSubmit">
+                    <h2>SIGN UP</h2>
+                </button>
             </form>
 
         </div>
@@ -59,10 +67,51 @@
                     <label for="password">password</label>
                     <input type="password" placeholder="" name="password" required>
                 </div>
-                <button type="submit" class="loginSubmit"><h2>LOG IN</h2></button>
+                <button type="submit" class="loginSubmit">
+                    <h2>LOG IN</h2>
+                </button>
 
             </form>
         </div>
+
+        <!-- Choose Starter Gotchu-->
+        <div class="chooseStarterGotchu hidden">
+            <!-- Pick your Gotchu -->
+            <div class="pickGotchuEggs">
+                <h1>Pick your Gotchu!</h1>
+                <div class="redEgg">
+                    <div class="viewRedEggButton">
+                        <h2>VIEW</h2>
+                    </div>
+                </div>
+                <div class="blueEgg">
+                    <div class="viewBlueEggButton">
+                        <h2>VIEW</h2>
+                    </div>
+                </div>
+                <div class="greenEgg">
+                    <div class="viewGreenEggButton">
+                        <h2>VIEW</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Gotchu Card -->
+        <div class="gotchuCard catCard">
+            <div class="title"><h3>CATCHU</h3></div>
+            <div class="catchuCharacter"></div>
+            <div class="description"><h3>This gotchu is cool. You should choose this one.</h3></div>
+            <div class="level"><h3>LVL 01</h3></div>
+            <div class="xp"><h3>XP 0 / 50</h3></div>
+            <div class="attack"><h3>ATTACK</h3><h4>***</h4></div>
+            <div class="speed"><h3>SPEED</h3><h4>**</h4></div>
+            <div class="defense"><h3>DEFENSE</h3><h4>**</h4></div>
+            <div class="selectButton"><h2>SELECT</h2></div>
+
+        </div>
+
     </div>
 </body>
 
