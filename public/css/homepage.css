@@ -15,7 +15,7 @@
 
 .topNav > div{
     position: absolute;
-    top: 80px;
+    top: 30px;
 }
 
 .userBar {
@@ -86,8 +86,8 @@
 	width: 380px;
 	height: 330px;
     position: absolute;
-    bottom: 270px;
-    left: 530px;
+    bottom: 290px;
+    left: 520px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +96,7 @@
 
 .bottomNav >div{
     position: absolute;
-    bottom: 30px;
+    bottom: 70px;
 
 }
 

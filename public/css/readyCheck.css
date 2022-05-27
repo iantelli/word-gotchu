@@ -132,7 +132,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5em;
+    margin-top: 3em;
     filter: grayscale(1) brightness(60%);
 }
 

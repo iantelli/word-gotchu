@@ -124,7 +124,7 @@ window.addEventListener("click", function (event) {
       abilityPopup.className = "abilityContainer";
       abilityPopup.innerHTML = `
           <div class="topRow">
-            <div class="catchuAbility1"></div>
+            <div class="ability1Icon"></div>
             <div class="abilityText">
                 <p>LVL01 ABILITY</p>
                 <div class="description">
@@ -133,7 +133,7 @@ window.addEventListener("click", function (event) {
             </div>
           </div>
           <div class="middleRow">
-              <div class="catchuAbility2"></div>
+              <div class="ability2Icon"></div>
               <div class="abilityText">
                   <p>LVL02 ABILITY</p>
                   <div class="description">
@@ -143,7 +143,7 @@ window.addEventListener("click", function (event) {
               
           </div>
           <div class="bottomRow">
-              <div class="catchuAbility3"></div>
+              <div class="ability3Icon"></div>
               <div class="abilityText">
                   <p>LVL03 ABILITY</p>
                   <div class="description">
@@ -231,7 +231,29 @@ const populateGotchuPage = (petLvl, petXP) => {
 
 }
 
-const populateStoryPage = (petStory1, petStory2, petStory3) => {
+const populateStoryPage = () => {
+  const selectedGotchu = playerGotchu;
+  let petStory1;
+  let petStory2;
+  let petStory3;
+  if (selectedGotchu == "catchu") {
+    petStory1 = "Raised in a young family where everybody was always busy, Catchu tried to get its owners attention by meowing, but was always ignored. One day, it accidentally broke a mug when it hopped onto the table to get closer to the owners, and noticed that they took the time to teach Catchu to not do that.";
+    petStory2 = "Catchu became a sort of prankster, realising it could gain the owners attention by causing trouble. Catchu thrived off the attention, and continued to come up with ways to cause chaos. It became difficult for Catchu when a newborn was introduced into the family, with its crying always beckoning the calls of the family.";
+    petStory3 = " Catchu decided to do a prank where it would be quiet with the newborn under thick blankets and try to scare the parents by jumping out of the blankets last minute. Instead of being met with sighs and chastizing, the parents screamed in terror at Catchu. What happened next was a blur to Catchu, but it found itself in a white room, drifting off asleep only to wake up with devil horns and a tail. ";
+  }
+
+  if (selectedGotchu == "dogchu") {
+    petStory1 = "A shiba inu, this Dogchu is soft spoken and good to the bone. Dogchu was raised by a sweet elder lady who loved Dogchu dearly. Every day the elder lady would head out to gather food and come home to their little cottage before sunset where they would enjoy dinner together.";
+    petStory2 = "One day, Dogchu waited outside the cottage for its sweet owner to come home. Eventually, night time fell and the elder lady was no where to be seen. Being devoted and patient, this Dogchu continued to wait as it got colder and darker.";
+    petStory3 = "Dogchu waited days after days in the cold, never once leaving their spot on the cottage’s porch. Eventually, Dogchu woke up after feeling the coldest it had ever felt before the night prior. Dogchu looked up to find its owner smiling down at them and they felt warmth and lightness around them again.  ";
+  }
+
+  if (selectedGotchu == "turtlechu") {
+    petStory1 = "This Turtlechu was always a confident turtle. It was the fastest and stealthiest young turtle of its village. Turtlechu was smug because of this, often making fun of its weaker classmates and thus Turtlechu became a bit of an outcast.";
+    petStory2 = "Turtlechu continued to excel in its ninja classes, but one night during a mission, Turtlechu got too cocky and hurt themself in the process, permanently blinding an eye. Helpless, it layed there injured in the forest, feeling alone. That’s when the weakest turtle in its class spotted Turtlechu’s body and helped";
+    petStory3 = "Since that day, Turtlechu made a best friend in the other turtle. Turtlechu came to realize that the greatest weakness of all, was his cockiness, and since has humbled. The Turtlechu strived to become the greatest ninja of all in order to protect others and to help others find strength.";
+  }
+
   const story1 = document.querySelector(".story .lvl1");
   const story2 = document.querySelector(".story .lvl2");
   const story3 = document.querySelector(".story .lvl3");
@@ -241,10 +263,46 @@ const populateStoryPage = (petStory1, petStory2, petStory3) => {
 }
 
 // Should change to support different pets as a variable
-const populateAbilityPage = (petAbility1, petAbility2, petAbility3) => {
+const populateAbilityPage = () => {
+  const selectedGotchu = playerGotchu;
+  const ability1Icon = document.querySelector(".ability1Icon");
+  const ability2Icon = document.querySelector(".ability2Icon");
+  const ability3Icon = document.querySelector(".ability3Icon");
+  ability1Icon.className = `${selectedGotchu}Ability100`;
+  ability2Icon.className = `${selectedGotchu}Evo2Ability100`;
+  ability3Icon.className = `${selectedGotchu}Evo3Ability100`;
+  ability1Icon.style.transform = "scale(0.6)";
+  ability2Icon.style.transform = "scale(0.6)";
+  ability3Icon.style.transform = "scale(0.6)";
+  ability1Icon.style.marginTop = "-1.5em";
+  ability2Icon.style.marginTop = "-1.5em";
+  ability3Icon.style.marginTop = "-1.5em";
   const ability1 = document.querySelector(`.description p.ability1`);
   const ability2 = document.querySelector(`.description p.ability2`);
   const ability3 = document.querySelector(`.description p.ability3`);
+
+  let petAbility1;
+  let petAbility2;
+  let petAbility3;
+
+  if (selectedGotchu == "catchu") {
+    petAbility1 = "Bad Luck: Deals damage to the opponent for 1-4 damage (Roll a 1d4).";
+    petAbility2 = "Very Bad Luck: Deals damage to the opponent for 1-6 damage (Roll a 1d6).";
+    petAbility3 = "Super Bad Luck: Deals damage to the opponent for 1-8 damage (Roll a 1d8).";
+  }
+
+  if (selectedGotchu == "dogchu") {
+    petAbility1 = "Good Dog: Helps you find one Yellow letter in your current Wordle.";
+    petAbility2 = "Great Dog: Helps you find two Yellow letters in your current Wordle.";
+    petAbility3 = "Best Dog: Helps you find one Green letter in your current Wordle.";
+  }
+
+  if (selectedGotchu == "turtlechu") {
+    petAbility1 = "Hard Shell: Creates a shield that prevents 5 DMG.";
+    petAbility2 = "Harder Shell: Creates a shield that prevents 10 DMG.";
+    petAbility3 = "Hardest Shell: Creates a shield that prevents 15 DMG.";
+  }
+
   ability1.innerText = petAbility1;
   ability2.innerText = petAbility2;
   ability3.innerText = petAbility3;

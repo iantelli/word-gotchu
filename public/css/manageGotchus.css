@@ -220,6 +220,13 @@
     height: 110px;
     background-color: #955612;
     margin-top: -25px;
+    display: flex;
+}
+
+.lvl1, .lvl2, .lvl3 {
+    font-size: 0.7em;
+    margin-top: 4px;
+    margin-left: 4px;
 }
 
 .lockIcon {
@@ -291,79 +298,12 @@
 }
 
 .abilityText p {
-    margin-left: 4.5em;
+    margin-left: 5em;
+    padding-bottom: 0.5em;
 }
 
 .description p.ability1, .description p.ability2, .description p.ability3 {
     margin-left: 0.5em;
     padding-top: 0.5em;
-}
-
-/* Story popup css */
-.storyContainer {
-    background: url(../images/assets_spritesheet.png) no-repeat -5922px -776px;
-    width: 650px;
-    height: 518px;
-    display: flex;
-    /* align-content: center;
-    justify-content: center; */
-    flex-direction: column;
-    transform: scale(1.2);
-    margin-top: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    /* display: none; */
-}
-
-.storyContainer > * {
-    transform: scale(calc(1/1.2));
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.storyContainer > * > *  {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.storyText {
-    width: 620px;
-    height: 110px;
-    background-color: #CD6C03;
-    margin-top: -25px;
-}
-
-.story p {
-    margin-left: 0.5em;
-    margin-top: 0.4em;
-}
-
-.storyText .lockIcon {
-    display: none;
-}
-
-.topText {
-    padding-top: 30px;
-}
-
-.locked {
-    width: 620px;
-    height: 110px;
-    background-color: #955612;
-    margin-top: -25px;
-}
-
-.lockIcon {
-    background: url(../images/Misc/locked.png) no-repeat center;
-    width: 100px;
-    height: 100px;
-    margin-top: 5px;
-}
-
-.locked p {
-    display: none;
-}
-
-.popups {
-    position: relative;
+    font-size: small;
 }
