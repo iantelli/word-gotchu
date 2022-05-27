@@ -68,19 +68,11 @@ if (settingsButton) {
       if (fxToggleInnerText.innerText === "ON") {
         fxToggleInnerText.innerText = "OFF";
         fxState = false;
-        typeSound.muted = true;
-        errorSound.muted = true;
-        correctSound.muted = true;
-        delSound.muted = true;
-        sendSound.muted = true;
+        sfx.mute(true);
       } else {
         fxToggleInnerText.innerText = "ON";
         fxState = true;
-        typeSound.muted = false;
-        errorSound.muted = false;
-        correctSound.muted = false;
-        delSound.muted = false;
-        sendSound.muted = false;
+        sfx.mute(false);
       }
     })
 
@@ -89,11 +81,11 @@ if (settingsButton) {
       if (musicToggleInnerText.innerText === "ON") {
         musicToggleInnerText.innerText = "OFF";
         musicState = false;
-        battleMusic.muted = true;
+        music.mute(true)
       } else {
         musicToggleInnerText.innerText = "ON";
         musicState = true;
-        battleMusic.muted = false;
+        music.mute(false);
       }
     })
 
