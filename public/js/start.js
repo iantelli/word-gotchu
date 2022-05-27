@@ -1,4 +1,4 @@
-window.onclick = function(event) {
+window.onclick = function (event) {
   const targetClassList = event.target.className.split(" ");
 
   if (targetClassList.includes("loginButton") || targetClassList.includes("signupButton")) {
@@ -13,15 +13,15 @@ window.onclick = function(event) {
     const backButton = document.createElement("div");
     backButton.className = "backButton";
     backButton.innerHTML = `<h1>BACK</h1>`;
-    
+
     const mainScreen = document.querySelector(".startScreenBg");
     mainScreen.appendChild(backButton);
   }
-  
+
   if (targetClassList.includes("backButton")) {
     const card = document.querySelector(".gotchuCard");
     if (card) card.remove();
-    if (!card) window.location.href = "/start";
+    if (!card) window.location.href = "/";
   }
 
   if (targetClassList.includes("loginButton")) {
@@ -129,7 +129,7 @@ function pickGotchu() {
   let selectedEgg;
 
   const viewRedEggButton = document.querySelector(".viewRedEggButton");
-  viewRedEggButton.addEventListener("click", function() {
+  viewRedEggButton.addEventListener("click", function () {
     selectedEgg = {
       cardName: "catCard",
       extraClass: "",
@@ -144,7 +144,7 @@ function pickGotchu() {
   });
 
   const viewBlueEggButton = document.querySelector(".viewBlueEggButton");
-  viewBlueEggButton.addEventListener("click", function() {
+  viewBlueEggButton.addEventListener("click", function () {
     selectedEgg = {
       cardName: "dogCard",
       extraClass: "",
@@ -160,7 +160,7 @@ function pickGotchu() {
   });
 
   const viewGreenEggButton = document.querySelector(".viewGreenEggButton");
-  viewGreenEggButton.addEventListener("click", function() {
+  viewGreenEggButton.addEventListener("click", function () {
     selectedEgg = {
       cardName: "turtleCard",
       extraClass: " turtleTitle",
@@ -175,7 +175,7 @@ function pickGotchu() {
 
   });
 
-  
+
 }
 
 function populateEggCard(selectedEgg) {

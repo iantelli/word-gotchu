@@ -2,39 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wordgotchu</title>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/body.css">
-    <link rel="stylesheet" href="/css/startScreen.css">
-    <link rel="stylesheet" href="/css/gotchus.css">
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordgotchu</title>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/body.css">
+  <link rel="stylesheet" href="/css/startScreen.css">
+  <link rel="stylesheet" href="/css/gotchus.css">
 </head>
 
 <body>
-    <!-- Startup Screen-->
-    <div class="startScreenBg">
-        <div class="wordGotchuTitle"></div>
+  <!-- Startup Screen-->
+  <div class="startScreenBg">
+    <div class="wordGotchuTitle"></div>
 
-        <div class="loginSignupOption">
-            <div class="loginButton">
-                <h1>LOGIN</h1>
-            </div>
-            <div class="signupButton">
-                <h1>SIGN UP</h1>
-            </div>
-        </div>
-
-        <!-- Change the link -->
-        <div class="guestSignIn">
-            <a href="/"><h2>CONTINUE AS GUEST</h2></a>
-        </div>
-
+    <div class="loginSignupOption">
+      <div class="loginButton">
+        <h1>LOGIN</h1>
+      </div>
+      <div class="signupButton">
+        <h1>SIGN UP</h1>
+      </div>
     </div>
-    
-    <script src="/js/start.js"></script>
+
+    <!-- Change the link -->
+    <div class="guestSignIn">
+      <a href="/">
+        <h2>CONTINUE AS GUEST</h2>
+      </a>
+    </div>
+
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCpzcKwCrIbF6nbzefNONYlTyvtPeFqa2E",
+      authDomain: "wordgotchu.firebaseapp.com",
+      databaseURL: "https://wordgotchu-default-rtdb.firebaseio.com",
+      projectId: "wordgotchu",
+      storageBucket: "wordgotchu.appspot.com",
+      messagingSenderId: "864605245451",
+      appId: "1:864605245451:web:844c3beee20a79a33f370e",
+      measurementId: "G-9LW3YP7LVV"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="/js/start.js"></script>
 </body>
 
 </html>

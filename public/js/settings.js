@@ -157,7 +157,7 @@ if (profileSettings) {
                 <h4>CLOSE</h4>
             </div>
           `;
-          profileSettingsFragment.appendChild(profileSettingsContainer);
+    profileSettingsFragment.appendChild(profileSettingsContainer);
     mainScreen.appendChild(profileSettingsFragment);
     const closeProfileButton = document.querySelector(".closeProfileButton");
     closeProfileButton.addEventListener("click", (event) => {

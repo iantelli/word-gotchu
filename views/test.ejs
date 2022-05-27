@@ -1,60 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/test.css">
-    <link rel="stylesheet" href="/css/body.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/test.css">
+  <link rel="stylesheet" href="/css/body.css">
 </head>
+
 <body>
 
-    <div class="roundSummaryContainer">
-        <h1 class="resultsTitle">Round <%= roundNumber %> Results</h1>
+  <div class="roundSummaryContainer">
+    <h1 class="resultsTitle">Round <%= roundNumber %> Results</h1>
 
-        <!-- Maybe get usernames -->
-        <h3 class="nameResultsText">Your Results</h3>
+    <!-- Maybe get usernames -->
+    <h3 class="nameResultsText">Your Results</h3>
 
-        <!-- Get scores from game in js or db -->
-        <div class="summaryText">
-            <div class="wordleResults">
-                <p>Successful Wordles</p><p class="results">2</p>
-            </div>
-            <div class="greenResults">
-                <p>Green Letters</p><p class="results">4</p>
-            </div>
-            <div class="yellowResults">
-                <p>Yellow Letters</p><p class="results">3</p>
-            </div>
-            <div class="firstAttemptResults">
-                <p>First Attempts</p><p class="results">1</p>
-            </div>
-        </div>
-
-        <!-- Get damage totals from js or db -->
-        <h3 class="playerDamageTotal">Your Damage: 40</h3>
-        <h3 class="opponentDamageTotal hidden">Opponent Damage: 25</h3>
-
-        <!-- Save icons with user profile maybe -->
-        <div class="playerIcons">
-            <div class="userIcon catchuDefaultIcon"></div>
-            <div class="opponentIcon dogchuDefaultIcon"></div>
-        </div>
-
-        <div class="playerHealthbars">
-            <div class="userHealthbar"></div>
-            <div class="opponentHealthbar"></div>
-            <div class="userHealthInnerBar"></div>
-            <div class="opponentHealthInnerBar"></div>
-        </div>
-
-        <h4 class="nextRoundText">Round <%= roundNumber + 1 %> will begin in X seconds...</h4>
-
-        <button class="checkOtherResultLeft hidden">&#60;</button>
-        <button class="checkOtherResultRight">&#62;</button>
+    <!-- Get scores from game in js or db -->
+    <div class="summaryText">
+      <div class="wordleResults">
+        <p>Successful Wordles</p>
+        <p class="results">2</p>
+      </div>
+      <div class="greenResults">
+        <p>Green Letters</p>
+        <p class="results">4</p>
+      </div>
+      <div class="yellowResults">
+        <p>Yellow Letters</p>
+        <p class="results">3</p>
+      </div>
+      <div class="firstAttemptResults">
+        <p>First Attempts</p>
+        <p class="results">1</p>
+      </div>
     </div>
 
-    <script src="/js/test.js"></script>
+    <!-- Get damage totals from js or db -->
+    <h3 class="playerDamageTotal">Your Damage: 40</h3>
+    <h3 class="opponentDamageTotal hidden">Opponent Damage: 25</h3>
+
+    <!-- Save icons with user profile maybe -->
+    <div class="playerIcons">
+      <div class="userIcon catchuDefaultIcon"></div>
+      <div class="opponentIcon dogchuDefaultIcon"></div>
+    </div>
+
+    <div class="playerHealthbars">
+      <div class="userHealthbar"></div>
+      <div class="opponentHealthbar"></div>
+      <div class="userHealthInnerBar"></div>
+      <div class="opponentHealthInnerBar"></div>
+    </div>
+
+    <h4 class="nextRoundText">Round <%= roundNumber + 1 %> will begin in X seconds...</h4>
+
+    <button class="checkOtherResultLeft hidden">&#60;</button>
+    <button class="checkOtherResultRight">&#62;</button>
+  </div>
+
+  <script src="/js/test.js"></script>
 </body>
+
 </html>

@@ -29,7 +29,7 @@
                 sfx.uiSound.play();
                 navigator.clipboard.writeText(roomCode);
                 btn.innerHTML = "Copied!";
-                setTimeout (() => {
+                setTimeout(() => {
                     window.open(location.href + "lobby/" + roomCode, "_blank");
                 }, 300);
             });
@@ -75,7 +75,7 @@
             document.querySelector("p.roomCodeText").remove();
             document.querySelector("div.backButton").classList.toggle("battleMenuBackBtn");
             return;
-        } 
+        }
         if (event.target.classList.contains("backButton") && event.target.classList.contains("joinRoomBackBtn")) {
             sfx.removeLetter.play();
             document.querySelector("div.backButton").classList.toggle("joinRoomBackBtn");

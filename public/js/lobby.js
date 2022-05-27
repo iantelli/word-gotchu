@@ -201,14 +201,14 @@
               } else {
                 document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
               }
-              setTimeout (() => {
+              setTimeout(() => {
                 if (player.num === 1) {
                   document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP1");
                 } else {
                   document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
                 }
                 document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}></div>`;
-              } , 600)
+              }, 600)
               //end game condition
               if (player.hp - 25 <= 0) {
 
@@ -220,9 +220,9 @@
             }
           })
         })
-        setTimeout (() => {
+        setTimeout(() => {
           startNewWordle();
-        } , 1000)
+        }, 1000)
       }
       if (word.totalGuesses === 6 && !word.completed) {
         allPlayersRef.get().then((snapshot) => {
@@ -237,14 +237,14 @@
                 document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
               }
 
-              setTimeout (() => {
+              setTimeout(() => {
                 if (player.num === 1) {
                   document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP1");
                 } else {
                   document.querySelector(`.player${player.num}Character`).classList.toggle("attackedP2");
                 }
                 document.querySelector(`.player${player.num}Character`).innerHTML = `<div class=${player.gotchu}></div>`;
-              } , 600)
+              }, 600)
               //end game condition
               if (player.hp - 25 <= 0) {
 

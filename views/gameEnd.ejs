@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Over</title>
-    <link rel="stylesheet" href="/css/gameEnd.css">
-    <link rel="stylesheet" href="/css/body.css">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Over</title>
+  <link rel="stylesheet" href="/css/gameEnd.css">
+  <link rel="stylesheet" href="/css/body.css">
 </head>
+
 <body>
-    <div class="gameEndBackground">
-        <% if (gameResult.winner) { %>
-            <h1 class="gameResultTitle">VICTORY</h1>
-            <p class="gameResultText">Your pet won!</p>
-            <!-- Should probably send sprite coordinates or class name from express for different pets -->
-            <div class="<%= gotchu %>Win"></div>
-            <div class="greenXPBar"></div>
-            <!-- Use absolute values for xp probably -->
-            <p style="color: #3EFF1F;">+<%= gameResult.xpChange %> Happiness</p>
-        <% } else { %>
-            <h1 class="gameResultTitle">DEFEAT</h1>
-            <p class="gameResultText">Your pet lost the battle.</p>
-            <div class="<%= gotchu %>Lose"></div>
-            <div class="redXPBar"></div>
-            <p style="color: red;">-<%= gameResult.xpChange %> Happiness</p>
-        <% } %>
-        <h2>Reward:</h2>
-        <div class="rewardContainer">
-            <div class="currencyIcon"></div>
-            <h1 class="rewardAmount"><%= gameResult.reward %></h1>
-        </div>
-        <div class="endGameButtonsContainer">
-            <!-- Should outline text for readability -->
-            <div class="rematchButton">
-                <h3 class="endGameButtonText">REMATCH</h3>
-            </div>
-            <div class="quitButton">
-                <h3 class="endGameButtonText">QUIT</h3>
-            </div>
-        </div>
+  <div class="gameEndBackground">
+    <% if (gameResult.winner) { %>
+    <h1 class="gameResultTitle">VICTORY</h1>
+    <p class="gameResultText">Your pet won!</p>
+    <!-- Should probably send sprite coordinates or class name from express for different pets -->
+    <div class="<%= gotchu %>Win"></div>
+    <div class="greenXPBar"></div>
+    <!-- Use absolute values for xp probably -->
+    <p style="color: #3EFF1F;">+<%= gameResult.xpChange %> Happiness</p>
+    <% } else { %>
+    <h1 class="gameResultTitle">DEFEAT</h1>
+    <p class="gameResultText">Your pet lost the battle.</p>
+    <div class="<%= gotchu %>Lose"></div>
+    <div class="redXPBar"></div>
+    <p style="color: red;">-<%= gameResult.xpChange %> Happiness</p>
+    <% } %>
+    <h2>Reward:</h2>
+    <div class="rewardContainer">
+      <div class="currencyIcon"></div>
+      <h1 class="rewardAmount"><%= gameResult.reward %></h1>
     </div>
-    <script src="/js/gameEnd.js"></script>
+    <div class="endGameButtonsContainer">
+      <!-- Should outline text for readability -->
+      <div class="rematchButton">
+        <h3 class="endGameButtonText">REMATCH</h3>
+      </div>
+      <div class="quitButton">
+        <h3 class="endGameButtonText">QUIT</h3>
+      </div>
+    </div>
+  </div>
+  <script src="/js/gameEnd.js"></script>
 </body>
+
 </html>

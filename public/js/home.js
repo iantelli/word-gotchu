@@ -162,7 +162,7 @@ window.addEventListener("click", function (event) {
   // Swap gotchus on manage gotchu page
 
   // Save the current gotchu somewhere and reference it so it will dynamically assign the default one
-  
+
   const allGotchuIcons = ["catchuIcon", "dogchuIcon", "turtlechuIcon"];
 
   if (allGotchuIcons.includes(targetClasslist[0])) {
@@ -215,7 +215,7 @@ const populateGotchuPage = (petLvl, petXP) => {
   const XPBarTextBox = document.querySelector(".XPBar p");
   levelBarTextBox.innerText = `LVL ${petLvl}`;
   XPBarTextBox.innerText = `XP ${petXP}/100`;
-  
+
   // Assign default pet maybe or get pet from db
   const selectedGotchu = playerGotchu;
   const selectedGotchuIcon = document.querySelector(`.manageGotchusContainer .bottomBar .${playerGotchu}Icon`);
