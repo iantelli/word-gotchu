@@ -107,7 +107,15 @@
             document.querySelector(".gachaBg").classList.toggle("hidden");
             document.querySelector(".mainScreenBg").classList.toggle("hidden");
             document.querySelector(".mainScreenBg .topNav .gotchuCoinBar .gotchuCoinAmount").innerText = playerCurrency;
-            goToGotchuDomeListener();
+            return;
+        }
+
+        // Gochu Dome Listener
+
+        if (event.target.classList.contains("gotchuDomeButton")) {
+            sfx.uiSound.play();
+            document.querySelector(".mainScreenBg").classList.toggle("hidden");
+            document.querySelector(".gochuDome").classList.toggle("hidden");
             return;
         }
     });
