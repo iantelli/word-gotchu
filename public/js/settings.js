@@ -100,6 +100,27 @@ if (settingsButton) {
       const settingsContainer = document.querySelector(".settingsContainer");
       settingsContainer.remove();
     })
+
+    // Log out container
+    const logoutButton = document.querySelector(".closeSettingsContainer .logoutButton");
+    logoutButton.addEventListener("click", (event) => {
+      const settingsContainer = document.querySelector(".settingsContainer");
+      settingsContainer.innerHTML = `
+      <div class= "logoutContainer">
+        <h1>LOG OUT?</h1>
+        <h2> Are you sure you want to log out?
+        <div class="closeSettingsContainer">
+          <div class="yesButton">
+            <h4>YES</h4>
+          </div>
+          <div class="noButton">
+            <h4>NO</h4>
+          </div>
+        </div>
+      </div>
+    `;
+
+    })
     
   })
 
