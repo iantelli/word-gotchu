@@ -3,9 +3,9 @@
     width: 1440px;
     height: 1024px;
     transform: translate(-50%, -0%);
-    position: fixed;
+    position: absolute;
     left: 50%;
-    bottom: 0px;
+    top:5%;
     margin: 0 auto;
 
 }
