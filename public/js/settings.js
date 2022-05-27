@@ -144,7 +144,7 @@ if (profileSettings) {
     const profileSettingsContainer = document.createElement("div");
     profileSettingsContainer.className = "profileSettingsContainer";
     profileSettingsContainer.innerHTML = `
-            <h1>USERNAME</h1>
+            <h1>${username}</h1>
             <div class="userProfileIcon"></div>
             <div class="profileRow">
               <div class= "wins"><h3>Total Wins</h3><h3 class="winCount">5</h3></div>
