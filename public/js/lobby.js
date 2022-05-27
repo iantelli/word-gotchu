@@ -333,7 +333,7 @@
       //On new player
       const addedPlayer = snapshot.val();
       if (addedPlayer.num === 2 && !gameStarted) {
-        document.querySelector(`.player${addedPlayer.num}Username`).innerHTML = `Them`;
+        document.querySelector(`.player${addedPlayer.num}Username`).innerHTML = addedPlayer.name || "Guest";
         document.querySelector(`.player${addedPlayer.num}Character`).innerHTML = `<div class=${addedPlayer.gotchu}></div>`;
         document.querySelector(`.player${addedPlayer.num}Icon`).innerHTML = `<div class=${addedPlayer.gotchu}Icon></div>`
         gameStarted = true;
@@ -554,6 +554,7 @@
         })
 
         playerRef.set({
+          name: user.displayName,
           id: playerId,
           gotchu,
           hp: 100,
@@ -567,7 +568,7 @@
           playerRef.update({
             num: playerNum
           })
-          document.querySelector(`.player${playerNum}Username`).innerHTML = `Me`;
+          document.querySelector(`.player${playerNum}Username`).innerHTML = user.displayName;
           document.querySelector(`.player${playerNum}Username`).style = "color: red;"
           document.querySelector(`.player${playerNum}Character`).innerHTML = `<div class=${gotchu}></div>`;
           document.querySelector(`.player${playerNum}Icon`).innerHTML = `<div class=${gotchu}Icon></div>`;
@@ -580,7 +581,7 @@
                 document.querySelector(`.player2Icon`).innerHTML = `<div class=${player.gotchu}Icon></div>`;
               }
               if (playerNum === 2) {
-                document.querySelector(`.player1Username`).innerHTML = `Them`;
+                document.querySelector(`.player1Username`).innerHTML = player.name || "Guest";
                 document.querySelector(`.player1Character`).innerHTML = `<div class=${player.gotchu}></div>`;
                 document.querySelector(`.player1Icon`).innerHTML = `<div class=${player.gotchu}Icon></div>`;
               }

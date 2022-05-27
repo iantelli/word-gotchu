@@ -231,6 +231,7 @@ function login() {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in
+      window.location.href = "/user"
       var user = userCredential.user;
       console.log(user.displayName)
       // ...

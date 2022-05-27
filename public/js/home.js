@@ -247,13 +247,14 @@ const populateAbilityPage = (petAbility1, petAbility2, petAbility3) => {
   ability3.innerText = petAbility3;
 }
 
-populateHomepage(username, playerCurrency);
+
 
 firebase.auth().onAuthStateChanged((user) => {
   // console.log(user)
   if (user) {
       console.log("user")
-      console.log(user.displayName)
+      username = user.displayName
+      populateHomepage(user.displayName || "Guest", playerCurrency);
   } else {
       window.location.href = "/"
   }
