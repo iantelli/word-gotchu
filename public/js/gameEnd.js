@@ -9,7 +9,7 @@
     }
 
     if (targetClassList.includes("quitButton")) {
-      return window.location.href = `/`;
+      return window.location.href = `/user`;
     }
   }
 })();
