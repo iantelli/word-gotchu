@@ -67,7 +67,7 @@ window.addEventListener("click", function (event) {
       const mainScreen = document.querySelector(".mainScreenBg");
       mainScreen.classList.remove("hidden");
 
-      populateHomepage(username, playerCurrency);
+      populateHomepage(username || "Guest", playerCurrency);
     })
 
     // Toggle story popup
