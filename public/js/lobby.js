@@ -554,7 +554,7 @@
         })
 
         playerRef.set({
-          name: user.displayName,
+          name: user.displayName || "Guest",
           id: playerId,
           gotchu,
           hp: 100,
@@ -568,7 +568,7 @@
           playerRef.update({
             num: playerNum
           })
-          document.querySelector(`.player${playerNum}Username`).innerHTML = user.displayName;
+          document.querySelector(`.player${playerNum}Username`).innerHTML = user.displayName || "Guest";
           document.querySelector(`.player${playerNum}Username`).style = "color: red;"
           document.querySelector(`.player${playerNum}Character`).innerHTML = `<div class=${gotchu}></div>`;
           document.querySelector(`.player${playerNum}Icon`).innerHTML = `<div class=${gotchu}Icon></div>`;
