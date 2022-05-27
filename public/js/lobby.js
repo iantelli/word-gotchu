@@ -595,6 +595,8 @@
 
         initGame();
       })
+    } else {
+      window.location.href = `/`
     }
   })
 
