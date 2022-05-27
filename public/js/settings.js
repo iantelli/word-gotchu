@@ -4,7 +4,7 @@ const settingsButton = document.querySelector(".settingsButton");
 if (settingsButton) {
 
   settingsButton.addEventListener("click", (event) => {
-
+    sfx.uiSound.play();
     const existingProfileSettingsContainer = document.querySelector(".profileSettingsContainer");
     if (existingProfileSettingsContainer) return existingProfileSettingsContainer.remove();
 
@@ -96,6 +96,7 @@ if (settingsButton) {
     // Close settings container
     const closeSettingsButton = document.querySelector(".closeSettingsContainer .closeSettingsButton");
     closeSettingsButton.addEventListener("click", (event) => {
+      sfx.removeLetter.play();
       const settingsContainer = document.querySelector(".settingsContainer");
       settingsContainer.remove();
     })
@@ -103,6 +104,7 @@ if (settingsButton) {
     // Log out container
     const logoutButton = document.querySelector(".closeSettingsContainer .logoutButton");
     logoutButton.addEventListener("click", (event) => {
+      sfx.removeLetter.play();
       const settingsContainer = document.querySelector(".settingsContainer");
       settingsContainer.innerHTML = `
       <div class= "logoutContainer">
@@ -166,6 +168,7 @@ if (profileSettings) {
 document.addEventListener("click", event => {
   const targetClassList = event.target.className;
   if (targetClassList.includes("yesButton")) {
+    sfx.removeLetter.play();
     firebase.auth().signOut()
       .then(function () {
         window.location.href = "/"
@@ -174,6 +177,7 @@ document.addEventListener("click", event => {
       })
   }
   if (targetClassList.includes("noButton")) {
+    sfx.removeLetter.play();
     const settingsContainer = document.querySelector(".settingsContainer");
     settingsContainer.remove();
   }

@@ -1,7 +1,7 @@
 const sfx = {
     'removeLetter': new Howl({
         src: ['/sounds/removeLetter.wav', '/sounds/removeLetter.mp3'],
-        volume: 0.2,
+        volume: 0.15,
     }),
     'enterLetter': new Howl({
         src: ['/sounds/enterLetter.wav', '/sounds/enterLetter.mp3'],
@@ -37,7 +37,7 @@ const sfx = {
     }),
     'uiSound': new Howl({
         src: ['/sounds/uiSound.wav', '/sounds/uiSound.mp3'],
-        volume: 0.2,
+        volume: 0.15,
     }),
     'victorySound': new Howl({
         src: ['/sounds/victorySound.wav', '/sounds/victorySound.mp3'],

@@ -3,6 +3,7 @@ window.onclick = function (event) {
   const targetClassList = event.target.className.split(" ");
 
   if (targetClassList.includes("guest")) {
+    sfx.uiSound.play();
     event.preventDefault();
     console.log("annon")
     firebase.auth().signInAnonymously()
@@ -15,7 +16,7 @@ window.onclick = function (event) {
   }
 
   if (targetClassList.includes("loginButton") || targetClassList.includes("signupButton")) {
-
+    sfx.uiSound.play();
     const signupButton = document.querySelector(".signupButton");
     const loginButton = document.querySelector(".loginButton");
     const guestSignIn = document.querySelector(".guestSignIn");
@@ -32,13 +33,14 @@ window.onclick = function (event) {
   }
 
   if (targetClassList.includes("backButton")) {
+    sfx.removeLetter.play();
     const card = document.querySelector(".gotchuCard");
     if (card) card.remove();
     if (!card) window.location.href = "/";
   }
 
   if (targetClassList.includes("loginButton")) {
-
+    sfx.uiSound.play();
     const loginFormFragment = document.createDocumentFragment();
     const loginScreen = document.createElement("div");
     loginScreen.classList.add("loginScreen");
@@ -63,7 +65,7 @@ window.onclick = function (event) {
   }
 
   if (targetClassList.includes("signupButton")) {
-
+    sfx.uiSound.play();
     const signupFormFragment = document.createDocumentFragment();
     const signupScreen = document.createElement("div");
     signupScreen.classList.add("signupScreen");
@@ -94,6 +96,7 @@ window.onclick = function (event) {
 
   // Confirm selection
   if (targetClassList.includes("selectButton")) {
+    sfx.uiSound.play();
     event.preventDefault()
     const selectedEgg = event.target.parentElement;
     const selectedGotchu = selectedEgg.className.split(" ")[1].split("Card")[0] + "chu";
@@ -161,6 +164,7 @@ function pickGotchu() {
 
   const viewRedEggButton = document.querySelector(".viewRedEggButton");
   viewRedEggButton.addEventListener("click", function () {
+    sfx.uiSound.play();
     selectedEgg = {
       cardName: "catCard",
       extraClass: "",
@@ -176,6 +180,7 @@ function pickGotchu() {
 
   const viewBlueEggButton = document.querySelector(".viewBlueEggButton");
   viewBlueEggButton.addEventListener("click", function () {
+    sfx.uiSound.play();
     selectedEgg = {
       cardName: "dogCard",
       extraClass: "",
@@ -192,6 +197,7 @@ function pickGotchu() {
 
   const viewGreenEggButton = document.querySelector(".viewGreenEggButton");
   viewGreenEggButton.addEventListener("click", function () {
+    sfx.uiSound.play();
     selectedEgg = {
       cardName: "turtleCard",
       extraClass: " turtleTitle",
