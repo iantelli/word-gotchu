@@ -86,6 +86,8 @@ function init() {
 firebase.auth().onAuthStateChanged((user) => {
     // console.log(user)
     if (user) {
+        console.log("user")
+        console.log(user.displayName)
         //LOGGED IN
         playerId = user.uid;
         allPlayersRef = firebase.database().ref(`lobbies/${lobbyId}/ready/players`);
@@ -123,6 +125,9 @@ firebase.auth().onAuthStateChanged((user) => {
             })
         })
         playerRef.onDisconnect().remove();
+    } else {
+        console.log("no user")
+        window.location.href = "/"
     }
 })
 
@@ -136,8 +141,3 @@ playerPetContainer.innerHTML = `<div class="${playerGotchu}"></div>`;
 // const opponentGotchu = "dogchuEvo3";
 // const opponentPetContainer = document.querySelector(".opponentCharacter .opponentPetContainer");
 // opponentPetContainer.innerHTML = `<div class="${opponentGotchu}"></div>`;
-
-//Error
-firebase.auth().signInAnonymously().catch((error) => {
-    console.log(error.code, error.message)
-})

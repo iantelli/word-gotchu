@@ -594,11 +594,6 @@
       window.location.href = `/`
     }
   })
-
-  //Error
-  firebase.auth().signInAnonymously().catch((error) => {
-    console.log(error.code, error.message)
-  })
 })();
 
 

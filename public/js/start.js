@@ -1,5 +1,18 @@
+let userinfo = {};
 window.onclick = function (event) {
   const targetClassList = event.target.className.split(" ");
+
+  if (targetClassList.includes("guest")) {
+    event.preventDefault();
+    console.log("annon")
+    firebase.auth().signInAnonymously()
+    .then(()=> {
+      window.location.href = "/user"
+    })
+    .catch((error) => {
+      console.log(error.code, error.message)
+    })
+  }
 
   if (targetClassList.includes("loginButton") || targetClassList.includes("signupButton")) {
 
@@ -59,13 +72,13 @@ window.onclick = function (event) {
         <div class="formContainer">
           <h1>SIGN UP</h1>
           <label for="username">USERNAME</label>
-          <input type="text" placeholder="" name="username" required>
+          <input type="text" placeholder="" name="username" id="username" required>
           <label for="email">EMAIL</label>
-          <input type="text" placeholder="" name="email" required>
+          <input type="text" placeholder="" name="email" id="email" required>
           <label for="password">PASSWORD</label>
-          <input type="password" placeholder="" name="password" required>
+          <input type="password" placeholder="" name="password" id="password" required>
           <label for="verifyPassword">VERIFY PASSWORD</label>
-          <input type="password" placeholder="" name="verifyPassword" required>
+          <input type="password" placeholder="" name="verifyPassword" id="verifyPassword" required>
         </div>
         <button type="submit" class="signupSubmit">
           <h2>SIGN UP</h2>
@@ -81,15 +94,33 @@ window.onclick = function (event) {
 
   // Confirm selection
   if (targetClassList.includes("selectButton")) {
+    event.preventDefault()
     const selectedEgg = event.target.parentElement;
     const selectedGotchu = selectedEgg.className.split(" ")[1].split("Card")[0] + "chu";
-    window.location.href = `/`;
+    const username = userinfo.username;
+    const email = userinfo.email;
+    const password = userinfo.password;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in 
+        var user = userCredential.user;
+        user.updateProfile({
+          displayName: username
+        })
+      })
+      .catch((error) => {
+        window.alert(error.message)
+      });
+    // window.location.href = `/`;
   }
 
 }
 
 function pickGotchu() {
-
+  event.preventDefault()
+  userinfo.username = document.getElementById("username").value;
+  userinfo.email = document.getElementById("email").value;
+  userinfo.password = document.getElementById("password").value;
   // Remove signup form
   const signupForm = document.querySelector(".signupScreen");
   signupForm.remove();
@@ -201,7 +232,7 @@ function login() {
     .then((userCredential) => {
       // Signed in
       var user = userCredential.user;
-      console.log(user)
+      console.log(user.displayName)
       // ...
     })
     .catch((error) => {
