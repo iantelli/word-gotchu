@@ -29,6 +29,9 @@
                 sfx.uiSound.play();
                 navigator.clipboard.writeText(roomCode);
                 btn.innerHTML = "Copied!";
+                setTimeout (() => {
+                    window.open(location.href + "lobby/" + roomCode, "_blank");
+                }, 300);
             });
             roomCodeText.innerText = "Share this code to your friend!";
             document.querySelector("div.createRoomDiv").appendChild(newRoomCode);
@@ -104,6 +107,7 @@
             document.querySelector(".gachaBg").classList.toggle("hidden");
             document.querySelector(".mainScreenBg").classList.toggle("hidden");
             document.querySelector(".mainScreenBg .topNav .gotchuCoinBar .gotchuCoinAmount").innerText = playerCurrency;
+            goToGotchuDomeListener();
             return;
         }
     });
