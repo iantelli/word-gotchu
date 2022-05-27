@@ -31,7 +31,7 @@
         </div>
 
         <!-- Signup Screen-->
-        <div class="signupScreen hidden">
+        <div class="signupScreen">
             <form action="">
                 <div class="formContainer">
                     <h1>SIGN UP</h1>
@@ -56,7 +56,7 @@
         </div>
 
         <!-- Login Screen-->
-        <div class="loginScreen hidden">
+        <div class="loginScreen">
             <form action="">
                 <div class="formContainer">
                     <h1>LOG IN</h1>
@@ -75,7 +75,7 @@
         </div>
 
         <!-- Choose Starter Gotchu-->
-        <div class="chooseStarterGotchu hidden">
+        <div class="chooseStarterGotchu">
             <!-- Pick your Gotchu -->
             <div class="pickGotchuEggs">
                 <h1>Pick your Gotchu!</h1>
@@ -99,7 +99,7 @@
         </div>
 
         <!-- Gotchu Card -->
-        <div class="gotchuCard catCard">
+        <div class="gotchuCard catCard hidden">
             <div class="title"><h3>CATCHU</h3></div>
             <div class="catchuCharacter"></div>
             <div class="description"><h3>This gotchu is cool. You should choose this one.</h3></div>
@@ -113,6 +113,23 @@
         </div>
 
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyCpzcKwCrIbF6nbzefNONYlTyvtPeFqa2E",
+        authDomain: "wordgotchu.firebaseapp.com",
+        databaseURL: "https://wordgotchu-default-rtdb.firebaseio.com",
+        projectId: "wordgotchu",
+        storageBucket: "wordgotchu.appspot.com",
+        messagingSenderId: "864605245451",
+        appId: "1:864605245451:web:844c3beee20a79a33f370e",
+        measurementId: "G-9LW3YP7LVV"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>F
+    <script src="/js/startScreen.js"></script>
 </body>
 
 </html>

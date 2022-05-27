@@ -65,16 +65,16 @@ html, body {
 }
 
 .playerPetContainer {
-    /* width: 260px;
-    height: 315px; */
+    width: 260px;
+    height: 315px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .opponentPetContainer {
-    /* width: 260px;
-    height: 315px; */
+    width: 260px;
+    height: 315px;
     display: flex;
     align-items: center;
     justify-content: center;

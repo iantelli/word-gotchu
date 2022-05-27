@@ -125,7 +125,7 @@ firebase.auth().onAuthStateChanged((user) => {
 // Populate pets
 
 // Get pets from user profile in db or something
-const playerGotchu = "catchuEvo2";
+const playerGotchu = "catchu";
 const playerPetContainer = document.querySelector(".playerCharacter .playerPetContainer");
 playerPetContainer.innerHTML = `<div class="${playerGotchu}"></div>`;
 
