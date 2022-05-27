@@ -1,6 +1,8 @@
 
 // Still need to change some of the listeners
-
+window.onload = () => {
+  music.menuMusic.play();
+}
 window.addEventListener("click", function (event) {
   const targetClasslist = event.target.className.split(" ");
 
@@ -8,7 +10,7 @@ window.addEventListener("click", function (event) {
   if (targetClasslist.includes("gotchuButton")) {
 
     // Need to fill xp, level, and story boxes with js
-
+    sfx.uiSound.play();
     const mainScreen = document.querySelector(".mainScreenBg");
     mainScreen.classList.add("hidden");
 
@@ -61,7 +63,7 @@ window.addEventListener("click", function (event) {
     // Back button listener to return to original homepage
     const backButton = document.querySelector(".topBar .backButton");
     backButton.addEventListener("click", function () {
-
+      sfx.removeLetter.play();
       gotchusPageContainer.remove();
 
       const mainScreen = document.querySelector(".mainScreenBg");
@@ -73,6 +75,7 @@ window.addEventListener("click", function (event) {
     // Toggle story popup
     const storyButton = document.querySelector(".storyButton");
     storyButton.addEventListener("click", function () {
+      sfx.uiSound.play();
       const existingStoryPopup = document.querySelector(".storyPopup");
       const existingAbilityPopup = document.querySelector(".abilityContainer");
       if (existingStoryPopup) return existingStoryPopup.remove();
@@ -110,7 +113,7 @@ window.addEventListener("click", function (event) {
     abilityButton.addEventListener("click", function () {
 
       // Maybe don't need to add locked properties for abilities? Can add later if needed
-
+      sfx.uiSound.play();
       const existingStoryPopup = document.querySelector(".storyPopup");
       const existingAbilityPopup = document.querySelector(".abilityContainer");
       if (existingStoryPopup) existingStoryPopup.remove();
@@ -165,6 +168,7 @@ window.addEventListener("click", function (event) {
   const allGotchuIcons = ["catchuIcon", "dogchuIcon", "turtlechuIcon"];
 
   if (allGotchuIcons.includes(targetClasslist[0])) {
+    sfx.uiSound.play();
     const selectedGotchu = document.querySelector(".manageGotchusContainer .bottomBar ." + targetClasslist[0]);
     const previousSelectedGotchu = document.querySelectorAll(".manageGotchusContainer .bottomBar .selected");
     const gotchu = targetClasslist[0].split("Icon")[0];

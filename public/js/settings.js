@@ -68,11 +68,15 @@ if (settingsButton) {
       if (fxToggleInnerText.innerText === "ON") {
         fxToggleInnerText.innerText = "OFF";
         fxState = false;
-        sfx.mute(true);
+        sfx.uiSound.mute(true);
+        sfx.removeLetter.mute(true);
+        sfx.gachaSound.mute(true);
       } else {
         fxToggleInnerText.innerText = "ON";
         fxState = true;
-        sfx.mute(false);
+        sfx.uiSound.mute(false);
+        sfx.removeLetter.mute(false);
+        sfx.gachaSound.mute(false);
       }
     })
 
@@ -81,11 +85,11 @@ if (settingsButton) {
       if (musicToggleInnerText.innerText === "ON") {
         musicToggleInnerText.innerText = "OFF";
         musicState = false;
-        music.mute(true)
+        music.menuMusic.mute(true);
       } else {
         musicToggleInnerText.innerText = "ON";
         musicState = true;
-        music.mute(false);
+        music.menuMusic.mute(false);
       }
     })
 
@@ -124,6 +128,7 @@ if (settingsButton) {
 const profileSettings = document.querySelector(".userBar");
 if (profileSettings) {
   profileSettings.addEventListener("click", (event) => {
+    sfx.uiSound.play();
     const existingSettingsContainer = document.querySelector(".settingsContainer");
     if (existingSettingsContainer) return existingSettingsContainer.remove();
 
@@ -152,6 +157,7 @@ if (profileSettings) {
     mainScreen.appendChild(profileSettingsFragment);
     const closeProfileButton = document.querySelector(".closeProfileButton");
     closeProfileButton.addEventListener("click", (event) => {
+      sfx.removeLetter.play();
       const profileSettingsContainer = document.querySelector(".profileSettingsContainer");
       profileSettingsContainer.remove();
     })
