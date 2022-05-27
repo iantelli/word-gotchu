@@ -478,11 +478,15 @@
         if (event.target.innerHTML === "ON") {
           event.target.innerHTML = "OFF";
           fxState = false;
-          sfx.mute(true);
+          for (const sound in sfx) {
+            sfx[sound].mute(true);
+          }
         } else {
           event.target.innerHTML = "ON";
           fxState = true;
-          sfx.mute(false);
+          for (const sound in sfx) {
+            sfx[sound].mute(false);
+          }
         }
       })
 
@@ -506,7 +510,9 @@
         onOffToggleButtonText.innerText = "OFF";
         if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
           fxState = false;
-          sfx.mute(true);
+          for (const sound in sfx) {
+            sfx[sound].mute(true);
+          }
         } else {
           musicState = false;
           music.battleMusic.mute(true);
@@ -516,7 +522,9 @@
         onOffToggleButtonText.innerText = "ON";
         if (onOffToggleButton.parentElement.className == "soundSettingsRow") {
           fxState = true;
-          sfx.mute(false);
+          for (const sound in sfx) {
+            sfx[sound].mute(false);
+          }
         } else {
           musicState = true;
           music.battleMusic.mute(false);
