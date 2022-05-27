@@ -142,7 +142,7 @@ div {
     height: 120px;
     position: absolute;
     bottom: 40px;
-    left: 375px
+    left: 550px
 
 }
 
@@ -248,8 +248,4 @@ div {
 .gachaBg .gachaResultContainer .closeGachaResult .bottomText {
     transform: scale(calc(1 / 0.95), calc(1 / 0.55));
     pointer-events: none;
-}
-
-.dim {
-    filter: brightness(50%);
 }

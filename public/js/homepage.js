@@ -96,12 +96,14 @@
             sfx.uiSound.play();
             document.querySelector(".mainScreenBg").classList.toggle("hidden");
             document.querySelector(".gachaBg").classList.toggle("hidden");
+            document.querySelector(".gachaBg .topNavBar .gotchuCoinBar .gotchuCoinAmount").innerText = playerCurrency;
             return;
         }
         if (event.target.classList.contains("homeButton")) {
             sfx.removeLetter.play();
             document.querySelector(".gachaBg").classList.toggle("hidden");
             document.querySelector(".mainScreenBg").classList.toggle("hidden");
+            document.querySelector(".mainScreenBg .topNav .gotchuCoinBar .gotchuCoinAmount").innerText = playerCurrency;
             return;
         }
     });

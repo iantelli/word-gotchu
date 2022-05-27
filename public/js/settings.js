@@ -41,6 +41,13 @@ if (settingsButton) {
     const musicToggle = document.querySelector(".musicSettingsRow .onOffToggleButton");
     const musicToggleInnerText = document.querySelector(".musicSettingsRow .onOffToggleButton h3");
 
+
+    
+    /** Sound variables
+     * @param {boolean} - let fxState
+     * @param {boolean} - let musicState
+     */
+    
     if (fxState) {
       fxToggleInnerText.innerText = "ON";
     } else {

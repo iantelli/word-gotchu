@@ -3,21 +3,14 @@ window.onclick = function (event) {
 
   const targetClassList = event.target.className.split(" ");
 
-  // Change this to the manage page instead of homepage or make an all gotchus page?
-  if (targetClassList.includes("viewGotchusButton")) {
-    sfx.removeLetter.play();
-    // document.querySelector(".mainScreenBg").classList.toggle("hidden");
-    // document.querySelector(".gotchuBg").classList.toggle("hidden");
-    return;
-  }
-
   if (targetClassList.includes("gachaRollButton")) {
 
     // Subtract currency
     // Sync with db or something
     const currencyBar = document.querySelector(".gachaBg .gotchuCoinAmount");
-    let currencyAmount = parseInt(currencyBar.innerText);
+    let currencyAmount = parseInt(playerCurrency);
     currencyBar.innerText = currencyAmount - 1000;
+    playerCurrency = currencyAmount - 1000;
 
     // Play sound
     sfx.gachaSound.play();
@@ -28,28 +21,22 @@ window.onclick = function (event) {
 
     // Get gacha result
     let gachaResult;
-    if (cryptoNumber >= 0 && cryptoNumber <= 51) {
+
+    if (cryptoNumber >= 0 && cryptoNumber <= 85) {
       gachaResult = "catchu";
     }
 
-    if (cryptoNumber >= 52 && cryptoNumber <= 102) {
+    if (cryptoNumber >= 86 && cryptoNumber <= 171) {
       gachaResult = "dogchu";
     }
 
-    if (cryptoNumber >= 102 && cryptoNumber <= 153) {
+    if (cryptoNumber >= 172 && cryptoNumber <= 256) {
       gachaResult = "turtlechu";
     }
+
+    // console.log(cryptoNumber, gachaResult);
     
-    if (cryptoNumber >= 153 && cryptoNumber <= 204) {
-      gachaResult = "mousechu";
-    }
-
-    if (cryptoNumber >= 204 && cryptoNumber <= 255) {
-      gachaResult = "raccoonchu";
-    }
-
-
-    console.log(cryptoNumber, gachaResult);
+    // Add rolled gotchu to owned gotchus
 
     const gachaFragment = new DocumentFragment();
     const rollResultPopup = document.createElement("div");
@@ -69,16 +56,13 @@ window.onclick = function (event) {
 
     // Disable buttons
     const rollButton = document.querySelector(".gachaBg .gachaRollButton");
-    const viewGotchusButton = document.querySelector(".gachaBg .viewGotchusButton");
     const homeButton = document.querySelector(".gachaBg .homeButton");
     rollButton.classList.add("disable");
-    viewGotchusButton.classList.add("disable");
     homeButton.classList.add("disable");
 
     // Dim Background
 
     // Clean up page
-    // const gachaResultContainer = document.querySelector(".gachaResultContainer");
     const closeGachaResultButton = document.querySelector(".gachaBg .gachaResultContainer .closeGachaResult");
     closeGachaResultButton.addEventListener("click", () => {
       const allGachaResultContainers = document.querySelectorAll(".gachaResultContainer");
@@ -86,13 +70,9 @@ window.onclick = function (event) {
 
       // Re-enable buttons
       rollButton.classList.remove("disable");
-      viewGotchusButton.classList.remove("disable");
       homeButton.classList.remove("disable");
-      gachaBg.style.filter = "";
 
     });
-
-
 
   }
 
