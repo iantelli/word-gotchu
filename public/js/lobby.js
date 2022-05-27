@@ -293,7 +293,6 @@
     }
     // if the key pressed is enter, submit the wordle
     if (event.key.toLowerCase() === "enter" && keyCount === 6) {
-      sfx.sendWordle.play();
       submitWordle();
     }
     // if the key pressed is backspace, remove the last letter
@@ -320,7 +319,6 @@
       keyCount--;
     }
     else if (event.target.classList.contains("ent") && keyCount === 6) {
-      sfx.sendWordle.play();
       submitWordle();
     }
   })
