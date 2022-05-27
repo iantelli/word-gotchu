@@ -139,7 +139,8 @@ if (profileSettings) {
     const existingProfileSettingsContainer = document.querySelector(".profileSettingsContainer");
     if (existingProfileSettingsContainer) return existingProfileSettingsContainer.remove();
 
-    // Add game screen selector too
+    // Profile Settings Popup
+
     const mainScreen = document.querySelector(".mainScreenBg");
     const profileSettingsFragment = document.createDocumentFragment();
     const profileSettingsContainer = document.createElement("div");
@@ -158,5 +159,10 @@ if (profileSettings) {
           `;
           profileSettingsFragment.appendChild(profileSettingsContainer);
     mainScreen.appendChild(profileSettingsFragment);
+    const closeProfileButton = document.querySelector(".closeProfileButton");
+    closeProfileButton.addEventListener("click", (event) => {
+      const profileSettingsContainer = document.querySelector(".profileSettingsContainer");
+      profileSettingsContainer.remove();
+    })
   })
 }
