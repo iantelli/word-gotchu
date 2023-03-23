@@ -1,7 +1,7 @@
 # Word-Gotchu
 Pixel styled web platform game based on Wordle and original characters known as 'Gotchus' that battle against each other in an arena.
 
-Now hosted on [Heroku](https://wordgotchu.herokuapp.com/).
+Now hosted on [Railway](https://word-gotchu.up.railway.app/).
 
 ## Gameplay
 
